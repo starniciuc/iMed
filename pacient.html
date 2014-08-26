@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Info pacient - Sistem Informaţional Medical / iMeD</title>
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Header -->
+            <nav class="navbar navbar-default top" role="navigation">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <div class="col-lg-3 col-md-4 col-sm-16 col-xs-16">
+                            <div class="navbar-header">
+
+                                <a class="logo" href="index.html">
+                                    <span class="brand"></span>
+                                    <span>iMeD</span>
+                                    <small>SIM</small> 
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-13 col-md-12 col-sm-16 col-xs-16">
+                            <button type="button" class="sidebar-btn navbar-toggle pull-left" data-toggle="offcanvas" data-target="#sidebar">
+                                <span class="sr-only">Deschide bara laterală</span>
+                                <span class="fa fa-bars"></span> 
+                            </button>
+                            <button type="button" class="icons navbar-toggle pull-left" data-toggle="collapse" data-target="#top-nav">
+                                <span class="sr-only">Vezi toate modulele</span>
+                                <span class="fa fa-ellipsis-v"></span>
+                            </button>
+
+                            <div class="profile-btn btn-group pull-right">
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                                    Victoria Rosca
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#"><i class="fa fa-user"></i>Preferinţele mele</a></li>
+                                    <li><a href="#"><i class="fa fa-cog"></i>Setări profil</a></li>
+                                    <li><a href="#"><i class="fa fa-sign-out"></i>Ieşire</a></li>
+                                </ul>
+                            </div>
+                            <div class="collapse navbar-collapse" id="top-nav">
+                                <ul class="nav navbar-nav top-navbar">
+                                    <li class="info" data-toggle="tooltip" data-placement="bottom" title="Sănătate Info"><a href="http://e-sanatate.md/News/Home">Sănătate Info</a></li>
+                                    <li class="tv" data-toggle="tooltip" data-placement="bottom" title="Sănătate TV"><a href="http://e-sanatate.md/TV/Home">Sănătate TV</a></li>
+                                    <li class="sanoclub" data-toggle="tooltip" data-placement="bottom" title="SanoClub"><a href="http://e-sanatate.md/SanoClub">SanoClub</a></li>
+                                    <li class="isan" data-toggle="tooltip" data-placement="bottom" title="iSaN"><a href="http://e-sanatate.md/iSaN/Home">iSaN</a></li>
+                                    <!-- <li class="imed" data-toggle="tooltip" data-placement="bottom" title="iMeD"><a href="#">iMeD</a></li> -->
+                                    <li class="imec" data-toggle="tooltip" data-placement="bottom" title="iMeC"><a href="http://e-sanatate.md/iMeC/Home">iMeC</a></li>
+                                    <li class="tuberculoza" data-toggle="tooltip" data-placement="bottom" title="Tuberculoza Info"><a href="http://tuberculoza.info/">Tuberculoza Info</a></li>
+                                    <li class="spitale" data-toggle="tooltip" data-placement="bottom" title="Spitale.MD"><a href="http://e-sanatate.md/Spitale/Home">Spitale.MD</a></li>
+                                    <li class="pas" data-toggle="tooltip" data-placement="bottom" title="Centrul PAS"><a href="http://pas.md/">Centrul PAS</a></li>
+                                    <li class="scoala" data-toggle="tooltip" data-placement="bottom" title="Școala E-Sănătate"><a href="#">Școala E-Sănătate</a></li>
+                                    <li class="donez" data-toggle="tooltip" data-placement="bottom" title="Donez Sânge"><a href="#">Donez Sânge</a></li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Container -->
+            <div class="container-fluid wrapper-main-container">
+                <div class="row-offcanvas row-offcanvas-left">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-10 left-sidebar sidebar-offcanvas" id="sidebar" role="navigation">
+                        <nav class="left-navigation accordion-navigation">
+                            <ul>
+                                <li><a href="board.html" class="collapse-btn"><span class="fa fa-bar-chart-o"></span>TABLOU DE BORD</a></li>
+                                <li class="active-dropdown"><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-users"></span>PACIENŢI <i class="fa fa-angle-down"></i></a>
+                                    <ul class="collapse in">
+                                        <li class="active"><a href="index.html"><i class="fa fa-angle-right"></i>Căutare pacient</a></li>
+                                        <li><a href="newpacient.html"><i class="fa fa-angle-right"></i>Pacient nou</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Comasare duplicate</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Anularea comasării</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-calendar"></span>PROGRAMARE <i class="fa fa-angle-down"></i></a>
+                                    <ul class="collapse">
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Programarea mea</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Caută programarea</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-file-text-o"></span>RAPOARTE <i class="fa fa-angle-down"></i></a>
+                                    <ul class="collapse">
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Registrul vizitelor</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Registrul Tichete Stitistice</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Sectorul meu</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Registrul monitorizare</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Modificare registre</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Registrul trimiterilor</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Registrul gravidelor</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-book"></span>REGISTRE <i class="fa fa-angle-down"></i></a>
+                                    <ul class="collapse">
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Rapoarte zilnice</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Rapoarte lunare ale medicului</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-umbrella"></span>VACCINĂRI <i class="fa fa-angle-down"></i></a>
+                                    <ul class="collapse">
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Registrul vaccinărilor</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Planuri</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Registrul planuri vaccinări</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Raport</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-cogs"></span>SETĂRI <i class="fa fa-angle-down"></i></a>
+                                    <ul class="collapse">
+                                        <li><a href="#"><i class="fa fa-angle-right"></i>Lista scurtă a diagnozelor</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <a href="#" class="back">Ieşi din SIM</a>
+                        </nav>
+                    </div>
+                    <div class="col-lg-13 col-md-12 col-sm-16 col-xs-16 wrapper-container">
+                        <div class="main-container info-pacient">
+                            <h1>Ana Mardare Radu <span>27 ani, feminin</span></h1>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-16">
+                                        <ul class="list-main-menu">
+                                            <li><a href="#">Consultaţia medicală</a></li>
+                                            <li><a href="#">Tratament</a></li>
+                                            <li><a href="#">Examene paraclinice</a></li>
+                                            <li><a href="#">Diagnostice</a></li>
+                                            <li><a href="#">Tratamente</a></li>
+                                            <li><a href="#">Consultanţa stomatologică</a></li>
+                                            <li><a href="#">Menţiuni speciale</a></li>
+                                            <li><a href="#">Acord informativ</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-lg-16 col-md-16 col-sm-16 col-xs-16">
+                                        <div class="block-form">
+                                            <div class="row">
+                                                <div class="col-lg-10">
+                                                    <div class="first-block">
+                                                        <form>
+                                                            <label>Epizod tratare</label>
+                                                            <input class="" type="text" value="Pancreatită de la 16.06.2014   17:15:34">
+
+                                                            <label>Data vizitei</label>
+                                                            <input class="" type="text" value="15.07.2014">
+                                                            <input class="" type="text" value="10:31">
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <label>Planificat pentru</label>
+                                                    <input type="text" value="21.07.2014  13:15">                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-8">                                        
+                                        <table>
+                                            <tr>
+                                                <th></th>
+                                                <th>Cod</th>
+                                                <th>Diagnoză clinică</th>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>Cod</td>
+                                                <td>Diagnoză clinică</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+
+                        <footer class="footer">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <nav class="footer-nav">
+                                        <ul>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Privacy">Confidențialitate</a></li>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Security">Securitatea datelor</a></li>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Terms">Termeni şi Condiţii</a></li>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Assistance">Asistență pentru clienți</a></li>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Services">Servicii</a></li>
+                                        </ul>
+                                    </nav>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row copyright">
+                                    <div class="btn-group dropup">      
+                                        <button class="btn  dropdown-toggle" data-toggle="dropdown">În Română</button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">На русском</a></li>
+                                        </ul>
+                                    </div>
+                                    <p>2014 © iMeD. Toate drepturile sunt rezervate.</p>
+
+                                    <ul class="socials">
+                                        <li class="facebook"><a href="https://www.facebook.com/e.sanatatea.ta" target="_blank"></a></li>
+                                        <li class="twitter"><a href="https://twitter.com/E_Sanatatea_TA" target="_blank"></a></li>
+                                        <li class="linkedin"><a href="http://www.linkedin.com/profile/view?id=254762663&trk=tab_pro" target="_blank"></a></li>
+                                        <li class="youtube"><a href="http://www.youtube.com/channel/UCuVNhiubNuy1M8yQmQmVOUQ" target="_blank"></a></li>
+                                        <li class="rss"><a href="https://e-sanatate.md/News/Home/RSS" target="_blank"></a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/bootstrap-tooltip.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/modernizr.js"></script>
+    </body>
+</html>
