@@ -1092,6 +1092,7 @@ form.new-pacient .row{
 }
 .info-pacient{
     overflow: hidden;
+    padding-bottom: 80px;
 }
 .info-pacient h1{
     background-color: rgb(230,250,255);
@@ -1132,6 +1133,38 @@ ul.list-main-menu li:hover{
 }
 .block-form .first-block form{
     margin: 0;
+}
+.table-side h2{
+    color: #fff;
+    background-color: #3A526B;
+    margin-bottom: 0;
+}
+.table-side table{
+    width: 100%;
+}
+.table-side table tr td:first-child{
+    text-align: center;
+}
+.table-side table tr td{
+    padding: 5px;
+    border:1px solid #E6E6E6;
+    font-size: 13px;
+}
+.table-side table{
+    
+}
+.table-side table th{
+    padding: 5px;
+    background-color: #E6E6E6;
+    color: #666666;
+    font-size: 12px;
+}
+.small-table{
+    height: 127px;
+    border:1px solid #DDDDDD;
+}
+.btn-add{
+    float: right;
 }
 /************************************************************
         Mobile optimization
