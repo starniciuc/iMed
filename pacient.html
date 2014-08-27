@@ -131,7 +131,70 @@
                     </div>
                     <div class="col-lg-13 col-md-12 col-sm-16 col-xs-16 wrapper-container">
                         <div class="main-container info-pacient">
-                            <h1>Ana Mardare Radu <span>27 ani, feminin</span> <a href="javascript:void(0)" data-toggle="modal" data-target="#info-pacient"><span></span> Info pacient</a></h1>
+                            <h1>Ana Mardare Radu <span>27 ani, feminin</span> 
+                                <div class="btn-group pull-right">
+                                    <button data-toggle="dropdown" class="btn dropdown-toggle btn-info-pacient" type="button">
+                                        <i class="fa fa-file-text-o"></i> <span>Info<br>
+                                        pacient</span>
+                                    </button>
+                                    <div class="dropdown-menu my-position">
+                                        <table>
+                                            <tr>
+                                                <th>Pacient</th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <td>IDNP</td>
+                                                <td>2004004042004</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Numărul poliţei</td>
+                                                <td>A334455</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sexul</td>
+                                                <td>F</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Data naşterii</td>
+                                                <td>01.01.1987</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sectorul</td>
+                                                <td>12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Medic de familie</td>
+                                                <td><a href="#">Anastasia Crigan Anatolie</a></td>
+                                            </tr>
+                                            
+                                        </table>
+                                        <table>
+                                            <tr>
+                                                <th>Adresa</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Mun. Chişinău, str. Matei Basarab, 18/3, ap. 5</td>
+                                            </tr>
+                                        </table>
+                                        <table>
+                                            <tr>
+                                                <th>Contacte</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Tel.: 069969699, 022334455</td>
+                                            </tr>
+                                            <tr>
+                                                <td>e-mail: <a href="mailto:ana.mardare@hotmail.com" class="no-border">ana.mardare@hotmail.com</a></td>
+                                            </tr>
+                                        </table>
+                                        
+                                        <div class="text-center">
+                                            <button class="btn btn-warning">Profil iSaN</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h1>
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-lg-16">
@@ -148,6 +211,12 @@
                                     </div>
 
                                     <div class="col-lg-16 col-md-16 col-sm-16 col-xs-16">
+                                        <div class="row">
+                                            <div class="col-lg-16 clearfix">
+                                                <a href="#" class="left-link"><span>Alege epizodul de tratament</span></a>
+                                                <a href="#" class="right-link"><i class="fa fa-long-arrow-left"></i> <span>Vizita precedentă</span></a>
+                                            </div>
+                                        </div>
                                         <div class="block-form">
                                             <div class="row">
                                                 <div class="col-lg-10">
@@ -182,11 +251,11 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="second">
-                                                            <label>Planificat pentru</label>
-                                                            <input type="text" value="21.07.2014  13:15"> 
-                                                            <p>
-                                                                <a href="#"><i class="fa fa-calendar"></i> Programare</a>
-                                                            </p>
+                                                        <label>Planificat pentru</label>
+                                                        <input type="text" value="21.07.2014  13:15"> 
+                                                        <p>
+                                                            <a href="#"><i class="fa fa-calendar"></i> Programare</a>
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -369,18 +438,6 @@
                 </div>
             </div>
 
-        </div>
-        <div class="modal fade bs-example-modal-md" id="info-pacient" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                    <div class="modal-header">
-
-                    </div>
-                    <div class="modal-footer">
-
-                    </div>
-                </div><!-- /.modal-content -->
-            </div>
         </div>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
