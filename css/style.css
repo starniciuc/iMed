@@ -735,18 +735,20 @@ a.hide-form:hover{
     padding: 10px 30px;
     background-color: #3a526c;
 }
-.search-result .control-panel button{
+.search-result .control-panel button,
+.btn-add
+{
     border-radius: 4px;
     padding: 8px 25px;
     font-size: 13px;
     color:#fff;
     margin-right: 6px;
 }
-.search-result .control-panel button.blue{
+button.blue{
     background-color: #547599;
     border: 1px solid #1c2733;
 }
-.search-result .control-panel button.blue:hover{
+button.blue:hover{
     background-color: #709dcc;
 }
 .search-result .control-panel button.green{
@@ -1140,20 +1142,22 @@ ul.list-main-menu li:hover{
     background-color: #3A526B;
     margin-bottom: 0;
     position: relative;
+    padding-left: 10px;
 }
 .table-side table{
     width: 100%;
 }
 .table-side table tr td:first-child{
     text-align: center;
+    width: 40px;
 }
 .table-side table tr td{
     padding: 5px;
     border:1px solid #E6E6E6;
     font-size: 13px;
 }
-.table-side table{
-    
+.table-side.a{
+    padding-right: 0;
 }
 .table-side table th{
     padding: 5px;
@@ -1162,21 +1166,16 @@ ul.list-main-menu li:hover{
     font-size: 12px;
 }
 .small-table{
-    height: 127px;
+    height: 122px;
     border:1px solid #DDDDDD;
+    overflow-y: scroll;
+    margin-bottom: 10px;
 }
 .btn-add{
     position: absolute;
     top: 7px;
     right: 7px;
-    display: block;
-    width: 30px;
-    height: 30px;
-    border-radius: 4px;
-    background-color: #43AB1D;
-    line-height: 30px;
-    text-align: center;
-    color: #ffffff;
+    padding: 8px 12px;
 }
 .second{
     background-color: #FAFAFA;
@@ -1234,7 +1233,8 @@ ul.list-main-menu li:hover{
 }
 .second p{
     padding-top: 15px;
-    text-align:  center;
+    text-align:  left;
+    padding-left: 110px;
 }
 .second p a{
     color: #0080FF;
