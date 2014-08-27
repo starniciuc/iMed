@@ -1126,6 +1126,7 @@ ul.list-main-menu li:hover{
 .block-form{
     border-radius: 4px;
     border:1px solid rgb(70, 160, 255);
+    background-color: #FAFAFA;
 }
 .block-form .first-block{
     background-color: rgb(240, 240, 240);
@@ -1179,19 +1180,69 @@ ul.list-main-menu li:hover{
 }
 .second{
     background-color: #FAFAFA;
+    padding-top: 15px;
 }
 /* Hz ce pagina */
 
-.visited-date p{
-    float: left;
+.data-block{
+    margin-bottom: 15px;
 }
-.visited-date .date{
+.data-block .date{
     width: 90px;
 }
-.visited-date .hour{
+.data-block .hour{
     width: 50px;
 }
-
+.block-form form label,
+.block-form .second label
+{
+    color: #1C2733;
+    font-weight: normal;
+    font-size: 13px;
+    float: left;
+    margin-right: 10px;
+}
+.tratare{
+    width: 53%;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.tratare input,
+.second input
+{
+    width: 77%;
+    background-color: #FFED91;
+}
+.second input{
+    width: 50%;
+}
+.locul{
+    width: 40%;
+    float: left;
+    margin-right: 15px;
+}
+.locul select{
+    width: 74%;
+}
+.tipul-vizitei{
+    width: 40%;
+    float: left;
+}
+.tipul-vizitei select{
+    width: 75%;
+}
+.second p{
+    padding-top: 15px;
+    text-align:  center;
+}
+.second p a{
+    color: #0080FF;
+    font-size: 13px;
+}
+.second p a:hover{
+    text-decoration: none;
+}
 /************************************************************
         Mobile optimization
 ************************************************************/
