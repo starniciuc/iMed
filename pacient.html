@@ -131,7 +131,7 @@
                     </div>
                     <div class="col-lg-13 col-md-12 col-sm-16 col-xs-16 wrapper-container">
                         <div class="main-container info-pacient">
-                            <h1>Ana Mardare Radu <span>27 ani, feminin</span></h1>
+                            <h1>Ana Mardare Radu <span>27 ani, feminin</span> <a href="javascript:void(0)" data-toggle="modal" data-target="#info-pacient"><span></span> Info pacient</a></h1>
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-lg-16">
@@ -154,30 +154,56 @@
                                                     <div class="first-block">
                                                         <form>
                                                             <div class="row">
-                                                                <div class="col-sm-10">
+                                                                <div class="col-lg-10">
+                                                                    <div class="row ">
+                                                                        <label>
+                                                                            Epizod tratare
+                                                                        </label>
+                                                                        <input class="" type="text" value="Pancreatită de la 16.06.2014   17:15:34">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <div class="row visited-date clearfix">
+                                                                        <p>Data vizitei</p>
+                                                                        <input class="date" type="text" value="15.07.2014">
+                                                                        <input class="hour" type="text" value="10:31">
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-9">
                                                                     <div class="row">
                                                                         <div class="col-lg-5">
-                                                                            Epizod tratare
+                                                                            Locul vizitei
                                                                         </div>
                                                                         <div class="col-lg-11">
-                                                                            <input class="" type="text" value="Pancreatită de la 16.06.2014   17:15:34">
+                                                                            <select>
+                                                                                <option>Policlinica</option>
+                                                                            </select>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-sm-6">
+                                                                <div class="col-sm-7">
                                                                     <div class="row">
-                                                                        <div class="col-lg-5">Data vizitei</div>
-                                                                        <div class="col-lg-5"><input class="" type="text" value="15.07.2014"></div>
-                                                                        <div class="col-lg-6"><input class="" type="text" value="10:31"></div>
-                                                                    </div> 
+                                                                        <div class="col-lg-5">
+                                                                            <p>Tipul vizitei</p>
+                                                                        </div>
+                                                                        <div class="col-lg-11">
+                                                                            <select>
+                                                                                <option>Pe motiv de boală</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </form>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <label>Planificat pentru</label>
-                                                    <input type="text" value="21.07.2014  13:15">                                                    
+                                                    <div class="second">
+                                                        <label>Planificat pentru</label>
+                                                        <input type="text" value="21.07.2014  13:15"> 
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -205,7 +231,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-16">
-                                                <h2>Servicii <a href="#" class="btn-add">+</a></h2>
+                                                <h2>Servicii <a href="#" class="btn-add"><i class="fa fa-plus"></i></a></h2>
                                             </div>
                                         </div>
                                         <div  class="small-table">
@@ -232,7 +258,7 @@
                                     <div class="col-lg-8 table-side">
                                         <div class="row">
                                             <div class="col-lg-16">
-                                                <h2>Trimiteri</h2>
+                                                <h2>Trimiteri <a href="#" class="btn-add"><i class="fa fa-plus"></i></a></h2>
                                             </div>
                                         </div>
                                         <table>
@@ -360,7 +386,18 @@
             </div>
 
         </div>
+        <div class="modal fade bs-example-modal-md" id="info-pacient" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
 
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div><!-- /.modal-content -->
+            </div>
+        </div>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/bootstrap-tooltip.js"></script>

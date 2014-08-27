@@ -1129,7 +1129,7 @@ ul.list-main-menu li:hover{
 }
 .block-form .first-block{
     background-color: rgb(240, 240, 240);
-    
+    padding: 15px;
 }
 .block-form .first-block form{
     margin: 0;
@@ -1138,6 +1138,7 @@ ul.list-main-menu li:hover{
     color: #fff;
     background-color: #3A526B;
     margin-bottom: 0;
+    position: relative;
 }
 .table-side table{
     width: 100%;
@@ -1164,8 +1165,33 @@ ul.list-main-menu li:hover{
     border:1px solid #DDDDDD;
 }
 .btn-add{
-    float: right;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #43AB1D;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
 }
+.second{
+    background-color: #FAFAFA;
+}
+/* Hz ce pagina */
+
+.visited-date p{
+    float: left;
+}
+.visited-date .date{
+    width: 90px;
+}
+.visited-date .hour{
+    width: 50px;
+}
+
 /************************************************************
         Mobile optimization
 ************************************************************/
