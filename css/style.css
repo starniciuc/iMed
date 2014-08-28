@@ -758,7 +758,7 @@ button.green{
 button.green:hover{
     background-color: #57de26;
 }
-button:last-child{
+.control-panel button:last-child{
     float: right;
     margin-right: 0;
 }
@@ -1108,6 +1108,7 @@ form.new-pacient .row{
     display: inline-block;
     text-align: left;
     vertical-align: top;
+    padding-left: 3px;
 }
 .info-pacient h1 .name-block img{
     width: 60px;
@@ -1135,6 +1136,8 @@ ul.list-main-menu li{
 }
 ul.list-main-menu li a{
     color: #ffffff;
+    width: 100%;
+    line-height: 100%;
 }
 ul.list-main-menu li a:hover{
     text-decoration: none;
@@ -1142,7 +1145,8 @@ ul.list-main-menu li a:hover{
 ul.list-main-menu li:hover,
 ul.list-main-menu li.selected
 {
-    background-color: rgb(70, 160, 255);
+    background-color: #709dcc;
+    cursor: pointer;
 }
 .block-form{
     border-radius: 4px;
@@ -1295,6 +1299,7 @@ ul.list-main-menu li.selected
     margin-right: 15px;
     padding: 13px;
     margin-top: 1px;
+    font-size: 15px;
 }
 .btn-info-pacient:hover,
 .btn-info-pacient:active,
@@ -1314,6 +1319,7 @@ ul.list-main-menu li.selected
 .info-pacient h1 .btn-info-pacient.first span{
     font-weight: bold;
     font-size: 13px;
+    padding-right: 5px;
 }
 .info-pacient h1 .btn-info-pacient:hover span,
 .info-pacient h1 .btn-info-pacient:active span,
