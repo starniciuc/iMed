@@ -1365,8 +1365,18 @@ ul.list-main-menu li.selected
     font-size: 13px;
     font-weight: normal;
 }
-
-
+.btn.dropdown-toggle.institutia{
+    font-weight: normal;
+    font-size: 12px;
+    width: auto !important;
+    color: #709ccc;
+}
+.profile-btn.btn-group{
+    width: auto;
+}
+.dropdown-menu.fisa li{
+    padding: 5px 0;
+}
 /************************************************************
         Mobile optimization
 ************************************************************/
