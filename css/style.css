@@ -1097,28 +1097,27 @@ form.new-pacient .row{
     padding-bottom: 80px;
 }
 .info-pacient h1{
-    background-color: #0058AE;
-	color:#ffffff;
-	border-bottom: 3px solid #007CFA;
-	padding: 10px 0 5px 30px;
+    background-color: #FFCD40;
+    color:#1C2733;
+    padding: 10px 0 5px 30px;
 }
 .info-pacient h1 .name-block{
-	display: inline-block;
+    display: inline-block;
 }
 .info-pacient h1 .name-block .name{
-	display: inline-block;
-	text-align: left;
-	vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
 }
 .info-pacient h1 .name-block img{
     width: 60px;
-	height: 60px;
-	border-radius: 4px;
-	border:1px solid #ffffff;
+    height: 60px;
+    border-radius: 4px;
+    border:1px solid #ffffff;
 }
 .info-pacient h1 span{
     font-size: 16px;
-	line-height: 16px;
+    line-height: 16px;
 }
 ul.list-main-menu{
     padding: 0;
@@ -1132,7 +1131,7 @@ ul.list-main-menu li{
     border-radius: 4px;
     padding: 8px 15px;
     text-align: center;
-	margin-top: 3px;
+    margin-top: 3px;
 }
 ul.list-main-menu li a{
     color: #ffffff;
@@ -1284,34 +1283,43 @@ ul.list-main-menu li.selected
 .btn-info-pacient{
     background: none;
     height: 100%;
-    border:2px solid #FFF;
+    border:2px solid #0059B2;
     border-radius: 4px;
     margin-top: 7px;
     margin-right: 30px;
-    color:#FFF;
+    color:#0059B2;
     font-size: 20px;
     line-height: 30px;
+}
+.btn-info-pacient.first{
+    margin-right: 15px;
+    padding: 13px;
+    margin-top: 1px;
 }
 .btn-info-pacient:hover,
 .btn-info-pacient:active,
 .btn-info-pacient:focus
 {
-    background-color: #0080FF;
-    color: #ffffff;
+    background-color: #0059B2;
+    color: #FFF;
 }
 .info-pacient h1 .btn-info-pacient span{
     font-size: 11px;
     line-height: 11px;
-    color:#FFF;
+    color:#0059B2;
     padding: 0;
     display: inline-block;
     text-align: left;
+}
+.info-pacient h1 .btn-info-pacient.first span{
+    font-weight: bold;
+    font-size: 13px;
 }
 .info-pacient h1 .btn-info-pacient:hover span,
 .info-pacient h1 .btn-info-pacient:active span,
 .info-pacient h1 .btn-info-pacient:focus span
 {
-    color: #ffffff;
+    color: #FFF;
 }
 .pull-right > .dropdown-menu.my-position{
     top: 4px;
@@ -1345,11 +1353,11 @@ ul.list-main-menu li.selected
     border:0;
 }
 .table-side h3{
-	padding-left: 0;
+    padding-left: 0;
 }
 .table-side h3 span{
-	font-size: 13px;
-	font-weight: normal;
+    font-size: 13px;
+    font-weight: normal;
 }
 
 
