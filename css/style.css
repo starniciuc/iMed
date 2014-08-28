@@ -731,11 +731,11 @@ a.hide-form:hover{
     vertical-align: middle;
     margin-left: 20px;
 }
-.search-result .control-panel{
+.control-panel{
     padding: 10px 30px;
     background-color: #3a526c;
 }
-.search-result .control-panel button,
+.control-panel button,
 .btn-add
 {
     border-radius: 4px;
@@ -751,14 +751,14 @@ button.blue{
 button.blue:hover{
     background-color: #709dcc;
 }
-.search-result .control-panel button.green{
+button.green{
     background-color: #4dc421;
     border: 1px solid #43791d;
 }
-.search-result .control-panel button.green:hover{
+button.green:hover{
     background-color: #57de26;
 }
-.search-result .control-panel button:last-child{
+button:last-child{
     float: right;
     margin-right: 0;
 }
@@ -1097,11 +1097,28 @@ form.new-pacient .row{
     padding-bottom: 80px;
 }
 .info-pacient h1{
-    background-color: rgb(230,250,255);
+    background-color: #0058AE;
+	color:#ffffff;
+	border-bottom: 3px solid #007CFA;
+	padding: 10px 0 5px 30px;
+}
+.info-pacient h1 .name-block{
+	display: inline-block;
+}
+.info-pacient h1 .name-block .name{
+	display: inline-block;
+	text-align: left;
+	vertical-align: top;
+}
+.info-pacient h1 .name-block img{
+    width: 60px;
+	height: 60px;
+	border-radius: 4px;
+	border:1px solid #ffffff;
 }
 .info-pacient h1 span{
     font-size: 16px;
-    padding-left: 20px;
+	line-height: 16px;
 }
 ul.list-main-menu{
     padding: 0;
@@ -1115,6 +1132,7 @@ ul.list-main-menu li{
     border-radius: 4px;
     padding: 8px 15px;
     text-align: center;
+	margin-top: 3px;
 }
 ul.list-main-menu li a{
     color: #ffffff;
@@ -1122,7 +1140,9 @@ ul.list-main-menu li a{
 ul.list-main-menu li a:hover{
     text-decoration: none;
 }
-ul.list-main-menu li:hover{
+ul.list-main-menu li:hover,
+ul.list-main-menu li.selected
+{
     background-color: rgb(70, 160, 255);
 }
 .block-form{
@@ -1166,7 +1186,7 @@ ul.list-main-menu li:hover{
     font-size: 12px;
 }
 .small-table{
-    height: 122px;
+    height: 127px;
     border:1px solid #DDDDDD;
     overflow-y: scroll;
     margin-bottom: 10px;
@@ -1264,11 +1284,11 @@ ul.list-main-menu li:hover{
 .btn-info-pacient{
     background: none;
     height: 100%;
-    border:2px solid #0080FF;
+    border:2px solid #FFF;
     border-radius: 4px;
-    margin-top: -10px;
+    margin-top: 7px;
     margin-right: 30px;
-    color:#0080FF;
+    color:#FFF;
     font-size: 20px;
     line-height: 30px;
 }
@@ -1282,7 +1302,7 @@ ul.list-main-menu li:hover{
 .info-pacient h1 .btn-info-pacient span{
     font-size: 11px;
     line-height: 11px;
-    color:#0080FF;
+    color:#FFF;
     padding: 0;
     display: inline-block;
     text-align: left;
@@ -1294,7 +1314,7 @@ ul.list-main-menu li:hover{
     color: #ffffff;
 }
 .pull-right > .dropdown-menu.my-position{
-    top: -12px;
+    top: 4px;
     right: 122px;
     border:0;
     width: 300px;
@@ -1324,6 +1344,15 @@ ul.list-main-menu li:hover{
 .no-border{
     border:0;
 }
+.table-side h3{
+	padding-left: 0;
+}
+.table-side h3 span{
+	font-size: 13px;
+	font-weight: normal;
+}
+
+
 /************************************************************
         Mobile optimization
 ************************************************************/
