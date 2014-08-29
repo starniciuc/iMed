@@ -1242,7 +1242,7 @@ ul.list-main-menu li.selected
 .tratare input,
 .second input
 {
-    width: 77%;
+    width: 82%;
     background-color: #FFED91;
 }
 .second input{
@@ -1254,7 +1254,7 @@ ul.list-main-menu li.selected
     margin-right: 15px;
 }
 .locul select{
-    width: 74%;
+    width: 80%;
 }
 .tipul-vizitei{
     width: 40%;
