@@ -1143,11 +1143,15 @@ ul.list-main-menu li a{
 ul.list-main-menu li a:hover{
     text-decoration: none;
 }
-ul.list-main-menu li:hover,
+ul.list-main-menu li:hover
+{
+    background-color: #1C2733;
+    cursor: pointer;
+}
+ul.list-main-menu li:active,
 ul.list-main-menu li.selected
 {
-    background-color: #709dcc;
-    cursor: pointer;
+    background-color: #46A0FF;
 }
 .block-form{
     border-radius: 4px;
