@@ -1254,7 +1254,11 @@ ul.list-main-menu li.selected
     margin-right: 15px;
 }
 .locul select{
-    width: 80%;
+    width: 76%;
+}
+.locul label{
+    width: 80px;
+	text-align: right;
 }
 .tipul-vizitei{
     width: 40%;
@@ -1491,6 +1495,14 @@ ul.list-main-menu li.selected
 .checkbox-element label{
 	color: #ff0000 !important;
 	font-size: 11px;
+}
+.btn-iSan{
+	background-color: #FF9600;
+	border:1px solid #FF8C19;
+	font-size: 13px;
+}
+.btn-iSan:hover{
+	background-color: #FFAA00;
 }
 /************************************************************
         Mobile optimization
