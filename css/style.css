@@ -1419,6 +1419,12 @@ ul.list-main-menu li.selected
     margin-right: 15px;
     margin-bottom: 15px;
 }
+.cod-diagnostic.class{
+	width: 18%;
+}
+.cod-diagnostic.class input{
+	width: 82%;
+}
 .cod-diagnostic.cod label{
 	float: right!important;
 }
