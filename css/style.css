@@ -1419,6 +1419,12 @@ ul.list-main-menu li.selected
     margin-right: 15px;
     margin-bottom: 15px;
 }
+.tratare.denumire{
+	width: 53%;
+}
+.tratare.denumire input{
+	width: 84%;
+}
 .cod-diagnostic.class{
 	width: 18%;
 }
