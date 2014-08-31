@@ -16,7 +16,7 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
 </head>
-<body>
+<body class="board">
 <div class="wrapper">
 <!-- Header -->
 <nav class="navbar navbar-default top" role="navigation">
@@ -40,7 +40,7 @@
 								<button type="button" class="icons navbar-toggle pull-left" data-toggle="collapse" data-target="#top-nav">
 									<span class="sr-only">Vezi toate modulele</span>
 									<span class="fa fa-ellipsis-v"></span>
-								</button>        
+								</button>
 						
 								<div class="profile-btn btn-group pull-right">
 									<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
@@ -80,14 +80,14 @@
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-10 left-sidebar sidebar-offcanvas" id="sidebar" role="navigation">
 						<nav class="left-navigation accordion-navigation">
 								<ul>
-										<li><a href="board.html" class="collapse-btn"><span class="fa fa-bar-chart-o"></span>TABLOU DE BORD</a></li>
+										<li class="active"><a href="board.html" class="collapse-btn"><span class="fa fa-bar-chart-o"></span>TABLOU DE BORD</a></li>
 										<li class="active-dropdown"><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-users"></span>PACIENŢI <i class="fa fa-angle-down"></i></a>
 											<ul class="collapse in">
-                        <li class="active"><a href="index.html"><i class="fa fa-angle-right"></i>Căutare pacient</a></li>
-                        <li><a href="newpacient.html"><i class="fa fa-angle-right"></i>Pacient nou</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i>Comasare duplicate</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i>Anularea comasării</a></li>
-                    	</ul>
+						                        <li><a href="index.html"><i class="fa fa-angle-right"></i>Căutare pacient</a></li>
+						                        <li><a href="newpacient.html"><i class="fa fa-angle-right"></i>Pacient nou</a></li>
+						                        <li><a href="#"><i class="fa fa-angle-right"></i>Comasare duplicate</a></li>
+						                        <li><a href="#"><i class="fa fa-angle-right"></i>Anularea comasării</a></li>
+                    						</ul>
 										</li>
 										<li><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-calendar"></span>PROGRAMARE <i class="fa fa-angle-down"></i></a>
 											<ul class="collapse">
@@ -131,282 +131,475 @@
 				</div>
 				<div class="col-lg-13 col-md-12 col-sm-16 col-xs-16 wrapper-container">
 						<div class="main-container">
-							<h1>Căutare pacient <a href="javascript:void(0)" class="hide-form" data-toggle="collapse" data-target=".search-form">Ascunde formularul</a></h1>
-							<div class="search-form collapse in">
-								<form action="">
-									<div class="container-fluid">
+							<h1>Tablou de bord</h1>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-lg-11 col-md-11 col-sm-11">
+
 										<div class="row">
-											<div class="col-lg-2 col-sm-2">
-												<label for="">Diapazon:</label>
+
+										<!-- Left Sidebar -->
+
+											<div class="col-lg-8">
+
+												<div class="row wrapper-box">
+													<div class="col-lg-16">
+														<div class="row">
+															<div class="box big clearfix red">
+																<div class="header">
+																	<h4>Internaţi bolnavi</h4>
+																</div>
+																<div class="content">
+																	<div class="col-lg-5 col-md-5 col-sm-5">
+																		<p class="text">Total</p>
+																		<h5 class="number">35</h5>
+																	</div>
+																	<div class="col-lg-6 col-md-6 col-sm-6">
+																		<p class="text">Locuitori rurali</p>
+																		<h5 class="number">11</h5>
+																	</div>
+																	<div class="col-lg-5 col-md-5 col-sm-5">
+																		<p class="text">Copii 0-17 ani</p>
+																		<h5 class="number">5</h5>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row wrapper-box">
+													<div class="col-lg-16">
+														<div class="row">
+															<div class="box big clearfix purple">
+																<div class="header">
+																	<h4>Pacienţi aduşi de:</h4>
+																</div>
+																<div class="content">
+																	<div class="col-lg-4 col-md-4 col-sm-4">
+																		<p class="text">Familie</p>
+																		<h5 class="number">7284</h5>
+																	</div>
+																	<div class="col-lg-4 col-md-4 col-sm-4">
+																		<p class="text">Ambulanţă</p>
+																		<h5 class="number">1567</h5>
+																	</div>
+																	<div class="col-lg-4 col-md-4 col-sm-4">
+																		<p class="text">AVIASAN</p>
+																		<h5 class="number">24</h5>
+																	</div>
+																	<div class="col-lg-4 col-md-4 col-sm-4">
+																		<p class="text">Alte situaţii</p>
+																		<h5 class="number">354</h5>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row wrapper-box two-columns">
+
+													<div class="col-lg-8 col-md-8 col-sm-8">
+														<div class="row" style="margin-right:-15px;">
+															<div class="box small clearfix green">
+																<div class="content">
+																	<div class="col-lg-16">
+																	<div class="divider"></div>
+																	<p class="text">Pacienţi programaţi la zi</p>
+																	<br>
+																	<h5 class="number">245</h5>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												
+													<div class="col-lg-8 col-md-8 col-sm-8">
+														<div class="row" style="margin-left:-15px;">
+															<div class="box small clearfix green">
+																<div class="content">
+																	<div class="col-lg-16">
+																	<div class="divider"></div>
+																	<p class="text">Locuri libere la încep. zilei</p>
+																	<div class="left border">
+																		<h5 class="number">10</h5>
+																		<p class="text">Bărbaţi</p>
+																	</div>
+																	<div class="left">
+																		<h5 class="number">5</h5>
+																		<p class="text">Femei</p>
+																	</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+												</div>
+
+												<div class="row wrapper-box">
+													<div class="col-lg-16">
+														<div class="row">
+															<div class="box big clearfix darkblue htmlbox">
+																<div class="header">
+																	<h4>Html info box</h4>
+																</div>
+																<div class="content">
+																	<div class="col-lg-16">
+																		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel est odio. Aenean vitae justo leo. Ut ut massa sapien. Nullam ultrices elit massa, eleifend cursus turpis tempor in. Donec non velit mollis, semper neque in, fringilla nulla. Phasellus malesuada sagittis suscipit.
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row wrapper-box">
+													<div class="col-lg-16">
+														<div class="row">
+															<div class="box big clearfix green-light">
+																<div class="header">
+																	<h4>Asiguraţi</h4>
+																</div>
+																<div class="content">
+																	<div class="col-lg-5 col-md-5 col-sm-5">
+																		<p class="text">CNAM</p>
+																		<h5 class="number">8567</h5>
+																	</div>
+																	<div class="col-lg-6 col-md-6 col-sm-6">
+																		<p class="text">Altă companie</p>
+																		<h5 class="number">354</h5>
+																	</div>
+																	<div class="col-lg-5 col-md-5 col-sm-5">
+																		<p class="text">Neasiguraţi</p>
+																		<h5 class="number">249</h5>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row wrapper-box two-columns">
+
+													<div class="col-lg-8 col-md-8 col-sm-8">
+														<div class="row" style="margin-right:-15px;">
+															<div class="box small clearfix blue">
+																<div class="content">
+																	<div class="col-lg-16">
+																	<div class="divider"></div>
+																	<p class="text">Utilizatori activi în instituţie</p>
+																	<br>
+																	<h5 class="number">12</h5>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												
+													<div class="col-lg-8 col-md-8 col-sm-8">
+														<div class="row" style="margin-left:-15px;">
+															<div class="box small clearfix blue">
+																<div class="content">
+																	<div class="col-lg-16">
+																	<div class="divider"></div>
+																	<p class="text">Cadre medicale în instituţie</p>
+																	<br>
+																	<h5 class="number">152</h5>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+												</div>
+
 											</div>
-											<div class="col-lg-14 col-sm-14 radio">
-												<input type="radio" value="mysector" name="diapazon" id="mysector"><label for="mysector">Sectorul meu</label>
-												<input type="radio" value="allpacients" name="diapazon" id="allpacients"><label for="allpacients">Toţi pacienţii</label>
+												
+											<!-- Left Sidebar -->
+
+											<!-- Center Sidebar -->
+
+
+											<div class="col-lg-8">
+
+												<div class="row wrapper-box two-columns" style="margin-left:0;">
+
+													<div class="col-lg-8 col-md-8 col-sm-8">
+														<div class="row" style="margin-right:-15px;">
+															<div class="box small clearfix red">
+																<div class="content">
+																	<div class="col-lg-16">
+																	<div class="divider"></div>
+																	<p class="text">Bolnavi la începutul ultimilor 24 ore</p>
+																	<h5 class="number">257</h5>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												
+													<div class="col-lg-8 col-md-8 col-sm-8">
+														<div class="row" style="margin-left:-15px;">
+															<div class="box small clearfix red">
+																<div class="content">
+																	<div class="col-lg-16">
+																	<div class="divider"></div>
+																	<p class="text">Bolnavi total la încep. zilei curente</p>
+																	<h5 class="number">289</h5>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+												</div>
+											
+												<div class="row wrapper-box two-columns" style="margin-left:0;">
+
+													<div class="col-lg-8 col-md-8 col-sm-8">
+														<div class="row" style="margin-right:-15px;">
+															<div class="box small clearfix red">
+																<div class="content">
+																	<div class="col-lg-16">
+																	<div class="divider"></div>
+																	<p class="text">Bolnavi externați</p>
+																	<br>
+																	<h5 class="number">257</h5>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												
+													<div class="col-lg-8 col-md-8 col-sm-8">
+														<div class="row" style="margin-left:-15px;">
+															<div class="box small clearfix yellow">
+																<div class="content">
+																	<div class="col-lg-16">
+																	<div class="divider"></div>
+																	<p class="text">Număr de paturi în instituţie</p>
+																	<div class="left border">
+																		<h5 class="number">257</h5>
+																		<p class="text">Total</p>
+																	</div>
+																	<div class="left">
+																		<h5 class="number">257</h5>
+																		<p class="text">Total</p>
+																	</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+												</div>
+
+												<div class="row wrapper-box" style="margin-left:0;">
+													<div class="col-lg-16">
+															<div class="row">
+															<div class="box big clearfix yellow">
+																<div class="header">
+																	<h4>Paturi libere</h4>
+																</div>
+																<div class="content">
+																	<table class="free-beds">
+																		<tr>
+																			<th>Saloane</th>
+																			<th>Paturi libere</th>
+																			<th>Total</th>
+																		</tr>
+																		<tr>
+																			<td>Secţia A / Salon 1</td>
+																			<td>2</td>
+																			<td>5</td>
+																		</tr>
+																		<tr>
+																			<td>Secţia A / Salon 1</td>
+																			<td>2</td>
+																			<td>5</td>
+																		</tr>
+																		<tr>
+																			<td>Secţia A / Salon 1</td>
+																			<td>2</td>
+																			<td>5</td>
+																		</tr>
+																		<tr>
+																			<td>Secţia A / Salon 1</td>
+																			<td>2</td>
+																			<td>5</td>
+																		</tr>
+																		<tr>
+																			<td>Secţia A / Salon 1</td>
+																			<td>2</td>
+																			<td>5</td>
+																		</tr>
+																		<tr>
+																			<td>Secţia A / Salon 1</td>
+																			<td>2</td>
+																			<td>5</td>
+																		</tr>
+																		<tr>
+																			<td>Secţia A / Salon 1</td>
+																			<td>2</td>
+																			<td>5</td>
+																		</tr>
+																	</table>
+																</div>
+															</div>
+														</div>
+														
+													</div>
+												</div>
+
+												<div class="row wrapper-box" style="margin-left:0;">
+													<div class="col-lg-16">
+														<div class="row">
+															<div class="box big clearfix blue-light">
+																<div class="header">
+																	<h4>Naşteri</h4>
+																</div>
+																<div class="content">
+																	<div class="col-lg-5 col-md-5 col-sm-5">
+																		<p class="text">Cezariană</p>
+																		<h5 class="number">11</h5>
+																	</div>
+																	<div class="col-lg-6 col-md-6 col-sm-6">
+																		<p class="text">Naturală</p>
+																		<h5 class="number">46</h5>
+																	</div>
+																	<div class="col-lg-5 col-md-5 col-sm-5">
+																		<p class="text">Total</p>
+																		<h5 class="number">57</h5>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="row wrapper-box two-columns" style="margin-left:0;">
+
+													<div class="col-lg-8 col-md-8 col-sm-8">
+														<div class="row" style="margin-right:-15px;">
+															<div class="box small clearfix green-dark">
+																<div class="content">
+																	<div class="col-lg-16">
+																	<div class="divider"></div>
+																	<p class="text">Total pacienţi deserviţi de instituţie</p>
+																	<h5 class="number">8951</h5>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												
+													<div class="col-lg-8 col-md-8 col-sm-8">
+														<div class="row" style="margin-left:-15px;">
+															<div class="box small clearfix red">
+																<div class="content">
+																	<div class="col-lg-16">
+																	<div class="divider"></div>
+																	<p class="text">Pacineţi care au refuzat instituţia</p>
+																	
+																	<h5 class="number">131</h5>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+												</div>
+
 											</div>
-											<div class="col-lg-2 col-sm-2"></div>
-											<div class="col-lg-4 col-sm-6"></div>
+
+											<!-- Center Sidebar -->
+
 										</div>
-										<div class="row">
-											<div class="col-lg-2 col-sm-2"><label for="idnp">IDNP:</label></div>
-											<div class="col-lg-4 col-sm-6"><input type="text" id="idnp"></div>
-											<div class="col-lg-2 col-sm-2"><label for="location">Localitatea:</label></div>
-											<div class="col-lg-4 col-sm-6"><input type="text" id="location"></div>
-										</div>
-										<div class="row">
-											<div class="col-lg-2 col-sm-2"><label for="name">Numele:</label></div>
-											<div class="col-lg-4 col-sm-6"><input type="text" id="name"></div>
-											<div class="col-lg-2 col-sm-2"><label for="street">Strada:</label></div>
-											<div class="col-lg-4 col-sm-6"><input type="text" id="street"></div>
-										</div>
-										<div class="row">
-											<div class="col-lg-2 col-sm-2"><label for="lastname">Prenumele:</label></div>
-											<div class="col-lg-4 col-sm-6"><input type="text" id="lastname"></div>
-											<div class="col-lg-2 col-sm-2"><label for="bloc">Bloc:</label></div>
-											<div class="col-lg-4 col-sm-6"><input type="text" id="bloc"></div>
-										</div>
-										<div class="row">
-											<div class="col-lg-2 col-sm-2"><label for="birthdayyear">Anul naşterii:</label></div>
-											<div class="col-lg-4 col-sm-6"><input type="text" id="birthdayyear"></div>
-											<div class="col-lg-2 col-sm-2"><label for="apartment">Apartament:</label></div>
-											<div class="col-lg-4 col-sm-6"><input type="text" id="apartment"></div>
-										</div>
-										<div class="row">
-											<div class="col-lg-2 col-sm-2"><label for="polita">Poliţa:</label></div>
-											<div class="col-lg-4 col-sm-6"><input type="text" id="polita"></div>
-										</div>
-										<div class="row">
-											<div class="buttons-panel">
-												<input type="submit" value="Caută">
-												<input type="reset" value="Curăţă">
-											</div>
-										</div>
+										
 									</div>
-								</form>
-							</div>
-							<div class="search-result">
-								<h3>Rezultatele căutării <span>3 înscrieri găsite</span></h3>
-								<div class="container-fluid">
-									<div class="row">
-										<div class="control-panel">
-											<button class="blue">Fişa Medicală</button>
-											<button class="blue">Programări şi Trimiteri</button>
-											<button class="green">Pacient Nou</button>
-											<button class="blue">Exportă în Excel</button>
+
+									<!-- Right Sidebar -->
+
+									<div class="col-lg-5 col-md-5 col-sm-5">
+
+										<div class="row wrapper-box" style="margin-left:0;">
+											<div class="col-lg-16">
+												<div class="row">
+													<div class="box big clearfix green-dark info">
+														<div class="content">
+															<div class="col-lg-16">
+																<h3>IMSP Clinica Universitară de Asistenţă Medicală Primară a USMF “N.Testimiţanu”</h3>
+																<h5 class="score">77</h5><a href="http://e-sanatate.md/Spitale/Home/"><span class="score-text">Scorul satisfacţiei<br>pacientului</span></a>
+																<div class="clear"></div>
+																<h4>Adresa</h4>
+																<p>str. 31 August 1989, 137A,<br>mun. Chişinău, Republica Moldova</p>
+																<h4>Contacte</h4>
+																<p>Tel. + 373 22 909 909, 068 844 334;<br>Fax +373 22 321 500</p>
+																<br>
+																<p>e-mail: <a href="mailto:info@email.md">info@email.md</a><br><a href="www.domen.md">www.domen.md</a></p>
+																<h4>Despre instituție</h4>
+																<table>
+																	<tr>
+																		<td>Categorie instituţie</td>
+																		<td>Centru medical</td>
+																	</tr>
+																	<tr>
+																		<td>Tip instituţie</td>
+																		<td>Privată</td>
+																	</tr>
+																	<tr>
+																		<td>Acreditatare</td>
+																		<td>Da</td>
+																	</tr>
+																	<tr>
+																		<td>Clinică universitară</td>
+																		<td>Nu</td>
+																	</tr>
+																	<tr>
+																		<td>Afiliere la asociaţii</td>
+																		<td>Da</td>
+																	</tr>
+																	<tr>
+																		<td>Contractată de CNAM</td>
+																		<td>Da</td>
+																	</tr>
+																	<tr>
+																		<td>Certificat de calitate</td>
+																		<td>Da</td>
+																	</tr>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
+
+										<div class="row wrapper-box" style="margin-left:0;">
+											<div class="col-lg-16">
+												<div class="row">
+													<div class="box big clearfix darkblue htmlbox">
+														<div class="header">
+															<h4>Html info box</h4>
+														</div>
+														<div class="content">
+															<div class="col-lg-16">
+																Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel est odio. Aenean vitae justo leo. Ut ut massa sapien. Nullam ultrices elit massa, eleifend cursus turpis tempor in. Donec non velit mollis, semper neque in, fringilla nulla. Phasellus malesuada sagittis suscipit.
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
 									</div>
-								</div>
-								<div class="table-inner">
-								<table>
-									<tr>
-										<th><input type="checkbox"></th>
-										<th>IDNP</th>
-										<th>Numele</th>
-										<th>Prenumele</th>
-										<th>Patronimic</th>
-										<th>Data nașterii</th>
-										<th>Sexul</th>
-										<th>Sectorul</th>
-										<th>Strada</th>
-										<th>Bloc</th>
-										<th>Ap.</th>
-										<th>Localitatea</th>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox"></td>
-										<td>2004004042001</td>
-										<td><a href="#">Dromadera</a></td>
-										<td><a href="#">Anastasia</a></td>
-										<td>Cezar</td>
-										<td>01.01.1980</td>
-										<td>F</td>
-										<td>12</td>
-										<td>Matei Basarab</td>
-										<td>7</td>
-										<td>15</td>
-										<td>Chișinău</td>
-									</tr>
-								</table>
-								</div>
-								<div class="pagination-box">
-									<ul class="pagination">
-										<li class="disabled"><a href="#">&laquo;</a></li>
-										<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-										<li><a href="#">2 <span class="sr-only">(page 2)</span></a></li>
-										<li><a href="#">3 <span class="sr-only">(page 3)</span></a></li>
-										<li><a href="#">4 <span class="sr-only">(page 4)</span></a></li>
-										<li><a href="#">&raquo;</a></li>
-									</ul>
+
+									<!-- Right Sidebar -->
+
 								</div>
 							</div>
-								
 						</div>
 
 						<!-- Footer -->
@@ -426,7 +619,7 @@
 										<div class="clear"></div>
 									</div>
 									<div class="row copyright">
-										<div class="btn-group dropup">
+										<div class="btn-group dropup">      
 											<button class="btn  dropdown-toggle" data-toggle="dropdown">În Română</button>
 											<ul class="dropdown-menu" role="menu">
 											 	<li><a href="#">На русском</a></li>
@@ -454,6 +647,7 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/bootstrap-tooltip.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
 <script src="js/main.js"></script>
 <script src="js/modernizr.js"></script>
 </body>
