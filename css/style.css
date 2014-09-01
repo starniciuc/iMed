@@ -1124,7 +1124,7 @@ form.new-pacient .row{
 ul.list-main-menu{
     padding: 0;
     list-style: none;
-     padding-top: 20px;
+	padding-top: 20px;
     padding-bottom: 30px;
 }
 ul.list-main-menu li{
@@ -1475,7 +1475,7 @@ ul.list-main-menu li.selected
     width: 75%;
 }
 .deschis.last-row{
-	
+
 	margin-bottom: 0;
 }
 .idnp.last-row{
