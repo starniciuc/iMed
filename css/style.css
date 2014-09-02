@@ -67,7 +67,9 @@ label{
     line-height: 30px;
     cursor: pointer;
 }
-input[type="text"]{
+input[type="text"],
+input[type="password"]
+{
     width: 100%;
     height: 30px;
     border:1px solid #e6e6e6;
@@ -1503,6 +1505,50 @@ ul.list-main-menu li.selected
 }
 .btn-iSan:hover{
 	background-color: #FFAA00;
+}
+/***********************************************************
+Login block
+************************************************************/
+.login-block{
+	margin: 15% auto;
+	width: 320px;
+	border-radius: 4px;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 20px 30px 10px rgba(58, 82, 107, 0.4);
+	-moz-box-shadow:    0px 20px 30px 10px rgba(58, 82, 107, 0.4);
+	box-shadow:         0px 20px 30px 10px rgba(58, 82, 107, 0.4);
+}
+.login-block .control-panel p{
+	color: #ffffff;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 50px;
+}
+.login-block form{
+	background-color: #ffffff;
+	margin: 0;
+}
+.login-block form .content-login{
+	padding: 30px;
+}
+.login-block form label{
+	font-weight: normal;
+	float: none;
+	font-size: 16px;
+}
+.login-block form .submit-form-login{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.login-block .info-login{
+	padding: 15px 30px;
+	background-color: #FFED91;
+}
+.login-block .info-login p{
+	margin: 0;
+	font-size: 12px;
+	line-height: 18px;
+	color: #666666;
 }
 /************************************************************
         Mobile optimization
