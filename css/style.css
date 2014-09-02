@@ -1095,6 +1095,7 @@ form.new-pacient .row{
 .board .box.info table{
     width: 100%;
 }
+/* fismed-1 si fismed-2 ce pagina */
 .info-pacient{
     overflow: hidden;
     padding-bottom: 80px;
@@ -1215,8 +1216,6 @@ ul.list-main-menu li.selected
     background-color: #FAFAFA;
     padding-top: 15px;
 }
-/* Hz ce pagina */
-
 .data-block{
     margin-bottom: 15px;
 }
