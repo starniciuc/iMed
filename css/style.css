@@ -1,12 +1,12 @@
-/* Temporar import CSS. Imprortant la final de adus codul importat dupa posibilitate in acest fisier. */
+/* Temporar import CSS. Imprortant la final de adus, dupa posibilitate, codul importat in acest fisier. */
 @import "reset.css";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic-ext,latin-ext);	/* De definit fontul fara import. La google code e scris cum */
 @import "font-awesome.css";
 @import "datepicker.css";
 
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
 
 /************************************************************
-        Default styles
+	Default styles
 ************************************************************/
 .clearfix:before,
 .clearfix:after {
@@ -67,7 +67,9 @@ label{
     line-height: 30px;
     cursor: pointer;
 }
-input[type="text"]{
+input[type="text"],
+input[type="password"]
+{
     width: 100%;
     height: 30px;
     border:1px solid #e6e6e6;
@@ -143,7 +145,7 @@ input[type="submit"]:active, input[type="reset"]:active,button:active{
 
 
 /************************************************************
-        Header and Top Navigation
+	Header and Top Navigation
 ************************************************************/
 nav.top .container-fluid{
     padding: 0;
@@ -413,7 +415,7 @@ html.svg .top-navbar li.donez{
 
 
 /************************************************************
-        Left Sidebar
+	Left Sidebar
 ************************************************************/
 .left-sidebar{
     background-color:#3a526c;
@@ -564,7 +566,7 @@ html.svg .top-navbar li.donez{
 
 
 /************************************************************
-        Footer
+	Footer
 ************************************************************/
 .footer{
     margin: 30px 0;
@@ -668,10 +670,10 @@ html.svg .top-navbar li.donez{
 
 
 /************************************************************
-        Pages
+	Pages
 ************************************************************/
 /*
-        Search section form 
+	Search section form 
 */
 a.hide-form{
     color:#0080ff;
@@ -723,7 +725,7 @@ a.hide-form:hover{
 }
 
 /*
-        Search results
+	Search results
 */
 .search-result span{
     font-size: 13px;
@@ -816,7 +818,7 @@ button.green:hover{
 }
 
 /*
-        New Pacient Page
+	New Pacient Page
 */
 .nav-tabs{
     border:1px solid #e6e6e6;
@@ -879,7 +881,7 @@ form.new-pacient .row{
 }
 
 /*
-        Tablou de bord page
+	Tablou de bord page
 */
 .board .main-container{
     background: none;
@@ -1093,6 +1095,9 @@ form.new-pacient .row{
 .board .box.info table{
     width: 100%;
 }
+/*
+	Fisa medicala
+*/
 .info-pacient{
     overflow: hidden;
     padding-bottom: 80px;
@@ -1124,7 +1129,7 @@ form.new-pacient .row{
 ul.list-main-menu{
     padding: 0;
     list-style: none;
-     padding-top: 20px;
+	padding-top: 20px;
     padding-bottom: 30px;
 }
 ul.list-main-menu li{
@@ -1201,7 +1206,6 @@ ul.list-main-menu li.selected
     height: 127px;
     border:1px solid #DDDDDD;
     overflow-y: scroll;
-    margin-bottom: 10px;
 }
 .btn-add{
     position: absolute;
@@ -1213,10 +1217,8 @@ ul.list-main-menu li.selected
     background-color: #FAFAFA;
     padding-top: 15px;
 }
-/* Hz ce pagina */
-
 .data-block{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .data-block .date{
     width: 90px;
@@ -1236,8 +1238,8 @@ ul.list-main-menu li.selected
 .tratare{
     width: 53%;
     float: left;
-    margin-right: 15px;
-    margin-bottom: 15px;
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
 .tratare input,
 .second input
@@ -1251,13 +1253,13 @@ ul.list-main-menu li.selected
 .locul{
     width: 40%;
     float: left;
-    margin-right: 15px;
+    margin-right: 20px;
 }
 .locul select{
     width: 76%;
 }
 .locul label{
-    width: 80px;
+    width: 84px;
 	text-align: right;
 }
 .tipul-vizitei{
@@ -1277,6 +1279,7 @@ ul.list-main-menu li.selected
     font-size: 13px;
 }
 .second p a:hover{
+    color: #0059B2;
     text-decoration: none;
 }
 .left-link{
@@ -1287,7 +1290,6 @@ ul.list-main-menu li.selected
 }
 .left-link, .right-link{
     padding-bottom: 20px;
-    padding-top: 10px;
     color: #0080FF;
     font-size: 13px;
 }
@@ -1420,8 +1422,8 @@ ul.list-main-menu li.selected
 .cod-diagnostic{
     width: 23%;
     float: left;
-    margin-right: 15px;
-    margin-bottom: 15px;
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
 .tratare.denumire{
 	width: 53%;
@@ -1444,8 +1446,8 @@ ul.list-main-menu li.selected
 .deschis{
 	float: left;
 	width: 27%;
-	margin-bottom: 15px;
-	margin-right: 15px;
+	margin-bottom: 20px;
+	margin-right: 10px;
 }
 .deschis input{
 	width: 70%;
@@ -1457,8 +1459,8 @@ ul.list-main-menu li.selected
 .idnp{
 	float: left;
 	width: 18%;
-	margin-right: 25px;
-	margin-bottom: 15px;
+	margin-right: 20px;
+	margin-bottom: 10px;
 }
 .idnp input{
 	width: 70%;
@@ -1475,7 +1477,6 @@ ul.list-main-menu li.selected
     width: 75%;
 }
 .deschis.last-row{
-	
 	margin-bottom: 0;
 }
 .idnp.last-row{
@@ -1503,6 +1504,50 @@ ul.list-main-menu li.selected
 }
 .btn-iSan:hover{
 	background-color: #FFAA00;
+}
+/***********************************************************
+	Login block
+************************************************************/
+.login-block{
+	margin: 10% auto;
+	width: 320px;
+	border-radius: 4px;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 20px 30px 10px rgba(58, 82, 107, 0.3);
+	-moz-box-shadow:    0px 20px 30px 10px rgba(58, 82, 107, 0.3);
+	box-shadow:         0px 20px 30px 10px rgba(58, 82, 107, 0.3);
+}
+.login-block .control-panel p{
+	color: #ffffff;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 50px;
+}
+.login-block form{
+	background-color: #ffffff;
+	margin: 0;
+}
+.login-block form .content-login{
+	padding: 30px;
+}
+.login-block form label{
+	font-weight: normal;
+	float: none;
+	font-size: 16px;
+}
+.login-block form .submit-form-login{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.login-block .info-login{
+	padding: 15px 30px;
+	background-color: #FFED91;
+}
+.login-block .info-login p{
+	margin: 0;
+	font-size: 12px;
+	line-height: 18px;
+	color: #666666;
 }
 /************************************************************
 Redesign to left bar
@@ -1751,10 +1796,10 @@ Redesign to left bar
 
 
 /************************************************************
-        Tablets optimization
+	Tablets optimization
 ************************************************************/
 /*
-        Tablets optimization, orientation portrait
+	Tablets optimization, orientation portrait
 */
 @media only screen and (min-width : 768px) and (max-width : 980px) and (orientation : portrait) {
     label{
@@ -1857,7 +1902,7 @@ Redesign to left bar
 }
 
 /*
-        Tablets optimization, orientation landscape
+	Tablets optimization, orientation landscape
 */
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
     .footer .footer-nav ul li{
@@ -1937,7 +1982,7 @@ Redesign to left bar
     }
 
     /*
-            Off Canvas
+	Off Canvas
     */
     .left-sidebar{
         margin: 0;
