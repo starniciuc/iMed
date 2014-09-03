@@ -26,7 +26,7 @@
     display: none;
 }
 .wrapper{
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 .wrapper-main-container{
     padding: 0;
@@ -1503,6 +1503,36 @@ ul.list-main-menu li.selected
 }
 .btn-iSan:hover{
 	background-color: #FFAA00;
+}
+/************************************************************
+Redesign to left bar
+*************************************************************/
+.wrapper > section{
+    padding-top: 70px;
+}
+.main-content{
+    padding-top: 0px;
+}
+.wrapper > .aside{
+    margin-top: 70px;
+}
+.navbar-top .navbar-header{
+    width: auto;
+    background: none;
+}
+.aside-toggled .navbar-top .navbar-header{
+    width: auto;
+}
+.button-slide-left{
+    
+}
+.sidebar{
+    background-color: #3a526c;
+}
+.sidebar .nav > li > a{
+    color: #fff;
+    font-size: 13px;
+    text-shadow: none;
 }
 /************************************************************
         Mobile optimization
