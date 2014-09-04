@@ -482,18 +482,6 @@ body {
   background-color: transparent !important;
   font-weight: normal;
 }
-.sidebar .nav .nav > li > a:after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  margin-top: -3px;
-  width: 6px;
-  height: 6px;
-  border-radius: 500px;
-  background-color: #919293;
-}
 .sidebar .nav .nav > li.active > a:after {
   background-color: #fff;
   background-color: #3498db;

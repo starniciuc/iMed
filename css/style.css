@@ -4,7 +4,7 @@
 @import "datepicker.css";
 
 /************************************************************
-	Default styles
+        Default styles
 ************************************************************/
 .clearfix:before,
 .clearfix:after {
@@ -143,7 +143,7 @@ input[type="submit"]:active, input[type="reset"]:active,button:active{
 
 
 /************************************************************
-	Header and Top Navigation
+        Header and Top Navigation
 ************************************************************/
 nav.top .container-fluid{
     padding: 0;
@@ -413,7 +413,7 @@ html.svg .top-navbar li.donez{
 
 
 /************************************************************
-	Left Sidebar
+        Left Sidebar
 ************************************************************/
 .left-sidebar{
     background-color:#3a526c;
@@ -564,7 +564,7 @@ html.svg .top-navbar li.donez{
 
 
 /************************************************************
-	Footer
+        Footer
 ************************************************************/
 .footer{
     margin: 30px 0;
@@ -668,10 +668,10 @@ html.svg .top-navbar li.donez{
 
 
 /************************************************************
-	Pages
+        Pages
 ************************************************************/
 /*
-	Search section form 
+        Search section form 
 */
 a.hide-form{
     color:#0080ff;
@@ -723,7 +723,7 @@ a.hide-form:hover{
 }
 
 /*
-	Search results
+        Search results
 */
 .search-result span{
     font-size: 13px;
@@ -816,7 +816,7 @@ button.green:hover{
 }
 
 /*
-	New Pacient Page
+        New Pacient Page
 */
 .nav-tabs{
     border:1px solid #e6e6e6;
@@ -879,7 +879,7 @@ form.new-pacient .row{
 }
 
 /*
-	Tablou de bord page
+        Tablou de bord page
 */
 .board .main-container{
     background: none;
@@ -1094,7 +1094,7 @@ form.new-pacient .row{
     width: 100%;
 }
 /*
-	Fisa medicala
+        Fisa medicala
 */
 .info-pacient{
     overflow: hidden;
@@ -1127,7 +1127,7 @@ form.new-pacient .row{
 ul.list-main-menu{
     padding: 0;
     list-style: none;
-	padding-top: 20px;
+    padding-top: 20px;
     padding-bottom: 30px;
 }
 ul.list-main-menu li{
@@ -1258,7 +1258,7 @@ ul.list-main-menu li.selected
 }
 .locul label{
     width: 84px;
-	text-align: right;
+    text-align: right;
 }
 .tipul-vizitei{
     width: 40%;
@@ -1332,8 +1332,8 @@ ul.list-main-menu li.selected
 .info-pacient h1 .btn-info-pacient.first span{
     font-weight: bold;
     font-size: 13px;
-	padding-right: 5px;
-	line-height: 16px !important;
+    padding-right: 5px;
+    line-height: 16px !important;
 }
 .info-pacient h1 .btn-info-pacient:hover span,
 .info-pacient h1 .btn-info-pacient:active span,
@@ -1382,7 +1382,7 @@ ul.list-main-menu li.selected
 .btn.dropdown-toggle.institutia{
     font-weight: normal;
     font-size: 10px;
-	text-align: right;
+    text-align: right;
     width: auto !important;
     color: #709ccc;
 }
@@ -1393,23 +1393,23 @@ ul.list-main-menu li.selected
     padding: 5px 0;
 }
 .btn-vezi{
-	border:1px solid #4FC33A;
-	padding: 2px 10px 4px;
-	line-height: 17px;
-	display: none;
-	font-size: 11px;
+    border:1px solid #4FC33A;
+    padding: 2px 10px 4px;
+    line-height: 17px;
+    display: none;
+    font-size: 11px;
 }
 .table-side.fismed-2 table tr td{
     line-height: 25px;
 }
 .table-side.fismed-2 h2 span{
-	font-size: 12px;
-	padding-left: 5px;
-	font-weight: normal;
+    font-size: 12px;
+    padding-left: 5px;
+    font-weight: normal;
 }
 .table-side.fismed-2 table tr:hover {
     background-color: #FFF3C1;
-	cursor: pointer;
+    cursor: pointer;
 }
 .table-side.fismed-2 table tr:hover td .btn-vezi{
     display: block;
@@ -1424,44 +1424,44 @@ ul.list-main-menu li.selected
     margin-bottom: 10px;
 }
 .tratare.denumire{
-	width: 53%;
+    width: 53%;
 }
 .tratare.denumire input{
-	width: 84%;
+    width: 84%;
 }
 .cod-diagnostic.class{
-	width: 18%;
+    width: 18%;
 }
 .cod-diagnostic.class input{
-	width: 82%;
+    width: 82%;
 }
 .cod-diagnostic.cod label{
-	float: right!important;
+    float: right!important;
 }
 .cod-diagnostic.cod input{
-	float: right!important;
+    float: right!important;
 }
 .deschis{
-	float: left;
-	width: 27%;
-	margin-bottom: 20px;
-	margin-right: 10px;
+    float: left;
+    width: 27%;
+    margin-bottom: 20px;
+    margin-right: 10px;
 }
 .deschis input{
-	width: 70%;
-	float: right;
+    width: 70%;
+    float: right;
 }
 .deschis label{
-	float: right!important;
+    float: right!important;
 }
 .idnp{
-	float: left;
-	width: 18%;
-	margin-right: 20px;
-	margin-bottom: 10px;
+    float: left;
+    width: 18%;
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
 .idnp input{
-	width: 70%;
+    width: 70%;
 }
 
 .cod-diagnostic input{
@@ -1475,77 +1475,77 @@ ul.list-main-menu li.selected
     width: 75%;
 }
 .deschis.last-row{
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 .idnp.last-row{
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 .data-block.fismed-2 input{
-	width: 200px;
-	background-color: #ffed91;
+    width: 200px;
+    background-color: #ffed91;
 }
 .checkbox-element{
-	width: 173px;
+    width: 173px;
 }
 .checkbox-element input{
-	margin-top: 9px;
-	margin-right: 7px;
+    margin-top: 9px;
+    margin-right: 7px;
 }
 .checkbox-element label{
-	color: #ff0000 !important;
-	font-size: 11px;
+    color: #ff0000 !important;
+    font-size: 11px;
 }
 .btn-iSan{
-	background-color: #FF9600;
-	border:1px solid #FF8C19;
-	font-size: 13px;
+    background-color: #FF9600;
+    border:1px solid #FF8C19;
+    font-size: 13px;
 }
 .btn-iSan:hover{
-	background-color: #FFAA00;
+    background-color: #FFAA00;
 }
 /***********************************************************
-	Login block
+        Login block
 ************************************************************/
 .login-block{
-	margin: 10% auto;
-	width: 320px;
-	border-radius: 4px;
-	overflow: hidden;
-	-webkit-box-shadow: 0px 20px 30px 10px rgba(58, 82, 107, 0.3);
-	-moz-box-shadow:    0px 20px 30px 10px rgba(58, 82, 107, 0.3);
-	box-shadow:         0px 20px 30px 10px rgba(58, 82, 107, 0.3);
+    margin: 10% auto;
+    width: 320px;
+    border-radius: 4px;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 20px 30px 10px rgba(58, 82, 107, 0.3);
+    -moz-box-shadow:    0px 20px 30px 10px rgba(58, 82, 107, 0.3);
+    box-shadow:         0px 20px 30px 10px rgba(58, 82, 107, 0.3);
 }
 .login-block .control-panel p{
-	color: #ffffff;
-	font-size: 30px;
-	font-weight: bold;
-	line-height: 50px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 50px;
 }
 .login-block form{
-	background-color: #ffffff;
-	margin: 0;
+    background-color: #ffffff;
+    margin: 0;
 }
 .login-block form .content-login{
-	padding: 30px;
+    padding: 30px;
 }
 .login-block form label{
-	font-weight: normal;
-	float: none;
-	font-size: 16px;
+    font-weight: normal;
+    float: none;
+    font-size: 16px;
 }
 .login-block form .submit-form-login{
-	padding-top: 20px;
-	padding-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .login-block .info-login{
-	padding: 15px 30px;
-	background-color: #FFED91;
+    padding: 15px 30px;
+    background-color: #FFED91;
 }
 .login-block .info-login p{
-	margin: 0;
-	font-size: 12px;
-	line-height: 18px;
-	color: #666666;
+    margin: 0;
+    font-size: 12px;
+    line-height: 18px;
+    color: #666666;
 }
 /************************************************************
 Redesign to left bar
@@ -1567,15 +1567,138 @@ Redesign to left bar
     width: auto;
 }
 .button-slide-left{
-    
+
 }
 .sidebar{
     background-color: #3a526c;
+}
+.sidebar .nav .nav{
+    background-color: #3a526c;
+    box-shadow: none;
+    list-style: none;
+    padding-left: 0px;
+}
+.sidebar .nav .nav li a{
+    padding-left: 45px;
+}
+.sidebar .nav li a i{
+    color: rgba(255, 255, 255, 0.4);
+    margin-left: 5px;
+}
+.sidebar .nav li a:hover{
+    background-color: #33475f !important;
+    color: #32e6e6;
+}
+.sidebar .nav li a:hover i{
+    color: #32e6e6;
+}
+.sidebar .nav .nav li a i{
+    color: rgba(255, 255, 255, 0.4);
+    margin-right: 10px;
+}
+.sidebar .nav .nav li a:hover i{
+    color: #32e6e6;
+}
+.sidebar .nav .nav li.active a i{
+    color: #000;
+}
+.sidebar .nav .nav li.active a{
+    background-color: #32e6e5 !important;
+    color: #000;
 }
 .sidebar .nav > li > a{
     color: #fff;
     font-size: 13px;
     text-shadow: none;
+}
+.glisare{
+    height: 30px;
+}
+.sidebar .nav > li.glisare .button-slide-left{
+    display: block;
+    width: 60px;    
+    height: 20px;
+    border-radius: 0 0 0 4px;
+    background-color: #33485E!important;
+    padding: 0 !important;
+    margin: 0;
+    line-height: 17px;
+    text-align: center;
+    font-size: 9px !important;
+    font-weight: normal;  
+    margin-right: -41px;
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out;
+}
+.sidebar .nav > li.glisare .button-slide-left:hover{
+    margin: 0;
+}
+.sidebar .nav > li.glisare .button-slide-left em{
+    width: auto;
+    font-size: 13px;
+    padding-top: 2px;
+    margin-right: 5px;
+}
+.sidebar .nav li a.open-item-menu i:before{
+    content: "\f106";
+}
+.aside-toggled .sidebar .nav li{
+    border-bottom: 1px solid #33485E;
+}
+.aside-toggled .sidebar .nav li a{
+    color: #709CCC;
+}
+.aside-toggled .sidebar .nav li:hover{
+    border-left: 5px solid #709CCC;
+}
+.aside-toggled .sidebar .nav li:hover a em{
+    margin-left: -5px;
+    color: #ffffff;
+}
+.aside-toggled .sidebar .nav li:hover a span.item-text{
+    background-color: #33485E!important;
+    width: auto;
+}
+.aside-toggled .sidebar .nav li:hover .nav{
+    background-color: #33485E!important;
+    width: auto;
+    border-radius: 0 4px 4px 0;
+    overflow: hidden;
+    padding-left: 0; 
+}
+.aside-toggled .sidebar .nav li:hover .nav li{
+    border:0;
+}
+.aside-toggled .sidebar .nav li:hover .nav li a{
+    color: #32E6E6;
+    padding: 3px 0;
+    padding-left: 10px;
+    font-size: 13px;
+    line-height: 20px;
+}
+.aside-toggled .sidebar .nav li:hover .nav li.active a span.item-text{
+    background-color: #32e6e5 !important;
+    color: #000;
+    line-height: 18px;
+}
+.aside-toggled .sidebar .nav li .nav li a span.item-text{
+    line-height: 18px;
+    font-weight: normal;
+    font-size: 13px;
+}
+.aside-toggled .sidebar .nav li:hover a span.item-text{
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 68px;
+    display: block;
+    width: auto;
+}
+.aside-toggled .sidebar .nav li:hover a span.item-text:after{
+    display: table;
+    clear: both;
+    content: " ";
 }
 /************************************************************
         Mobile optimization
@@ -1794,10 +1917,10 @@ Redesign to left bar
 
 
 /************************************************************
-	Tablets optimization
+        Tablets optimization
 ************************************************************/
 /*
-	Tablets optimization, orientation portrait
+        Tablets optimization, orientation portrait
 */
 @media only screen and (min-width : 768px) and (max-width : 980px) and (orientation : portrait) {
     label{
@@ -1900,7 +2023,7 @@ Redesign to left bar
 }
 
 /*
-	Tablets optimization, orientation landscape
+        Tablets optimization, orientation landscape
 */
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
     .footer .footer-nav ul li{
@@ -1980,7 +2103,7 @@ Redesign to left bar
     }
 
     /*
-	Off Canvas
+        Off Canvas
     */
     .left-sidebar{
         margin: 0;

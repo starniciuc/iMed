@@ -41,5 +41,7 @@ $("#open-pacient-info").click(function(){
 	$(".btn-group").toggleClass("open");
 });
 
-
-
+$(".i-menu").click(function(){
+    $("a").removeClass("open-item-menu");
+    $(this).toggleClass("open-item-menu");
+});
