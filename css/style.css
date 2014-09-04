@@ -1663,10 +1663,12 @@ Redesign to left bar
 }
 .aside-toggled .sidebar .nav li:hover .nav{
     background-color: #33485E!important;
-    width: auto;
+    width: 250px;
     border-radius: 0 4px 4px 0;
     overflow: hidden;
     padding-left: 0; 
+	padding-top: 68px;
+	padding-bottom: 15px;
 }
 .aside-toggled .sidebar .nav li:hover .nav li{
     border:0;
@@ -1691,15 +1693,50 @@ Redesign to left bar
 .aside-toggled .sidebar .nav li:hover a span.item-text{
     font-size: 15px;
     font-weight: bold;
-    line-height: 68px;
+    line-height: 67px;
     display: block;
+	border-radius: 0 4px 4px 0;
     width: auto;
+	padding-right: 20px;
+}
+.aside-toggled .sidebar .nav li:hover a i.fa.fa-angle-down{
+    display: none;
 }
 .aside-toggled .sidebar .nav li:hover a span.item-text:after{
     display: table;
     clear: both;
     content: " ";
 }
+.aside-toggled .sidebar .nav li.glisare:hover{
+    border-left: 0;
+}
+.aside-toggled .sidebar .nav li.glisare em:before{
+	content: "\f101";
+}
+.aside-toggled .sidebar .nav li.glisare em{
+	color: #ffffff;
+	width: 60px;
+}
+.aside-toggled .sidebar .nav li.glisare a{
+    width: 16px;
+	overflow: hidden;
+	margin: 0;
+	color: #ffffff;
+	white-space: nowrap;
+	content: " ";
+}
+.aside-toggled .sidebar .nav li.glisare a:before{
+    content: " ";
+}
+.aside-toggled .sidebar .nav li.glisare a em:after{
+    content: " extinde";
+	font-size: 9px;
+	padding-left: 3px;
+}
+.aside-toggled .sidebar .nav li.glisare a:hover{
+    width: 60px;
+}
+
 /************************************************************
         Mobile optimization
 ************************************************************/
