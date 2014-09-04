@@ -489,7 +489,9 @@ html.svg .top-navbar li.donez{
 .left-sidebar .left-navigation li.active a i{
     color: #000;
 }
-.left-sidebar .back{
+.left-sidebar .back,
+.left-side .back
+{
     display: inline-block;
     margin-left: 35px;
     margin-top: 60px;
@@ -500,10 +502,14 @@ html.svg .top-navbar li.donez{
     padding: 12px 30px;
     font-size: 15px;
 }
-.left-sidebar .back:hover{
+.left-sidebar .back:hover,
+.left-side .back:hover
+{
     background-color: rgba(50,230,230,.15);
 }
-.left-sidebar .back:active{
+.left-sidebar .back:active,
+.left-side .back:active
+{
     -moz-box-shadow:    inset 0 2px 1px 0 rgba(0,0,0,.2);
     -webkit-box-shadow: inset 0 2px 1px 0 rgba(0,0,0,.2);
     box-shadow:         inset 0 2px 1px 0 rgba(0,0,0,.2);
@@ -1735,6 +1741,25 @@ Redesign to left bar
 }
 .aside-toggled .sidebar .nav li.glisare a:hover{
     width: 60px;
+}
+.sidebar .nav li.left-side a em{
+    display: none;
+}
+.aside-toggled .sidebar .nav li.left-side a em{
+    display: block;
+}
+.aside-toggled .sidebar .nav li.left-side a.back {
+    border: 0;
+    border-radius: 0;
+    color: #709ccc;
+    display: inline-block;
+    font-size: 13px;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 22px 0;
+    text-align: center;
+    text-decoration: none;
+	width: 100%;
 }
 
 /************************************************************
