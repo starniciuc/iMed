@@ -1591,7 +1591,9 @@ Redesign to left bar
     color: rgba(255, 255, 255, 0.4);
     margin-left: 5px;
 }
-.sidebar .nav li a:hover{
+.sidebar .nav li a:hover,
+.aside-toggled  .sidebar .nav li.active a
+{
     background-color: #33475f !important;
     color: #32e6e6;
 }
@@ -1656,14 +1658,20 @@ Redesign to left bar
 .aside-toggled .sidebar .nav li a{
     color: #709CCC;
 }
-.aside-toggled .sidebar .nav li:hover{
+.aside-toggled .sidebar .nav li:hover,
+.aside-toggled .sidebar .nav li.active
+{
     border-left: 5px solid #709CCC;
 }
-.aside-toggled .sidebar .nav li:hover a em{
+.aside-toggled .sidebar .nav li:hover a em,
+.aside-toggled .sidebar .nav li.active a em
+{
     margin-left: -5px;
     color: #ffffff;
 }
-.aside-toggled .sidebar .nav li:hover a span.item-text{
+.aside-toggled .sidebar .nav li:hover a span.item-text,
+.aside-toggled .sidebar .nav li.active a span.item-text
+{
     background-color: #33485E!important;
     width: auto;
 }
@@ -1688,7 +1696,7 @@ Redesign to left bar
 }
 .aside-toggled .sidebar .nav li:hover .nav li.active a span.item-text{
     background-color: #32e6e5 !important;
-    color: #000;
+    color: #FFFFFF;
     line-height: 18px;
 }
 .aside-toggled .sidebar .nav li .nav li a span.item-text{
