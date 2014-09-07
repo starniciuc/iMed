@@ -1347,12 +1347,18 @@ ul.list-main-menu li.selected
 {
     color: #FFF;
 }
-.pull-right > .dropdown-menu.my-position{
+.pull-right > .dropdown-menu.my-position,
+.dropdown-menu.my-position.in-block-down
+{
     top: 4px;
     right: 122px;
     border:0;
     width: 300px;
     padding: 20px;
+}
+.dropdown-menu.my-position.in-block-down{
+    right:0;
+    left:90px;
 }
 .dropdown-menu.my-position table{
     width: 100%;
@@ -1362,6 +1368,7 @@ ul.list-main-menu li.selected
 .dropdown-menu.my-position table tr th{
     font-size: 13px;
     padding: 5px 0;
+    font-weight: bold;
 }
 .dropdown-menu.my-position table tr td{
     font-size: 11px;
@@ -1591,7 +1598,9 @@ Redesign to left bar
     color: rgba(255, 255, 255, 0.4);
     margin-left: 5px;
 }
-.sidebar .nav li a:hover{
+.sidebar .nav li a:hover,
+.aside-toggled  .sidebar .nav li.active a
+{
     background-color: #33475f !important;
     color: #32e6e6;
 }
@@ -1656,14 +1665,20 @@ Redesign to left bar
 .aside-toggled .sidebar .nav li a{
     color: #709CCC;
 }
-.aside-toggled .sidebar .nav li:hover{
+.aside-toggled .sidebar .nav li:hover,
+.aside-toggled .sidebar .nav li.active
+{
     border-left: 5px solid #709CCC;
 }
-.aside-toggled .sidebar .nav li:hover a em{
+.aside-toggled .sidebar .nav li:hover a em,
+.aside-toggled .sidebar .nav li.active a em
+{
     margin-left: -5px;
     color: #ffffff;
 }
-.aside-toggled .sidebar .nav li:hover a span.item-text{
+.aside-toggled .sidebar .nav li:hover a span.item-text,
+.aside-toggled .sidebar .nav li.active a span.item-text
+{
     background-color: #33485E!important;
     width: auto;
 }
@@ -1688,7 +1703,7 @@ Redesign to left bar
 }
 .aside-toggled .sidebar .nav li:hover .nav li.active a span.item-text{
     background-color: #32e6e5 !important;
-    color: #000;
+    color: #FFFFFF;
     line-height: 18px;
 }
 .aside-toggled .sidebar .nav li .nav li a span.item-text{
@@ -1761,9 +1776,102 @@ Redesign to left bar
     text-decoration: none;
 	width: 100%;
 }
-
 /************************************************************
-        Mobile optimization
+Redesign fismed page
+*************************************************************/
+.main-menu-border{
+    border-bottom:1px solid #ddd;
+}
+.top-main-container{
+    margin-top: 30px;
+}
+.top-main-container .main-container{
+    margin-top: 0px;
+}
+.top-main-container .main-container.top-name{
+    margin-top: 0px;
+    background-color: #FFCD40;
+    padding: 15px 30px;
+}
+.top-main-container .main-container.top-name h3{
+    margin: 0;
+    padding:0;
+    color: #000;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.top-main-container .main-container.top-name .name-block img{
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    border:1px solid #ffffff;
+}
+.top-main-container .main-container.top-name .name-block .name {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    padding-left: 13px;
+}
+.top-main-container .main-container.top-name .name-block .name span.virsta{
+    color: #000000;
+    display: block;
+}
+.top-main-container .main-container.top-name .btn-info-pacient span{
+    font-size: 11px;
+    line-height: 11px;
+    color:#000;
+    padding: 0;
+    display: inline-block;
+    text-align: left;
+}
+.top-main-container .main-container.top-name .btn-info-pacient{
+    border:2px solid #000;
+    color:#000;
+    padding: 3px 10px;
+}
+.top-main-container .main-container.top-name .btn-info-pacient:hover{
+    color: #ffffff;
+}
+.top-main-container .main-container.top-name .btn-info-pacient:hover span,
+.top-main-container .main-container.top-name .btn-info-pacient:active span,
+.top-main-container .main-container.top-name .btn-info-pacient:focus span
+{
+    color: #FFF;
+}
+.left-top strong{
+    font-weight: bold;
+}
+.left-top p{
+    color: #000000;
+    padding: 3px 30px;
+}
+.border-left-top{
+    border-left: 1px solid #ddd;
+}
+.pad-top-block{
+    padding-top: 14px;
+}
+.pad-top-block2{
+    padding: 13px 30px;
+}
+.button-side{
+    padding-top: 25px;
+    padding-left: 75px;
+}
+.btn-programare{
+    display:block;
+    background-color: #0059b3;
+    color:#fff;
+    padding: 6px 15px 8px;
+    text-align: center;
+    border-radius: 4px;
+    width:130px;
+}
+.btn-programare:hover{
+    color: #FFF;
+}
+/************************************************************
+        Mobile op$timization
 ************************************************************/
 @media (max-width:767px){
     .login{
