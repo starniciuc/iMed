@@ -1870,6 +1870,30 @@ Redesign fismed page
 .btn-programare:hover{
     color: #FFF;
 }
+.btn-close{
+    width: 150px;
+}
+.checkbox-top{
+    padding-top: 8px;
+}
+.checkbox-top{
+    margin: 0;
+}
+.checkbox-top label{
+    font-weight: normal; 
+    float: none;
+    color: #cc0000;
+}
+.table-side.fismed-2.table-vizite table tr td:last-child{
+    width: auto;
+    text-align: center;
+}
+.table-vizite table tr td:last-child a{
+    text-decoration: underline;
+}
+.table-vizite table tr td:last-child a:hover{
+    text-decoration: none;
+}
 /************************************************************
         Mobile op$timization
 ************************************************************/

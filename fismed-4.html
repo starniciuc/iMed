@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Info pacient - Sistem Informaţional Medical / iMeD</title>
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <section class="wrapper">
+            <!-- Header -->
+            <nav class="navbar navbar-default top navbar-top navbar-fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <div class="col-lg-3 col-md-4 col-sm-16 col-xs-16">
+                            <div class="navbar-header">
+                                <a class="logo" href="index.html">
+                                    <span class="brand"></span>
+                                    <span>iMeD</span>
+                                    <small>SIM</small> 
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-13 col-md-12 col-sm-16 col-xs-16">
+                            <button type="button" class="sidebar-btn navbar-toggle pull-left" data-toggle="offcanvas" data-target="#sidebar">
+                                <span class="sr-only">Deschide bara laterală</span>
+                                <span class="fa fa-bars"></span> 
+                            </button>
+                            <button type="button" class="icons navbar-toggle pull-left" data-toggle="collapse" data-target="#top-nav">
+                                <span class="sr-only">Vezi toate modulele</span>
+                                <span class="fa fa-ellipsis-v"></span>
+                            </button>
+
+                            <div class="profile-btn btn-group pull-right">
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                                    Victoria Rosca
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#"><i class="fa fa-user"></i>Preferinţele mele</a></li>
+                                    <li><a href="#"><i class="fa fa-cog"></i>Setări profil</a></li>
+                                    <li><a href="#"><i class="fa fa-sign-out"></i>Ieşire</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="profile-btn btn-group pull-right">
+                                <button type="button" class="btn dropdown-toggle institutia" data-toggle="dropdown">
+                                    IMSP Clinica Universitară de Asistenţă<br>
+                                    Medicală Primară a USMF “N.Testimiţanu”                                    
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Spitalul Clinic de Traumatologie şi Ortopedie</a></li>
+                                    <li><a href="#">Spitalul Clinic Municipal „Sf. Treime”</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="top-nav">
+                                <ul class="nav navbar-nav top-navbar">
+                                    <li class="info" data-toggle="tooltip" data-placement="bottom" title="Sănătate Info"><a href="http://e-sanatate.md/News/Home">Sănătate Info</a></li>
+                                    <li class="tv" data-toggle="tooltip" data-placement="bottom" title="Sănătate TV"><a href="http://e-sanatate.md/TV/Home">Sănătate TV</a></li>
+                                    <li class="sanoclub" data-toggle="tooltip" data-placement="bottom" title="SanoClub"><a href="http://e-sanatate.md/SanoClub">SanoClub</a></li>
+                                    <li class="isan" data-toggle="tooltip" data-placement="bottom" title="iSaN"><a href="http://e-sanatate.md/iSaN/Home">iSaN</a></li>
+                                    <!-- <li class="imed" data-toggle="tooltip" data-placement="bottom" title="iMeD"><a href="#">iMeD</a></li> -->
+                                    <li class="imec" data-toggle="tooltip" data-placement="bottom" title="iMeC"><a href="http://e-sanatate.md/iMeC/Home">iMeC</a></li>
+                                    <li class="tuberculoza" data-toggle="tooltip" data-placement="bottom" title="Tuberculoza Info"><a href="http://tuberculoza.info/">Tuberculoza Info</a></li>
+                                    <li class="spitale" data-toggle="tooltip" data-placement="bottom" title="Spitale.MD"><a href="http://e-sanatate.md/Spitale/Home">Spitale.MD</a></li>
+                                    <li class="pas" data-toggle="tooltip" data-placement="bottom" title="Centrul PAS"><a href="http://pas.md/">Centrul PAS</a></li>
+                                    <li class="scoala" data-toggle="tooltip" data-placement="bottom" title="Școala E-Sănătate"><a href="#">Școala E-Sănătate</a></li>
+                                    <li class="donez" data-toggle="tooltip" data-placement="bottom" title="Donez Sânge"><a href="#">Donez Sânge</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Container -->
+
+            <!-- START aside-->
+
+            <aside class="aside">
+                <!-- START Sidebar (left)-->
+                <nav class="sidebar">
+                    <ul class="nav">
+                        <!-- START Menu-->
+                        <li class='glisare clearfix'>
+                            <a href="#" data-toggle="aside" class="button-slide-left pull-right">
+                                <em class="fa fa-angle-double-left"></em> glisează
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html" title="Dashboard" class="has-submenu">
+                                <em class="fa fa-bar-chart-o"></em>
+                                <span class="item-text">TABLOU DE BORD</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#" title="PACIENŢI" data-toggle="collapse-next" class="i-menu open-item-menu has-submenu">
+                                <em class="fa fa-users"></em>
+                                <span class="item-text">PACIENŢI <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse in">
+                                <li class="active">
+                                    <a href="searchpacient.html" title="Căutare pacient" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Căutare pacient</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="newpacient.html" title="Pacient nou" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Pacient nou</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Comasare duplicate" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Comasare duplicate</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Pacient nou" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Anularea comasării</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="PROGRAMARE" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-calendar"></em>
+                                <span class="item-text">PROGRAMARE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Caută programarea</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="STOC" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-cubes"></em>
+                                <span class="item-text">STOC <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Caută programarea</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="RESURSE UMANE" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-list-alt"></em>
+                                <span class="item-text">RESURSE UMANE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Caută programarea</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="Clasificatoare" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-bookmark"></em>
+                                <span class="item-text">CLASIFICATOARE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Caută programarea</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="RAPOARTE" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-clipboard"></em>
+                                <span class="item-text">RAPOARTE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Registrul vizitelor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul vizitelor</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul Tichete Stitistice" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul Tichete Stitistice</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Validation" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Validation</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Sectorul meu" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Sectorul meu</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul monitorizare" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul monitorizare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Modificare registre" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Modificare registre</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul trimiterilor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul trimiterilor</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul gravidelor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul gravidelor</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="REGISTRE" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa  fa-book"></em>
+                                <span class="item-text">REGISTRE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Rapoarte zilnice" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Rapoarte zilnice</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Rapoarte lunare ale medicului" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Rapoarte lunare ale medicului</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="VACCINĂRI" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-umbrella"></em>
+                                <span class="item-text">VACCINĂRI <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Registrul vaccinărilor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul vaccinărilor</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Planuri" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Planuri</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul planuri vaccinări" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul planuri vaccinări</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Raport" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Raport</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="SETĂRI" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-cogs"></em>
+                                <span class="item-text">SETĂRI <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Lista scurtă a diagnozelor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Lista scurtă a diagnozelor</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+						<li class="left-side">
+							<a href="#" class="back has-submenu">
+                                <em class="fa fa-circle-o"></em>
+                                <span class="item-text">Ieşi din SIM</span>
+                            </a>
+						</li>
+                        <!-- END Menu-->
+                    </ul>
+                </nav>
+                <!-- END Sidebar (left)-->
+            </aside>
+            <!-- End aside-->
+            <section>
+                <!-- START Page content-->
+                <section class="main-content ">
+                    <div class="top-main-container">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="main-container top-name">
+                                    <h3>Ana Mardare Radu</h3>
+                                    <div class="name-block">
+                                        <img src="img/pacienti/ana-mardare_profile.jpg" alt="Ana Mardare">
+                                        <div class="name"><span class="virsta">27 ani, feminin</span>
+                                            <div class="btn-group keep-open">
+                                                <button data-toggle="dropdown" class="btn dropdown-toggle btn-info-pacient" type="button">
+                                                    <i class="fa fa-file-text-o"></i> <span>Info<br>
+                                                        pacient</span>
+                                                </button>
+                                                <div class="dropdown-menu my-position in-block-down">
+                                                    <table>
+                                                        <tr><th>Pacient</th><th></th></tr>
+                                                        <tr><td>IDNP</td><td>2004004042004</td></tr>
+                                                        <tr><td>Numărul poliţei</td><td>A334455</td></tr>
+                                                        <tr><td>Sexul</td><td>F</td></tr>
+                                                        <tr><td>Data naşterii</td><td>01.01.1987</td></tr>
+                                                        <tr><td>Sectorul</td><td>12</td></tr>
+                                                        <tr><td>Medic de familie</td><td><a href="#">Anastasia Crigan Anatolie</a></td></tr>
+                                                    </table>
+                                                    <table>
+                                                        <tr><th>Adresa</th></tr>
+                                                        <tr><td>Mun. Chişinău, str. Matei Basarab, 18/3, ap. 5</td></tr>
+                                                    </table>
+                                                    <table>
+                                                        <tr><th>Contacte</th></tr>
+                                                        <tr><td>Tel.: 069969699, 022334455</td></tr>
+                                                        <tr><td>e-mail: <a href="mailto:ana.mardare@hotmail.com" class="no-border">ana.mardare@hotmail.com</a></td></tr>
+                                                    </table>
+                                                    <div class="text-center">
+                                                        <button class="btn btn-warning btn-iSan">Profil iSaN</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                </div>
+                                
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="main-container left-top">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <div class="row">
+                                                <div class="col-lg-16 pad-top-block">
+                                                    <p><strong>Denumire epizod</strong></p>
+                                                    <p>Cu Vibrio cholerae, biover cholerae</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-16 pad-top-block2">
+                                                    <p><strong>Subclasa</strong></p>
+                                                    <p>Boli infecțioase intestinale</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-9 border-left-top">
+                                            <div class="row">
+                                                <div class="col-lg-9 pad-top-block">
+                                                    <p><strong>Data deschiderii</strong></p>
+                                                    <p>15.07.2014 10:31</p>
+                                                </div>
+                                                <div class="col-lg-7 pad-top-block  button-side">
+                                                     <a href="#" class="btn-programare btn-close">Închide epizodul</a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-10 pad-top-block2">
+                                                    <p><strong>A deschis</strong></p>
+                                                    <p>Alexandru Barbănouă Andrei</p>
+                                                </div>
+                                                <div class="col-lg-6 pad-top-block2">
+                                                    <div class='form-group checkbox-top'>
+                                                        <input type="checkbox">
+                                                        <label> Include în monitorizare</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-container info-pacient">
+                        <div class="container-fluid">
+                            <div class="row main-menu-border">
+                                <div class="col-lg-16">
+                                    <ul class="list-main-menu">
+                                        <li ><a href="#">Date generale</a></li>
+                                        <li><a href="#">Alergii</a></li>
+                                        <li class="selected"><a href="#">Epizoade de maladii</a></li>
+                                        <li><a href="#">Vaccinare</a></li>
+                                        <li><a href="#">Gravidități</a></li>
+                                        <li><a href="#">CIMC Copil</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-16 table-side fismed-2 table-vizite"> 
+                                    <div class="row">
+                                        <div class="col-lg-16">
+                                            <h2>Vizite <span>85 vizite</span><button class="btn-add blue" data-toggle="tooltip" data-placement="bottom" title="Adaugă"><i class="fa fa-plus"></i></button></h2>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <tr>
+                                            <th>Data vizitei</th>
+                                            <th>Tipu vizitei</th>
+                                            <th>Locul vizitei</th>
+                                            <th>Prestator</th>
+                                            <th>Specializare</th>
+                                            <th></th>
+                                        </tr>
+                                        <tr>
+                                            <td>29.07.2014</td>
+                                            <td>Pe motiv de boală</td>
+                                            <td>Policlinica</td>
+                                            <td>Ion Mihai</td>
+                                            <td>Alergolog</td>
+                                            <td><a href="#">Vezi vizita</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>29.07.2014</td>
+                                            <td>Pe motiv de boală</td>
+                                            <td>Policlinica</td>
+                                            <td>Ion Mihai</td>
+                                            <td>Alergolog</td>
+                                            <td><a href="#">Vezi vizita</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>29.07.2014</td>
+                                            <td>Pe motiv de boală</td>
+                                            <td>Policlinica</td>
+                                            <td>Ion Mihai</td>
+                                            <td>Alergolog</td>
+                                            <td><a href="#">Vezi vizita</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>29.07.2014</td>
+                                            <td>Pe motiv de boală</td>
+                                            <td>Policlinica</td>
+                                            <td>Ion Mihai</td>
+                                            <td>Alergolog</td>
+                                            <td><a href="#">Vezi vizita</a></td>
+                                        </tr>
+                                        <tr>												
+                                            <td>29.07.2014</td>
+                                            <td>Pe motiv de boală</td>
+                                            <td>Policlinica</td>
+                                            <td>Ion Mihai</td>
+                                            <td>Alergolog</td>
+                                            <td><a href="#">Vezi vizita</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>29.07.2014</td>
+                                            <td>Pe motiv de boală</td>
+                                            <td>Policlinica</td>
+                                            <td>Ion Mihai</td>
+                                            <td>Alergolog</td>
+                                            <td><a href="#">Vezi vizita</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>29.07.2014</td>
+                                            <td>Pe motiv de boală</td>
+                                            <td>Policlinica</td>
+                                            <td>Ion Mihai</td>
+                                            <td>Alergolog</td>
+                                            <td><a href="#">Vezi vizita</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>29.07.2014</td>
+                                            <td>Pe motiv de boală</td>
+                                            <td>Policlinica</td>
+                                            <td>Ion Mihai</td>
+                                            <td>Alergolog</td>
+                                            <td><a href="#">Vezi vizita</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>29.07.2014</td>
+                                            <td>Pe motiv de boală</td>
+                                            <td>Policlinica</td>
+                                            <td>Ion Mihai</td>
+                                            <td>Alergolog</td>
+                                            <td><a href="#">Vezi vizita</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>29.07.2014</td>
+                                            <td>Pe motiv de boală</td>
+                                            <td>Policlinica</td>
+                                            <td>Ion Mihai</td>
+                                            <td>Alergolog</td>
+                                            <td><a href="#">Vezi vizita</a></td>
+                                        </tr>
+                                    </table>
+                                    <div class="pagination-box">
+                                        <ul class="pagination">
+                                            <li class="disabled"><a href="#">&laquo;</a></li>
+                                            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                            <li><a href="#">2 <span class="sr-only">(page 2)</span></a></li>
+                                            <li><a href="#">3 <span class="sr-only">(page 3)</span></a></li>
+                                            <li><a href="#">4 <span class="sr-only">(page 4)</span></a></li>
+                                            <li><a href="#">5 <span class="sr-only">(page 5)</span></a></li>
+                                            <li><a href="#">6 <span class="sr-only">(page 6)</span></a></li>
+                                            <li><a href="#">7 <span class="sr-only">(page 7)</span></a></li>
+                                            <li><a href="#">8 <span class="sr-only">(page 8)</span></a></li>
+                                            <li><a href="#">9 <span class="sr-only">(page 9)</span></a></li>
+                                            <li><a href="#">&raquo;</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Footer -->
+
+                    <footer class="footer">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <nav class="footer-nav">
+                                    <ul>
+                                        <li><a href="https://e-sanatate.md/iMeD/Home/Privacy">Confidențialitate</a></li>
+                                        <li><a href="https://e-sanatate.md/iMeD/Home/Security">Securitatea datelor</a></li>
+                                        <li><a href="https://e-sanatate.md/iMeD/Home/Terms">Termeni şi Condiţii</a></li>
+                                        <li><a href="https://e-sanatate.md/iMeD/Home/Assistance">Asistență pentru clienți</a></li>
+                                        <li><a href="https://e-sanatate.md/iMeD/Home/Services">Servicii</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="row copyright">
+                                <div class="btn-group dropup">      
+                                    <button class="btn  dropdown-toggle" data-toggle="dropdown" disabled="disabled">În Română</button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">На русском</a></li>
+                                    </ul>
+                                </div>
+                                <p>2014 © iMeD. Toate drepturile sunt rezervate.</p>
+
+                                <ul class="socials">
+                                    <li class="facebook"><a href="https://www.facebook.com/e.sanatatea.ta" target="_blank"></a></li>
+                                    <li class="twitter"><a href="https://twitter.com/E_Sanatatea_TA" target="_blank"></a></li>
+                                    <li class="linkedin"><a href="http://www.linkedin.com/profile/view?id=254762663&trk=tab_pro" target="_blank"></a></li>
+                                    <li class="youtube"><a href="http://www.youtube.com/channel/UCuVNhiubNuy1M8yQmQmVOUQ" target="_blank"></a></li>
+                                    <li class="rss"><a href="https://e-sanatate.md/News/Home/RSS" target="_blank"></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </footer>
+
+                </section>
+            </section>
+            <!-- END Page content-->
+        </section>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/bootstrap-tooltip.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/fastclick.js" type="text/javascript"></script>
+        <script src="js/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap-slider.js" type="text/javascript"></script>
+        <script src="js/chosen.jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+        <script src="js/jquery.inputmask.bundle.js" type="text/javascript"></script>
+        <script src="js/app.js" type="text/javascript"></script>
+        <script src="js/main.js"></script>
+        <script src="js/modernizr.js"></script>
+    </body>
+</html>
