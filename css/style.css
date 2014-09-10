@@ -2045,31 +2045,20 @@ table.servicii tr th:last-child
 }
 .filter-gravide{
     margin-top: 15px;
-    margin-bottom: 10px;
 }
 .filter-gravide p{
     color:#1C2733;
     font-size: 13px;
-    margin-bottom: 20px;
-}
-.filter-gravide .input-block{
-    min-height: 85px;
-}
-.filter-gravide .form-group{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding-right: 30px;
+    margin-bottom: 0px;
 }
 .link-med{
     border-bottom: 1px dashed #0080FF;
     font-size: 13px;
     color: #0080FF;
-    position: absolute;
-    bottom: 25px;
+    line-height: 25px;
 }
 .link-med:hover{
-    border-color: #FFFFFF;
+    border: 0;
     text-decoration: none;
 }
 .blue-show{
@@ -2079,6 +2068,70 @@ table.servicii tr th:last-child
 }
 .blue-show:hover{
     color:#FFFFFF;
+}
+.btn-green-med{
+    color:#FFFFFF;
+    background-color: #4DC421;
+    font-size: 13px;
+    border: 1px solid #43AB1D;
+    padding: 5px 15px 4px;
+}
+#tabs-gravide h2{
+    margin: 0;
+    color: #1C2733;
+    padding: 0;
+}
+.tab-sarcina{
+    padding: 0;
+    padding-top: 15px;
+    border: 0;
+}
+.tab-sarcina li{
+    padding: 0;
+    margin: 0;
+    margin-right: 5px;
+    border:0;
+}
+.tab-sarcina li a{
+    padding: 0;
+    margin: 0;
+    color: #0080FF;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 3px 10px;
+}
+.tab-sarcina li a span{
+    border-bottom: 1px dashed #0080FF;
+}
+.tab-sarcina li.active a span{
+    border-bottom: 0px dashed #0080FF;
+}
+.tab-sarcina li.active a{
+    color:#FFFFFF;
+    border-radius: 4px;
+    background-color: #46A0FF !important;
+}
+.tab-sarcina li a:active,
+.tab-sarcina li a:focus
+{
+    color:#FFFFFF!important;
+}
+.content-tab-sarcina{
+    border:0;
+}
+#tabs-gravide .close-tabs{
+    background:none;
+    margin: -1px;
+}
+#tabs-gravide .close-tabs a{ 
+    color: #0080FF;
+    font-size: 13px;
+    border-bottom: 1px dashed #0080FF;
+    line-height: 100%;
+    padding-top: 3px;
+}
+#tabs-gravide .close-tabs a:hover{ 
+    border-bottom: 0px dashed #0080FF;
 }
 /************************************************************
         Mobile op$timization
