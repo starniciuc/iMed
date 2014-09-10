@@ -7,7 +7,7 @@
 Import fonts
 ************************************************************/
 @font-face {
-    font-family: 'open_sansregular';
+    font-family: 'Open Sans';
     src: url('../fonts/opensans_regular/OpenSans-Regular-webfont.eot');
     src: url('../fonts/opensans_regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/opensans_regular/OpenSans-Regular-webfont.woff') format('woff'),
@@ -15,9 +15,18 @@ Import fonts
          url('../fonts/opensans_regular/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans_bold/OpenSans-Bold-webfont.eot');
+    src: url('../fonts/opensans_bold/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans_bold/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/opensans_bold/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans_bold/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
 
 }
-
 /************************************************************
         Default styles
 ************************************************************/
@@ -46,7 +55,7 @@ Import fonts
 }
 body{
     background-color:#ebf1f1;
-    font-family:  'open_sansregular', Arial, sans-serif;
+    font-family:  'Open Sans', Arial, sans-serif;
     font-size: 14px;
 }
 .clear{
