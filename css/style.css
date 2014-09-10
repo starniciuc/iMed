@@ -1,7 +1,22 @@
 /* Temporar import CSS. Imprortant la final de adus, dupa posibilitate, codul importat in acest fisier. */
+
 @import "reset.css";
 @import "font-awesome.css";
 @import "datepicker.css";
+/************************************************************
+Import fonts
+************************************************************/
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/opensans_regular/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/opensans_regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans_regular/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/opensans_regular/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/opensans_regular/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 /************************************************************
         Default styles
@@ -31,7 +46,7 @@
 }
 body{
     background-color:#ebf1f1;
-    font-family: "Open Sans", Arial, sans-serif;
+    font-family:  'open_sansregular', Arial, sans-serif;
     font-size: 14px;
 }
 .clear{
