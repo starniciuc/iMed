@@ -846,6 +846,12 @@ button.green:hover{
 /*
         New Pacient Page
 */
+.new-pacient-content h1{
+    padding-left: 35px;
+}
+.new-pacient-content .nav-tabs{
+    margin-left: 15px;
+}
 .nav-tabs{
     border:1px solid #e6e6e6;
     display: inline-block;
@@ -885,17 +891,18 @@ button.green:hover{
 form.new-pacient label{
     font-weight: 400;
     float: none;
+    padding-left: 15px;
 }
 form.new-pacient input[type="checkbox"]{
     margin: 10px 0 0;
 }
 form.new-pacient .row{
-    margin: 10px -30px;
+    margin: 10px -15px;
 }
 #general-information form.new-pacient .adress{
     background-color: #f5f5f5;
     padding-bottom: 15px;
-    margin: 15px -30px;
+    margin: 15px -15px;
 }
 #general-information form.new-pacient .adress h2{
     background-color: #e6e6e6;
@@ -904,6 +911,7 @@ form.new-pacient .row{
 #residence h2{
     background: none;
     padding: 0;
+    padding-left: 15px;
 }
 
 /*
@@ -1888,7 +1896,7 @@ Redesign fismed page
     padding-top: 14px;
 }
 .pad-top-block2{
-    padding: 13px 30px;
+    padding: 13px 15px;
 }
 .button-side{
     padding-top: 25px;
