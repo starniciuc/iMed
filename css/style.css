@@ -2043,6 +2043,14 @@ table.servicii tr th:last-child
     background-color: #FFE646;
     color: #1C2733;
 }
+.filter-gravide{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.filter-gravide p{
+    color:#1C2733;
+    font-size: 13px;
+}
 /************************************************************
         Mobile op$timization
 ************************************************************/
