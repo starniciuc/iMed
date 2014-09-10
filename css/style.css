@@ -1134,7 +1134,7 @@ form.new-pacient .row{
 */
 .info-pacient{
     overflow: hidden;
-    padding-bottom: 80px;
+    padding-bottom: 30px;
 }
 .info-pacient h1{
     background-color: #FFCD40;
@@ -2050,6 +2050,35 @@ table.servicii tr th:last-child
 .filter-gravide p{
     color:#1C2733;
     font-size: 13px;
+    margin-bottom: 20px;
+}
+.filter-gravide .input-block{
+    min-height: 85px;
+}
+.filter-gravide .form-group{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-right: 30px;
+}
+.link-med{
+    border-bottom: 1px dashed #0080FF;
+    font-size: 13px;
+    color: #0080FF;
+    position: absolute;
+    bottom: 25px;
+}
+.link-med:hover{
+    border-color: #FFFFFF;
+    text-decoration: none;
+}
+.blue-show{
+    background-color: #0080FF;
+    color: #FFFFFF;
+    border:1px solid #01529A;
+}
+.blue-show:hover{
+    color:#FFFFFF;
 }
 /************************************************************
         Mobile op$timization
