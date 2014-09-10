@@ -1595,7 +1595,7 @@ Redesign to left bar
 .aside-toggled  .sidebar .nav li.active a
 {
     background-color: #33475f !important;
-    color: #32e6e6;
+    color: #32e6e6 !important;
 }
 .sidebar .nav li a:hover i{
     color: #32e6e6;
@@ -1661,12 +1661,12 @@ Redesign to left bar
 .aside-toggled .sidebar .nav li:hover,
 .aside-toggled .sidebar .nav li.active
 {
-    border-left: 5px solid #709CCC;
+    border-left: 4px solid #709CCC;
 }
 .aside-toggled .sidebar .nav li:hover a em,
 .aside-toggled .sidebar .nav li.active a em
 {
-    margin-left: -5px;
+    margin-left: -4px;
     color: #ffffff;
 }
 .aside-toggled .sidebar .nav li:hover a span.item-text,
@@ -1696,11 +1696,18 @@ Redesign to left bar
 }
 .aside-toggled .sidebar .nav li:hover .nav li.active a span.item-text{
     background-color: #32e6e5 !important;
-    color: #FFFFFF;
-    line-height: 18px;
+    color: #1C2733;
+    line-height: 26px;
+}
+.aside-toggled .sidebar .nav li:hover .nav li.active a span.item-text:hover{
+    color: #1C2733 !important;
+}
+.aside-toggled .sidebar .nav li .nav li a span.item-text:hover{
+    color: #32e6e5 !important;
 }
 .aside-toggled .sidebar .nav li .nav li a span.item-text{
-    line-height: 18px;
+    line-height: 26px;
+	color: #ffffff;
     font-weight: normal;
     font-size: 13px;
 }
@@ -1730,12 +1737,13 @@ Redesign to left bar
 .aside-toggled .sidebar .nav li.glisare em{
 	color: #ffffff;
 	width: 60px;
+	margin-left: -4px;
 }
 .aside-toggled .sidebar .nav li.glisare a{
     width: 16px;
 	overflow: hidden;
 	margin: 0;
-	color: #ffffff;
+	color: #FFF;
 	white-space: nowrap;
 	content: " ";
 }
@@ -1745,10 +1753,15 @@ Redesign to left bar
 .aside-toggled .sidebar .nav li.glisare a em:after{
     content: " extinde";
 	font-size: 9px;
-	padding-left: 3px;
+	padding-left: 4px;
 }
 .aside-toggled .sidebar .nav li.glisare a:hover{
     width: 60px;
+}
+.aside-toggled .sidebar .nav li.glisare a:hover,
+.aside-toggled .sidebar .nav li.glisare a em:hover{
+	width: 60px;
+	color: #32e6e6 !important;
 }
 .sidebar .nav li.left-side a em{
     display: none;
@@ -1764,7 +1777,7 @@ Redesign to left bar
     font-size: 13px;
     margin-left: 0;
     margin-top: 0;
-    padding: 22px 0;
+    padding: 18px 0;
     text-align: center;
     text-decoration: none;
 	width: 100%;
