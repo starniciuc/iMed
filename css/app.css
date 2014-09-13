@@ -360,12 +360,6 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .navbar-top {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    border: 0;
-    background-color: #fff;
   }
   .navbar-top .navbar-nav > a {
     box-shadow: 0 0 0 #000 inset;

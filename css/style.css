@@ -1692,7 +1692,7 @@ ul.list-main-menu li.selected
 Redesign to left bar
 *************************************************************/
 .wrapper > section{
-    padding-top: 70px;
+    padding-top: 0px;
 }
 .main-content{
     padding-top: 0px;
