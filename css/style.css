@@ -1261,6 +1261,7 @@ ul.list-main-menu{
     list-style: none;
     padding-top: 20px;
     padding-bottom: 30px;
+    padding-left: 15px;
 }
 ul.list-main-menu li{
     display: inline-block;
@@ -1322,6 +1323,7 @@ ul.list-main-menu li.selected
     padding: 5px;
     border:1px solid #E6E6E6;
     font-size: 13px;
+    color: #1c2733;
 }
 .table-side.a{
     padding-right: 0;
@@ -1547,7 +1549,7 @@ ul.list-main-menu li.selected
     font-weight: normal;
 }
 .table-side.fismed-2 table tr:hover {
-    background-color: #FFF3C1;
+    background-color: #FFF4BF;
     cursor: pointer;
 }
 .table-side.fismed-2 table tr:hover td .btn-vezi{
@@ -1976,6 +1978,7 @@ Redesign fismed page
 .top-main-container .main-container.top-name .btn-info-pacient:active
 {
     color: #ffffff;
+    border-color: #ffcd40;
 }
 .top-main-container .main-container.top-name .btn-info-pacient:hover span,
 .top-main-container .main-container.top-name .btn-info-pacient:active span,
@@ -1989,6 +1992,7 @@ Redesign fismed page
 .left-top p{
     color: #000000;
     padding: 3px 30px;
+    font-size: 13px;
 }
 .border-left-top{
     border-left: 1px solid #ddd;
@@ -2001,7 +2005,7 @@ Redesign fismed page
 }
 .button-side{
     padding-top: 25px;
-    padding-left: 75px;
+    padding-right: 30px;
 }
 .btn-programare{
     display:block;
@@ -2011,15 +2015,19 @@ Redesign fismed page
     text-align: center;
     border-radius: 4px;
     width:130px;
+    font-size: 13px;
 }
 .btn-programare:hover{
     color: #FFF;
+    text-decoration: none;
+    background-color: #0080ff;
 }
 .btn-close{
     width: 150px;
 }
 .checkbox-top{
     padding-top: 8px;
+    padding-right: 15px;
 }
 .checkbox-top{
     margin: 0;
@@ -2081,19 +2089,26 @@ Redesign fismed page
 .table-side.fismed-2.table-last-auto table tr:nth-child(odd) td{
     background-color: #FAFAFA;
 }
+.table-side.fismed-2.table-last-auto table tr:nth-child(odd):hover td{
+    background-color: #fff4bf;
+}
 table.servicii tr td:last-child,
 table.servicii tr th:last-child
 {
     text-align: center;
 }
 .table-side.fismed-2.table-last-auto table tr td a.cancel{
-    color: #cc0000;
+    color: #ff0000;
+}
+.table-side.fismed-2.table-last-auto table tr td a.show{
+    text-decoration: underline;
 }
 .table-side.fismed-2.table-last-auto table tr td a.cancel:hover{
     text-decoration: none;
+    color:#ff8c19;
 }
 .table-side.fismed-2.table-last-auto table tr td a.cancel span{
-    border-bottom: 1px dotted #cc0000;
+    border-bottom: 1px dashed #cc0000;
 }
 .table-side.fismed-2.table-last-auto table tr td a.cancel:hover span{
     border-bottom: 0;
@@ -2233,6 +2248,9 @@ table.servicii tr th:last-child
 }
 #tabs-gravide .close-tabs a:hover{ 
     border-bottom: 0px dashed #0080FF;
+}
+.tooltip{
+    font-weight: normal;
 }
 /************************************************************
         Mobile op$timization

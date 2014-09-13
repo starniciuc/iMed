@@ -1,14 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700);
-/**
- * 47admin - Admin Bootstrap Skin
- * 
- * Author: @geedmo
- * Website: http://geedmo.com
- * License: Codecanyon Regular License
- */
-/* ========================================================================
-   Component: bootstrap-reset.less
- ========================================================================== */
 a {
   outline: none !important;
 }
@@ -206,7 +195,7 @@ body {
     padding-top: 60px;
   }
   .main-content {
-    padding: 20px 40px;
+    padding: 20px 30px;
   }
 }
 .aside-toggled {
@@ -543,12 +532,10 @@ body {
     z-index: 2001;
     height: auto !important;
   }
-  .aside-toggled .sidebar .nav > li:hover .nav,
-  .aside-toggled .sidebar .nav > li.open .nav {
+  .aside-toggled .sidebar .nav > li:hover .nav {
     display: block;
   }
-  .aside-toggled .sidebar .nav > li:hover .item-text,
-  .aside-toggled .sidebar .nav > li.open .item-text {
+  .aside-toggled .sidebar .nav > li:hover .item-text{
     display: block;
   }
   .aside-toggled .sidebar .nav .label {
@@ -605,7 +592,6 @@ body {
    Component: typo.less
  ========================================================================== */
 body {
-  font-family: "PT Sans", sans-serif;
   color: #656565;
 }
 h1,
