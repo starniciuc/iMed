@@ -2252,6 +2252,63 @@ table.servicii tr th:last-child
 .tooltip{
     font-weight: normal;
 }
+/*******
+prin button
+**********/
+.nav > li.print-side-button{
+    position: absolute;
+    bottom: 20px;
+}
+.nav > li.print-side-button a{
+    color: #709ccc;;
+    font-weight: normal;
+    border:2px solid #33475f;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-left: 30px;
+    line-height: 20px;
+}
+.nav > li.print-side-button a:hover{
+    border-color: #DDDDDD;
+}
+.sidebar .nav > li.print-side-button > a em{
+    font-size: 20px;
+    width: auto;
+    margin-right: 4px;
+}
+.aside-toggled .sidebar .nav > li.print-side-button {
+    border: 0;
+    border-top: 1px solid #33475f;
+    width: 100%;
+}
+.aside-toggled .sidebar .nav > li.print-side-button a{
+    border: 0;
+    margin: 0;
+}
+.aside-toggled .sidebar .nav > li.print-side-button a:hover{
+    border: 0;
+    margin: 0;
+    font-weight: normal;
+}
+.aside-toggled .sidebar .nav > li.print-side-button a:hover em{
+    margin-left: 0px;
+    font-weight: normal;
+}
+.aside-toggled .sidebar .nav > li.print-side-button a span.item-text{
+    display: block;
+    position: relative;
+    line-height: 100%;
+    background: none;
+    left: 0;
+    padding: 0;
+    color: #709ccc;
+}
+.aside-toggled .sidebar .nav > li.print-side-button a:hover span.item-text{
+    font-weight: normal;
+    font-size: 12px;
+    color:#FFFFFF;
+}
 /************************************************************
         Mobile op$timization
 ************************************************************/

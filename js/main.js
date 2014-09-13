@@ -60,10 +60,8 @@ if (!('boxShadow' in document.body.style)) {
 $(document).ready(function() {
     var $menu = $(".aside");
     $(window).scroll(function() {
-        console.log($(this).scrollTop());
         margin = 70 - $(this).scrollTop();
         _margin = margin < 0 ? 0 : margin;
-        console.log(_margin);
         $menu.css("margin-top", _margin);
 
     });//scroll

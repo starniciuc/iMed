@@ -424,12 +424,16 @@ body {
 .sidebar {
   background-color: #2c3037;
   height: 100%;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 .sidebar > .nav {
   position: relative;
   padding-bottom: 60px;
   min-height: 100%;
+  overflow-x: hidden;
+}
+.aside-toggled .sidebar > .nav {
+    overflow-x: visible !important;
 }
 .sidebar .nav > li > a {
   padding: 16px 30px;
