@@ -1506,7 +1506,7 @@ Redesign to left bar
     padding-left: 0px;
 }
 .sidebar .nav .nav li a{
-    padding-left: 45px;
+    padding-left: 60px;
 }
 .sidebar .nav li a i{
     color: rgba(255, 255, 255, 0.4);
@@ -1522,6 +1522,10 @@ Redesign to left bar
 .sidebar .nav .nav li a i{
     color: rgba(255, 255, 255, 0.4);
     margin-right: 10px;
+    margin-left: -15px;
+}
+.aside-toggled .sidebar .nav .nav li a i{
+    margin-left: 5px;
 }
 .sidebar .nav .nav li a:hover i{
     color: #32e6e6;
