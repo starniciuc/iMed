@@ -253,7 +253,7 @@ nav.navbar .logo{
     text-decoration: none;
 }
 html.svg nav.navbar .logo .brand{
-    background-image: url("../img/logo-imed.svg");
+    /*background-image: url("../img/logo-imed.svg");*/
     vertical-align: middle;
     margin-left: 0;
     display: inline-block;
