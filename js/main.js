@@ -1,6 +1,3 @@
-/*
- Collapsed Left Navigation
- */
 
 $(".collapse-btn").click(function() {
     var mybtn = $(this);
@@ -59,7 +56,11 @@ if (!('boxShadow' in document.body.style)) {
 }
 $(document).ready(function() {
     var $menu = $(".aside");
+    if ($(window).scrollTop() > 70) {
+        $menu.css("margin-top", "0");
+    }
     $(window).scroll(function() {
+
         margin = 70 - $(this).scrollTop();
         _margin = margin < 0 ? 0 : margin;
         $menu.css("margin-top", _margin);

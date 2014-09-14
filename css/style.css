@@ -1,5 +1,8 @@
 /* Temporar import CSS. Imprortant la final de adus, dupa posibilitate, codul importat in acest fisier. */
 
+@import "bootstrap.css";
+@import "app.css";
+@import "ie7.css";
 @import "reset.css";
 @import "font-awesome.css";
 @import "datepicker.css";
@@ -302,8 +305,8 @@ nav.navbar .logo small{
     display: block;
     width: 40px;
     height: 40px;
-    color:#FFF;
-    font-size: 30px;
+    color:#ffffff;
+    font-size: 40px;
     padding: 0;
     text-align: center;
     line-height: 40px;
@@ -314,132 +317,36 @@ nav.navbar .logo small{
 .nav.navbar-nav li a:hover{
     color: #DDDDDD;
 }
-/*
-html.svg .top-navbar li.info{
-    background-image: url("../img/icon-sanostiri.svg");
-    background-position: 0 0;
-}
-*/
 .top-navbar li.info:hover{
     background-color: #ff003c;
 }
-/*
-.top-navbar li.tv{
-    background-position: 0 -40px;
-}
-html.svg .top-navbar li.tv{
-    background-image: url("../img/icon-sanatatetv.svg");
-    background-position: 0 0;
-}
-*/
 .top-navbar li.tv:hover{
     background-color: #0088dc;
 }
-/*
-.top-navbar li.sanoclub{
-    background-position: 0 -80px;
-}
-html.svg .top-navbar li.sanoclub{
-    background-image: url("../img/icon-sanoclub.svg");
-    background-position: 0 0;
-}
-*/
 .top-navbar li.sanoclub:hover{
     background-color: #783cc8;
 }
-/*
-.top-navbar li.isan{
-    background-position: 0 -120px;
-}
-html.svg .top-navbar li.isan{
-    background-image: url("../img/icon-isan.svg");
-    background-position: 0 0;
-}
-*/
 .top-navbar li.isan:hover{
     background-color: #ffaa00;
 }
-/*
-.top-navbar li.imed{
-    background-position: 0 -160px;
-}
-html.svg .top-navbar li.imed{
-    background-image: url("../img/icon-imed.svg");
-    background-position: 0 0;
-}
-*/
 .top-navbar li.imed:hover{
     background-color: #28b4b4;
 }
-/*
-.top-navbar li.imec{
-    background-position: 0 -200px;
-}
-html.svg .top-navbar li.imec{
-    background-image: url("../img/icon-imec.svg");
-    background-position: 0 0;
-}
-*/
 .top-navbar li.imec:hover{
     background-color: #008787;
 }
-/*
-.top-navbar li.tuberculoza{
-    background-position: 0 -240px;
-}
-html.svg .top-navbar li.tuberculoza{
-    background-image: url("../img/icon-infotb.svg");
-    background-position: 0 0;
-}
-*/
 .top-navbar li.tuberculoza:hover{
     background-color: #44c3ff;
 }
-/*
-.top-navbar li.spitale{
-    background-position: 0 -280px;
-}
-html.svg .top-navbar li.spitale{
-    background-image: url("../img/icon-spitalemd.svg");
-    background-position: 0 0;
-}
-*/
 .top-navbar li.spitale:hover{
     background-color: #00cc66;
 }
-/*
-.top-navbar li.pas{
-    background-position: 0 -320px;
-}
-html.svg .top-navbar li.pas{
-    background-image: url("../img/icon-pas.svg");
-    background-position: 0 0;
-}
-*/
 .top-navbar li.pas:hover{
     background-color: #009645;
 }
-/*
-.top-navbar li.scoala{
-    background-position: 0 -360px;
-}
-html.svg .top-navbar li.scoala{
-    background-image: url("../img/icon-learn.svg");
-    background-position: 0 0;
-}
-*/
 .top-navbar li.scoala:hover{
     background-color: #ed2225;
 }
-/*
-.top-navbar li.donez{
-    background-position: 0 -400px;
-}
-html.svg .top-navbar li.donez{
-    background-image: url("../img/icon-donate.svg");
-    background-position: 0 0;
-}
-*/
 .top-navbar li.donez:hover{
     background-color: #f15a4d;
 }
@@ -703,8 +610,8 @@ html.svg .top-navbar li.donez{
     text-decoration: none;
 }
 .footer .footer-nav ul li a:hover{
-    color: #0059b2;
-    border-bottom: 1px solid #b2cde8;
+   color: #ff8c19;
+    border-bottom: 1px solid #ffa54c;
     padding-bottom: 1px;
 }
 .footer .copyright{
@@ -774,7 +681,7 @@ html.svg .top-navbar li.donez{
     display: block;
     width: 24px;
     height: 24px;
-    opacity: .5;
+    opacity: .4;
     background-image: url("../img/social-icons-sprite.png");
 }
 .footer .socials li.twitter a{
