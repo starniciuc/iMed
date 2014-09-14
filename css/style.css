@@ -1764,7 +1764,7 @@ Redesign fismed page
 .top-main-container .main-container.top-name .btn-info-pacient:active
 {
     color: #ffffff;
-    border-color: #ffcd40;
+    border-color: #0059b2;
 }
 .top-main-container .main-container.top-name .btn-info-pacient:hover span,
 .top-main-container .main-container.top-name .btn-info-pacient:active span,
@@ -1810,6 +1810,7 @@ Redesign fismed page
 }
 .btn-close{
     width: 150px;
+    font-size: 11px;
 }
 .checkbox-top{
     padding-top: 8px;
@@ -1821,7 +1822,8 @@ Redesign fismed page
 .checkbox-top label{
     font-weight: normal; 
     float: none;
-    color: #cc0000;
+    font-size: 11px;
+    color: #ff0000;
 }
 .table-side.fismed-2.table-vizite table tr td:last-child{
     width: auto;
@@ -1910,7 +1912,7 @@ table.servicii tr th:last-child
     color: #FF2814;
 }
 .fismed-tabs{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .main-container.info-pacient.fismed{
     padding-bottom: 30px;
@@ -1983,6 +1985,7 @@ table.servicii tr th:last-child
     margin: 0;
     color: #1C2733;
     padding: 0;
+    background: none;
 }
 .tab-sarcina{
     padding: 0;
@@ -2002,6 +2005,15 @@ table.servicii tr th:last-child
     font-size: 13px;
     font-weight: normal;
     padding: 3px 10px;
+}
+.tab-sarcina li a:hover{
+    color:#ff7f00;
+}
+.tab-sarcina li.active a:hover{
+    color:#FFFFFF;
+}
+.tab-sarcina li a:hover span{
+    border-color: #ffa54c;
 }
 .tab-sarcina li a span{
     border-bottom: 1px dashed #0080FF;
