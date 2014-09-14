@@ -1507,6 +1507,7 @@ Redesign to left bar
 }
 .sidebar .nav .nav li a{
     padding-left: 60px;
+    line-height: 20px;
 }
 .sidebar .nav li a i{
     color: rgba(255, 255, 255, 0.4);
