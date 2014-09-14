@@ -252,17 +252,9 @@ nav.navbar .logo{
     line-height: 70px;
     text-decoration: none;
 }
-html.svg nav.navbar .logo .brand{
-    /*background-image: url("../img/logo-imed.svg");*/
-    vertical-align: middle;
-    margin-left: 0;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border-radius: 6px;
-}
 nav.navbar .logo .brand{
-    background-image: url("../img/imed-logo.png");
+    background-image: url("../img/logo-imed.png");
+    background-size: 100% 100%;
     vertical-align: middle;
     margin-left: 0;
     display: inline-block;
@@ -283,14 +275,11 @@ nav.navbar .logo small{
     font-size: 17px;
 }
 .top-navbar li{
-    /*text-indent: -99999px;*/
     width: 40px;
     height: 40px;
     border-radius: 6px;
     color:#DDDDDD;
-    background-color: #000;
-   /* background-image: url("../img/icons-section-sprite.png");
-    background-repeat: no-repeat;*/
+    background-color: #06080a;
     margin-right: 15px;
     -webkit-transition: background-color .5s;
     -o-transition: background-color .5s;
@@ -312,10 +301,10 @@ nav.navbar .logo small{
     line-height: 40px;
 }
 .nav.navbar-nav li a{
-    color: #DDDDDD;
+    color: #d2d4d6;
 }
 .nav.navbar-nav li a:hover{
-    color: #DDDDDD;
+    color: #FFFFFF;
 }
 .top-navbar li.info:hover{
     background-color: #ff003c;
@@ -353,6 +342,7 @@ nav.navbar .logo small{
 #top-nav .top-navbar{
     min-height: 70px;
     padding-top: 15px;
+    padding-left: 30px;
 }
 .profile-btn{
     height: 70px;
@@ -2160,16 +2150,19 @@ table.servicii tr th:last-child
     font-weight: normal;
 }
 /*******
-prin button
+print button
 **********/
 .nav > li.print-side-button{
     position: absolute;
     bottom: 20px;
 }
+.aside-toggled .nav > li.print-side-button{
+    bottom: 0px;
+}
 .nav > li.print-side-button a{
     color: #709ccc;;
     font-weight: normal;
-    border:2px solid #33475f;
+    border:1px solid #33475f;
     border-radius: 4px;
     font-size: 12px;
     padding: 5px 10px;
@@ -2177,7 +2170,7 @@ prin button
     line-height: 20px;
 }
 .nav > li.print-side-button a:hover{
-    border-color: #DDDDDD;
+    border-color: #32E6E6;
 }
 .sidebar .nav > li.print-side-button > a em{
     font-size: 20px;
@@ -2201,6 +2194,7 @@ prin button
 .aside-toggled .sidebar .nav > li.print-side-button a:hover em{
     margin-left: 0px;
     font-weight: normal;
+    color: #32E6E6;
 }
 .aside-toggled .sidebar .nav > li.print-side-button a span.item-text{
     display: block;
@@ -2214,7 +2208,7 @@ prin button
 .aside-toggled .sidebar .nav > li.print-side-button a:hover span.item-text{
     font-weight: normal;
     font-size: 12px;
-    color:#FFFFFF;
+    color:#32E6E6;
 }
 /************************************************************
         Mobile op$timization
