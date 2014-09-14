@@ -45,16 +45,6 @@ Import icons
 }
 [class^="icon-"], [class*=" icon-"] {
 	font-family: 'icons-e-sanatate';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 
 .icon-sanostiri:before {
@@ -273,8 +263,6 @@ nav.navbar .logo small{
     font-size: 17px;
 }
 .top-navbar li{
-    width: 40px;
-    height: 40px;
     border-radius: 6px;
     color:#DDDDDD;
     background-color: #06080a;
