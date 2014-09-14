@@ -1,638 +1,845 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Căutare pacient - Sistem Informaţional Medical / iMeD</title>
-		<link rel="shortcut icon" href="img/favicon.ico">
-		<link href="css/bootstrap.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Info pacient - Sistem Informaţional Medical / iMeD</title>
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <link href="css/style.css" rel="stylesheet">
 
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<div class="wrapper">
-			<!-- Header -->
-			<nav class="navbar navbar-default top" role="navigation">
-				<div class="container-fluid">
-					<div class="row-fluid">
-						<div class="col-lg-3 col-md-4 col-sm-16 col-xs-16">
-							<div class="navbar-header">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <section class="wrapper">
+            <!-- Header -->
+            <nav class="navbar navbar-default top navbar-top navbar-fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <div class="col-lg-16">
+                            <div class="col-lg-2 col-md-4 col-sm-16 col-xs-16">
+                                <div class="navbar-header">
+                                    <a class="logo" href="index.html">
+                                        <span class="brand"></span>
+                                        <span>iMeD</span>
+                                        <small>SIM</small> 
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-14 col-md-12 col-sm-16 col-xs-16">
+                                <button type="button" class="sidebar-btn navbar-toggle pull-left" data-toggle="offcanvas" data-target="#sidebar">
+                                    <span class="sr-only">Deschide bara laterală</span>
+                                    <span class="fa fa-bars"></span> 
+                                </button>
+                                <button type="button" class="icons navbar-toggle pull-left" data-toggle="collapse" data-target="#top-nav">
+                                    <span class="sr-only">Vezi toate modulele</span>
+                                    <span class="fa fa-ellipsis-v"></span>
+                                </button>
 
-								<a class="logo" href="index.html">
-									<span class="brand"></span>
-									<span>iMeD</span>
-									<small>SIM</small> 
-								</a>
-							</div>
-						</div>
-						<div class="col-lg-13 col-md-12 col-sm-16 col-xs-16">
-							<button type="button" class="sidebar-btn navbar-toggle pull-left" data-toggle="offcanvas" data-target="#sidebar">
-								<span class="sr-only">Deschide bara laterală</span>
-								<span class="fa fa-bars"></span> 
-							</button>
-							<button type="button" class="icons navbar-toggle pull-left" data-toggle="collapse" data-target="#top-nav">
-								<span class="sr-only">Vezi toate modulele</span>
-								<span class="fa fa-ellipsis-v"></span>
-							</button>
+                                <div class="profile-btn btn-group pull-right">
+                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                                        Victoria Rosca
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#"><i class="fa fa-user"></i>Preferinţele mele</a></li>
+                                        <li><a href="#"><i class="fa fa-cog"></i>Setări profil</a></li>
+                                        <li><a href="#"><i class="fa fa-sign-out"></i>Ieşire</a></li>
+                                    </ul>
+                                </div>
 
-							<div class="profile-btn btn-group pull-right">
-								<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-									Victoria Rosca
-								</button>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="#"><i class="fa fa-user"></i>Preferinţele mele</a></li>
-									<li><a href="#"><i class="fa fa-cog"></i>Setări profil</a></li>
-									<li><a href="#"><i class="fa fa-sign-out"></i>Ieşire</a></li>
-								</ul>
-							</div>
-							<div class="collapse navbar-collapse" id="top-nav">
-								<ul class="nav navbar-nav top-navbar">
-									<li class="info" data-toggle="tooltip" data-placement="bottom" title="Sănătate Info"><a href="http://e-sanatate.md/News/Home">Sănătate Info</a></li>
-									<li class="tv" data-toggle="tooltip" data-placement="bottom" title="Sănătate TV"><a href="http://e-sanatate.md/TV/Home">Sănătate TV</a></li>
-									<li class="sanoclub" data-toggle="tooltip" data-placement="bottom" title="SanoClub"><a href="http://e-sanatate.md/SanoClub">SanoClub</a></li>
-									<li class="isan" data-toggle="tooltip" data-placement="bottom" title="iSaN"><a href="http://e-sanatate.md/iSaN/Home">iSaN</a></li>
-									<!-- <li class="imed" data-toggle="tooltip" data-placement="bottom" title="iMeD"><a href="#">iMeD</a></li> -->
-									<li class="imec" data-toggle="tooltip" data-placement="bottom" title="iMeC"><a href="http://e-sanatate.md/iMeC/Home">iMeC</a></li>
-									<li class="tuberculoza" data-toggle="tooltip" data-placement="bottom" title="Tuberculoza Info"><a href="http://tuberculoza.info/">Tuberculoza Info</a></li>
-									<li class="spitale" data-toggle="tooltip" data-placement="bottom" title="Spitale.MD"><a href="http://e-sanatate.md/Spitale/Home">Spitale.MD</a></li>
-									<li class="pas" data-toggle="tooltip" data-placement="bottom" title="Centrul PAS"><a href="http://pas.md/">Centrul PAS</a></li>
-									<li class="scoala" data-toggle="tooltip" data-placement="bottom" title="Școala E-Sănătate"><a href="#">Școala E-Sănătate</a></li>
-									<li class="donez" data-toggle="tooltip" data-placement="bottom" title="Donez Sânge"><a href="#">Donez Sânge</a></li>
-								</ul>
+                                <div class="profile-btn btn-group pull-right">
+                                    <button type="button" class="btn dropdown-toggle institutia" data-toggle="dropdown">
+                                        IMSP Clinica Universitară de Asistenţă<br>
+                                        Medicală Primară a USMF “N.Testimiţanu”                                    
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Spitalul Clinic de Traumatologie şi Ortopedie</a></li>
+                                        <li><a href="#">Spitalul Clinic Municipal „Sf. Treime”</a></li>
+                                    </ul>
+                                </div>
 
-							</div>
+                                <div class="collapse navbar-collapse" id="top-nav">
+                                    <ul class="nav navbar-nav top-navbar">
+                                        <li class="info" data-toggle="tooltip" data-placement="bottom" title="Sănătate Info"><a href="http://e-sanatate.md/News/Home"><span class="icon-sanostiri"></span></a></li>
+                                        <li class="tv" data-toggle="tooltip" data-placement="bottom" title="Sănătate TV"><a href="http://e-sanatate.md/TV/Home"><span class="icon-sanatatetv"></span></a></li>
+                                        <li class="sanoclub" data-toggle="tooltip" data-placement="bottom" title="SanoClub"><a href="http://e-sanatate.md/SanoClub"><span class="icon-sanoclub"></span></a></li>
+                                        <li class="isan" data-toggle="tooltip" data-placement="bottom" title="iSaN"><a href="http://e-sanatate.md/iSaN/Home"><span class="icon-isan"></span></a></li>
+                                        <!-- <li class="imed" data-toggle="tooltip" data-placement="bottom" title="iMeD"><a href="#">iMeD</a></li> -->
+                                        <li class="imec" data-toggle="tooltip" data-placement="bottom" title="iMeC"><a href="http://e-sanatate.md/iMeC/Home"><span class="icon-imec"></span></a></li>
+                                        <li class="tuberculoza" data-toggle="tooltip" data-placement="bottom" title="Tuberculoza Info"><a href="http://tuberculoza.info/"><span class="icon-infotb"></span></a></li>
+                                        <li class="spitale" data-toggle="tooltip" data-placement="bottom" title="Spitale.MD"><a href="http://e-sanatate.md/Spitale/Home"><span class="icon-spitalemd"></span></a></li>
+                                        <li class="pas" data-toggle="tooltip" data-placement="bottom" title="Centrul PAS"><a href="http://pas.md/"><span class="icon-pas"></span></a></li>
+                                        <li class="scoala" data-toggle="tooltip" data-placement="bottom" title="Școala E-Sănătate"><a href="#"><span class="icon-scoala"></span></a></li>
+                                        <li class="donez" data-toggle="tooltip" data-placement="bottom" title="Donez Sânge"><a href="#"><span class="icon-donez"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
 
-						</div>
-					</div>
-				</div>
-			</nav>
+            <!-- Main Container -->
 
-			<!-- Main Container -->
-			<div class="container-fluid wrapper-main-container">
-				<div class="row-offcanvas row-offcanvas-left">
-					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-10 left-sidebar sidebar-offcanvas" id="sidebar" role="navigation">
-						<nav class="left-navigation accordion-navigation">
-							<ul>
-								<li><a href="index.html" class="collapse-btn"><span class="fa fa-bar-chart-o"></span>TABLOU DE BORD</a></li>
-								<li class="active-dropdown"><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-users"></span>PACIENŢI <i class="fa fa-angle-down"></i></a>
-									<ul class="collapse in">
-										<li class="active"><a href="searchpacient.html"><i class="fa fa-angle-right"></i>Căutare pacient</a></li>
-										<li><a href="newpacient.html"><i class="fa fa-angle-right"></i>Pacient nou</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Comasare duplicate</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Anularea comasării</a></li>
-									</ul>
-								</li>
-								<li><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-calendar"></span>PROGRAMARE <i class="fa fa-angle-down"></i></a>
-									<ul class="collapse">
-										<li><a href="#"><i class="fa fa-angle-right"></i>Programarea mea</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Caută programarea</a></li>
-									</ul>
-								</li>
-								<li><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-file-text-o"></span>RAPOARTE <i class="fa fa-angle-down"></i></a>
-									<ul class="collapse">
-										<li><a href="#"><i class="fa fa-angle-right"></i>Registrul vizitelor</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Registrul Tichete Stitistice</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Sectorul meu</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Registrul monitorizare</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Modificare registre</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Registrul trimiterilor</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Registrul gravidelor</a></li>
-									</ul>
-								</li>
-								<li><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-book"></span>REGISTRE <i class="fa fa-angle-down"></i></a>
-									<ul class="collapse">
-										<li><a href="#"><i class="fa fa-angle-right"></i>Rapoarte zilnice</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Rapoarte lunare ale medicului</a></li>
-									</ul>
-								</li>
-								<li><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-umbrella"></span>VACCINĂRI <i class="fa fa-angle-down"></i></a>
-									<ul class="collapse">
-										<li><a href="#"><i class="fa fa-angle-right"></i>Registrul vaccinărilor</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Planuri</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Registrul planuri vaccinări</a></li>
-										<li><a href="#"><i class="fa fa-angle-right"></i>Raport</a></li>
-									</ul>
-								</li>
-								<li><a href="javascript:void(0)" class="collapse-btn"><span class="fa fa-cogs"></span>SETĂRI <i class="fa fa-angle-down"></i></a>
-									<ul class="collapse">
-										<li><a href="#"><i class="fa fa-angle-right"></i>Lista scurtă a diagnozelor</a></li>
-									</ul>
-								</li>
-							</ul>
-							<a href="#" class="back">Ieşi din SIM</a>
-						</nav>
-					</div>
-					<div class="col-lg-13 col-md-12 col-sm-16 col-xs-16 wrapper-container">
-						<div class="main-container">
-							<h1>Ana Mardare Radu</h1>
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-lg-16">
-										<!-- Nav tabs -->
-										<ul class="nav nav-tabs" role="tablist">
-											<li class="active"><a href="#general-information" role="tab" data-toggle="tab">Informaţie Generală</a></li>
-											<li><a href="#secondary-information" role="tab" data-toggle="tab">Informaţie Auxiliară</a></li>
-											<li><a href="#residence" role="tab" data-toggle="tab">Reşedinţă</a></li>
-										</ul>
+            <!-- START aside-->
 
-										<!-- Tab panes -->
-										<div class="tab-content">
-											<div class="tab-pane active" id="general-information">
-												<form action="" class="new-pacient">
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="register-date">Data înregistrării</label>
-														</div>
-														<div class="col-lg-3">
-															<input type="text" id="register-date">
-														</div>
-													</div>
+            <aside class="aside">
+                <!-- START Sidebar (left)-->
+                <nav class="sidebar">
+                    <ul class="nav">
+                        <!-- START Menu-->
+                        <li class='glisare clearfix'>
+                            <a href="#" data-toggle="aside" class="button-slide-left pull-right">
+                                <em class="fa fa-angle-double-left"></em> glisează
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html" title="Dashboard" class="has-submenu">
+                                <em class="fa fa-bar-chart-o"></em>
+                                <span class="item-text">TABLOU DE BORD</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#" title="PACIENŢI" data-toggle="collapse-next" class="i-menu open-item-menu has-submenu">
+                                <em class="fa fa-users"></em>
+                                <span class="item-text">PACIENŢI <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse in">
+                                <li class="active">
+                                    <a href="searchpacient.html" title="Căutare pacient" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Căutare pacient</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="newpacient.html" title="Pacient nou" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Pacient nou</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Comasare duplicate" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Comasare duplicate</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Pacient nou" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Anularea comasării</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="PROGRAMARE" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-calendar"></em>
+                                <span class="item-text">PROGRAMARE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Caută programarea</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="STOC" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-cubes"></em>
+                                <span class="item-text">STOC <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Caută programarea</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="RESURSE UMANE" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-list-alt"></em>
+                                <span class="item-text">RESURSE UMANE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Caută programarea</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="Clasificatoare" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-bookmark"></em>
+                                <span class="item-text">CLASIFICATOARE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Caută programarea</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="RAPOARTE" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-clipboard"></em>
+                                <span class="item-text">RAPOARTE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Registrul vizitelor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul vizitelor</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul Tichete Stitistice" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul Tichete Stitistice</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Validation" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Validation</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Sectorul meu" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Sectorul meu</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul monitorizare" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul monitorizare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Modificare registre" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Modificare registre</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul trimiterilor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul trimiterilor</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul gravidelor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul gravidelor</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="REGISTRE" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa  fa-book"></em>
+                                <span class="item-text">REGISTRE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Rapoarte zilnice" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Rapoarte zilnice</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Rapoarte lunare ale medicului" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Rapoarte lunare ale medicului</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="VACCINĂRI" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-umbrella"></em>
+                                <span class="item-text">VACCINĂRI <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Registrul vaccinărilor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul vaccinărilor</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Planuri" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Planuri</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul planuri vaccinări" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul planuri vaccinări</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Raport" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Raport</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="SETĂRI" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-cogs"></em><span class="item-text">SETĂRI <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Lista scurtă a diagnozelor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Lista scurtă a diagnozelor</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li class="print-side-button">
+                            <a href="#" class="back has-submenu">
+                                <em class="fa fa-print"></em>
+                                <span class="item-text">Tipărește</span>
+                            </a>
+                        </li>
+                        <!-- END Menu-->
+                    </ul>
+                </nav>
+                <!-- END Sidebar (left)-->
+            </aside>
+            <!-- End aside-->
+            <section>
+                <!-- START Page content-->
+                <section class="main-content ">                    
+                    <div class="main-container info-pacient">
+                            <h1>Ana Mardare Radu</h1>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-16">
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li class="active"><a href="#general-information" role="tab" data-toggle="tab">Informaţie Generală</a></li>
+                                            <li><a href="#secondary-information" role="tab" data-toggle="tab">Informaţie Auxiliară</a></li>
+                                            <li><a href="#residence" role="tab" data-toggle="tab">Reşedinţă</a></li>
+                                        </ul>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="idnp">IDNP</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="text" id="idnp">
-														</div>
-													</div>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="general-information">
+                                                <form action="" class="new-pacient">
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="register-date">Data înregistrării</label>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <input type="text" id="register-date">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="lastname">Prenume</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="text" id="lastname">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="idnp">IDNP</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" id="idnp">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="name">Nume</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="text" id="name">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="lastname">Prenume</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" id="lastname">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="patronimic">Patronimic</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="text" id="patronimic">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="name">Nume</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" id="name">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="patronimic">Sexul</label>
-														</div>
-														<div class="col-lg-2">
-															<select name="" id="">
-																<option value="f">F</option>
-																<option value="m">M</option>
-															</select>
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="patronimic">Patronimic</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" id="patronimic">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="birthdaydate">Data nașterii</label>
-														</div>
-														<div class="col-lg-3">
-															<input type="text" id="birthdaydate" class="datepicker">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="patronimic">Sexul</label>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <select name="" id="">
+                                                                <option value="f">F</option>
+                                                                <option value="m">M</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="nrpolita">Numărul poliţei</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="text" id="nrpolita">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="birthdaydate">Data nașterii</label>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <input type="text" id="birthdaydate" class="datepicker">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="category">Categoria</label>
-														</div>
-														<div class="col-lg-4">
-															<select name="" id="">
-																<option value="f">01 Salariat</option>
-																<option value="m">02 Salariat</option>
-															</select>
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="nrpolita">Numărul poliţei</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" id="nrpolita">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="category">Legătura cu instituția</label>
-														</div>
-														<div class="col-lg-5">
-															<select name="" id="">
-																<option value="f">MSP CMF Bălți</option>
-															</select>
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="category">Categoria</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <select name="" id="">
+                                                                <option value="f">01 Salariat</option>
+                                                                <option value="m">02 Salariat</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
 
-													<div class="row adress">
-														<h2>Adresa</h2>
-														<div class="container-fluid">
-															<div class="row">
-																<div class="col-lg-3">
-																	<label for="raion">Raion</label>
-																</div>
-																<div class="col-lg-4">
-																	<input type="text" id="raion">
-																</div>
-															</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="category">Legătura cu instituția</label>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <select name="" id="">
+                                                                <option value="f">MSP CMF Bălți</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
 
-															<div class="row">
-																<div class="col-lg-3">
-																	<label for="location">Localitatea</label>
-																</div>
-																<div class="col-lg-4">
-																	<input type="text" id="location">
-																</div>
-															</div>
+                                                    <div class="row adress">
+                                                        <h2>Adresa</h2>
+                                                        <div class="container-fluid">
+                                                            <div class="row">
+                                                                <div class="col-lg-3">
+                                                                    <label for="raion">Raion</label>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <input type="text" id="raion">
+                                                                </div>
+                                                            </div>
 
-															<div class="row">
-																<div class="col-lg-3">
-																	<label for="street">Strada</label>
-																</div>
-																<div class="col-lg-4">
-																	<input type="text" id="street">
-																</div>
-															</div>
+                                                            <div class="row">
+                                                                <div class="col-lg-3">
+                                                                    <label for="location">Localitatea</label>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <input type="text" id="location">
+                                                                </div>
+                                                            </div>
 
-															<div class="row">
-																<div class="col-lg-3">
-																	<label for="bloc">Bloc</label>
-																</div>
-																<div class="col-lg-2">
-																	<input type="text" id="bloc">
-																</div>
-															</div>
+                                                            <div class="row">
+                                                                <div class="col-lg-3">
+                                                                    <label for="street">Strada</label>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <input type="text" id="street">
+                                                                </div>
+                                                            </div>
 
-															<div class="row">
-																<div class="col-lg-3">
-																	<label for="bara">Bară</label>
-																</div>
-																<div class="col-lg-2">
-																	<input type="text" id="bara">
-																</div>
-															</div>
+                                                            <div class="row">
+                                                                <div class="col-lg-3">
+                                                                    <label for="bloc">Bloc</label>
+                                                                </div>
+                                                                <div class="col-lg-2">
+                                                                    <input type="text" id="bloc">
+                                                                </div>
+                                                            </div>
 
-															<div class="row">
-																<div class="col-lg-3">
-																	<label for="apartament">Apartament</label>
-																</div>
-																<div class="col-lg-2">
-																	<input type="text" id="apartament">
-																</div>
-															</div>
-														</div>
-													</div>
+                                                            <div class="row">
+                                                                <div class="col-lg-3">
+                                                                    <label for="bara">Bară</label>
+                                                                </div>
+                                                                <div class="col-lg-2">
+                                                                    <input type="text" id="bara">
+                                                                </div>
+                                                            </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="sectorul">Sectorul</label>
-														</div>
-														<div class="col-lg-2">
-															<select name="" id="">
-																<option value="12">12</option>
-																<option value="13">13</option>
-															</select>
-														</div>
-													</div>
+                                                            <div class="row">
+                                                                <div class="col-lg-3">
+                                                                    <label for="apartament">Apartament</label>
+                                                                </div>
+                                                                <div class="col-lg-2">
+                                                                    <input type="text" id="apartament">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="medic-de-familie">Medicul de familie</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="text" id="medic-de-familie">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="sectorul">Sectorul</label>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <select name="" id="">
+                                                                <option value="12">12</option>
+                                                                <option value="13">13</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="phone">Telefon</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="text" id="phone">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="medic-de-familie">Medicul de familie</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" id="medic-de-familie">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="mobile">Telefon mobil</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="text" id="mobile">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="phone">Telefon</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" id="phone">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="email">E-mail</label>
-														</div>
-														<div class="col-lg-5">
-															<input type="text" id="email">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="mobile">Telefon mobil</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" id="mobile">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="comments">Comentarii</label>
-														</div>
-														<div class="col-lg-5">
-															<textarea name="" id="comments" rows="5"></textarea>
-														</div>
-													</div>
-													<br><br>
-													<div class="row">
-														<div class="col-lg-3"></div>
-														<div class="col-lg-6">
-															<input type="submit" value="Salvează">
-															<input type="reset" value="Anulează">
-														</div>
-													</div>
-												</form>
-											</div>
-											<div class="tab-pane" id="secondary-information">
-												<form action="" class="new-pacient">
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="register-date">Cetăţenia</label>
-														</div>
-														<div class="col-lg-4">
-															<select name="" id="">
-																<option value="RM">Republica Moldova</option>
-															</select>
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="email">E-mail</label>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" id="email">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="register-date">Starea familiară</label>
-														</div>
-														<div class="col-lg-4">
-															<select name="" id="">
-																<option value="RM">Căsătorit</option>
-															</select>
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="comments">Comentarii</label>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <textarea name="" id="comments" rows="5"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <br><br>
+                                                    <div class="row">
+                                                        <div class="col-lg-3"></div>
+                                                        <div class="col-lg-6">
+                                                            <input type="submit" value="Salvează">
+                                                            <input type="reset" value="Anulează">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane" id="secondary-information">
+                                                <form action="" class="new-pacient">
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="register-date">Cetăţenia</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <select name="" id="">
+                                                                <option value="RM">Republica Moldova</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="childrens">Copii</label>
-														</div>
-														<div class="col-lg-2">
-															<input type="text" id="childrens">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="register-date">Starea familiară</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <select name="" id="">
+                                                                <option value="RM">Căsătorit</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="pensionar">Pensionar</label>
-														</div>
-														<div class="col-lg-2">
-															<input type="text" id="pensionar">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="childrens">Copii</label>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <input type="text" id="childrens">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="pensionar">Grupa sangvinică</label>
-														</div>
-														<div class="col-lg-2">
-															<select name="" id="">
-																<option value="3+">III +</option>
-															</select>
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="pensionar">Pensionar</label>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <input type="text" id="pensionar">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="pensionar">Statutul social</label>
-														</div>
-														<div class="col-lg-4">
-															<select name="" id="">
-																<option value="">Statutul</option>
-															</select>
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="pensionar">Grupa sangvinică</label>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <select name="" id="">
+                                                                <option value="3+">III +</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="pensionar">Frec grădiniţa?</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="checkbox">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="pensionar">Statutul social</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <select name="" id="">
+                                                                <option value="">Statutul</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="pensionar">Frecventează şcoala?</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="checkbox">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="pensionar">Frec grădiniţa?</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="checkbox">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="pensionar">Ocupaţie</label>
-														</div>
-														<div class="col-lg-5">
-															<select name="" id="">
-																<option value="">Școala internat</option>
-															</select>
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="pensionar">Frecventează şcoala?</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="checkbox">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="organization">Organizația</label>
-														</div>
-														<div class="col-lg-5">
-															<textarea name="" id="organization" rows="2"></textarea>
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="pensionar">Ocupaţie</label>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <select name="" id="">
+                                                                <option value="">Școala internat</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="function">Funcția</label>
-														</div>
-														<div class="col-lg-5">
-															<textarea name="" id="function" rows="2"></textarea>
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="organization">Organizația</label>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <textarea name="" id="organization" rows="2"></textarea>
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="function">Liber1</label>
-														</div>
-														<div class="col-lg-5">
-															<select name="" id="">
-																<option value="">1</option>
-															</select>
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="function">Funcția</label>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <textarea name="" id="function" rows="2"></textarea>
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="function">Liber2</label>
-														</div>
-														<div class="col-lg-5">
-															<select name="" id="">
-																<option value="">2</option>
-															</select>
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="function">Liber1</label>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <select name="" id="">
+                                                                <option value="">1</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
 
-													<br><br>
-													<div class="row">
-														<div class="col-lg-3"></div>
-														<div class="col-lg-6">
-															<input type="submit" value="Salvează">
-															<input type="reset" value="Anulează">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="function">Liber2</label>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <select name="" id="">
+                                                                <option value="">2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
 
-												</form>
-											</div>
-											<div class="tab-pane" id="residence">
-												<h2>Adresa</h2>
-												<form action="" class="new-pacient">
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="raion2">Raion</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="text" id="raion2">
-														</div>
-													</div>
+                                                    <br><br>
+                                                    <div class="row">
+                                                        <div class="col-lg-3"></div>
+                                                        <div class="col-lg-6">
+                                                            <input type="submit" value="Salvează">
+                                                            <input type="reset" value="Anulează">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="location2">Localitatea</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="text" id="location2">
-														</div>
-													</div>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane" id="residence">
+                                                <h2>Adresa</h2>
+                                                <form action="" class="new-pacient">
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="raion2">Raion</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" id="raion2">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="street2">Strada</label>
-														</div>
-														<div class="col-lg-4">
-															<input type="text" id="street2">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="location2">Localitatea</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" id="location2">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="bloc2">Bloc</label>
-														</div>
-														<div class="col-lg-2">
-															<input type="text" id="bloc2">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="street2">Strada</label>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" id="street2">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="bara2">Bară</label>
-														</div>
-														<div class="col-lg-2">
-															<input type="text" id="bara2">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="bloc2">Bloc</label>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <input type="text" id="bloc2">
+                                                        </div>
+                                                    </div>
 
-													<div class="row">
-														<div class="col-lg-3">
-															<label for="apartament2">Apatament</label>
-														</div>
-														<div class="col-lg-2">
-															<input type="text" id="apartament2">
-														</div>
-													</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="bara2">Bară</label>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <input type="text" id="bara2">
+                                                        </div>
+                                                    </div>
 
-													<br><br>
-													<div class="row">
-														<div class="col-lg-3"></div>
-														<div class="col-lg-6">
-															<input type="submit" value="Salvează">
-															<input type="reset" value="Anulează">
-														</div>
-													</div>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label for="apartament2">Apatament</label>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <input type="text" id="apartament2">
+                                                        </div>
+                                                    </div>
 
-						<!-- Footer -->
+                                                    <br><br>
+                                                    <div class="row">
+                                                        <div class="col-lg-3"></div>
+                                                        <div class="col-lg-6">
+                                                            <input type="submit" value="Salvează">
+                                                            <input type="reset" value="Anulează">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-						<footer class="footer">
-							<div class="container-fluid">
-								<div class="row">
-									<nav class="footer-nav">
-										<ul>
-											<li><a href="https://e-sanatate.md/iMeD/Home/Privacy">Confidențialitate</a></li>
-											<li><a href="https://e-sanatate.md/iMeD/Home/Security">Securitatea datelor</a></li>
-											<li><a href="https://e-sanatate.md/iMeD/Home/Terms">Termeni şi Condiţii</a></li>
-											<li><a href="https://e-sanatate.md/iMeD/Home/Assistance">Asistență pentru clienți</a></li>
-											<li><a href="https://e-sanatate.md/iMeD/Home/Services">Servicii</a></li>
-										</ul>
-									</nav>
-									<div class="clear"></div>
-								</div>
-								<div class="row copyright">
-									<div class="btn-group dropup">      
-										<button class="btn  dropdown-toggle" data-toggle="dropdown">În Română</button>
-										<ul class="dropdown-menu" role="menu">
-											<li><a href="#">На русском</a></li>
-										</ul>
-									</div>
-									<p>2014 © iMeD. Toate drepturile sunt rezervate.</p>
+                        <!-- Footer -->
 
-									<ul class="socials">
-										<li class="facebook"><a href="https://www.facebook.com/e.sanatatea.ta" target="_blank"></a></li>
-										<li class="twitter"><a href="https://twitter.com/E_Sanatatea_TA" target="_blank"></a></li>
-										<li class="linkedin"><a href="http://www.linkedin.com/profile/view?id=254762663&trk=tab_pro" target="_blank"></a></li>
-										<li class="youtube"><a href="http://www.youtube.com/channel/UCuVNhiubNuy1M8yQmQmVOUQ" target="_blank"></a></li>
-										<li class="rss"><a href="https://e-sanatate.md/News/Home/RSS" target="_blank"></a></li>
-									</ul>
+                        <footer class="footer">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <nav class="footer-nav">
+                                        <ul>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Privacy">Confidențialitate</a></li>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Security">Securitatea datelor</a></li>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Terms">Termeni şi Condiţii</a></li>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Assistance">Asistență pentru clienți</a></li>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Services">Servicii</a></li>
+                                        </ul>
+                                    </nav>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row copyright">
+                                    <div class="btn-group dropup">      
+                                        <button class="btn  dropdown-toggle" data-toggle="dropdown">În Română</button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">На русском</a></li>
+                                        </ul>
+                                    </div>
+                                    <p>2014 © iMeD. Toate drepturile sunt rezervate.</p>
 
-								</div>
-							</div>
-						</footer>
-					</div>
-				</div>
-			</div>
+                                    <ul class="socials">
+                                        <li class="facebook"><a href="https://www.facebook.com/e.sanatatea.ta" target="_blank"></a></li>
+                                        <li class="twitter"><a href="https://twitter.com/E_Sanatatea_TA" target="_blank"></a></li>
+                                        <li class="linkedin"><a href="http://www.linkedin.com/profile/view?id=254762663&trk=tab_pro" target="_blank"></a></li>
+                                        <li class="youtube"><a href="http://www.youtube.com/channel/UCuVNhiubNuy1M8yQmQmVOUQ" target="_blank"></a></li>
+                                        <li class="rss"><a href="https://e-sanatate.md/News/Home/RSS" target="_blank"></a></li>
+                                    </ul>
 
-		</div>
+                                </div>
+                            </div>
+                        </footer>
 
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/bootstrap-tooltip.js"></script>
-		<script src="js/bootstrap-datepicker.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/modernizr.js"></script>
-	</body>
+                </section>
+            </section>
+            <!-- END Page content-->
+        </section>
+        <script data-main="js/normalize" src="js/require.js"></script>
+    </body>
 </html>

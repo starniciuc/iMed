@@ -21,7 +21,6 @@ hr {
   border-bottom: 2px solid #d1d2d3;
 }
 .nav-tabs > li > a {
-  font-weight: bold;
   color: #656565;
   background-color: #f7f7f7;
   margin: 0;
@@ -34,12 +33,6 @@ hr {
 .nav-tabs > li.active > a:focus {
   color: inherit;
   border-bottom-color: #fff;
-}
-.tab-content {
-  padding: 10px 20px 0px;
-  border-style: solid;
-  border-width: 0 1px 1px 1px;
-  border-color: #d1d2d3;
 }
 .nav-pills + .tab-content {
   border: 0;

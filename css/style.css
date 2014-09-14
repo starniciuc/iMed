@@ -1533,6 +1533,9 @@ Redesign to left bar
     background-color: #32e6e5 !important;
     color: #000;
 }
+.sidebar .nav .nav li.active a:hover{
+    color: #000000!important;
+}
 .sidebar .nav > li > a{
     color: #fff;
     font-size: 13px;
@@ -1911,6 +1914,7 @@ table.servicii tr th:last-child
     margin: 0;
     min-height: 350px;
     border-radius: 0 6px 6px 6px;
+    padding: 15px 30px;
 }
 .fismed-tabs .list-main-menu li a{
     padding: 0;
@@ -2093,6 +2097,9 @@ print button
     font-weight: normal;
     font-size: 12px;
     color:#32E6E6;
+}
+section.login-section{
+    margin: 0;
 }
 /************************************************************
         Mobile op$timization

@@ -14,20 +14,6 @@ $(".collapse-btn").click(function() {
 $(function() {
     $("[data-toggle='tooltip']").tooltip();
 });
-
-/*$(document).ready(function() {
- $('[data-toggle=offcanvas]').click(function() {
- $('.row-offcanvas').toggleClass('active');
- $('#top-nav').collapse('hide');
- });
- });*/
-
-$(document).ready(function() {
-    $('[data-toggle=offcanvas]').click(function() {
-        $('.row-offcanvas').toggleClass('active');
-    });
-    $('.datepicker').datepicker();
-});
 $(document).ready(function() {
     $('.sidebar-btn').click(function() {
         $(this).toggleClass("left-20");
@@ -50,7 +36,6 @@ $(".i-menu").click(function() {
     $(this).toggleClass("open-item-menu");
 });
 $(".hide-btn-tab").click(function() {
-    console.log("asda");
     $(".hide-btn-tab").fadeOut();
 });
 $(".show-btn").click(function() {

@@ -1,14 +1,10 @@
- 
-require(["jquery.min"], function(jquery) {
+
+require(["jquery.min"], function() {
     require(['bootstrap']);
-    require(['animo.min', 'jquery.sparkline.min','fastclick','jquery.slimscroll.min','bootstrap-slider',
-        'chosen.jquery.min','bootstrap-filestyle.min'], function(app){
-            require(['app']);
-        });    
-    require(['bootstrap-datepicker']);
+    require(['animo.min', 'jquery.sparkline.min', 'fastclick', 'jquery.slimscroll.min', 'bootstrap-slider',
+        'chosen.jquery.min', 'bootstrap-filestyle.min'], function() {
+        require(['app']);
+    });
     require(['main']);
     require(['modernizr']);
 });
-/*
-
-*/
