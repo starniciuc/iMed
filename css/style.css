@@ -36,10 +36,8 @@ Import icons
 @font-face {
 	font-family: 'icons-e-sanatate';
 	src: url('../fonts/icons/icons-e-sanatate.eot');
-        src: url('../fonts/icons/icons-e-sanatate.eot?#iefix') format('embedded-opentype'),
-             url('../fonts/icons/icons-e-sanatate.woff') format('woff'),
-             url('../fonts/icons/icons-e-sanatatet.ttf') format('truetype'),
-             url('../fonts/icons/icons-e-sanatate.svg#icons-e-sanatate') format('svg');
+        src: url('../fonts/icons/icons-e-sanatate.woff') format('woff'),
+             url('../fonts/icons/icons-e-sanatatet.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
 }
