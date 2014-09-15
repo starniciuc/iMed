@@ -1783,6 +1783,9 @@ Redesign fismed page
 .border-left-top{
     border-left: 1px solid #ddd;
 }
+.border-left-top p{
+	padding-left: 0;
+}
 .pad-top-block{
     padding-top: 14px;
 }
