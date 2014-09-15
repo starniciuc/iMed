@@ -1800,7 +1800,8 @@ Redesign fismed page
     display:block;
     background-color: #0059b3;
     color:#fff;
-    padding: 6px 15px 8px;
+    line-height: 30px;
+	height: 30px;
     text-align: center;
     border-radius: 4px;
     width:130px;
@@ -1970,12 +1971,14 @@ table.servicii tr th:last-child
     text-decoration: none;
 }
 .blue-show{
-    background-color: #0080FF;
+    background-color: #0073e6;
     color: #FFFFFF;
     border:1px solid #01529A;
+	font-size: 13px;
 }
 .blue-show:hover{
     color:#FFFFFF;
+	background-color: #0080ff;
 }
 .btn-green-med{
     color:#FFFFFF;
