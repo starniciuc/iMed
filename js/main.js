@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(element).find("[rel='tooltip']").tooltip();
+//$(element).find("[rel='tooltip']").tooltip();
 
 /* Load optimizer*/
 $(".collapse-btn").click(function() {
