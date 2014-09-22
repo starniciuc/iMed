@@ -11,22 +11,32 @@ Import Open Sans font
 ****************************/
 @font-face {
     font-family: 'Open Sans';
-    src: url('../fonts/opensans_regular/OpenSans-Regular-webfont.eot');
-    src: url('../fonts/opensans_regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/opensans_regular/OpenSans-Regular-webfont.woff') format('woff'),
-        url('../fonts/opensans_regular/OpenSans-Regular-webfont.ttf') format('truetype'),
-        url('../fonts/opensans_regular/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    src: url('../fonts/OpenSans-Regular.eot');
+    src: url('../fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OpenSans-Regular.woff') format('woff'),
+        url('../fonts/OpenSans-Regular.ttf') format('truetype'),
+        url('../fonts/OpenSans-Regular.svg#open_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Open Sans';
-    src: url('../fonts/opensans_bold/OpenSans-Bold-webfont.eot');
-    src: url('../fonts/opensans_bold/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/opensans_bold/OpenSans-Bold-webfont.woff') format('woff'),
-        url('../fonts/opensans_bold/OpenSans-Bold-webfont.ttf') format('truetype'),
-        url('../fonts/opensans_bold/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    src: url('../fonts/OpenSans-Bold.eot');
+    src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OpenSans-Bold.woff') format('woff'),
+        url('../fonts/OpenSans-Bold.ttf') format('truetype'),
+        url('../fonts/OpenSans-Bold.svg#open_sansbold') format('svg');
     font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Semibold.eot');
+    src: url('../fonts/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OpenSans-Semibold.woff') format('woff'),
+        url('../fonts/OpenSans-Semibold.ttf') format('truetype'),
+        url('../fonts/OpenSans-Semibold.svg#open_sansbold') format('svg');
+    font-weight: 600;
     font-style: normal;
 }
 .clearfix:before, .clearfix:after {
