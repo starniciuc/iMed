@@ -2119,7 +2119,7 @@ Modal
     overflow: hidden;
 }
 .iMed-modal .modal-header{
-    background-color: #0080FF;
+    background-color: #46a0ff;
     color: #FFFFFF;
     border-radius: 5px 5px 0 0;
     border:0;
@@ -2139,6 +2139,7 @@ Modal
     background-color: #F0F0F0;
     border-color: #C8C8C8;
     color: #666666;
+	height: 30px;
 }
 .iMed-modal label{
     float: none;
