@@ -2155,6 +2155,16 @@ Modal
     width: 60px;
     background-color: #F0F0F0;
 }
+.iMed-modal .info-modal{
+    background-color: #E6FAFF;
+    padding: 20px 15px 5px;
+}
+.iMed-modal .info-modal p{
+    color: #547599;
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom: 15px;
+}
 /************************************************************
 Dashbord
 ************************************************************/
