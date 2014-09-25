@@ -195,7 +195,7 @@ nav.navbar .logo .brand{
     display: inline-block;
     width: 40px;
     height: 40px;
-    border-radius: 6px;
+    border-radius: 20px;
 }
 nav.navbar .logo span{
     font-size: 32px;
@@ -210,10 +210,10 @@ nav.navbar .logo small{
     font-size: 17px;
 }
 .top-navbar li{
-    border-radius: 6px;
+    border-radius: 20px;
     color:#DDDDDD;
     background-color: #06080a;
-    margin-right: 15px;
+    margin-right: 10px;
     -webkit-transition: background-color .5s;
     -o-transition: background-color .5s;
     transition: background-color .5s;
@@ -811,7 +811,7 @@ form.new-pacient .row{
     margin-left: -30px;
 }
 .board .wrapper-box{
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 .board .box{
     border-radius: 4px;
@@ -2154,6 +2154,103 @@ Modal
 .iMed-modal input.code-input{
     width: 60px;
     background-color: #F0F0F0;
+}
+/************************************************************
+Dashbord
+************************************************************/
+.table-box{
+    padding: 20px;
+}
+.table-box table.free-beds tr td{
+    font-size: 13px;
+    text-align: left;
+}
+.table-box table.free-beds tr td:last-child{
+    text-align: left;
+}
+.table-box.two-columns-box table.free-beds tr td:last-child,
+.table-box.two-columns-box table.free-beds tr th:last-child
+{
+    text-align: center;
+    border-left: 1px solid #FFFFFF;
+}
+.table-box.two-columns-box table.free-beds.virsta tr td:last-child,
+.table-box.two-columns-box table.free-beds.virsta tr th:last-child
+{
+    text-align: right;
+    border-left: 1px solid #FFFFFF;
+    max-width: 15px;
+}
+.table-box.two-columns-box table.free-beds tr td a.confirm-rezultat{
+    color: #4DC421;
+}
+.table-box.two-columns-box table.free-beds tr td a.cancelled-rezultat{
+    color: #FF0000;
+}
+.board .box.big .content.table-box .pagination-box{
+    padding: 0;
+}
+.board .box.htmlbox-blue .header{
+    background-color: #0080FF;
+}
+.board .box .content.text-box{
+    color: #000000;
+    font-size: 12px;
+    line-height: 16px;
+}
+.board .box.small .content p.text.black{
+    color: #1C2733;
+}
+.board .box .header h4.text-left{
+    text-align: left;
+}
+.board .box .content .data-contact{
+    padding: 0 15px !important;
+}
+.board .box .content .data-contact h5{
+    color: #0080FF;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    line-height: 15px;
+    margin-top: 15px;
+}
+.board .box .content .data-contact p{
+    color: #666666;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    line-height: 15px;
+}
+.board .btn-blue-iMed{
+    background-color: #0073E6;
+    color: #FFFFFF;
+}
+.board .btn-blue-iMed:hover{
+    background-color: #0080FF;
+    color: #FFFFFF;
+}
+.board .button-side{
+    padding-bottom: 20px;
+}
+.board .box .content.first-box .blue-box{
+    background-color: #0080FF;
+    border-radius: 4px 0 0 4px;
+}
+.board .box .content.first-box .blue-box p{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.board .box.big .content.first-box h5.number{
+    margin: 0;
+}
+.board .box.big .content.first-box > div{
+    padding: 15px;
 }
 /************************************************************
         Mobile op$timization
