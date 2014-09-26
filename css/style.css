@@ -946,7 +946,7 @@ form.new-pacient .row{
     color:#1c2733;
 }
 .board table.free-beds tr td:first-child, .board table.free-beds tr th:first-child{
-    padding-left: 20px;
+    padding-left: 10px;
 }
 .board table.free-beds tr td:first-child + td, .board table.free-beds tr th:first-child + th{
     text-align: right;
@@ -2174,7 +2174,7 @@ Modal
 Dashbord
 ************************************************************/
 .table-box{
-    padding: 20px;
+    padding: 5px 20px 20px 20px;
 }
 .table-box table.free-beds tr td{
     font-size: 13px;
