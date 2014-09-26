@@ -1974,6 +1974,10 @@ table.servicii tr th:last-child
     font-size: 13px;
     border: 1px solid #43AB1D;
     padding: 5px 15px 4px;
+	height: 30px;
+}
+.btn-green-med:hover{
+    background-color: #57de26;
 }
 #tabs-gravide h2{
     margin: 0;
@@ -2158,7 +2162,7 @@ Modal
 }
 .iMed-modal .info-modal{
     background-color: #E6FAFF;
-    padding: 5px 20px 20px 20px;
+    padding: 20px 20px 5px 20px;
 }
 .iMed-modal .info-modal p{
     color: #547599;
@@ -2210,7 +2214,6 @@ Dashbord
     color: #000000;
     font-size: 12px;
     line-height: 16px;
-	padding: 0 20px !important;
 }
 .board .box.small .content p.text.black{
     color: #000000;
