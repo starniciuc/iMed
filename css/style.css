@@ -2182,7 +2182,7 @@ Dashbord
     font-size: 13px;
     text-align: left;
 }
-.red .table-box table.free-beds tr:hover{
+.red .table-box table.free-beds tr:hover > td{
     cursor: pointer;
 	text-decoration: underline;
 }
