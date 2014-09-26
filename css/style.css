@@ -2184,6 +2184,7 @@ Dashbord
 }
 .red .table-box table.free-beds tr:hover{
     cursor: pointer;
+	text-decoration: underline;
 }
 .table-box table.free-beds tr td:last-child{
     text-align: left;
