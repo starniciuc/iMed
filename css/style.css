@@ -848,8 +848,9 @@ form.new-pacient .row{
 }
 
 .board .box.big .content > div{
-    padding: 25px 10px;
+    padding: 20px 20px 25px 20px;
     border-right:1px solid #e6e6e6;
+	color: #000000;
 }
 .board .box.big .content > div:last-child{
     border: none;
@@ -864,7 +865,7 @@ form.new-pacient .row{
     font-weight: 700;
     color: #1c2733;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 7px;
 }
 .board .box.small{
     min-height: 90px;
@@ -953,7 +954,7 @@ form.new-pacient .row{
 }
 .board table.free-beds tr td:last-child{
     text-align: right;
-    padding-right: 20px;
+    padding-right: 10px;
 }
 .board .box.htmlbox .content{
     font-size: 13px;
@@ -1002,7 +1003,7 @@ form.new-pacient .row{
     font-weight: 700;
 }
 .board .box.info{
-    color:#999;
+    color:#666666;
     font-size: 11px;
     line-height: 15px;
 }
@@ -2157,7 +2158,7 @@ Modal
 }
 .iMed-modal .info-modal{
     background-color: #E6FAFF;
-    padding: 20px 15px 5px;
+    padding: 5px 20px 20px 20px;
 }
 .iMed-modal .info-modal p{
     color: #547599;
@@ -2174,6 +2175,9 @@ Dashbord
 .table-box table.free-beds tr td{
     font-size: 13px;
     text-align: left;
+}
+.table-box table.free-beds tr:hover{
+    text-decoration: underline;
 }
 .table-box table.free-beds tr td:last-child{
     text-align: left;
@@ -2199,6 +2203,7 @@ Dashbord
 }
 .board .box.big .content.table-box .pagination-box{
     padding: 0;
+	color: #000000;
 }
 .board .box.htmlbox-blue .header{
     background-color: #0080FF;
@@ -2207,6 +2212,7 @@ Dashbord
     color: #000000;
     font-size: 12px;
     line-height: 16px;
+	padding: 0 20px !important;
 }
 .board .box.small .content p.text.black{
     color: #1C2733;
