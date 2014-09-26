@@ -2183,14 +2183,12 @@ Dashbord
     text-align: left;
 }
 .table-box.two-columns-box table.free-beds tr td:last-child,
-.table-box.two-columns-box table.free-beds tr th:last-child
-{
+.table-box.two-columns-box table.free-beds tr th:last-child{
     text-align: center;
     border-left: 1px solid #FFFFFF;
 }
 .table-box.two-columns-box table.free-beds.virsta tr td:last-child,
-.table-box.two-columns-box table.free-beds.virsta tr th:last-child
-{
+.table-box.two-columns-box table.free-beds.virsta tr th:last-child{
     text-align: right;
     border-left: 1px solid #FFFFFF;
     max-width: 15px;
@@ -2215,7 +2213,7 @@ Dashbord
 	padding: 0 20px !important;
 }
 .board .box.small .content p.text.black{
-    color: #1C2733;
+    color: #000000;
 }
 .board .box .header h4.text-left{
     text-align: left;
