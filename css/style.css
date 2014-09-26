@@ -1978,6 +1978,7 @@ table.servicii tr th:last-child
 }
 .btn-green-med:hover{
     background-color: #57de26;
+	color:#FFFFFF;
 }
 #tabs-gravide h2{
     margin: 0;
@@ -2141,10 +2142,11 @@ Modal
     line-height: 21px;
 }
 .btn-grey-med{
-    background-color: #F0F0F0;
     border-color: #C8C8C8;
     color: #666666;
     height: 30px;
+	font-size: 13px;
+    background-color: #e6e6e6;
 }
 .iMed-modal label{
     float: none;
@@ -2180,8 +2182,8 @@ Dashbord
     font-size: 13px;
     text-align: left;
 }
-.table-box table.free-beds tr:hover{
-    text-decoration: underline;
+.red .table-box table.free-beds tr:hover{
+    cursor: pointer;
 }
 .table-box table.free-beds tr td:last-child{
     text-align: left;
@@ -2197,10 +2199,10 @@ Dashbord
     border-left: 1px solid #FFFFFF;
     max-width: 15px;
 }
-.table-box.two-columns-box table.free-beds tr td a.confirm-rezultat{
+.table-box.two-columns-box table.free-beds tr td span.confirm-rezultat{
     color: #4DC421;
 }
-.table-box.two-columns-box table.free-beds tr td a.cancelled-rezultat{
+.table-box.two-columns-box table.free-beds tr td span.cancelled-rezultat{
     color: #FF0000;
 }
 .board .box.big .content.table-box .pagination-box{
