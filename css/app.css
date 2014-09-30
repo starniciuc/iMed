@@ -250,7 +250,6 @@ body {
 .navbar-top .navbar-header {
   position: relative;
   background-color: #3498db;
-  z-index: 11;
 }
 .navbar-top .navbar-header .navbar-brand {
   color: #fff;
