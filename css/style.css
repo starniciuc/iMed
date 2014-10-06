@@ -233,6 +233,7 @@ nav.navbar .logo small{
     background-image: url("../img/icons-section-sprite-2x.png");
     background-size: 100% auto;
     background-position: 0 0;
+    text-indent: -9999px;
 }
 .top-navbar li.info:hover{ background-color: #ff003c; }
 .top-navbar li.tv:hover{ background-color: #0088dc; }
@@ -296,6 +297,9 @@ nav.navbar .logo small{
     background-color: #1d2733;
     font:700 13px "Open Sans";
     color: #fff;
+}
+.profile-btn.btn-group .btn span{
+    opacity: 1;
 }
 .profile-btn.btn-group.open .dropdown-toggle{
     background-color: #33485e;
@@ -850,7 +854,7 @@ form.new-pacient .row{
 .board .box.big .content > div{
     padding: 20px 20px 25px 20px;
     border-right:1px solid #e6e6e6;
-	color: #000000;
+    color: #000000;
 }
 .board .box.big .content > div:last-child{
     border: none;
@@ -1772,7 +1776,7 @@ Redesign fismed page
     border-left: 1px solid #ddd;
 }
 .border-left-top p{
-	padding-left: 0;
+    padding-left: 0;
 }
 .pad-top-block{
     padding-top: 14px;
@@ -1789,7 +1793,7 @@ Redesign fismed page
     background-color: #0059b3;
     color:#fff;
     line-height: 30px;
-	height: 30px;
+    height: 30px;
     text-align: center;
     border-radius: 4px;
     width:130px;
@@ -1962,11 +1966,11 @@ table.servicii tr th:last-child
     background-color: #0073e6;
     color: #FFFFFF;
     border:1px solid #01529A;
-	font-size: 13px;
+    font-size: 13px;
 }
 .blue-show:hover{
     color:#FFFFFF;
-	background-color: #0080ff;
+    background-color: #0080ff;
 }
 .btn-green-med{
     color:#FFFFFF;
@@ -1974,11 +1978,11 @@ table.servicii tr th:last-child
     font-size: 13px;
     border: 1px solid #43AB1D;
     padding: 5px 15px 4px;
-	height: 30px;
+    height: 30px;
 }
 .btn-green-med:hover{
     background-color: #57de26;
-	color:#FFFFFF;
+    color:#FFFFFF;
 }
 #tabs-gravide h2{
     margin: 0;
@@ -2145,7 +2149,7 @@ Modal
     border-color: #C8C8C8;
     color: #666666;
     height: 30px;
-	font-size: 13px;
+    font-size: 13px;
     background-color: #e6e6e6;
 }
 .iMed-modal label{
@@ -2184,7 +2188,7 @@ Dashbord
 }
 .red .table-box table.free-beds tr:hover > td{
     cursor: pointer;
-	text-decoration: underline;
+    text-decoration: underline;
 }
 .table-box table.free-beds tr td:last-child{
     text-align: left;
@@ -2208,7 +2212,7 @@ Dashbord
 }
 .board .box.big .content.table-box .pagination-box{
     padding: 0;
-	color: #000000;
+    color: #000000;
 }
 .board .box.htmlbox-blue .header{
     background-color: #0080FF;
@@ -2225,7 +2229,7 @@ Dashbord
     text-align: left;
 }
 .board .box .content .data-contact{
-   padding: 0 20px !important;
+    padding: 0 20px !important;
 }
 .board .box .content .data-contact h5{
     color: #0080FF;
@@ -2272,6 +2276,31 @@ Dashbord
 .board .box.big .content.first-box > div{
     padding: 15px;
 }
+@media (max-width: 1200px){
+    .profile-btn.btn-group .btn{
+        width: auto;
+    }
+    .profile-btn.btn-group .btn i{
+        font-size: 20px;
+        color: #FFFFFF;
+    }
+}
+@media screen and (max-width: 992px) {
+    .profile-btn.btn-group.institutia{
+        right: 70px;
+    }
+    .profile-btn.btn-group{
+        position: absolute;
+        top:-70px;
+        right: 20px;
+        width: 44px;
+        height: 34px;
+        color:#000;
+    }    
+    .profile-btn.btn-group .btn{
+
+    }
+}
 /************************************************************
         Mobile op$timization
 ************************************************************/
@@ -2280,6 +2309,9 @@ Dashbord
         width: 100%;
         display: block;
         text-align: center;
+    }
+    .main-content{
+        padding-top: 10px; 
     }
     label{
         float: none;
@@ -2308,11 +2340,12 @@ Dashbord
     .top-navbar li a{
         width: auto;
         color:#fff !important;
+        text-indent: 0;
     }
     .icons.navbar-toggle{
         position: absolute;
         top:-60px;
-        right:40px;
+        right:93px;
         border:none;
         background: #33485e;
     }
@@ -2333,15 +2366,11 @@ Dashbord
     .profile-btn.btn-group .btn{
         width: 33px;
         height: 33px;
-        text-indent: -999999px;
         background-color: #33485e;
-        background-image: url("../img/profile.png");
-        background-repeat: no-repeat;
-        background-position: center center;
         border-radius: 4px;
     }
-    html.svg .profile-btn.btn-group .btn{
-        background-image: url("../img/profile.svg");
+    .profile-btn.btn-group .btn i{
+        font-size: 20px;
     }
     .profile-btn .dropdown-menu:before {
         position: absolute;
@@ -2372,7 +2401,25 @@ Dashbord
         padding-top: 0;
         padding-left: 50px;
         background-position-x: 10px !important;
+        background-image: url("../img/icons-section-sprite-2x.png");
+        background-size: 40px auto;
+        background-position: 0 0;
+        background-repeat: no-repeat;
     }
+    .top-navbar li a{
+        background: none;
+    }
+    .top-navbar li.tv { background-position: 0 -40px;}
+    .top-navbar li.sanoclub{ background-position: 0 -80px; }
+    .top-navbar li.isan{ background-position: 0 -120px;}
+    .top-navbar li.imed { background-position: 0 -160px; }
+    .top-navbar li.imec { background-position: 0 -200px;}
+    .top-navbar li.tuberculoza { background-position: 0 -240px;}
+    .top-navbar li.spitale { background-position: 0 -280px;}
+    .top-navbar li.pas {background-position: 0 -320px;}
+    .top-navbar li.scoala { background-position: 0 -360px;}
+    .top-navbar li.donez {background-position: 0 -400px;}
+
     #top-nav .top-navbar{
         padding-bottom: 15px;
         padding-top: 0;
@@ -2405,8 +2452,12 @@ Dashbord
     /*
      Off Canvas
     */
+    .main-content
     .left-sidebar{
         margin: 0;
+    }
+    .sidebar .nav > li > a{
+        padding: 10px 15px;
     }
     .row-offcanvas {
         position: relative;
@@ -2436,13 +2487,95 @@ Dashbord
         margin-top: 0;
         border-radius: 0;
     }
+    .aside-toggled .sidebar .nav li:hover .nav,
+    .sidebar .nav li .nav
+    {
+        background-color: #33485E!important;
+        width: auto;
+        border-radius: 0 4px 4px 0;
+        overflow: hidden;
+        padding-left: 0; 
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .aside-toggled .sidebar .nav li:hover .nav li,
+    .aside-toggled .sidebar .nav li .nav li
+    {
+        border:0;
+    }
+    .aside-toggled .sidebar .nav li:hover .nav li a,
+    .sidebar .nav li .nav li a
+    {
+        color: #32E6E6;
+        padding: 3px 0;
+        padding-left: 10px;
+        font-size: 13px;
+        line-height: 18px;
+    }
+    .aside-toggled .sidebar .nav li:hover .nav li.active a span.item-text,
+    .sidebar .nav li .nav li.active a span.item-text
+    {
+        background-color: #32e6e5 !important;
+        color: #1C2733;
+        line-height: 18px;
+    }
+    .aside-toggled .sidebar .nav li .nav li.active a span.item-text{
+        color: #1C2733;
+    }
+    .aside-toggled .sidebar .nav li:hover .nav li.active a span.item-text:hover,
+    .sidebar .nav li .nav li.active a span.item-text:hover
+    {
+        color: #1C2733 !important;
+         background-color: #32e6e5 !important;
+    }
+    .aside-toggled .sidebar .nav li .nav li a span.item-text:hover
+    {
+        color: #32e6e5 !important;
+    }
+    .aside-toggled .sidebar .nav li .nav li a span.item-text,
+    {
+        line-height: 15px;
+        color: #ffffff;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .aside-toggled .sidebar .nav li:hover a span.item-text,
+    .aside-toggled .sidebar .nav lia span.item-text
+    {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 100%;
+        display: inline-block;
+        border-radius: 0 4px 4px 0;
+        width: auto;
+        padding-right: 20px;
+    }
+    .aside-toggled .sidebar .nav li.glisare{
+        display: none
+    }
+    .aside-toggled .sidebar .nav li.left-side a em{
+        display: inline-block;
+    }
+    .aside-toggled .sidebar .nav li:hover a i.fa.fa-angle-down{
+        display: inline-block;
+    }
+    .aside-toggled .sidebar .nav li:hover a span.item-text:after{
+        display: inline-block;
+        clear: inherit;
+    }
+    .sidebar .nav .nav li a{
+        padding: 0;
+        line-height: 100%;
+    }
     .footer .footer-nav ul{
         display: block;
         text-align: center;
+        width: 100%;
     }
     .footer .footer-nav ul li{
         float: none;
-        margin: 10px 0 0 0;
+        display: inline-block;
+        margin: 10px 20px;
     }
     .footer .copyright .dropup .btn{
         float: none;
@@ -2484,6 +2617,33 @@ Dashbord
     }
     .board h1{
         padding-left: 30px;
+    }
+    .border-left-top{
+      padding-left: 30px;  
+    }
+    .filter-gravide p{
+        margin-bottom: 10px;
+    }
+    .filter-gravide .link-med{
+        float: right;
+    }
+    .filter-gravide{
+        margin-bottom: 10px;
+    }
+    .filter-gravide:after{
+        display: table;
+        clear: both;
+        content: " ";
+    }
+    .search-form form{
+        padding:  0 20px;
+    }
+    .search-form form label{
+        float: left;
+    }
+    .padding-filter{
+        text-align: left !important;
+        padding-left: 5px;
     }
 }
 /************************************************************
