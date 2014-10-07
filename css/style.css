@@ -2287,7 +2287,7 @@ Dashbord
 }
 @media screen and (max-width: 992px) {
     .profile-btn.btn-group.institutia{
-        right: 70px;
+        right: 50px;
     }
     .profile-btn.btn-group{
         position: absolute;
@@ -2345,7 +2345,7 @@ Dashbord
     .icons.navbar-toggle{
         position: absolute;
         top:-60px;
-        right:93px;
+        right:73px;
         border:none;
         background: #33485e;
     }
