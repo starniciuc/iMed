@@ -2292,13 +2292,13 @@ Dashbord
     .profile-btn.btn-group{
         position: absolute;
         top:-70px;
-        right: 20px;
+        right: 0px;
         width: 44px;
         height: 34px;
         color:#000;
     }    
     .profile-btn.btn-group .btn{
-
+		text-align: center;
     }
 }
 /************************************************************
@@ -2358,7 +2358,7 @@ Dashbord
     .profile-btn.btn-group{
         position: absolute;
         top:-52px;
-        right: 20px;
+        right: 0px;
         width: 44px;
         height: 34px;
         color:#000;
