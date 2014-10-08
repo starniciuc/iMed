@@ -2278,7 +2278,7 @@ Dashbord
 }
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
-        width: auto;
+        width: 40px;
     }
     .profile-btn.btn-group .btn i{
         font-size: 20px;
@@ -2298,7 +2298,7 @@ Dashbord
         color:#000;
     }    
     .profile-btn.btn-group .btn{
-		text-align: center;
+        text-align: center;
     }
 }
 /************************************************************
@@ -2364,7 +2364,7 @@ Dashbord
         color:#000;
     }
     .profile-btn.btn-group .btn{
-        width: 33px;
+        width: 40px;
         height: 33px;
         background-color: #33485e;
         border-radius: 4px;
@@ -2526,7 +2526,7 @@ Dashbord
     .sidebar .nav li .nav li.active a span.item-text:hover
     {
         color: #1C2733 !important;
-         background-color: #32e6e5 !important;
+        background-color: #32e6e5 !important;
     }
     .aside-toggled .sidebar .nav li .nav li a span.item-text:hover
     {
@@ -2619,7 +2619,7 @@ Dashbord
         padding-left: 30px;
     }
     .border-left-top{
-      padding-left: 30px;  
+        padding-left: 30px;  
     }
     .filter-gravide p{
         margin-bottom: 10px;
@@ -2647,9 +2647,9 @@ Dashbord
     }
 }
 @media (max-width:500px){
-	.col-me-device{
-		width: 100%;
-	}
+    .col-me-device{
+        width: 100%;
+    }
 }
 /************************************************************
         Tablets optimization
@@ -2714,7 +2714,7 @@ Dashbord
     .icons.navbar-toggle{
         position: absolute;
         top:-58px;
-        left:230px;
+        right: 70px;
         width:30px;
         height:30px;
         border:none;
@@ -2730,7 +2730,7 @@ Dashbord
     .profile-btn.btn-group{
         position: absolute;
         top:-70px;
-        right: 20px;
+        right: 0px;
     }
     .main-container{
         margin-top: 0;
@@ -2782,9 +2782,6 @@ Dashbord
 }
 
 @media only screen and (min-width : 768px) and (max-width : 980px){
-    .navbar-toggle {
-        display: block;
-    }
     .navbar-collapse.collapse {
         display: none!important;
     }
@@ -2817,7 +2814,7 @@ Dashbord
     .icons.navbar-toggle{
         position: absolute;
         top:-58px;
-        left:230px;
+        right: 70px;
         width:30px;
         height:30px;
         border:none;
