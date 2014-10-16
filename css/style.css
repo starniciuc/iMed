@@ -2627,8 +2627,7 @@ New page Acord informat la interventie
     {
         color: #32e6e5 !important;
     }
-    .aside-toggled .sidebar .nav li .nav li a span.item-text,
-    {
+    .aside-toggled .sidebar .nav li .nav li a span.item-text    {
         line-height: 15px;
         color: #ffffff;
         font-weight: normal;
