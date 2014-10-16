@@ -2330,7 +2330,7 @@ New page Acord informat la interventie
 }
 .main-container.user-page .contract-subsol .semnatura-pacient p.info-paragraf{
     position: relative;
-    width: 151px;
+    width: 155px;
     display: block;
     font-weight: bold;
 }
@@ -2339,12 +2339,13 @@ New page Acord informat la interventie
     display: block;
     font-weight: normal;
     bottom: -13px;
-    text-align: center;
+    text-align: left;
     width: 100%;
     font-size: 11px;
 }
 .text-bold{
     font-weight: bold;
+    margin-right: 5px;
 }
 
 .refuz label{
