@@ -14,7 +14,7 @@ $(".collapse-btn").click(function () {
 });
 
 $(function () {
-    $("[data-toggle='tooltip']").tooltip();
+    //$("[data-toggle='tooltip']").tooltip();
 });
 $(document).ready(function () {
     $('.sidebar-btn').click(function () {
