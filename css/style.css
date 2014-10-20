@@ -2383,6 +2383,7 @@ Form page
     background-color: #E6FAFF;
     border:1px solid #46A0FF;
     border-radius: 6px;
+    margin-bottom: 20px;
 }
 .user-page .form-page textarea{
     border-color: #cccccc;
@@ -2396,8 +2397,50 @@ Form page
     background-color: #0080FF;
     color: #FFFFFF;
 }
+.user-page .form-page h1.into-small-text{
+    text-align: center;
+    position: relative;
+}
+.user-page .form-page h1.into-small-text span{
+    text-align: left;
+    font-size: 13px;
+    font-weight: normal;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+}
 .padding-top{
     padding-top: 20px;
+}
+.masure-input{
+    position: relative;
+}
+.masure-input input{
+    padding-right: 70px;
+}
+.masure-input label{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    text-align: right;
+    float: none;
+    font-weight: normal;
+    font-size: 13px;
+    color: #000000;
+}
+.user-page .form-page h2{
+    font-size: 18px;
+    color: #000000;
+    background: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+}
+.acord-table table tr td a{
+    text-decoration: underline;
+}
+.acord-table table tr td a:hover{
+    text-decoration: none;
 }
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{

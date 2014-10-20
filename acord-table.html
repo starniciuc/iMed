@@ -429,10 +429,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="main-container">
+                    <div class="main-container info-pacient">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-lg-16">
+                                <div class="col-lg-16  main-menu-border">
                                     <ul class="list-main-menu">
                                         <li ><a href="#">Date generale</a></li>
                                         <li><a href="#">Internarea</a></li>
@@ -454,191 +454,119 @@
                                     </ul>
                                 </div>
                             </div>
+                            <div class="row-fluid">
+                                <div class="col-lg-16 table-side fismed-2 acord-table"> 
+                                    <div class="row">
+                                        <div class="col-lg-16">
+                                            <h2>Lista acordurilor și refuzurilor<button class="btn-add blue" data-toggle="modal" rel="tooltip" data-placement="bottom" data-target="#addEpiz" title="Adaugă"><i class="fa fa-plus"></i></button></h2>
+                                        </div>
+                                    </div>
+                                    <div class="table-inner">
+                                    <table>
+                                        <tr>
+                                            <th>Data înregistrării</th>
+                                            <th>Titlu</th>
+                                            <th>Nume, prenume medic</th>
+                                            <th>IDNP</th>
+                                        </tr>
+                                        <tr>
+                                            <td>15.10.2014 16:53</td>
+                                            <td><a href="#">Acord informat la intervenția medicală</a></td>
+                                            <td>Alexandru Barbănouă Andrei</td>
+                                            <td>20040040042004</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15.10.2014 16:53</td>
+                                            <td><a href="#">Refuz de la intervenția medicală</a></td>
+                                            <td>Alexandru Barbănouă Andrei</td>
+                                            <td>20040040042004</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="main-container user-page">
                         <div class="container-fluid">
                             <div class="row-fluid clearfix" id="container">
-                                <div class="col-lg-16 form-page">
-                                    <div class="form-group clearfix">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p>Secția</p>
-                                                <input type="text" class="form-control" >
-                                            </div>
-                                            <div class="col-lg-2 col-md-3 ">
-                                                <p>Salonul nr.</p>
-                                                <input type="text" class="form-control" >
-                                            </div>
+                                <div class="col-lg-16">
+                                    
+                                    <div id="accept">
+                                        <h1>Acordul informat la intervenția medicală</h1>
+                                        <p>Denumirea instituției  <strong>IMSP Clinica Universitară de Asistenţă Medicală Primară a USMF “N.Testimiţanu”</strong>  secția  <strong>Chirurgie toracală</strong></p>
+                                        <p>Eu, subsemnatul  <strong>Ana Mardare Radu</strong> prin prezentul îmi exprim acordul (consimţământul) la următoarele proceduri de diagnostic/tratament prin următoarele metode:</p>
+                                        <textarea></textarea>
+                                        <p>caracterul şi scopul cărora mi-au fost explicate şi propuse de către medicul,  <strong>Victoria Roșca</strong></p>
+                                        <p>Eu am fost informat şi am înţeles că aceste metode sunt efectuate prin utilizarea dispozitivelor (aparatelor) special destinate metodelor propuse de diagnostic/tratament, și anume: </p>
+                                        <textarea></textarea>
+                                        <p>Procedurile vor fi efectuate la recomandarea medicului de către asistentele medicale, special pregătite în acest domeniu.</p>
+                                        <p>În cadrul efectuării procedurilor de tratament eu voi fi conectat la aparatul (dispozitivul) medical prin intermediul</p>
+                                        <textarea rows="1"></textarea>
+                                        <div class="side-textarea">
+                                            <label for="senzatii" class="label-textarea">şi voi avea senzaţii</label>
+                                            <textarea name="senzatii" class="label-senzatii" rows="1"></textarea>
                                         </div>
-                                    </div>
-                                    <h1>Fișa medicală a bolnavului de staționar nr. 101</h1>
-                                    <div class="form-group clearfix">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p>Numele, prenumele, patronimicul</p>
-                                                <input type="text" class="form-control" >
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 ">
-                                                <p>Cetățenia</p>
-                                                <select class="form-control" >
-                                                    <option></option>
-                                                    <option></option>
-                                                    <option></option>
-                                                </select>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 ">
-                                                <p>IDNP</p>
-                                                <input type="text" class="form-control" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <p>Data nașterii</p>
-                                                <input type="text" class="form-control" >
-                                            </div>
-                                            <div class="col-lg-2 col-md-3 ">
-                                                <p>Vârsta</p>
-                                                <input type="text" class="form-control" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="row">
-                                            <div class="col-md-9">
-                                                <p>Domiciliul</p>
-                                                <input type="text" class="form-control" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <p>Plătitor servicii medicale</p>
-                                                <select class="form-control" >
-                                                    <option></option>
-                                                    <option></option>
-                                                    <option></option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <p>Plătitor servicii medicale</p>
-                                                <select class="form-control" >
-                                                    <option></option>
-                                                    <option></option>
-                                                    <option></option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <p>Asigurător</p>
-                                                <select class="form-control" >
-                                                    <option></option>
-                                                    <option></option>
-                                                    <option></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <p>Nr. polița de asigurare</p>
-                                                <input type="text" class="form-control" >
-                                            </div>
-                                            <div class="col-lg-2 col-md-3">
-                                                <p>Valabilă până la </p>
-                                                <input type="text" class="form-control" >
-                                            </div>
-                                            <div class="col-md-4">
-                                                <p>Categoria bolnavului asigurat</p>
-                                                <select class="form-control" >
-                                                    <option></option>
-                                                    <option></option>
-                                                    <option></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="row">
-                                            <div class="col-md-9">
-                                                <p>Locul de muncă, profesia sau funcția</p>
-                                                <input type="text" class="form-control" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="row">
-                                            <div class="col-lg-2 col-md-3">
-                                                <p>Grupa sangvină </p>
-                                                <select class="form-control" >
-                                                    <option></option>
-                                                    <option></option>
-                                                    <option></option>
-                                                </select>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3">
-                                                <p>Rh factor</p>
-                                                <select class="form-control" >
-                                                    <option></option>
-                                                    <option></option>
-                                                    <option></option>
-                                                </select>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3">
-                                                <p>Sexul</p>
-                                                <select class="form-control" >
-                                                    <option></option>
-                                                    <option></option>
-                                                    <option></option>
-                                                </select>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3">
-                                                <p>Greutatea la naștere</p>
-                                                <input type="text" class="form-control" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-10 special-section">
-                                        <div class="form-group clearfix">
-                                            <div class="row">
-                                                <div class="col-md-13">
-                                                    <p>Reacții alergice</p>
-                                                    <input type="text" class="form-control" >
+                                        <p>Mi-au fost explicate, într-o formă accesibilă, scopul, efectele scontate, metodele intervenției medicale, riscul potențial, posibilele consecințe medico-sociale, psihologice, economice, precum și variantele alternativele de tratament și îngrijire medicală. Am fost informat despre beneficiile acestor metode de diagnostic şi tratament, care nu au un grad absolut de eficacitate şi despre consecinţele nedorite ce pot duce în anumite cazuri rare la complicaţii grave şi chiar moarte. Vor fi luate toate măsurile de preîntâmpinare care constau în supravegherea atentă a stării mele de către personalul medical mediu în procesul tratamentului, iar utilajul şi medicamentele necesare pentru acordarea asistenţei medicale de urgenţă sunt disponibile.</p>
+                                        <p>Eu am înţeles tot ce mi-a explicat medicul şi am primit răspuns la toate întrebările mele.</p>
+                                        <p>Benevol îmi exprim consimţămîntul conştient pentru efectuarea procedurilor descrise.</p>
+                                        <p>Concomitent îmi asum responsabilitatea pentru orice încălcare a regulilor de comportament şi neîndeplinirea recomandărilor primite.</p>
+                                        <div class="contract-subsol">
+                                            <div class="semnatura-pacient clearfix">
+                                                <div class="pull-left">
+                                                    <p>Data și ora  <strong>15 octombrie 2014, 16:53</strong></p>
                                                 </div>
-                                                <div class="col-lg-1 col-md-2 padding-top">
-                                                    <button class="btn btn-blue">+ 1</button>
+                                                <div class="pull-right">
+                                                    <p class="pull-right"> ____________________________________________</p>
+                                                    <p class="pull-right info-paragraf">Semnătura pacientului <span>(reprezentantul legal)</span></p>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group clearfix">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <p>Fumător</p>
-                                                    <select class="form-control" >
-                                                        <option></option>
-                                                        <option></option>
-                                                        <option></option>
-                                                    </select>
+                                            <p>Confirm că eu am explicat pacientului caracterul, scopul, beneficiile şi riscurile procedurilor descrise.</p>
+                                            <div class="semnatura-medic clearfix">
+                                                <div class="pull-left">
+                                                    <p>Data și ora  <strong>15 octombrie 2014, 16:53</strong></p>
                                                 </div>
-                                                <div class="col-md-5">
-                                                    <p>Consum alcool </p>
-                                                    <select class="form-control" >
-                                                        <option></option>
-                                                        <option></option>
-                                                        <option></option>
-                                                    </select>
+                                                <div class="pull-right">
+                                                    <p class="pull-right"> ____________________________________________</p>
+                                                    <p class="pull-right text-bold">Semnătura medicului </p>
                                                 </div>
+                                            </div>
+                                            <div class="refuz">
+                                                <input type="checkbox" name="refuza" id="refuz-check"><label>Refuz de la intervenția medicală</label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group clearfix">
-                                        <div class="row">
-                                            <div class="col-lg-16">
-                                                <button class="btn btn-green-med">Salvează</button>
-                                                <button class="btn btn-grey-med">Anulează</button>
+                                    <div id="refuz">
+                                        <h1>Refuz de la intervenția medicală</h1>
+                                        <p>Denumirea instituției  <strong>IMSP Clinica Universitară de Asistenţă Medicală Primară a USMF “N.Testimiţanu”</strong>  secția  <strong>Chirurgie toracală</strong></p>
+                                        <p>Eu, subsemnatul  <strong>Ana Mardare Radu</strong> prin prezentul îmi exprim acordul (consimţământul) la următoarele proceduri de diagnostic/tratament prin următoarele metode:</p>
+                                        <textarea></textarea>
+                                        <p>caracterul şi scopul cărora mi-au fost explicate şi propuse de către medicul,  <strong>Victoria Roșca</strong></p>
+                                        <p>Eu am fost informat şi am înţeles că aceste metode sunt efectuate prin utilizarea dispozitivelor (aparatelor) special destinate metodelor propuse de diagnostic/tratament, și anume: </p>
+                                        <textarea></textarea>
+                                        <div class="contract-subsol">
+                                            <div class="semnatura-pacient clearfix">
+                                                <div class="pull-left">
+                                                    <p>Data și ora  <strong>15 octombrie 2014, 16:53</strong></p>
+                                                </div>
+                                                <div class="pull-right">
+                                                    <p class="pull-right">____________________________________________</p>
+                                                    <p class="pull-right info-paragraf">Semnătura pacientului <span>(reprezentantul legal)</span></p>
+                                                </div>
+                                            </div>
+                                            <p>Confirm că eu am explicat pacientului caracterul, scopul, beneficiile şi riscurile procedurilor descrise.</p>
+                                            <div class="semnatura-medic clearfix">
+                                                <div class="pull-left">
+                                                    <p>Data și ora  <strong>15 octombrie 2014, 16:53</strong></p>
+                                                </div>
+                                                <div class="pull-right">
+                                                    <p class="pull-right">____________________________________________</p>
+                                                    <p class="pull-right text-bold">Semnătura medicului</p>
+                                                </div>
+                                            </div>
+                                            <div class="date-personale">
+                                                <p>Șef secție  <strong>Victoria Roșca</strong>,  IDNP  <strong>2004004042004</strong></p>
+                                                <p>Director  <strong>Victoria Roșca</strong>,  IDNP  <strong>2004004042004</strong></p>
                                             </div>
                                         </div>
                                     </div>
