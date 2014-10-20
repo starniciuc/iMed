@@ -188,7 +188,7 @@ nav.navbar .logo{
     text-decoration: none;
 }
 nav.navbar .logo .brand{
-    background-image: url("../img/logo-imed.png");
+    background-image: url("../img/logo-siis.png");
     background-size: 100% 100%;
     vertical-align: middle;
     margin-left: 0;
@@ -2365,6 +2365,40 @@ New page Acord informat la interventie
 #container textarea{
     min-height: 30px;
 }
+/*****************************************************
+Form page
+/*****************************************************/
+.user-page .form-page{
+    padding: 20px 15px;
+}
+.user-page .form-page p{
+    margin-bottom: 5px;
+}
+.user-page .form-page h1{
+    text-align: left;
+    padding-left: 0px;
+}
+.user-page .form-page .special-section{
+    padding: 10px 15px;
+    background-color: #E6FAFF;
+    border:1px solid #46A0FF;
+    border-radius: 6px;
+}
+.user-page .form-page textarea{
+    border-color: #cccccc;
+}
+.btn-blue{
+    background-color: #0073E6;
+    border:1px solid #01529A;
+    color: #FFFFFF;    
+}
+.btn-blue:hover{
+    background-color: #0080FF;
+    color: #FFFFFF;
+}
+.padding-top{
+    padding-top: 20px;
+}
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
         width: 40px;
@@ -2390,6 +2424,7 @@ New page Acord informat la interventie
         text-align: center;
     }
 }
+
 /************************************************************
         Mobile op$timization
 ************************************************************/
