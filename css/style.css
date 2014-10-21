@@ -2376,14 +2376,23 @@ Form page
 }
 .user-page .form-page h1{
     text-align: left;
-    padding-left: 0px;
+    padding-left: 15px;
 }
 .user-page .form-page .special-section{
     padding: 10px 15px;
     background-color: #E6FAFF;
-    border:1px solid #46A0FF;
+    border:1px solid #D4EDFF;
     border-radius: 6px;
     margin-bottom: 20px;
+}
+.user-page .form-page .btn-green-med,
+.user-page .form-page .btn-grey-med{
+	width: 90px;
+	height: 30px;
+	margin-right: 15px;
+}
+.user-page .form-page .form-control{
+	height: 30px;
 }
 .user-page .form-page textarea{
     border-color: #cccccc;
@@ -2400,6 +2409,7 @@ Form page
 .user-page .form-page h1.into-small-text{
     text-align: center;
     position: relative;
+	margin-left: 15px;
 }
 .user-page .form-page h1.into-small-text span{
     text-align: left;
