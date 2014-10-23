@@ -55,7 +55,7 @@
                                 <div class="profile-btn btn-group institutia pull-right">
                                     <button type="button" class="btn dropdown-toggle institutia" data-toggle="dropdown">
                                         <span class="hidden-md hidden-sm hidden-xs">IMSP Clinica Universitară de Asistenţă<br>
-                                        Medicală Primară a USMF “N.Testimiţanu"</span>
+											Medicală Primară a USMF “N.Testimiţanu"</span>
                                         <i class="fa fa-medkit visible-md visible-sm visible-xs"></i>
                                     </button>
                                     <ul class="dropdown-menu" role="menu">
@@ -105,13 +105,13 @@
                                 <span class="item-text">TABLOU DE BORD</span>
                             </a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="#" title="PACIENŢI" data-toggle="collapse-next" class="i-menu open-item-menu has-submenu">
                                 <em class="fa fa-users"></em>
                                 <span class="item-text">PACIENŢI <i class="fa fa-angle-down"></i></span>
                             </a>
                             <!-- START SubMenu item-->
-                            <ul class="nav collapse in">
+                            <ul class="nav collapse">
                                 <li class="active">
                                     <a href="searchpacient.html" title="Căutare pacient" data-toggle="" class="no-submenu">
                                         <span class="item-text"><i class="fa fa-angle-right"></i>Căutare pacient</span>
@@ -155,17 +155,30 @@
                             </ul>
                             <!-- END SubMenu item-->
                         </li>
-                        <li>
+                        <li  class="active">
                             <a href="#" title="STOC" data-toggle="collapse-next" class="i-menu has-submenu">
                                 <em class="fa fa-cubes"></em>
                                 <span class="item-text">STOC <i class="fa fa-angle-down"></i></span>
                             </a>
                             <!-- START SubMenu item-->
-                            <ul class="nav collapse ">
-                                <li>
-                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
-                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
-                                    </a>
+                            <ul class="nav collapse in">
+                                <li id="submenu3">
+                                    <a title="Programarea mea" data-toggle="collapse" data-parent="#submenu3" href="#collapseOne" class="no-submenu tree-menu">
+                                        <span class="item-text"><i class="fa fa-angle-down"></i>Programarea mea</span>
+									</a>
+									<ul class="nav submenu-menu collapse" id="collapseOne">
+										<li>
+											<a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+												<span class="item-text"><i class="fa fa-angle-right"></i>Programarea 1</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+												<span class="item-text"><i class="fa fa-angle-right"></i>Caută 1</span>
+											</a>
+										</li>
+									</ul>
+									<!-- END SubMenu item-->
                                 </li>
                                 <li>
                                     <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
@@ -344,498 +357,498 @@
             <section>
                 <!-- START Page content-->
                 <section class="main-content ">                    
-                    <div class="main-container info-pacient">
-                            <h1>Ana Mardare Radu</h1>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-lg-16">
-                                        <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs" role="tablist">
-                                            <li class="active"><a href="#general-information" role="tab" data-toggle="tab">Informaţie Generală</a></li>
-                                            <li><a href="#secondary-information" role="tab" data-toggle="tab">Informaţie Auxiliară</a></li>
-                                            <li><a href="#residence" role="tab" data-toggle="tab">Reşedinţă</a></li>
-                                        </ul>
+                    <div class="main-container">
+						<h1>Ana Mardare Radu</h1>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-lg-16">
+									<!-- Nav tabs -->
+									<ul class="nav nav-tabs" role="tablist">
+										<li class="active"><a href="#general-information" role="tab" data-toggle="tab">Informaţie Generală</a></li>
+										<li><a href="#secondary-information" role="tab" data-toggle="tab">Informaţie Auxiliară</a></li>
+										<li><a href="#residence" role="tab" data-toggle="tab">Reşedinţă</a></li>
+									</ul>
 
-                                        <!-- Tab panes -->
-                                        <div class="tab-content">
-                                            <div class="tab-pane active" id="general-information">
-                                                <form action="" class="new-pacient">
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="register-date">Data înregistrării</label>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" id="register-date">
-                                                        </div>
-                                                    </div>
+									<!-- Tab panes -->
+									<div class="tab-content">
+										<div class="tab-pane active" id="general-information">
+											<form action="" class="new-pacient">
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="register-date">Data înregistrării</label>
+													</div>
+													<div class="col-lg-3">
+														<input type="text" id="register-date">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="idnp">IDNP</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="text" id="idnp">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="idnp">IDNP</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="text" id="idnp">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="lastname">Prenume</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="text" id="lastname">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="lastname">Prenume</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="text" id="lastname">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="name">Nume</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="text" id="name">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="name">Nume</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="text" id="name">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="patronimic">Patronimic</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="text" id="patronimic">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="patronimic">Patronimic</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="text" id="patronimic">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="patronimic">Sexul</label>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <select name="" id="">
-                                                                <option value="f">F</option>
-                                                                <option value="m">M</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="patronimic">Sexul</label>
+													</div>
+													<div class="col-lg-2">
+														<select name="" id="">
+															<option value="f">F</option>
+															<option value="m">M</option>
+														</select>
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="birthdaydate">Data nașterii</label>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" id="birthdaydate" class="datepicker">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="birthdaydate">Data nașterii</label>
+													</div>
+													<div class="col-lg-3">
+														<input type="text" id="birthdaydate" class="datepicker">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="nrpolita">Numărul poliţei</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="text" id="nrpolita">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="nrpolita">Numărul poliţei</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="text" id="nrpolita">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="category">Categoria</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <select name="" id="">
-                                                                <option value="f">01 Salariat</option>
-                                                                <option value="m">02 Salariat</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="category">Categoria</label>
+													</div>
+													<div class="col-lg-4">
+														<select name="" id="">
+															<option value="f">01 Salariat</option>
+															<option value="m">02 Salariat</option>
+														</select>
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="category">Legătura cu instituția</label>
-                                                        </div>
-                                                        <div class="col-lg-5">
-                                                            <select name="" id="">
-                                                                <option value="f">MSP CMF Bălți</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="category">Legătura cu instituția</label>
+													</div>
+													<div class="col-lg-5">
+														<select name="" id="">
+															<option value="f">MSP CMF Bălți</option>
+														</select>
+													</div>
+												</div>
 
-                                                    <div class="row adress">
-                                                        <h2>Adresa</h2>
-                                                        <div class="container-fluid">
-                                                            <div class="row">
-                                                                <div class="col-lg-3">
-                                                                    <label for="raion">Raion</label>
-                                                                </div>
-                                                                <div class="col-lg-4">
-                                                                    <input type="text" id="raion">
-                                                                </div>
-                                                            </div>
+												<div class="row adress">
+													<h2>Adresa</h2>
+													<div class="container-fluid">
+														<div class="row">
+															<div class="col-lg-3">
+																<label for="raion">Raion</label>
+															</div>
+															<div class="col-lg-4">
+																<input type="text" id="raion">
+															</div>
+														</div>
 
-                                                            <div class="row">
-                                                                <div class="col-lg-3">
-                                                                    <label for="location">Localitatea</label>
-                                                                </div>
-                                                                <div class="col-lg-4">
-                                                                    <input type="text" id="location">
-                                                                </div>
-                                                            </div>
+														<div class="row">
+															<div class="col-lg-3">
+																<label for="location">Localitatea</label>
+															</div>
+															<div class="col-lg-4">
+																<input type="text" id="location">
+															</div>
+														</div>
 
-                                                            <div class="row">
-                                                                <div class="col-lg-3">
-                                                                    <label for="street">Strada</label>
-                                                                </div>
-                                                                <div class="col-lg-4">
-                                                                    <input type="text" id="street">
-                                                                </div>
-                                                            </div>
+														<div class="row">
+															<div class="col-lg-3">
+																<label for="street">Strada</label>
+															</div>
+															<div class="col-lg-4">
+																<input type="text" id="street">
+															</div>
+														</div>
 
-                                                            <div class="row">
-                                                                <div class="col-lg-3">
-                                                                    <label for="bloc">Bloc</label>
-                                                                </div>
-                                                                <div class="col-lg-2">
-                                                                    <input type="text" id="bloc">
-                                                                </div>
-                                                            </div>
+														<div class="row">
+															<div class="col-lg-3">
+																<label for="bloc">Bloc</label>
+															</div>
+															<div class="col-lg-2">
+																<input type="text" id="bloc">
+															</div>
+														</div>
 
-                                                            <div class="row">
-                                                                <div class="col-lg-3">
-                                                                    <label for="bara">Bară</label>
-                                                                </div>
-                                                                <div class="col-lg-2">
-                                                                    <input type="text" id="bara">
-                                                                </div>
-                                                            </div>
+														<div class="row">
+															<div class="col-lg-3">
+																<label for="bara">Bară</label>
+															</div>
+															<div class="col-lg-2">
+																<input type="text" id="bara">
+															</div>
+														</div>
 
-                                                            <div class="row">
-                                                                <div class="col-lg-3">
-                                                                    <label for="apartament">Apartament</label>
-                                                                </div>
-                                                                <div class="col-lg-2">
-                                                                    <input type="text" id="apartament">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+														<div class="row">
+															<div class="col-lg-3">
+																<label for="apartament">Apartament</label>
+															</div>
+															<div class="col-lg-2">
+																<input type="text" id="apartament">
+															</div>
+														</div>
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="sectorul">Sectorul</label>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <select name="" id="">
-                                                                <option value="12">12</option>
-                                                                <option value="13">13</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="sectorul">Sectorul</label>
+													</div>
+													<div class="col-lg-2">
+														<select name="" id="">
+															<option value="12">12</option>
+															<option value="13">13</option>
+														</select>
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="medic-de-familie">Medicul de familie</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="text" id="medic-de-familie">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="medic-de-familie">Medicul de familie</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="text" id="medic-de-familie">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="phone">Telefon</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="text" id="phone">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="phone">Telefon</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="text" id="phone">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="mobile">Telefon mobil</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="text" id="mobile">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="mobile">Telefon mobil</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="text" id="mobile">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="email">E-mail</label>
-                                                        </div>
-                                                        <div class="col-lg-5">
-                                                            <input type="text" id="email">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="email">E-mail</label>
+													</div>
+													<div class="col-lg-5">
+														<input type="text" id="email">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="comments">Comentarii</label>
-                                                        </div>
-                                                        <div class="col-lg-5">
-                                                            <textarea name="" id="comments" rows="5"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <br><br>
-                                                    <div class="row">
-                                                        <div class="col-lg-3"></div>
-                                                        <div class="col-lg-6">
-                                                            <input type="submit" value="Salvează">
-                                                            <input type="reset" value="Anulează">
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="tab-pane" id="secondary-information">
-                                                <form action="" class="new-pacient">
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="register-date">Cetăţenia</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <select name="" id="">
-                                                                <option value="RM">Republica Moldova</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="comments">Comentarii</label>
+													</div>
+													<div class="col-lg-5">
+														<textarea name="" id="comments" rows="5"></textarea>
+													</div>
+												</div>
+												<br><br>
+												<div class="row">
+													<div class="col-lg-3"></div>
+													<div class="col-lg-6">
+														<input type="submit" value="Salvează">
+														<input type="reset" value="Anulează">
+													</div>
+												</div>
+											</form>
+										</div>
+										<div class="tab-pane" id="secondary-information">
+											<form action="" class="new-pacient">
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="register-date">Cetăţenia</label>
+													</div>
+													<div class="col-lg-4">
+														<select name="" id="">
+															<option value="RM">Republica Moldova</option>
+														</select>
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="register-date">Starea familiară</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <select name="" id="">
-                                                                <option value="RM">Căsătorit</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="register-date">Starea familiară</label>
+													</div>
+													<div class="col-lg-4">
+														<select name="" id="">
+															<option value="RM">Căsătorit</option>
+														</select>
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="childrens">Copii</label>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <input type="text" id="childrens">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="childrens">Copii</label>
+													</div>
+													<div class="col-lg-2">
+														<input type="text" id="childrens">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="pensionar">Pensionar</label>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <input type="text" id="pensionar">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="pensionar">Pensionar</label>
+													</div>
+													<div class="col-lg-2">
+														<input type="text" id="pensionar">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="pensionar">Grupa sangvinică</label>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <select name="" id="">
-                                                                <option value="3+">III +</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="pensionar">Grupa sangvinică</label>
+													</div>
+													<div class="col-lg-2">
+														<select name="" id="">
+															<option value="3+">III +</option>
+														</select>
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="pensionar">Statutul social</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <select name="" id="">
-                                                                <option value="">Statutul</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="pensionar">Statutul social</label>
+													</div>
+													<div class="col-lg-4">
+														<select name="" id="">
+															<option value="">Statutul</option>
+														</select>
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="pensionar">Frec grădiniţa?</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="checkbox">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="pensionar">Frec grădiniţa?</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="checkbox">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="pensionar">Frecventează şcoala?</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="checkbox">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="pensionar">Frecventează şcoala?</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="checkbox">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="pensionar">Ocupaţie</label>
-                                                        </div>
-                                                        <div class="col-lg-5">
-                                                            <select name="" id="">
-                                                                <option value="">Școala internat</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="pensionar">Ocupaţie</label>
+													</div>
+													<div class="col-lg-5">
+														<select name="" id="">
+															<option value="">Școala internat</option>
+														</select>
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="organization">Organizația</label>
-                                                        </div>
-                                                        <div class="col-lg-5">
-                                                            <textarea name="" id="organization" rows="2"></textarea>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="organization">Organizația</label>
+													</div>
+													<div class="col-lg-5">
+														<textarea name="" id="organization" rows="2"></textarea>
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="function">Funcția</label>
-                                                        </div>
-                                                        <div class="col-lg-5">
-                                                            <textarea name="" id="function" rows="2"></textarea>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="function">Funcția</label>
+													</div>
+													<div class="col-lg-5">
+														<textarea name="" id="function" rows="2"></textarea>
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="function">Liber1</label>
-                                                        </div>
-                                                        <div class="col-lg-5">
-                                                            <select name="" id="">
-                                                                <option value="">1</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="function">Liber1</label>
+													</div>
+													<div class="col-lg-5">
+														<select name="" id="">
+															<option value="">1</option>
+														</select>
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="function">Liber2</label>
-                                                        </div>
-                                                        <div class="col-lg-5">
-                                                            <select name="" id="">
-                                                                <option value="">2</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="function">Liber2</label>
+													</div>
+													<div class="col-lg-5">
+														<select name="" id="">
+															<option value="">2</option>
+														</select>
+													</div>
+												</div>
 
-                                                    <br><br>
-                                                    <div class="row">
-                                                        <div class="col-lg-3"></div>
-                                                        <div class="col-lg-6">
-                                                            <input type="submit" value="Salvează">
-                                                            <input type="reset" value="Anulează">
-                                                        </div>
-                                                    </div>
+												<br><br>
+												<div class="row">
+													<div class="col-lg-3"></div>
+													<div class="col-lg-6">
+														<input type="submit" value="Salvează">
+														<input type="reset" value="Anulează">
+													</div>
+												</div>
 
-                                                </form>
-                                            </div>
-                                            <div class="tab-pane" id="residence">
-                                                <h2>Adresa</h2>
-                                                <form action="" class="new-pacient">
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="raion2">Raion</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="text" id="raion2">
-                                                        </div>
-                                                    </div>
+											</form>
+										</div>
+										<div class="tab-pane" id="residence">
+											<h2>Adresa</h2>
+											<form action="" class="new-pacient">
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="raion2">Raion</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="text" id="raion2">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="location2">Localitatea</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="text" id="location2">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="location2">Localitatea</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="text" id="location2">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="street2">Strada</label>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <input type="text" id="street2">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="street2">Strada</label>
+													</div>
+													<div class="col-lg-4">
+														<input type="text" id="street2">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="bloc2">Bloc</label>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <input type="text" id="bloc2">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="bloc2">Bloc</label>
+													</div>
+													<div class="col-lg-2">
+														<input type="text" id="bloc2">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="bara2">Bară</label>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <input type="text" id="bara2">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="bara2">Bară</label>
+													</div>
+													<div class="col-lg-2">
+														<input type="text" id="bara2">
+													</div>
+												</div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="apartament2">Apatament</label>
-                                                        </div>
-                                                        <div class="col-lg-2">
-                                                            <input type="text" id="apartament2">
-                                                        </div>
-                                                    </div>
+												<div class="row">
+													<div class="col-lg-3">
+														<label for="apartament2">Apatament</label>
+													</div>
+													<div class="col-lg-2">
+														<input type="text" id="apartament2">
+													</div>
+												</div>
 
-                                                    <br><br>
-                                                    <div class="row">
-                                                        <div class="col-lg-3"></div>
-                                                        <div class="col-lg-6">
-                                                            <input type="submit" value="Salvează">
-                                                            <input type="reset" value="Anulează">
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+												<br><br>
+												<div class="row">
+													<div class="col-lg-3"></div>
+													<div class="col-lg-6">
+														<input type="submit" value="Salvează">
+														<input type="reset" value="Anulează">
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                        <!-- Footer -->
+					<!-- Footer -->
 
-                        <footer class="footer">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <nav class="footer-nav">
-                                        <ul>
-                                            <li><a href="https://e-sanatate.md/iMeD/Home/Privacy">Confidențialitate</a></li>
-                                            <li><a href="https://e-sanatate.md/iMeD/Home/Security">Securitatea datelor</a></li>
-                                            <li><a href="https://e-sanatate.md/iMeD/Home/Terms">Termeni şi Condiţii</a></li>
-                                            <li><a href="https://e-sanatate.md/iMeD/Home/Assistance">Asistență pentru clienți</a></li>
-                                            <li><a href="https://e-sanatate.md/iMeD/Home/Services">Servicii</a></li>
-                                        </ul>
-                                    </nav>
-                                    <div class="clear"></div>
-                                </div>
-                                <div class="row copyright">
-                                    <div class="btn-group dropup">      
-                                        <button class="btn  dropdown-toggle" data-toggle="dropdown">În Română</button>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">На русском</a></li>
-                                        </ul>
-                                    </div>
-                                    <p>2014 © iMeD. Toate drepturile sunt rezervate.</p>
+					<footer class="footer">
+						<div class="container-fluid">
+							<div class="row">
+								<nav class="footer-nav">
+									<ul>
+										<li><a href="https://e-sanatate.md/iMeD/Home/Privacy">Confidențialitate</a></li>
+										<li><a href="https://e-sanatate.md/iMeD/Home/Security">Securitatea datelor</a></li>
+										<li><a href="https://e-sanatate.md/iMeD/Home/Terms">Termeni şi Condiţii</a></li>
+										<li><a href="https://e-sanatate.md/iMeD/Home/Assistance">Asistență pentru clienți</a></li>
+										<li><a href="https://e-sanatate.md/iMeD/Home/Services">Servicii</a></li>
+									</ul>
+								</nav>
+								<div class="clear"></div>
+							</div>
+							<div class="row copyright">
+								<div class="btn-group dropup">      
+									<button class="btn  dropdown-toggle" data-toggle="dropdown">În Română</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">На русском</a></li>
+									</ul>
+								</div>
+								<p>2014 © iMeD. Toate drepturile sunt rezervate.</p>
 
-                                    <ul class="socials">
-                                        <li class="facebook"><a href="https://www.facebook.com/e.sanatatea.ta" target="_blank"></a></li>
-                                        <li class="twitter"><a href="https://twitter.com/E_Sanatatea_TA" target="_blank"></a></li>
-                                        <li class="linkedin"><a href="http://www.linkedin.com/profile/view?id=254762663&trk=tab_pro" target="_blank"></a></li>
-                                        <li class="youtube"><a href="http://www.youtube.com/channel/UCuVNhiubNuy1M8yQmQmVOUQ" target="_blank"></a></li>
-                                        <li class="rss"><a href="https://e-sanatate.md/News/Home/RSS" target="_blank"></a></li>
-                                    </ul>
+								<ul class="socials">
+									<li class="facebook"><a href="https://www.facebook.com/e.sanatatea.ta" target="_blank"></a></li>
+									<li class="twitter"><a href="https://twitter.com/E_Sanatatea_TA" target="_blank"></a></li>
+									<li class="linkedin"><a href="http://www.linkedin.com/profile/view?id=254762663&trk=tab_pro" target="_blank"></a></li>
+									<li class="youtube"><a href="http://www.youtube.com/channel/UCuVNhiubNuy1M8yQmQmVOUQ" target="_blank"></a></li>
+									<li class="rss"><a href="https://e-sanatate.md/News/Home/RSS" target="_blank"></a></li>
+								</ul>
 
-                                </div>
-                            </div>
-                        </footer>
+							</div>
+						</div>
+					</footer>
 
                 </section>
             </section>

@@ -94,9 +94,6 @@ fieldset .form-group {
 .popover .popover-title {
   border: 0;
 }
-.nav li > a {
-  background-color: transparent !important;
-}
 .nav.nav-pills .active > a {
   background-color: #3498db !important;
 }
@@ -440,12 +437,6 @@ body {
 .sidebar .nav > li > a > em {
   width: 2em;
 }
-.sidebar .nav > li.active > a,
-.sidebar .nav > li.active > a:focus,
-.sidebar .nav > li.active > a:hover {
-  color: #fff;
-  background-color: #434953;
-}
 .sidebar .nav .nav {
   padding-left: 30px;
   background-color: #212429;
@@ -454,8 +445,6 @@ body {
 .sidebar .nav .nav > li > a {
   position: relative;
   padding: 7px 30px;
-  font-size: 13px;
-  background-color: transparent !important;
   font-weight: normal;
 }
 .sidebar .nav .nav > li.active > a:after {

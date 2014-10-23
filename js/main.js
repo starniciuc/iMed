@@ -69,5 +69,11 @@ $(document).ready(function () {
         $("#accept").slideToggle();
         $("#refuz").slideToggle();
     });
+	
+	$(".tree-menu").click(function(){
+		var $p = $(this).parent("li");
+		$p.toggleClass("open-submenu");
+		console.log("test");
+	});
 });
 

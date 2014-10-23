@@ -2452,6 +2452,20 @@ Form page
 .acord-table table tr td a:hover{
     text-decoration: none;
 }
+li.open-submenu a{
+	background-color: #33475f !important;
+    color: #32e6e6 !important;
+}
+ul.submenu-menu a{
+	background-color: #33475f !important;
+    color: #32e6e6 !important;
+}
+.sidebar .nav .nav > li > a:active,
+.sidebar .nav .nav > li > a:focus
+{
+	background-color: #33475f !important;
+    color: #32e6e6 !important;
+}
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
         width: 40px;
