@@ -2466,6 +2466,15 @@ ul.submenu-menu a{
 	background-color: #33475f !important;
     color: #32e6e6 !important;
 }
+.aside-toggled .sidebar .nav .nav,
+.aside-toggled .sidebar .nav li:hover .nav{
+	overflow: visible;
+}
+.aside-toggled .sidebar .nav .nav li:hover .nav,
+.aside-toggled .sidebar .nav  li:hover .nav .nav{
+    display: block;
+	padding-top: 5px;
+}
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
         width: 40px;
