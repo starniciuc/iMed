@@ -2456,10 +2456,10 @@ li.open-submenu a{
 	background-color: #33475f !important;
     color: #32e6e6 !important;
 }
-ul.submenu-menu a{
+/*ul.submenu-menu a{
 	background-color: #33475f !important;
     color: #32e6e6 !important;
-}
+}*/
 .sidebar .nav .nav > li > a:active,
 .sidebar .nav .nav > li > a:focus
 {
