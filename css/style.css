@@ -2470,11 +2470,6 @@ ul.submenu-menu a{
 .aside-toggled .sidebar .nav li:hover .nav{
 	overflow: visible;
 }
-
-.aside-toggled .sidebar .nav  li:hover .nav .nav{
-    display: none;
-	padding-top: 5px;
-}
 .sidebar .nav .nav li a i.submenu-i{
     margin-left: 10px;
     margin-right: 0;
@@ -2483,7 +2478,10 @@ ul.submenu-menu a{
     padding-left: 70px;
     line-height: 100%;
 }
-.aside-toggled .sidebar .nav  .nav li:hover > .nav{
+.sidebar .nav  .nav li .nav{
+    display: block;
+}
+.aside-toggled .sidebar .nav  .nav .nav.submenu-menu{
     display: block;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -2491,12 +2489,6 @@ ul.submenu-menu a{
     top: 0;
     left: 0;
     padding-left: 15px;
-}
-.aside-toggled .sidebar .nav .nav li a i.submenu-i{
-    display: block;
-}
-.aside-toggled .sidebar .nav  .nav li:hover > .nav li a{
-    line-height: 100%;
 }
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
