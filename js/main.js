@@ -12,7 +12,20 @@ $(".collapse-btn").click(function () {
     par.slideToggle(200);
     $(mybtn).toggleClass("close-menu");
 });
-
+$(".btn-open").click(function() {
+        var mybtn = $(this);
+        var par = mybtn.parents(".collapse-side").children(".collapse");
+        par.collapse("show");
+        mybtn.addClass("close-a");
+        par.on('shown.bs.collapse', function() {
+            mybtn.click(function() {
+                par.collapse('hide');
+            });
+        });
+        par.on('hidden.bs.collapse', function() {
+            mybtn.removeClass("close-a");
+        });
+    });
 $(function () {
     //$("[data-toggle='tooltip']").tooltip();
 });

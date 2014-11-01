@@ -2284,6 +2284,10 @@ New page Acord informat la interventie
     text-align: center;
     color: #000000;
 }
+.main-container.user-page .special-section h2 span{
+    font-size: 12px;
+    font-weight: normal;
+}
 .main-container.user-page p{
     color: #000000;
     font-size: 13px;
@@ -2387,12 +2391,12 @@ Form page
 }
 .user-page .form-page .btn-green-med,
 .user-page .form-page .btn-grey-med{
-	width: 90px;
-	height: 30px;
-	margin-right: 15px;
+    width: 90px;
+    height: 30px;
+    margin-right: 15px;
 }
 .user-page .form-page .form-control{
-	height: 30px;
+    height: 30px;
 }
 .user-page .form-page textarea{
     border-color: #cccccc;
@@ -2409,7 +2413,7 @@ Form page
 .user-page .form-page h1.into-small-text{
     text-align: center;
     position: relative;
-	margin-left: 15px;
+    margin-left: 15px;
 }
 .user-page .form-page h1.into-small-text span{
     text-align: left;
@@ -2453,22 +2457,18 @@ Form page
     text-decoration: none;
 }
 li.open-submenu a{
-	background-color: #33475f !important;
+    background-color: #33475f !important;
     color: #32e6e6 !important;
 }
-/*ul.submenu-menu a{
-	background-color: #33475f !important;
-    color: #32e6e6 !important;
-}*/
 .sidebar .nav .nav > li > a:active,
 .sidebar .nav .nav > li > a:focus
 {
-	background-color: #33475f !important;
+    background-color: #33475f !important;
     color: #32e6e6 !important;
 }
 .aside-toggled .sidebar .nav .nav,
 .aside-toggled .sidebar .nav li:hover .nav{
-	overflow: visible;
+    overflow: visible;
 }
 .sidebar .nav .nav li a i.submenu-i{
     margin-left: 10px;
@@ -2489,6 +2489,30 @@ li.open-submenu a{
     top: 0;
     left: 0;
     padding-left: 15px;
+}
+.main-container.user-page .collapse-side a{
+    color: #0080FF;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+.main-container.user-page .collapse-side a:hover{
+    text-decoration: none;
+}
+.main-container.user-page .collapse-side a i{
+    margin-right: 5px;
+}
+.main-container.user-page .collapse-side a i.fa-minus-square-o{
+    display: none;
+}
+.main-container.user-page .collapse-side a.close-a i.fa-minus-square-o{
+    display: inline-block;
+}
+.main-container.user-page .collapse-side a.close-a i.fa-plus-square-o{
+    display: none;
 }
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
