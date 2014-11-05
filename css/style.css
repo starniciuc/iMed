@@ -2457,6 +2457,14 @@ Form page
     font-style: italic;
     text-align: center;
 }
+.user-page .form-page h5{
+    font-size: 13px;
+    line-height: 20px;
+    color: #000000;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
 .user-page .form-page .checkbox-side label{
     float: none;
     font-size: 13px;
@@ -2468,7 +2476,7 @@ Form page
     float: none;
     font-size: 13px;
     color: #000000;
-    margin-left: 5px;
+    margin-left: 0px;
     margin-right: 5px;
     font-weight: normal;
 }

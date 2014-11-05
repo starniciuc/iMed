@@ -434,23 +434,20 @@
                             <div class="row">
                                 <div class="col-lg-16">
                                     <ul class="list-main-menu">
-                                        <li class="selected"><a href="#">Date generale</a></li>
-                                        <li><a href="#">Internarea</a></li>
-                                        <li><a href="#">Examene clinice</a></li>
-                                        <li><a href="#">Examene paraclinice</a></li>
-                                        <li><a href="#">Diagnostice</a></li>
-                                        <li><a href="#">Tratament non-chirurgical</a></li>
-                                        <li><a href="#">Tratament chirurgical</a></li>
-                                        <li><a href="#">Fișa REA și TI</a></li>
-                                        <li><a href="#">Transfer intraspitalicesc</a></li>
-                                        <li><a href="#">Concluzie expertiza</a></li>
-                                        <li><a href="#">Externare</a></li>
-                                        <li><a href="#">Epicriza</a></li>
-                                        <li><a href="#">Trimitere</a></li>
-                                        <li><a href="#">Acordul informat</a></li>
-                                        <li><a href="#">Mențiuni speciale</a></li>
-                                        <li><a href="#">Consiliul medical</a></li>
-                                        <li><a href="#">Act de constatare a morții</a></li>
+                                        <li><a href="#">Date generale</a></li>
+                                        <li><a href="#">Fişa</a></li>
+                                        <li><a href="#">Perioada a III</a></li>
+                                        <li class="selected"><a href="#">Examinarea perineului</a></li>
+                                        <li><a href="#">Supravegherea postnatală</a></li>
+                                        <li><a href="#">Inducerea naşterii</a></li>
+                                        <li><a href="#">Apreciere I</a></li>
+                                        <li><a href="#">Apreciere II</a></li>
+                                        <li><a href="#">Apreciere III</a></li>
+                                        <li><a href="#">Statutul inainte de operatie</a></li>
+                                        <li><a href="#">Perioada de lauzie</a></li>
+                                        <li><a href="#">Procedure-manopere</a></li>
+                                        <li><a href="#">Sumarul nașterii copilului</a></li>
+                                        <li><a href="#">Sumarul nașterii mama</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -460,174 +457,121 @@
                         <div class="container-fluid">
                             <div class="row-fluid clearfix" id="container">
                                 <div class="col-lg-16 form-page">
-                                    <h1 class="into-small-text">Fişa de naştere nr. 1</h1>
-                                    <h6>NB Aceasta fişa se indeplineşte numai când e stabilit debutul travaliului sau este planificată inducerea naşterii</h6>
+                                    <h1 class="into-small-text">Examinarea perineului și  căilor de naștere</h1>
                                     <div class="form-group clearfix">
                                         <div class="col-lg-16 checkbox-side">
-                                            <p>Nivelul necesar de asistenţa perinatală: 
-                                                <input type="checkbox" name="ck1">
-                                                <label for="ck1">la internare</label>
-                                                <input type="checkbox" name="ck2">
-                                                <label for="ck2">la internare</label>
+                                            <p>
+												<input type="checkbox" name="ck1"><label for="ck1">Căile de naștere intacte</label>
+                                                <input type="checkbox" name="ck2"><label for="ck2">Traumă</label>
+                                                <input type="checkbox" name="ck3"><label for="ck3">Neidendificată</label>
                                             </p>
                                         </div>
                                     </div>
                                     <div class="form-group clearfix">
-                                        <div class="col-md-4">
-                                            <p>Numele</p>
-                                            <input type="text" class="form-control" >
+                                        <div class="col-lg-16 checkbox-side">
+											<p>Gradul de traumă (°)</p>
+                                            <p>
+												<input type="checkbox" name="ck11"><label for="ck11">1°</label>
+												<input type="checkbox" name="ck12"><label for="ck12">2°</label>
+												<input type="checkbox" name="ck13"><label for="ck13">3a°</label>
+												<input type="checkbox" name="ck14"><label for="ck14">3b°</label>
+												<input type="checkbox" name="ck15"><label for="ck15">3c°</label>
+												<input type="checkbox" name="ck16"><label for="ck16">4°</label>
+                                            </p>
                                         </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-lg-16 checkbox-side">
+                                            <p>
+												<input type="checkbox" name="ck21"><label for="ck21">Labială</label>
+												<input type="checkbox" name="ck22"><label for="ck22">Labială</label>
+												<input type="checkbox" name="ck23"><label for="ck23">Cervicală</label>
+												<input type="checkbox" name="ck24"><label for="ck24">Epiziotomia</label>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-10">
+                                            <p>Indicații pentru epiziotomie</p>
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+									<div class="form-group clearfix">
+                                        <div class="col-lg-16 checkbox-side">
+											<h5>Suturarea</h5>
+                                            <p>
+												<input type="checkbox" name="ck31"><label for="ck31">Nu efectuată</label>
+                                                <input type="checkbox" name="ck32"><label for="ck32">Efectuată</label>
+                                                <input type="checkbox" name="ck33"><label for="ck33">Discutată cu mamă</label>
+                                                <input type="checkbox" name="ck33"><label for="ck33">Acordată</label>
+                                            </p>
+                                        </div>
+                                    </div>
+									<div class="form-group clearfix">
+                                        <div class="col-lg-16">
+											<h5>Suturarea căilor de naștere</h5>
+                                        </div>
+										<div class="col-md-8">
+											<p>Anestetic</p>
+											<input type="text" class="form-control" >
+										</div>
+										<div class="col-md-2 padding-top">
+											<button class="btn btn-blue">Selectează</button>
+										</div>
+                                    </div>
+									<div class="form-group clearfix">
+										<div class="col-md-8">
+											<p>Material de sutură</p>
+											<input type="text" class="form-control" >
+										</div>
+										<div class="col-md-2 padding-top">
+											<button class="btn btn-blue">Selectează</button>
+										</div>
+                                    </div>
+									<div class="form-group clearfix">
+										<div class="col-md-10">
+											<p>Tehnica</p>
+											<textarea class="form-control"></textarea>
+										</div>
+                                    </div>
+									<div class="form-group clearfix">
+                                        <div class="col-lg-16 checkbox-side">
+											<h5>După restabilire	</h5>
+                                            <p>
+												<input type="checkbox" name="ck41"><label for="ck41">Hemostază</label>
+                                                <input type="checkbox" name="ck42"><label for="ck42">Tamponada vaginală</label>
+                                                <input type="checkbox" name="ck43"><label for="ck43">Meșele/ace</label>
+                                                <input type="checkbox" name="ck44"><label for="ck44">PV&PR examinarea</label>
+                                                <input type="checkbox" name="ck45"><label for="ck45">Suturi pentru înlăturare</label>
+                                                <input type="checkbox" name="ck46"><label for="ck46">Antibiotice</label>
+                                                <input type="checkbox" name="ck47"><label for="ck47">Laxative</label>
+                                                <input type="checkbox" name="ck48"><label for="ck48">Consultare</label>
+                                            </p>
+                                        </div>
+                                    </div>
+									<div class="form-group clearfix">
+                                        <div class="col-lg-16 checkbox-side">
+											<h5>Discutarea cu mamă și recomandări</h5>
+                                            <p>
+												<input type="checkbox" name="ck51"><label for="ck51">Gradul de traumă</label>
+												<input type="checkbox" name="ck52"><label for="ck52">Tipul restabilirii</label>
+												<input type="checkbox" name="ck53"><label for="ck53">Analgetice</label>
+												<input type="checkbox" name="ck54"><label for="ck54">Igiena</label>
+												<input type="checkbox" name="ck55"><label for="ck55">Dieta</label>
+												<input type="checkbox" name="ck56"><label for="ck56">Exerciții</label>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-10">
+                                            <p>Comentarii</p>
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
                                         <div class="col-md-3">
-                                            <p>Prenumele</p>
-                                            <input type="text" class="form-control" > 
-                                        </div>
-                                        <div class="col-lg-2 col-md-3">
-                                            <p>Vârsta</p>
-                                            <input type="text" class="form-control" > 
-                                        </div>
-                                        <div class="col-lg-2 col-md-3">
-                                            <p>Grupa de saânge</p>
-                                            <input type="text" class="form-control" > 
-                                        </div>
-                                        <div class="col-lg-1 col-md-2">
-                                            <p>Rh</p>
-                                            <input type="text" class="form-control" > 
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="col-md-4">
-                                            <p>Naționalitatea</p>
-                                            <input type="text" class="form-control" >
-                                        </div>
-                                        <div class="col-lg-5 col-md-6">
-                                            <p>Cetățenie</p>
-                                            <input type="text" class="form-control" > 
-                                        </div>
-                                        <div class="col-lg-3 col-md-5">
-                                            <p>IDNP</p>
-                                            <input type="text" class="form-control" > 
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="col-lg-2 col-md-3">
-                                            <p>Polița de asigurare</p>
-                                        </div>
-                                        <div class="col-lg-1 col-md-2">
-                                            <p>Seria</p>
-                                            <input type="text" class="form-control" > 
-                                        </div>
-                                        <div class="col-lg-2 col-md-3">
-                                            <p>Nr.</p>
-                                            <input type="text" class="form-control" > 
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 clearfix">
-                                        <div class="special-section">
-                                            <div class="form-group clearfix">
-                                                <div class="col-md-6">
-                                                    <p>RW</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>Data</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group clearfix">
-                                                <div class="col-md-6">
-                                                    <p>HBsAg</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>Data</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group clearfix">
-                                                <div class="col-md-6">
-                                                    <p>HIV/SIDA</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>Data</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group clearfix">
-                                                <div class="col-md-6">
-                                                    <p>Frotiu gn</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>Data</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group clearfix">
-                                                <div class="col-md-6">
-                                                    <p>Internată</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>Data</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <p>Ora</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group clearfix">
-                                                <div class="col-md-6">
-                                                    <p>Externată</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>Data</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <p>Ora</p>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group clearfix">
-                                                <div class="col-md-16">
-                                                    <p>Număr zile-pat</p>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="form-group clearfix">
-                                        <div class="col-md-9">
-                                            <p>Locul de muncă, funcția ocupată</p>
-                                            <input type="text" class="form-control" >
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="col-md-5">
-                                            <p>Tranportata la maternitate</p>
-                                            <select class="form-control">
-                                                <option></option>
-                                                <option></option>
-                                                <option></option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="col-lg-16 checkbox-side">
-                                            <p>Transport: 
-                                                <input type="checkbox" name="ck1">
-                                                <label for="ck1">Ambulanța</label>
-                                                <input type="checkbox" name="ck2">
-                                                <label for="ck2">Personal</label>
-                                                <input type="checkbox" name="ck2">
-                                                <label for="ck2">De ocazie</label>
-                                            </p>
+                                            <p>Data/ora</p>
+											<input type="text" class="form-control" >
                                         </div>
                                     </div>
                                     <div class="form-group clearfix">
