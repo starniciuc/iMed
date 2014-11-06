@@ -2480,6 +2480,29 @@ Form page
     margin-right: 5px;
     font-weight: normal;
 }
+.user-page .form-page .form-control{
+    box-shadow: none;
+}
+.user-page .form-page .input-group-addon{
+    background: none;
+    border-left: 0;
+    color: #000000;
+}
+.user-page .form-page .datetimepicker input{
+    border-right: 0;
+}
+.user-page .form-page .table-side h2 {
+    background-color: #3a526b;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 0;
+    padding: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+.user-page .form-page .table-side td{
+    height: 30px;
+}
 .acord-table table tr td a{
     text-decoration: underline;
 }
