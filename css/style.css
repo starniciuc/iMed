@@ -2503,6 +2503,20 @@ Form page
 .user-page .form-page .table-side td{
     height: 30px;
 }
+.user-page .form-page .table-side.fismed-2 table tr td:last-child{
+    width: auto;
+}
+.user-page .form-page .table-side.fismed-2.simptome table tr th,
+.user-page .form-page .table-side.fismed-2.simptome table tr td
+{
+    vertical-align: middle;
+    text-align: center;
+}
+.user-page .form-page .table-side.fismed-2.simptome table tr:first-child th:first-child,
+.user-page .form-page .table-side.fismed-2.simptome table tr td:first-child
+{
+    text-align: left;
+}
 .acord-table table tr td a{
     text-decoration: underline;
 }
@@ -2512,6 +2526,36 @@ Form page
 li.open-submenu a{
     background-color: #33475f !important;
     color: #32e6e6 !important;
+}
+.checkbox-cell{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.checkbox-cell input[type="checkbox"]{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.checkbox-cell input[type="checkbox"]+ label{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    text-align: center;
+    vertical-align: middle;
+}
+.checkbox-cell label i{
+    display: none;
+}
+.checkbox-cell input[type="checkbox"]:checked + label i{
+    display: block;
+    color: rgb(0, 166, 55);
+    font-size: 20px;
 }
 .sidebar .nav .nav > li > a:active,
 .sidebar .nav .nav > li > a:focus
