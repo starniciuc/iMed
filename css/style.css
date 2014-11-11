@@ -2615,6 +2615,9 @@ li.open-submenu a{
 	padding-left: 15px;
 	padding-right: 15px;
 }
+.blue.dropdown-toggle.new-pacient-btn  span{
+	margin-left: 5px;
+}
 .new-pacient-drop .dropdown-menu > li > a{
 	font-size: 13px;
 	padding-left: 8px;
