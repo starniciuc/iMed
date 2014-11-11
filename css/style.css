@@ -2633,12 +2633,6 @@ li.open-submenu a{
     margin-bottom: 20px;
     color: #474747;
 }
-.index-collapse .collapse a{
-    font-size: 13px;
-    padding: 7px 0;
-    margin-bottom: 10px;
-    display: block;
-}
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
         width: 40px;
