@@ -2611,6 +2611,15 @@ li.open-submenu a{
 .main-container.user-page .collapse-side a.close-a i.fa-plus-square-o{
     display: none;
 }
+.blue.dropdown-toggle.new-pacient-btn{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.new-pacient-drop .dropdown-menu > li > a{
+	font-size: 13px;
+	padding-left: 8px;
+	padding-right: 10px;
+}
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
         width: 40px;
