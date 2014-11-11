@@ -2623,6 +2623,22 @@ li.open-submenu a{
 	padding-left: 8px;
 	padding-right: 10px;
 }
+.index-collapse{
+    border: 1px solid cyan;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+.index-collapse p a{
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #474747;
+}
+.index-collapse .collapse a{
+    font-size: 13px;
+    padding: 7px 0;
+    margin-bottom: 10px;
+    display: block;
+}
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
         width: 40px;
