@@ -55,7 +55,7 @@
                                 <div class="profile-btn btn-group institutia pull-right">
                                     <button type="button" class="btn dropdown-toggle institutia" data-toggle="dropdown">
                                         <span class="hidden-md hidden-sm hidden-xs">IMSP Clinica Universitară de Asistenţă<br>
-                                        Medicală Primară a USMF “N.Testimiţanu"</span>
+											Medicală Primară a USMF “N.Testimiţanu"</span>
                                         <i class="fa fa-medkit visible-md visible-sm visible-xs"></i>
                                     </button>
                                     <ul class="dropdown-menu" role="menu">
@@ -105,13 +105,13 @@
                                 <span class="item-text">TABLOU DE BORD</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" title="PACIENŢI" data-toggle="collapse-next" class="i-menu has-submenu">
+                        <li class="active">
+                            <a href="#" title="PACIENŢI" data-toggle="collapse-next" class="i-menu open-item-menu has-submenu">
                                 <em class="fa fa-users"></em>
                                 <span class="item-text">PACIENŢI <i class="fa fa-angle-down"></i></span>
                             </a>
                             <!-- START SubMenu item-->
-                            <ul class="nav collapse">
+                            <ul class="nav collapse in">
                                 <li class="active">
                                     <a href="searchpacient.html" title="Căutare pacient" data-toggle="" class="no-submenu">
                                         <span class="item-text"><i class="fa fa-angle-right"></i>Căutare pacient</span>
@@ -155,30 +155,17 @@
                             </ul>
                             <!-- END SubMenu item-->
                         </li>
-                        <li  class="active">
-                            <a href="#" title="STOC" data-toggle="collapse-next" class="i-menu open-item-menu has-submenu">
+                        <li>
+                            <a href="#" title="STOC" data-toggle="collapse-next" class="i-menu has-submenu">
                                 <em class="fa fa-cubes"></em>
                                 <span class="item-text">STOC <i class="fa fa-angle-down"></i></span>
                             </a>
                             <!-- START SubMenu item-->
-                            <ul class="nav collapse in">
+                            <ul class="nav collapse ">
                                 <li>
-                                    <a title="Programarea mea" href="#" class="no-submenu tree-menu">
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
                                         <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
                                     </a>
-                                    <ul class="nav submenu-menu">
-                                        <li>
-                                            <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
-                                                <span class="item-text"><i class="fa fa-angle-right"></i>Programarea 1</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
-                                                <span class="item-text"><i class="fa fa-angle-right"></i>Caută 1</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <!-- END SubMenu item-->
                                 </li>
                                 <li>
                                     <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
@@ -357,64 +344,298 @@
             <section>
                 <!-- START Page content-->
                 <section class="main-content ">                    
-                    <div class="main-container info-pacient">
-                        <div class="col-sm-16">
-                            <br>
-                            <ul>
-								<li><a href="searchpacient2.html">Search pacient (dropdown)</a></li>
-								<li><a href="fisa_rea.html">Fisa rea</a></li>
-								<li><a href="perioada.html">Perioada</a></li><br>
-								<li><a href="fisnast1.html">Fisa nastere</a></li><br>
-								<li><a href="examinare.html">Examinare</a></li><br>
-								<li><a href="epicriza.html">Epicriza</a></li><br>
-								<li><a href="act-mort.html">Act de constatare a morții</a></li><br>
-								<li><a href="mentiuni.html">Mențiuni speciale</a></li><br>
-								<li><a href="consiliul.html">Consiliul medical</a></li><br>
-                                <li><a href="diagnostic.html">Diagnostice</a></li><br>
-                                <li><a href="concluzie.html">Pentru pacienții internați la expertiză</a></li><br>
-                                <li><a href="evolutie.html">Evoluţie</a></li><br>
-                                <li><a href="tratament.html">Intervenția chirurgicală</a></li><br>
-                                <li><a href="acord-table2.html">Acord 2</a></li><br>
-                                <li><a href="acord-table.html">Acord</a></li><br>
-                                <li><a href="examene.html">Concluzie consultativă</a></li><br>
-                                <li><a href="internare.html">Internare</a></li><br>
-                                <li><a href="fismed-bolnav.html">Fișa medicală a bolnavului de staționar nr. 101</a></li><br>
-                                <li><a href="acord.html">Acord</a></li><br>
-                                <li><a href="fismed-cimc_copil.html">Fismed cimc copil</a></li><br>
-                                <li><a href="fismed-epizoade_maladii.html">fismed-epizoade_maladii</a></li><br>
-                                <li><a href="fismed-epizod-vizite.html">fismed-epizod-vizite</a></li><br>
-                                <li><a href="fismed-epizod_inchis-vizite.html">fismed-epizod_inchis-vizite</a></li><br>
-                                <li><a href="fismed-epizod_tratares.html">fismed-epizod_tratares</a></li><br>
-                                <li><a href="fismed-graviditati-2.html">fismed-graviditati-2</a></li><br>
-                                <li><a href="fismed-graviditati-3.html">fismed-graviditati-3</a></li><br>
-                                <li><a href="fismed-graviditati-inchisa.html">fismed-graviditati-inchisa</a></li><br>
-                                <li><a href="fismed-graviditati.html">fismed-graviditati</a></li><br>
-                                <li><a href="fismed-monitorizare.html">fismed-monitorizare</a></li><br>
-                                <li><a href="imed.html">imed</a></li><br>
-                                <li><a href="dashboard.html">dashboard</a></li><br>
-                                <li><a href="login-1.html">login-1</a></li><br>
-                                <li><a href="login-2.html">login-2</a></li><br>
-                                <li><a href="newpacient.html">newpacient</a></li><br>
-                                <li><a href="pacient.html">pacient</a></li><br>
-                                <li><a href="searchpacient.html">searchpacient</a></li><br>
-                            </ul>
+                    <div class="main-container">
+                        <h1>Căutare pacient <a href="javascript:void(0)" class="hide-form" data-toggle="collapse" data-target=".search-form">Ascunde formularul</a></h1>
+                        <div class="search-form collapse in">
+                            <form action="">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-sm-2">
+                                            <label for="">Diapazon:</label>
+                                        </div>
+                                        <div class="col-lg-14 col-sm-14 radio">
+                                            <input type="radio" value="mysector" name="diapazon" id="mysector"><label for="mysector">Sectorul meu</label>
+                                            <input type="radio" value="allpacients" name="diapazon" id="allpacients"><label for="allpacients">Toţi pacienţii</label>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-2"></div>
+                                        <div class="col-lg-4 col-sm-6"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2 col-sm-2"><label for="idnp">IDNP:</label></div>
+                                        <div class="col-lg-4 col-sm-6"><input type="text" id="idnp"></div>
+                                        <div class="col-lg-2 col-sm-2"><label for="location">Localitatea:</label></div>
+                                        <div class="col-lg-4 col-sm-6"><input type="text" id="location"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2 col-sm-2"><label for="name">Numele:</label></div>
+                                        <div class="col-lg-4 col-sm-6"><input type="text" id="name"></div>
+                                        <div class="col-lg-2 col-sm-2"><label for="street">Strada:</label></div>
+                                        <div class="col-lg-4 col-sm-6"><input type="text" id="street"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2 col-sm-2"><label for="lastname">Prenumele:</label></div>
+                                        <div class="col-lg-4 col-sm-6"><input type="text" id="lastname"></div>
+                                        <div class="col-lg-2 col-sm-2"><label for="bloc">Bloc:</label></div>
+                                        <div class="col-lg-4 col-sm-6"><input type="text" id="bloc"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2 col-sm-2"><label for="birthdayyear">Anul naşterii:</label></div>
+                                        <div class="col-lg-4 col-sm-6"><input type="text" id="birthdayyear"></div>
+                                        <div class="col-lg-2 col-sm-2"><label for="apartment">Apartament:</label></div>
+                                        <div class="col-lg-4 col-sm-6"><input type="text" id="apartment"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2 col-sm-2"><label for="polita">Poliţa:</label></div>
+                                        <div class="col-lg-4 col-sm-6"><input type="text" id="polita"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="buttons-panel">
+                                            <input type="submit" value="Caută">
+                                            <input type="reset" value="Curăţă">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <div class="search-result">
+                            <h3>Rezultatele căutării <span>3 înscrieri găsite</span></h3>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="control-panel">
+                                        <button class="blue">Fişa Medicală</button>
+                                        <button class="blue">Programări şi Trimiteri</button>
+                                        <div class="btn-group">
+											<button type="button" class="blue dropdown-toggle" data-toggle="dropdown">
+												Dropdown
+												<span class="caret"></span>
+												<span class="sr-only">Toggle Dropdown</span>
+											</button>
+											<ul class="dropdown-menu" role="menu">
+												<li><a href="#">Fișa de staționar</a></li>
+												<li><a href="#">Naștere</a></li>
+												<li><a href="#">Urgența</a></li>
+												<li><a href="#">Staționar de zi</a></li>
+											</ul>
+										</div>
+                                        <button class="green">Pacient Nou</button>
+                                        <button class="blue">Exportă în Excel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-inner">
+                                <table>
+                                    <tr>
+                                        <th><input type="checkbox"></th>
+                                        <th>IDNP</th>
+                                        <th>Numele</th>
+                                        <th>Prenumele</th>
+                                        <th>Patronimic</th>
+                                        <th>Data nașterii</th>
+                                        <th>Sexul</th>
+                                        <th>Sectorul</th>
+                                        <th>Strada</th>
+                                        <th>Bloc</th>
+                                        <th>Ap.</th>
+                                        <th>Localitatea</th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>2004004042001</td>
+                                        <td><a href="pacient.html">Mardare Radu</a></td>
+                                        <td><a href="pacient.html">Ana</a></td>
+                                        <td>Cezar</td>
+                                        <td>01.01.1980</td>
+                                        <td>F</td>
+                                        <td>12</td>
+                                        <td>Matei Basarab</td>
+                                        <td>7</td>
+                                        <td>15</td>
+                                        <td>Chișinău</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="pagination-box">
+                                <ul class="pagination">
+                                    <li class="disabled"><a href="#">&laquo;</a></li>
+                                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                    <li><a href="#">2 <span class="sr-only">(page 2)</span></a></li>
+                                    <li><a href="#">3 <span class="sr-only">(page 3)</span></a></li>
+                                    <li><a href="#">4 <span class="sr-only">(page 4)</span></a></li>
+                                    <li><a href="#">&raquo;</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
+
                     <!-- Footer -->
 
                     <footer class="footer">
@@ -432,8 +653,8 @@
                                 <div class="clear"></div>
                             </div>
                             <div class="row copyright">
-                                <div class="btn-group dropup">      
-                                    <button class="btn  dropdown-toggle" data-toggle="dropdown" disabled="disabled">În Română</button>
+                                <div class="btn-group dropup">
+                                    <button class="btn  dropdown-toggle" data-toggle="dropdown">În Română</button>
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="#">На русском</a></li>
                                     </ul>
