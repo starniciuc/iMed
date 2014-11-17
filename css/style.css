@@ -2511,10 +2511,15 @@ Form page
     width: auto;
 }
 .user-page .form-page .table-side.fismed-2.simptome table tr th,
-.user-page .form-page .table-side.fismed-2.simptome table tr td
+.user-page .form-page .table-side.fismed-2.simptome table tr td,
+.user-page .form-page .table-side.fismed-2.supraveghere table tr th,
+.user-page .form-page .table-side.fismed-2.supraveghere table tr td
 {
     vertical-align: middle;
     text-align: center;
+}
+.user-page .form-page .table-side.fismed-2.supraveghere table tr td.text-right-td{
+    text-align: right;
 }
 .user-page .form-page .table-side.fismed-2.simptome table tr:first-child th:first-child,
 .user-page .form-page .table-side.fismed-2.simptome table tr td:first-child
