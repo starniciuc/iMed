@@ -396,7 +396,8 @@
               date:   "fa fa-calendar",
               up:     "fa fa-arrow-up",
               down:   "fa fa-arrow-down"
-          }
+          },
+          language: 'ro'
         }));
 
       // Force a dropdown hide when click out of the input

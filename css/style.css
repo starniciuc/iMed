@@ -2689,6 +2689,24 @@ li.open-submenu a{
 .user-page .form-page .table-side h2.add{
     padding: 15px;
 }
+.user-page .form-page .info-block{
+    background-color: rgb(230, 250, 255);
+    border-radius: 6px;
+    padding: 15px;
+}
+.user-page .form-page .info-block p{
+    color: rgb(84, 117, 153);
+    font-size: 11px;
+    line-height: 13px;
+}
+.user-page .form-page .info-block p.title{
+    font-weight: bold;
+}
+.user-page .form-page table tr td .datetimepicker input,
+.user-page .form-page table tr td .datetimepicker span
+{
+    border: 0; 
+}
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
         width: 40px;
