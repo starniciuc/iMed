@@ -2707,6 +2707,9 @@ li.open-submenu a{
 {
     border: 0; 
 }
+.user-page .form-page table tr td.fixed-size{
+    width: 190px;
+}
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
         width: 40px;
