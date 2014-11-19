@@ -2310,6 +2310,10 @@ New page Acord informat la interventie
     margin-bottom: 10px;
     height: auto;
 }
+.main-container.user-page textarea:focus,
+.main-container.user-page textarea:active{
+	border-color: rgba(82, 168, 236, 0.8);
+}
 .main-container.user-page label.label-textarea{
     width: 130px;
     float: left;
@@ -2469,7 +2473,7 @@ Form page
     line-height: 20px;
     color: #000000;
     font-weight: bold;
-    margin: 20px 0 10px;
+    margin: 0px;
     padding: 0;
 }
 .user-page .form-page .checkbox-side label{
