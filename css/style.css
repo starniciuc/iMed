@@ -482,7 +482,7 @@ nav.navbar .logo small{
 }
 .main-container{
     background-color:#fff;
-    margin-top:30px;
+    margin-top:20px;
     border-radius: 6px;
     -webkit-box-shadow: 1px 1px 3px 0px rgba(58, 82, 107, 0.2);
     -moz-box-shadow:    1px 1px 3px 0px rgba(58, 82, 107, 0.2);
@@ -1046,8 +1046,8 @@ form.new-pacient .row{
 ul.list-main-menu{
     padding: 0;
     list-style: none;
-    padding-top: 20px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 15px;
 }
 ul.list-main-menu li{
@@ -1705,7 +1705,7 @@ Redesign fismed page
     border-bottom:1px solid #ddd;
 }
 .top-main-container{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .top-main-container .main-container{
     margin-top: 0px;
