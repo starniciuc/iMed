@@ -482,7 +482,7 @@ nav.navbar .logo small{
 }
 .main-container{
     background-color:#fff;
-    margin-top:30px;
+    margin-top:20px;
     border-radius: 6px;
     -webkit-box-shadow: 1px 1px 3px 0px rgba(58, 82, 107, 0.2);
     -moz-box-shadow:    1px 1px 3px 0px rgba(58, 82, 107, 0.2);
@@ -1046,8 +1046,8 @@ form.new-pacient .row{
 ul.list-main-menu{
     padding: 0;
     list-style: none;
-    padding-top: 20px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 15px;
 }
 ul.list-main-menu li{
@@ -1705,7 +1705,7 @@ Redesign fismed page
     border-bottom:1px solid #ddd;
 }
 .top-main-container{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .top-main-container .main-container{
     margin-top: 0px;
@@ -2310,6 +2310,10 @@ New page Acord informat la interventie
     margin-bottom: 10px;
     height: auto;
 }
+.main-container.user-page textarea:focus,
+.main-container.user-page textarea:active{
+	border-color: rgba(82, 168, 236, 0.8);
+}
 .main-container.user-page label.label-textarea{
     width: 130px;
     float: left;
@@ -2469,14 +2473,14 @@ Form page
     line-height: 20px;
     color: #000000;
     font-weight: bold;
-    margin: 0;
+    margin: 0px;
     padding: 0;
 }
 .user-page .form-page .checkbox-side label{
     float: none;
     font-size: 13px;
     color: #000000;
-    margin-right: 10px;
+    margin-right: 20px;
     font-weight: normal;
 }
 .user-page .form-page .checkbox-side input{
@@ -2709,6 +2713,21 @@ li.open-submenu a{
 }
 .user-page .form-page table tr td.fixed-size{
     width: 190px;
+}
+.width-fixed-14{
+	width: 14%;
+}
+.width-fixed-8{
+	width: 8%;
+}
+.width-fixed-70{
+	width: 70%;
+}
+.width-fixed-25{
+	width: 25%;
+}
+.width-fixed-140{
+	width: 140px;
 }
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
