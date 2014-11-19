@@ -575,7 +575,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <p>Gestații antecedente (>22 săpt + < 22 săpt)</p>
+                                            <p>Gestații antecedente (>22 săpt + <22 săpt)</p>
                                             <div class="row">
                                                 <div class='col-sm-8'>
                                                     <input type="text" class="form-control" >
@@ -604,19 +604,19 @@
                                         </div>
                                     </div>
                                     <div class="row-fluid info-pacient">
-                                        <div class="col-lg-10 table-side fismed-2 lauzie"> 
+                                        <div class="col-lg-10 table-side fismed-2"> 
                                             <div class="table-inner">
                                                 <table>
                                                     <tr>
-                                                        <th></th>
+                                                        <th class="width-fixed-8"></th>
                                                         <th>Data</th>
-                                                        <th>Termenul gestației (săpt+ zile)</th>
-                                                        <th>DPN</th>
+                                                        <th class="width-fixed-25">Termenul gestației (săpt + zile)</th>
+                                                        <th class="width-fixed-25">DPN</th>
                                                     </tr>
                                                     <tr>
                                                         <td>UM</td>
-                                                        <td class='fixed-size'>
-                                                            <div class="datetimepicker input-group date" data-date-format="DD.MM.YYYY">
+                                                        <td>
+                                                            <div class="datetimepicker input-group date" data-pick-time="false" data-date-format="DD.MM.YYYY">
                                                                 <input type="text" class="form-control">
                                                                 <span class="input-group-addon">
                                                                     <span class="fa fa-calendar"></span>
@@ -628,8 +628,8 @@
                                                     </tr>
                                                     <tr>
                                                         <td>USG</td>
-                                                        <td class='fixed-size'>
-                                                            <div class="datetimepicker input-group date" data-date-format="DD.MM.YYYY">
+                                                        <td>
+                                                            <div class="datetimepicker input-group date" data-pick-time="false" data-date-format="DD.MM.YYYY">
                                                                 <input type="text" class="form-control">
                                                                 <span class="input-group-addon">
                                                                     <span class="fa fa-calendar"></span>
@@ -679,7 +679,7 @@
                                             <input type="text" class="form-control" > 
                                         </div>
                                         <div class="col-lg-2 col-md-3">
-                                            <p>la medicul de familie.</p>
+                                            <p>la medicul de familie</p>
                                             <input type="text" class="form-control" > 
                                         </div>
                                         <div class="col-lg-2 col-md-3">
@@ -725,10 +725,10 @@
                                             <div class="table-inner">
                                                 <table>
                                                     <tr>
-                                                        <th></th>
-                                                        <th>Nu</th>
-                                                        <th>Da</th>
-                                                        <th>Mențiuni</th>
+                                                        <th class="width-fixed-14"></th>
+                                                        <th class="width-fixed-8">Nu</th>
+                                                        <th class="width-fixed-8">Da</th>
+                                                        <th class="width-fixed-70">Mențiuni</th>
                                                     </tr>
                                                     <tr>
                                                         <td>la începutul sarcinii</td>
@@ -827,7 +827,7 @@
                                         </div>
                                         <div class="col-lg-2 col-md-3">
                                             <p>Data</p>
-                                            <div class="datetimepicker input-group date mb-lg" data-date-format="DD.MM.YYYY">
+                                            <div class="datetimepicker input-group date mb-lg" data-pick-time="false" data-date-format="DD.MM.YYYY">
                                                 <input type="text" class="form-control">
                                                 <span class="input-group-addon">
                                                     <span class="fa fa-calendar"></span>
@@ -911,10 +911,13 @@
                                     </div>
                                     <div class="form-group clearfix">
                                         <div class="col-lg-16">
-                                            <p>În cazul T/A ≥ 140/90 se apreciază nivelul proteinuriei (g/l) la internare</p>
+                                            <p>În cazul T/A ≥ 140/90 se apreciază nivelul proteinuriei la internare</p>
                                         </div>
                                         <div class="col-lg-2 col-md-3">
-                                            <input type="text" class="form-control" >
+                                            <div class="masure-input">
+                                                <input type="text" class="form-control" >
+                                                <label>g/l</label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group clearfix">
@@ -950,18 +953,20 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class='col-md-10'>
-                                        <div class="info-block">
-                                            <p class="title">Abrevieri:</p>
-                                            <p>T/A – tensiunea arterială; DPN- data probabilă a naşterii;</p>
-                                            <p>s.a. – săptămâni de amenoree</p>
-                                            <p>UM – 1 zi a ultimei menstruației</p>
-                                            <p>PM – primă mișcare USG - ultrasonografia</p>
-                                            <p>AFLS – sindrom antifosfolipidic; RDIU – retard fetal intrauterin;</p>
-                                            <p>IMC – indexul masocorporal = 2 = masa corpului/ (lungimea corpului) (Norma 20-25 kg/m2)</p>
-                                            <p>ÎFU- înalțimea fundului uterin; CA – circumferinţa abdomenului DS – distantia spinarum, DC – distantia cristarum;</p>
-                                            <p>DI – distantia intertrohanterica; CE – conjugata externa</p>
-                                        </div>
+									<div class="form-group clearfix">
+										<div class='col-md-10'>
+											<div class="info-block">
+												<p class="title">Abrevieri:</p>
+												<p>T/A – tensiunea arterială; DPN- data probabilă a naşterii;</p>
+												<p>s.a. – săptămâni de amenoree</p>
+												<p>UM – 1 zi a ultimei menstruației</p>
+												<p>PM – primă mișcare USG - ultrasonografia</p>
+												<p>AFLS – sindrom antifosfolipidic; RDIU – retard fetal intrauterin;</p>
+												<p>IMC – indexul masocorporal = 2 = masa corpului/ (lungimea corpului) (Norma 20-25 kg/m2)</p>
+												<p>ÎFU- înalțimea fundului uterin; CA – circumferinţa abdomenului DS – distantia spinarum, DC – distantia cristarum;</p>
+												<p>DI – distantia intertrohanterica; CE – conjugata externa</p>
+											</div>
+										</div>
                                     </div>
 
                                     <div class="form-group clearfix">
@@ -976,7 +981,7 @@
                                         </div>
                                         <div class="col-lg-2 col-md-3">
                                             <p>Data</p>
-                                            <div class="datetimepicker input-group date mb-lg" data-date-format="DD.MM.YYYY">
+                                            <div class="datetimepicker input-group date mb-lg" data-pick-time="false" data-date-format="DD.MM.YYYY">
                                                 <input type="text" class="form-control">
                                                 <span class="input-group-addon">
                                                     <span class="fa fa-calendar"></span>
