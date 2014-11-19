@@ -2480,7 +2480,7 @@ Form page
     float: none;
     font-size: 13px;
     color: #000000;
-    margin-right: 25px;
+    margin-right: 40px;
     font-weight: normal;
 }
 .user-page .form-page .checkbox-side input{
@@ -2725,6 +2725,9 @@ li.open-submenu a{
 }
 .width-fixed-25{
 	width: 25%;
+}
+.width-fixed-140{
+	width: 140px;
 }
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
