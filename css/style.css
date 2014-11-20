@@ -67,11 +67,12 @@ body{
     clear: both;
 }
 h2{
-    background-color:#e1ffff;
+    background-color: #e1ffff;
     font-size: 18px;
     font-weight: 700;
-    padding: 13px 0 13px 30px;
+    line-height: 32px;
     margin: 30px 0;
+    padding: 5px 15px 5px 30px;
 }
 h1{
     padding: 20px 0 20px 30px;
@@ -2402,7 +2403,7 @@ Form page
 .user-page .form-page .btn-green-med,
 .user-page .form-page .btn-grey-med{
     width: 90px;
-    height: 30px;
+    height: 40px;
     margin-right: 15px;
 }
 .user-page .form-page .form-control{
@@ -2539,6 +2540,9 @@ Form page
 .user-page .form-page .table-side.fismed-2.sumarul table tr td{
     text-align: left;
 }
+.user-page .form-page .table-side.fismed-2.sumarul table tr td.text-center{
+    text-align: center;
+}
 .user-page .form-page .table-side.fismed-2.simptome table tr:first-child th:first-child,
 .user-page .form-page .table-side.fismed-2.simptome table tr td:first-child
 {
@@ -2595,19 +2599,18 @@ li.open-submenu a{
 }
 .checkbox-cell label i{
     display: none;
-}
-.checkbox-cell input[type="checkbox"]:checked + label i{
-    display: block;
     color: rgb(0, 166, 55);
     font-size: 20px;
 }
+.checkbox-cell label i.red{
+    color: rgb(255, 0, 0);
+}
+.checkbox-cell label:hover i{
+    display: block;
+}
+.checkbox-cell input[type="checkbox"]:checked + label i,
 .checkbox-cell input[type="radio"]:checked + label i{
     display: block;
-    color: rgb(0, 166, 55);
-    font-size: 20px;
-}
-.checkbox-cell input[type="radio"]:checked + label i.red{
-    color: rgb(255, 0, 0);
 }
 .sidebar .nav .nav > li > a:active,
 .sidebar .nav .nav > li > a:focus
