@@ -666,7 +666,7 @@ a.hide-form:hover{
     padding: 8px 25px;
     font-size: 13px;
     color:#fff;
-    margin-right: 6px;
+    margin-left: 6px;
 }
 button.blue{
     background-color: #547599;
@@ -1129,10 +1129,9 @@ ul.list-main-menu li.selected
     overflow-y: scroll;
 }
 .btn-add{
-    position: absolute;
-    top: 7px;
-    right: 7px;
+	float: right;
     padding: 8px 12px;
+	line-height: 13px;
 }
 .second{
     background-color: #FAFAFA;
@@ -2691,7 +2690,8 @@ li.open-submenu a{
     line-height: 20px;
 }
 .user-page .form-page .table-side h2.add{
-    padding: 15px;
+    padding: 7px 15px;
+	line-height: 32px;
 }
 .user-page .form-page .info-block{
     background-color: rgb(230, 250, 255);
