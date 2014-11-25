@@ -2386,6 +2386,15 @@ Form page
 .user-page .form-page p{
     margin-bottom: 5px;
 }
+.user-page .form-page p small{
+    font-size: 8px;
+}
+.user-page .form-page p.blue{
+    color: rgb(0, 115, 230);
+    font-size: 12px;
+    line-height: 20px;
+    font-style: italic;
+}
 .user-page .form-page p.small {
     font-size: 11px;
 }
@@ -2710,9 +2719,11 @@ li.open-submenu a{
     font-weight: bold;
 }
 .user-page .form-page table tr td .datetimepicker input,
-.user-page .form-page table tr td .datetimepicker span
+.user-page .form-page table tr td .datetimepicker span,
+.user-page .form-page table tr td select
 {
-    border: 0; 
+    border: 0;
+    border-radius: 0;
 }
 .user-page .form-page table tr td.fixed-size{
     width: 190px;

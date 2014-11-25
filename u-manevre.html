@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Info pacient - Sistem Informaţional Medical / iMeD</title>
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <section class="wrapper">
+            <!-- Header -->
+            <nav class="navbar navbar-default top navbar-top navbar-fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <div class="col-lg-16">
+                            <div class="col-lg-2 col-md-4 col-sm-16 col-xs-16">
+                                <div class="navbar-header">
+                                    <a class="logo" href="index.html" data-toggle="tooltip" data-placement="bottom" title="Sistemul Informațional Integrat în Sănătate">
+                                        <span class="brand"></span>
+                                        <span>SIIS</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-14 col-md-12 col-sm-16 col-xs-16">
+                                <button type="button" class="sidebar-btn navbar-toggle pull-left" data-toggle="aside" href="javascript:void(0)">
+                                    <span class="sr-only">Deschide bara laterală</span>
+                                    <span class="fa fa-bars"></span> 
+                                </button>
+                                <button type="button" class="icons navbar-toggle pull-left" data-toggle="collapse" data-target="#top-nav">
+                                    <span class="sr-only">Vezi toate modulele</span>
+                                    <span class="fa fa-ellipsis-v"></span>
+                                </button>
+
+                                <div class="profile-btn btn-group pull-right">
+                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                                        <span class="hidden-md hidden-sm hidden-xs">Victoria Rosca</span>
+                                        <i class="fa fa-user visible-md  visible-sm visible-xs"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#"><i class="fa fa-user"></i>Preferinţele mele</a></li>
+                                        <li><a href="#"><i class="fa fa-cog"></i>Setări profil</a></li>
+                                        <li><a href="#"><i class="fa fa-sign-out"></i>Ieşire</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="profile-btn btn-group institutia pull-right">
+                                    <button type="button" class="btn dropdown-toggle institutia" data-toggle="dropdown">
+                                        <span class="hidden-md hidden-sm hidden-xs">IMSP Clinica Universitară de Asistenţă<br>
+                                            Medicală Primară a USMF “N.Testimiţanu"</span>
+                                        <i class="fa fa-medkit visible-md visible-sm visible-xs"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Spitalul Clinic de Traumatologie şi Ortopedie</a></li>
+                                        <li><a href="#">Spitalul Clinic Municipal „Sf. Treime”</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="collapse navbar-collapse" id="top-nav">
+                                    <ul class="nav navbar-nav top-navbar">
+                                        <li class="info" data-toggle="tooltip" data-placement="bottom" title="Sănătate Info"><a href="http://e-sanatate.md/News/Home">Sănătate Info</a></li>
+                                        <li class="tv" data-toggle="tooltip" data-placement="bottom" title="Sănătate TV"><a href="http://e-sanatate.md/TV/Home">Sănătate TV</a></li>
+                                        <li class="sanoclub" data-toggle="tooltip" data-placement="bottom" title="SanoClub"><a href="http://e-sanatate.md/SanoClub">SanoClub</a></li>
+                                        <li class="isan" data-toggle="tooltip" data-placement="bottom" title="E-Sănătate Pacienți"><a href="http://e-sanatate.md/iSaN/Home">E-Sănătate Pacienți</a></li>
+                                        <!-- <li class="imed" data-toggle="tooltip" data-placement="bottom" title="E-Sănătate Medici"><a href="#">iMeD</a></li> -->
+                                        <li class="imec" data-toggle="tooltip" data-placement="bottom" title="E-Sănătate Instituții"><a href="http://e-sanatate.md/iMeC/Home">E-Sănătate Instituții</a></li>
+                                        <li class="tuberculoza" data-toggle="tooltip" data-placement="bottom" title="Tuberculoza Info"><a href="http://tuberculoza.info/">Tuberculoza Info</a></li>
+                                        <li class="spitale" data-toggle="tooltip" data-placement="bottom" title="Spitale.MD"><a href="http://e-sanatate.md/Spitale/Home">Spitale.MD</a></li>
+                                        <li class="pas" data-toggle="tooltip" data-placement="bottom" title="Centrul PAS"><a href="http://pas.md/">Centrul PAS</a></li>
+                                        <li class="scoala" data-toggle="tooltip" data-placement="bottom" title="Școala E-Sănătate"><a href="#">Școala E-Sănătate</a></li>
+                                        <li class="donez" data-toggle="tooltip" data-placement="bottom" title="Donez Sânge"><a href="#">Donez Sânge</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Container -->
+
+            <!-- START aside-->
+
+            <aside class="aside">
+                <!-- START Sidebar (left)-->
+                <nav class="sidebar">
+                    <ul class="nav">
+                        <!-- START Menu-->
+                        <li class='glisare clearfix'>
+                            <a href="#" data-toggle="aside" class="button-slide-left pull-right">
+                                <em class="fa fa-angle-double-left"></em> glisează
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html" title="Dashboard" class="has-submenu">
+                                <em class="fa fa-bar-chart-o"></em>
+                                <span class="item-text">TABLOU DE BORD</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#" title="PACIENŢI" data-toggle="collapse-next" class="i-menu open-item-menu has-submenu">
+                                <em class="fa fa-users"></em>
+                                <span class="item-text">PACIENŢI <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse in">
+                                <li class="active">
+                                    <a href="searchpacient.html" title="Căutare pacient" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Căutare pacient</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="newpacient.html" title="Pacient nou" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Pacient nou</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Comasare duplicate" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Comasare duplicate</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Pacient nou" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Anularea comasării</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="PROGRAMARE" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-calendar"></em>
+                                <span class="item-text">PROGRAMARE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Caută programarea</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="STOC" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-cubes"></em>
+                                <span class="item-text">STOC <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Caută programarea</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="RESURSE UMANE" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-list-alt"></em>
+                                <span class="item-text">RESURSE UMANE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Caută programarea</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="Clasificatoare" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-bookmark"></em>
+                                <span class="item-text">CLASIFICATOARE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Programarea mea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Programarea mea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Caută programarea" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Caută programarea</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="RAPOARTE" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-clipboard"></em>
+                                <span class="item-text">RAPOARTE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Registrul vizitelor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul vizitelor</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul Tichete Stitistice" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul Tichete Stitistice</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Validation" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Validation</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Sectorul meu" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Sectorul meu</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul monitorizare" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul monitorizare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Modificare registre" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Modificare registre</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul trimiterilor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul trimiterilor</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul gravidelor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul gravidelor</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="REGISTRE" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa  fa-book"></em>
+                                <span class="item-text">REGISTRE <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Rapoarte zilnice" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Rapoarte zilnice</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Rapoarte lunare ale medicului" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Rapoarte lunare ale medicului</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="VACCINĂRI" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-umbrella"></em>
+                                <span class="item-text">VACCINĂRI <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Registrul vaccinărilor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul vaccinărilor</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Planuri" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Planuri</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Registrul planuri vaccinări" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Registrul planuri vaccinări</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Raport" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Raport</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li>
+                            <a href="#" title="SETĂRI" data-toggle="collapse-next" class="i-menu has-submenu">
+                                <em class="fa fa-cogs"></em><span class="item-text">SETĂRI <i class="fa fa-angle-down"></i></span>
+                            </a>
+                            <!-- START SubMenu item-->
+                            <ul class="nav collapse ">
+                                <li>
+                                    <a href="#" title="Lista scurtă a diagnozelor" data-toggle="" class="no-submenu">
+                                        <span class="item-text"><i class="fa fa-angle-right"></i>Lista scurtă a diagnozelor</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- END SubMenu item-->
+                        </li>
+                        <li class="print-side-button">
+                            <a href="#" class="back has-submenu">
+                                <em class="fa fa-print"></em>
+                                <span class="item-text">Tipărește</span>
+                            </a>
+                        </li>
+                        <!-- END Menu-->
+                    </ul>
+                </nav>
+                <!-- END Sidebar (left)-->
+            </aside>
+            <!-- End aside-->
+            <section>
+                <!-- START Page content-->
+                <section class="main-content">
+                    <div class="top-main-container">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="main-container top-name">
+                                    <h3>Ana Mardare Radu</h3>
+                                    <div class="name-block">
+                                        <img src="img/pacienti/ana-mardare_profile.jpg" alt="Ana Mardare">
+                                        <div class="name"><span class="virsta">27 ani, feminin</span>
+                                            <div class="btn-group keep-open">
+                                                <button data-toggle="dropdown" class="btn dropdown-toggle btn-info-pacient" type="button">
+                                                    <i class="fa fa-file-text-o"></i> <span>Info<br>
+                                                        pacient</span>
+                                                </button>
+                                                <div class="dropdown-menu my-position in-block-down">
+                                                    <table>
+                                                        <tr><th>Pacient</th><th></th></tr>
+                                                        <tr><td>IDNP</td><td>2004004042004</td></tr>
+                                                        <tr><td>Numărul poliţei</td><td>A334455</td></tr>
+                                                        <tr><td>Sexul</td><td>F</td></tr>
+                                                        <tr><td>Data naşterii</td><td>01.01.1987</td></tr>
+                                                        <tr><td>Sectorul</td><td>12</td></tr>
+                                                        <tr><td>Medic de familie</td><td><a href="#">Anastasia Crigan Anatolie</a></td></tr>
+                                                    </table>
+                                                    <table>
+                                                        <tr><th>Adresa</th></tr>
+                                                        <tr><td>Mun. Chişinău, str. Matei Basarab, 18/3, ap. 5</td></tr>
+                                                    </table>
+                                                    <table>
+                                                        <tr><th>Contacte</th></tr>
+                                                        <tr><td>Tel.: 069969699, 022334455</td></tr>
+                                                        <tr><td>e-mail: <a href="mailto:ana.mardare@hotmail.com" class="no-border">ana.mardare@hotmail.com</a></td></tr>
+                                                    </table>
+                                                    <div class="text-center">
+                                                        <button class="btn btn-warning btn-iSan">Profil iSaN</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="main-container left-top">
+                                    <div class="row">
+                                        <div class="col-lg-5">
+                                            <div class="row">
+                                                <div class="col-lg-16 pad-top-block">
+                                                    <p><strong>Diagnosticul de trimitere</strong></p>
+                                                    <p>CIMC Copil 2014</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-16 pad-top-block2">
+                                                    <p><strong>Clasa</strong></p>
+                                                    <p>Policlinică</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="row">
+                                                <div class="col-lg-16 pad-top-block">
+                                                    <p><strong>Cod</strong></p>
+                                                    <p>A01.1</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-16 pad-top-block2">
+                                                    <p><strong>Subclasa</strong></p>
+                                                    <p>Pe motiv de boală</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="col-lg-16 pad-top-block">
+                                                    <p><strong>Medicul curant</strong></p>
+                                                    <p>Alexandru Barbănouă Andrei</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-container">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-16">
+                                    <ul class="list-main-menu">
+                                        <li><a href="#">Date generale</a></li>
+                                        <li><a href="#">Diagnostice</a></li>
+                                        <li><a href="#">Examene clinice</a></li>
+                                        <li><a href="#">Examene paraclinice</a></li>
+                                        <li class="selected"><a href="#">Manevre și proceduri efectuate</a></li>
+                                        <li><a href="#">Tratament</a></li>
+                                        <li><a href="#">Evoluție</a></li>
+                                        <li><a href="#">Consiliul medical</a></li>
+                                        <li><a href="#">Mențiuni speciale</a></li>
+                                        <li><a href="#">Acordul informat</a></li>
+                                        <li><a href="#">Externare</a></li>
+                                        <li><a href="#">Act de constatare a morții</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-container user-page">
+                        <div class="container-fluid">
+                            <div class="row-fluid clearfix" id="container">
+                                <div class="col-lg-16 form-page ">
+                                    <h1 class="into-small-text">Manevre și proceduri efectuate</h1>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck1"><label for="ck1">O<small>2</small> mască (l/min)</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck3"><label for="ck3">Nebulizare</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck4"><label for="ck4">Atelă</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck5"><label for="ck5">Pipă Guedelt</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck6"><label for="ck6">Compresiuni toracice externe</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck7"><label for="ck7">Aparat gipsat</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck8"><label for="ck8">Acces arterial</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck9"><label for="ck9">Monitorizare TA invazivă</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck10"><label for="ck10">Prelucrarea primchirurgicală a plăgii</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck11"><label for="ck11">IOT cu inducție</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck12"><label for="ck12">Monitorizare EKG</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck13"><label for="ck13">Sutură plagă</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck14"><label for="ck14">IOT fără inducție</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck15"><label for="ck15">Monitorizare SaO<small>2</small></label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck16"><label for="ck16">Tamponament nazal</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck17"><label for="ck17">INT cu inducție</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck18"><label for="ck18">Defibrilare manuală</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck19"><label for="ck19">Puncție lombară</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck20"><label for="ck20">Combitub</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck21"><label for="ck21">Defibrilare automată</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck22"><label for="ck22">Prelevare sânge</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck23"><label for="ck23">Mască laringiană</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck24"><label for="ck24">Cardioversie</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck25"><label for="ck25">Echilibrul acido-bazic</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck26"><label for="ck26">Decompresie toracică pe ac</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck27"><label for="ck27">Puncție pericardică</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck28"><label for="ck28">Echilibrul hidroelectrolitic</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck29"><label for="ck29">Drenaj toracic (ml)</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck30"><label for="ck30">Lavaj peritoneal diag.</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck31"><label for="ck31">Coagulagrama</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck32"><label for="ck32">Traheostomie</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck33"><label for="ck33">Reîncălzire</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck34"><label for="ck34">Determinarea grupului sanguin</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck35"><label for="ck35">Ventilație noninvazivă</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck36"><label for="ck36">Alte monitorizări</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck37"><label for="ck37">Investigație ultrasonografică</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck38"><label for="ck38">Ventilație mecanică</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck39"><label for="ck39">Aspirație pe sonda IOT (ml)</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck40"><label for="ck40">Investigații radiologice</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck41"><label for="ck41">Acces venos periferic</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck42"><label for="ck42">Aspirație cavitate bucală (ml)</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck43"><label for="ck43">Transfuzie sînge/componenți sanguini</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck44"><label for="ck44">Acces intraosos</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck45"><label for="ck45">Lavaj gastric (ml)</label></p>
+                                        </div>
+                                        <div class="col-md-8 checkbox-side">
+                                            <p><input type="checkbox" name="ck46"><label for="ck46">Vaccinare antitetanus</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck47"><label for="ck47">Acces venos central (vena)</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck48"><label for="ck48">Sondă nazogastrică (ml)</label></p>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h5>Altele (de scris)</h5>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck49"><label for="ck49">Injecție intramusculară</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck50"><label for="ck50">Sondă vezică urinară (ml)</label></p>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck51"><label for="ck51">Injecție subcutanată</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck52"><label for="ck52">Guler cervical</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck53"><label for="ck53">Injecție intradermică</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck54"><label for="ck54">Targă cu lopeți</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck55"><label for="ck55">Adm. intranazală</label></p> 
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck56"><label for="ck56">Targă coloană</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4">
+                                        </div>
+                                        <div class="col-md-4 checkbox-side">
+                                            <p><input type="checkbox" name="ck57"><label for="ck57">Imobilizare membre</label></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer -->
+
+                        <footer class="footer">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <nav class="footer-nav">
+                                        <ul>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Privacy">Confidențialitate</a></li>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Security">Securitatea datelor</a></li>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Terms">Termeni şi Condiţii</a></li>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Assistance">Asistență pentru clienți</a></li>
+                                            <li><a href="https://e-sanatate.md/iMeD/Home/Services">Servicii</a></li>
+                                        </ul>
+                                    </nav>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="row copyright">
+                                    <div class="btn-group dropup">      
+                                        <button class="btn  dropdown-toggle" data-toggle="dropdown" disabled="disabled">În Română</button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">На русском</a></li>
+                                        </ul>
+                                    </div>
+                                    <p>2014 © iMeD. Toate drepturile sunt rezervate.</p>
+
+                                    <ul class="socials">
+                                        <li class="facebook"><a href="https://www.facebook.com/e.sanatatea.ta" target="_blank"></a></li>
+                                        <li class="twitter"><a href="https://twitter.com/E_Sanatatea_TA" target="_blank"></a></li>
+                                        <li class="linkedin"><a href="http://www.linkedin.com/profile/view?id=254762663&trk=tab_pro" target="_blank"></a></li>
+                                        <li class="youtube"><a href="http://www.youtube.com/channel/UCuVNhiubNuy1M8yQmQmVOUQ" target="_blank"></a></li>
+                                        <li class="rss"><a href="https://e-sanatate.md/News/Home/RSS" target="_blank"></a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </footer>
+
+                </section>
+            </section>
+            <!-- END Page content-->
+        </section>
+        <script data-main="js/normalize" src="js/require.js"></script>
+    </body>
+</html>
