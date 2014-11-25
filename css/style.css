@@ -2292,18 +2292,21 @@ New page Acord informat la interventie
     font-size: 12px;
     font-weight: normal;
 }
-.main-container.user-page p{
+.main-container.user-page p,
+.modal-content  p{
     color: #000000;
     font-size: 13px;
     margin-bottom: 10px;
     line-height: 17px;
 }
-.main-container.user-page strong{
+.main-container.user-page strong,
+.modal-content  p strong{
     font-weight: bold;
     padding-bottom: 1px;
     border-bottom: 1px solid #46A0FF;
 }
-.main-container.user-page textarea{
+.main-container.user-page textarea,
+.modal-content  textarea{
     border: 1px solid #46A0FF;
     resize: none;
     overflow: hidden;
@@ -2313,6 +2316,9 @@ New page Acord informat la interventie
 .main-container.user-page textarea:focus,
 .main-container.user-page textarea:active{
 	border-color: rgba(82, 168, 236, 0.8);
+}
+.iMed-modal.marign{
+    margin-top: 0;
 }
 .main-container.user-page label.label-textarea{
     width: 130px;
@@ -2388,6 +2394,9 @@ Form page
 }
 .user-page .form-page p small{
     font-size: 8px;
+}
+.user-page .form-page p.small-text{
+    font-size: 12px;
 }
 .user-page .form-page p.blue{
     color: rgb(0, 115, 230);
