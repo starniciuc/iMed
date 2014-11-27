@@ -1307,6 +1307,8 @@ ul.list-main-menu li.selected
     text-align: right;
     width: auto !important;
     color: #709ccc;
+	white-space: normal;
+	max-width: 230px;
 }
 .profile-btn.btn-group{
     width: auto;
