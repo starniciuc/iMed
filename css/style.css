@@ -1305,10 +1305,9 @@ ul.list-main-menu li.selected
     font-weight: normal;
     font-size: 10px;
     text-align: right;
-    width: auto !important;
     color: #709ccc;
 	white-space: normal;
-	max-width: 230px;
+	width: 220px;
 }
 .profile-btn.btn-group{
     width: auto;
