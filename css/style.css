@@ -2750,8 +2750,17 @@ li.open-submenu a{
 .width-fixed-25{
 	width: 25% !important;
 }
+.width-fixed-15{
+	width: 15% !important;
+}
+.width-fixed-35{
+	width: 35% !important;
+}
 .width-fixed-140{
 	width: 140px !important;
+}
+.width-fixed-40{
+	width: 60px !important;
 }
 @media (max-width: 1200px){
     .profile-btn.btn-group .btn{
