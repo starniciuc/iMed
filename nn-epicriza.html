@@ -462,7 +462,7 @@
                             <div class="row-fluid clearfix" id="container">
                                 <div class="col-lg-16 form-page">
                                     <h1 class="into-small-text">Epicriza</h1>
-                                    
+
                                     <div class="form-group clearfix">
                                         <div class="col-md-7">
                                             <p>Numele, prenumele, patronimicul copilului</p>
@@ -495,11 +495,587 @@
                                     </div>
                                     <div class="form-group clearfix">
                                         <div class="col-md-3">
-                                            <p>Reacția la vaccin </p>
-                                            <textarea class="form-control"></textarea>
+                                            <p>S-a născut</p>
+                                            <div class="datetimepicker input-group date mb-lg" data-pick-time="false">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                            </div>                                            
+                                        </div>
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>Numărul gravidității</p>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>Numărul nașterii</p>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>Naștere la termen</p>
+                                            <select class="form-control" >
+                                                <option></option>
+                                                <option></option>
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p>dacă nu, la</p>
+                                            <div class="masure-input">
+                                                <input type="text" class="form-control" >
+                                                <label>săptămîni de gestație</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-16">
+                                            <h5>Scor Apgar</h5>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>1 min</p>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>5 min</p>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>10 min</p>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-16">
+                                            <h5>Nașterea</h5>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-16 checkbox-side">
+                                            <p>
+                                                <input type="radio" name="r1" id="ck11230"><label for="ck11230">Monofetală</label>
+                                                <input type="radio" name="r1" id="ck11231"><label for="ck11231">Multiplă</label>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-16">
+                                            <p>La naștere multiplă s-a născut alcîtelea la număr</p>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-5">
+                                            <p>Ruptura membranelor amniotice a avut loc la</p>
+                                            <div class="datetimepicker input-group date" data-date-format="DD.MM.YYYY">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>Durata travaliului</p>
+                                            <select class="form-control" >
+                                                <option></option>
+                                                <option></option>
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p>Prezentația</p>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-10">
+                                            <p>Complicații în naștere din partea mamei și copilului </p>
+                                            <textarea class="form-control" ></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-16">
+                                            <h5>S-a născut</h5>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-3">
+                                            <p>Nou-născut </p>
+                                            <select class="form-control" >
+                                                <option></option>
+                                                <option></option>
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>Greutatea</p>
+                                            <div class="masure-input">
+                                                <input type="text" class="form-control" >
+                                                <label>g</label>
+                                            </div>  
+                                        </div>
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>Talia</p>
+                                            <div class="masure-input">
+                                                <input type="text" class="form-control" >
+                                                <label>cm</label>
+                                            </div>  
+                                        </div>
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>Perimetrul cranian</p>
+                                            <div class="masure-input">
+                                                <input type="text" class="form-control" >
+                                                <label>cm</label>
+                                            </div>  
+                                        </div>
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>Perimetrul cutiei toracice</p>
+                                            <div class="masure-input">
+                                                <input type="text" class="form-control" >
+                                                <label>cm</label>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-16">
+                                            <h5>Asfixia</h5>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-lg-16 checkbox-side">
+                                            <p>
+                                                <input type="radio" name="r4" id="ck41"><label for="ck41">Nu</label>
+                                                <input type="radio" name="r4" id="ck42"><label for="ck42">Da</label>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>Durata</p>
+                                            <input type="text" class="form-control" >
+                                        </div>
+                                        <div class="col-lg-8 col-md-7">
+                                            <p>Măsurile de reanimare</p>
+                                            <input type="text" class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-lg-16 checkbox-side">
+                                            <p>
+                                                <input type="checkbox" name="ck41"><label for="ck41">Aplicarea pe burta mamei în contact “piele-la-piele” imediat după naștere</label>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-4">
+                                            <p>Aplicat la sân </p>
+                                            <select class="form-control" >
+                                                <option></option>
+                                                <option></option>
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p>în primele 30 minute</p>
+                                            <input type="text" class="form-control" >
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p>în primele 2 ore</p>
+                                            <input type="text" class="form-control" >
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p>după 2 ore</p>
+                                            <input type="text" class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-16">
+                                            <h5>Malformații congenitale</h5>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-2">
+                                            <button class="btn btn-blue">Selectează</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-16">
+                                            <h5>Traume puerperale</h5>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-10">
+                                            <p>Denumire</p>
+                                            <input type="text" class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-5">
+                                            <p>Clasa</p>
+                                            <input type="text" class="form-control" >
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p>Subclasa</p>
+                                            <input type="text" class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-2">
+                                            <button class="btn btn-blue">Adaugă</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-lg-16 checkbox-side">
+                                            <p><input type="checkbox" name="ck41"><label for="ck41">Profilaxia gonoblenoreei</label></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-16">
+                                            <h5>Medicament</h5>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-7">
+                                            <p>Denumire</p>
+                                            <input type="text" class="form-control" >
+                                        </div>
+                                        <div class="col-md-3 padding-top">
+                                            <button class="btn btn-blue">Selectează</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-3">
+                                            <p>Data și ora</p>
+                                            <div class="datetimepicker input-group date" data-date-format="DD.MM.YYYY HH:mm">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-10">
+                                            <p>Primul examen al nou-născutului. Concluzia consultativă </p>
+                                            <textarea class="form-control" ></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-16">
+                                            <h5>În baza examenului clinic și paraclinic (se anexează rezultatele investigațiilor) a fost stabilit următorul</h5>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-13">
+                                            <div class="special-section clearfix">
+                                                <h2>Diagnosticul clinic</h2>
+                                                <div class="col-md-16 clearfix">
+                                                    <div class="collapse-side">
+                                                        <a href="javascript:void(0)" class="btn-open"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i>(a) maladia de bază</a>
+                                                        <div class="collapse row">
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-3 ">
+                                                                    <p>Data și ora</p>
+                                                                    <p><strong>15.10.2014 16:53</strong></p>
+                                                                </div>
+                                                                <div class="col-md-10">
+                                                                    <p>Denumire diagnostic</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-2 padding-top">
+                                                                    <button class="btn btn-blue">Selectează</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-3 ">
+                                                                    <p>Cod</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <p>Clasa</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <p>Subclasa</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-16">
+                                                                    <p>Medic  <strong>Victoria Roșca,</strong>  IDNP  <strong>2004004042004</strong></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-16 clearfix">
+                                                    <div class="collapse-side">
+                                                        <a href="javascript:void(0)" class="btn-open"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i>(b) complicații</a>
+                                                        <div class="collapse row">
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-3 ">
+                                                                    <p>Data și ora</p>
+                                                                    <p><strong>15.10.2014 16:53</strong></p>
+                                                                </div>
+                                                                <div class="col-md-10">
+                                                                    <p>Denumire diagnostic</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-3 ">
+                                                                    <p>Cod</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <p>Clasa</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <p>Subclasa</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-3">
+                                                                    <button class="btn btn-blue">Adaugă</button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-16">
+                                                                    <p>Medic  <strong>Victoria Roșca,</strong>  IDNP  <strong>2004004042004</strong></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-16 clearfix">
+                                                    <div class="collapse-side">
+                                                        <a href="javascript:void(0)" class="btn-open"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i>(c) maladii concomitente</a>
+                                                        <div class="collapse row">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid info-pacient">
+                                        <div class="col-lg-16 table-side fismed-2 acord-table"> 
+                                            <div class="row">
+                                                <div class="col-lg-16">
+                                                    <h2>Tratament </h2>
+                                                </div>
+                                            </div>
+                                            <div class="table-inner">
+                                                <table>
+                                                    <tr>
+                                                        <th>Medicament</th>
+                                                        <th>Forma farmaceutică</th>
+                                                        <th>Doza indicată</th>
+                                                        <th>Administrare</th>
+                                                        <th>Perioada</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid info-pacient">
+                                        <div class="col-lg-16 table-side fismed-2 acord-table"> 
+                                            <div class="row">
+                                                <div class="col-lg-16">
+                                                    <h2>Alte măsuri terapeutice non-medicamentoase </h2>
+                                                </div>
+                                            </div>
+                                            <div class="table-inner">
+                                                <table>
+                                                    <tr>
+                                                        <th>Denumirea</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-10">
+                                            <p>Evoluția clinică</p>
+                                            <textarea class="form-control" ></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid info-pacient">
+                                        <div class="col-lg-16 table-side fismed-2 acord-table"> 
+                                            <div class="row">
+                                                <div class="col-lg-16">
+                                                    <h2>Vaccinarea </h2>
+                                                </div>
+                                            </div>
+                                            <div class="table-inner">
+                                                <table>
+                                                    <tr>
+                                                        <th>Data</th>
+                                                        <th>Ziua vieții</th>
+                                                        <th>Doza</th>
+                                                        <th>Nr. Seriei vaccinului</th>
+                                                        <th>Termenul valabilității</th>
+                                                        <th>Reacția la vaccin</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-10">
+                                            <p>Starea la externare</p>
+                                            <textarea class="form-control" ></textarea>
                                         </div>
                                     </div>
                                     
+                                    
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-16">
+                                            <h5>Cu următorul Diagnosticul la externare</h5>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-13">
+                                            <div class="special-section clearfix">
+                                                <h2>Diagnosticul la externare</h2>
+                                                <div class="col-md-16 clearfix">
+                                                    <div class="collapse-side">
+                                                        <a href="javascript:void(0)" class="btn-open"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i>(a) maladia de bază</a>
+                                                        <div class="collapse row">
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-3 ">
+                                                                    <p>Data și ora</p>
+                                                                    <p><strong>15.10.2014 16:53</strong></p>
+                                                                </div>
+                                                                <div class="col-md-10">
+                                                                    <p>Denumire diagnostic</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-2 padding-top">
+                                                                    <button class="btn btn-blue">Selectează</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-3 ">
+                                                                    <p>Cod</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <p>Clasa</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <p>Subclasa</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-16">
+                                                                    <p>Medic  <strong>Victoria Roșca,</strong>  IDNP  <strong>2004004042004</strong></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-16 clearfix">
+                                                    <div class="collapse-side">
+                                                        <a href="javascript:void(0)" class="btn-open"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i>(b) complicații</a>
+                                                        <div class="collapse row">
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-3 ">
+                                                                    <p>Data și ora</p>
+                                                                    <p><strong>15.10.2014 16:53</strong></p>
+                                                                </div>
+                                                                <div class="col-md-10">
+                                                                    <p>Denumire diagnostic</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-3 ">
+                                                                    <p>Cod</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <p>Clasa</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <p>Subclasa</p>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-3">
+                                                                    <button class="btn btn-blue">Adaugă</button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group clearfix">
+                                                                <div class="col-md-16">
+                                                                    <p>Medic  <strong>Victoria Roșca,</strong>  IDNP  <strong>2004004042004</strong></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-16 clearfix">
+                                                    <div class="collapse-side">
+                                                        <a href="javascript:void(0)" class="btn-open"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i>(c) maladii concomitente</a>
+                                                        <div class="collapse row">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-lg-2 col-md-3">
+                                            <p>Greutatea la externare</p>
+                                            <div class="masure-input">
+                                                <input type="text" class="form-control" >
+                                                <label>g</label>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-10">
+                                            <p>Recomandări</p>
+                                            <textarea class="form-control" ></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-13">
+                                            <p>Medic  <strong>Victoria Roșca,</strong>  IDNP  <strong>2004004042004</strong></p>
+                                            <p>Șef secție   <strong>Victoria Roșca,</strong>  IDNP  <strong>2004004042004</strong></p>
+                                        </div>
+                                    </div>
                                     <div class="form-group clearfix">
                                         <div class="col-lg-16  padding-top">
                                             <button class="btn btn-green-med">Salvează</button>

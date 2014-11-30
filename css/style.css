@@ -2414,8 +2414,8 @@ Form page
 }
 .user-page .form-page .special-section{
     padding: 10px 15px;
-    background-color: #E6FAFF;
-    border:1px solid #D4EDFF;
+    background-color: #edfbff;
+    border:1px solid #daecff;
     border-radius: 6px;
     margin-bottom: 20px;
 }
@@ -2756,8 +2756,14 @@ li.open-submenu a{
 .width-fixed-35{
 	width: 35% !important;
 }
+.width-fixed-10{
+	width: 10% !important;
+}
 .width-fixed-140{
 	width: 140px !important;
+}
+.width-fixed-120{
+	width: 120px !important;
 }
 .width-fixed-40{
 	width: 60px !important;
