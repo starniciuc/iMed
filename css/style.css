@@ -2307,7 +2307,7 @@ New page Acord informat la interventie
     border-bottom: 1px solid #46A0FF;
 }
 .main-container.user-page textarea,
-.modal-content  textarea{
+textarea{
     border: 1px solid #46A0FF;
     resize: none;
     overflow: hidden;
@@ -2315,8 +2315,11 @@ New page Acord informat la interventie
     height: auto;
 }
 .main-container.user-page textarea:focus,
-.main-container.user-page textarea:active{
+.main-container.user-page textarea:active,
+.user-page .form-page textarea:focus,
+.user-page .form-page textarea:active{
 	border-color: rgba(82, 168, 236, 0.8);
+        box-shadow: none;
 }
 .iMed-modal.marign{
     margin-top: 0;
@@ -2444,6 +2447,7 @@ Form page
     text-align: center;
     position: relative;
     margin-left: 15px;
+    margin-bottom: 20px;
 }
 .user-page .form-page h1.into-small-text span{
     text-align: left;
