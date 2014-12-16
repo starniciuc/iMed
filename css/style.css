@@ -2431,7 +2431,8 @@ Form page
 .user-page .form-page .form-control{
     height: 30px;
 }
-.user-page .form-page textarea{
+.user-page .form-page textarea,
+.modal-body select{
     border-color: #e6e6e6;
 	color: #1c2733;
 }
