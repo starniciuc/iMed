@@ -2432,7 +2432,8 @@ Form page
     height: 30px;
 }
 .user-page .form-page textarea{
-    border-color: #eeeeee;
+    border-color: #e6e6e6;
+	color: #1c2733;
 }
 .btn-blue{
     background-color: #0073E6;
