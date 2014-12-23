@@ -3153,6 +3153,9 @@ li.open-submenu a{
         text-align: left !important;
         padding-left: 5px;
     }
+	.user-page .form-page h1.into-small-text span{
+		bottom: -10px;
+	}
 }
 @media (max-width:500px){
     .col-me-device{
@@ -3263,6 +3266,9 @@ li.open-submenu a{
     .board h1{
         padding-left: 15px;
     }
+	.user-page .form-page h1.into-small-text span{
+		bottom: -10px;
+	}
 }
 /*
         Tablets optimization, orientation landscape
@@ -3287,6 +3293,9 @@ li.open-submenu a{
     .board h1{
         padding-left: 15px;
     }
+	.user-page .form-page h1.into-small-text span{
+		bottom: -10px;
+	}
 }
 
 @media only screen and (min-width : 768px) and (max-width : 980px){
@@ -3366,4 +3375,7 @@ li.open-submenu a{
         top: 0;
         width: 35%;
     }
+	.user-page .form-page h1.into-small-text span{
+		bottom: -10px;
+	}
 }
