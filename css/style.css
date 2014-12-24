@@ -2798,7 +2798,7 @@ li.open-submenu a{
 		margin-bottom: 20px;
 	}
 }
-@media (max-width: 1200px){
+@media (max-width: 1199px){
     .icons.navbar-toggle{
         /*position: absolute;
         top:-60px;
