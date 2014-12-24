@@ -2791,6 +2791,12 @@ li.open-submenu a{
 	.top-main-container .main-container.top-name .name-block .name{
 		padding-left: 3px;
 	}
+	.border-left-top p {
+		padding-left: 15px;
+	}
+	.btn-programare{
+		margin-bottom: 20px;
+	}
 }
 @media (max-width: 1200px){
     .icons.navbar-toggle{
