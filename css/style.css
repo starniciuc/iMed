@@ -2778,15 +2778,42 @@ li.open-submenu a{
 	display: inline-block;
 }
 @media (max-width: 1200px){
-    .profile-btn.btn-group .btn{
+    .icons.navbar-toggle{
+        /*position: absolute;
+        top:-60px;
+        right:73px;*/
+        border:none;
+		top:4px;
+        background: #33485e;
+		display: block !important;
+    }
+	#top-nav{
+		width: 100%;
+	}
+    .icons.navbar-toggle span{
+        color:#fff;
+    }
+    .icons.navbar-toggle:hover, .icons.navbar-toggle:focus{
+        background: #33485e !important;
+    }
+	.navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-collapse.collapse.in{
+        display: block !important;
+        height: auto !important;
+        padding-bottom: 0;
+        overflow: visible !important;
+    }
+}
+@media screen and (max-width: 992px) {
+	.profile-btn.btn-group .btn{
         width: 40px;
     }
     .profile-btn.btn-group .btn i{
         font-size: 20px;
         color: #FFFFFF;
     }
-}
-@media screen and (max-width: 992px) {
     .profile-btn.btn-group.institutia{
         right: 50px;
     }
@@ -3299,15 +3326,7 @@ li.open-submenu a{
 }
 
 @media only screen and (min-width : 768px) and (max-width : 980px){
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-collapse.collapse.in{
-        display: block !important;
-        height: auto !important;
-        padding-bottom: 0;
-        overflow: visible !important;
-    }
+    
     .sidebar-btn{
         top:-60px;
         left: -10px;
