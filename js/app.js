@@ -5,19 +5,33 @@
  * Targeted elements must have [data-toggle="aside"]
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-  var Selector = '[data-toggle="aside"]',
-      $body = $('body');
+	var Selector = '[data-toggle="aside"]',
+			$body = $('body');
 
-  $(document).on('click', Selector, function (e) {
-      e.preventDefault();
-      
-      $body.toggleClass('aside-toggled');
+	$(document).on('click', Selector, function (e) {
+		e.preventDefault();
 
-  });
+		$body.toggleClass('aside-toggled');
+
+	});
 
 }(jQuery, window, document));
+
+$(window).on("resize", function () {
+	$body = $('body');
+	if ($(window).width() < 1200) {
+		$body.addClass('aside-toggled');
+		
+		if($(window).width() < 767){
+			$body.removeClass('aside-toggled');
+		}
+	}else{
+		$body.removeClass('aside-toggled');
+	}
+});
+
 
 /**=========================================================
  * Module: calendar-ui.js
@@ -25,258 +39,262 @@
  * events and events creations
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-  if(!$.fn.fullCalendar) return;
+	if (!$.fn.fullCalendar)
+		return;
 
 
-  /**
-   * ExternalEvent object
-   * @param jQuery Object elements Set of element as jQuery objects
-   */
-  var ExternalEvent = function (elements) {
-      
-      if (!elements) return;
-      
-      elements.each(function() {
-          var $this = $(this);
-          // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
-          // it doesn't need to have a start or end
-          var calendarEventObject = {
-              title: $.trim($this.text()) // use the element's text as the event title
-          };
+	/**
+	 * ExternalEvent object
+	 * @param jQuery Object elements Set of element as jQuery objects
+	 */
+	var ExternalEvent = function (elements) {
 
-          // store the Event Object in the DOM element so we can get to it later
-          $this.data('calendarEventObject', calendarEventObject);
+		if (!elements)
+			return;
 
-          // make the event draggable using jQuery UI
-          $this.draggable({
-              zIndex: 1070,
-              revert: true, // will cause the event to go back to its
-              revertDuration: 0  //  original position after the drag
-          });
+		elements.each(function () {
+			var $this = $(this);
+			// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+			// it doesn't need to have a start or end
+			var calendarEventObject = {
+				title: $.trim($this.text()) // use the element's text as the event title
+			};
 
-      });
-  };
+			// store the Event Object in the DOM element so we can get to it later
+			$this.data('calendarEventObject', calendarEventObject);
 
-  /**
-   * Invoke full calendar plugin and attach behavior
-   * @param  jQuery [calElement] The calendar dom element wrapped into jQuery
-   * @param  EventObject [events] An object with the event list to load when the calendar displays
-   */
-  function initCalendar(calElement, events) {
+			// make the event draggable using jQuery UI
+			$this.draggable({
+				zIndex: 1070,
+				revert: true, // will cause the event to go back to its
+				revertDuration: 0  //  original position after the drag
+			});
 
-      // check to remove elements from the list
-      var removeAfterDrop = $('#remove-after-drop');
+		});
+	};
 
-      calElement.fullCalendar({
-          header: {
-              left:   'prev,next today',
-              center: 'title',
-              right:  'month,agendaWeek,agendaDay'
-          },
-          buttonIcons: { // note the space at the beginning
-              prev:    ' fa fa-caret-left',
-              next:    ' fa fa-caret-right'
-          },
-          buttonText: {
-              today: 'today',
-              month: 'month',
-              week:  'week',
-              day:   'day'
-          },
-          editable: true,
-          droppable: true, // this allows things to be dropped onto the calendar 
-          drop: function(date, allDay) { // this function is called when something is dropped
-              
-              var $this = $(this),
-                  // retrieve the dropped element's stored Event Object
-                  originalEventObject = $this.data('calendarEventObject');
+	/**
+	 * Invoke full calendar plugin and attach behavior
+	 * @param  jQuery [calElement] The calendar dom element wrapped into jQuery
+	 * @param  EventObject [events] An object with the event list to load when the calendar displays
+	 */
+	function initCalendar(calElement, events) {
 
-              // if something went wrong, abort
-              if(!originalEventObject) return;
+		// check to remove elements from the list
+		var removeAfterDrop = $('#remove-after-drop');
 
-              // clone the object to avoid multiple events with reference to the same object
-              var clonedEventObject = $.extend({}, originalEventObject);
+		calElement.fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
+			buttonIcons: {// note the space at the beginning
+				prev: ' fa fa-caret-left',
+				next: ' fa fa-caret-right'
+			},
+			buttonText: {
+				today: 'today',
+				month: 'month',
+				week: 'week',
+				day: 'day'
+			},
+			editable: true,
+			droppable: true, // this allows things to be dropped onto the calendar 
+			drop: function (date, allDay) { // this function is called when something is dropped
 
-              // assign the reported date
-              clonedEventObject.start = date;
-              clonedEventObject.allDay = allDay;
-              clonedEventObject.backgroundColor = $this.css("background-color");
-              clonedEventObject.borderColor = $this.css("border-color");
+				var $this = $(this),
+						// retrieve the dropped element's stored Event Object
+						originalEventObject = $this.data('calendarEventObject');
 
-              // render the event on the calendar
-              // the last `true` argument determines if the event "sticks" 
-              // (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
-              calElement.fullCalendar('renderEvent', clonedEventObject, true);
-              
-              // if necessary remove the element from the list
-              if(removeAfterDrop.is(':checked')) {
-                $this.remove();
-              }
-          },
-          eventDragStart: function (event, js, ui) {
-            draggingEvent = event;
-          },
-          // This array is the events sources
-          events: events
-      });
-  }
+				// if something went wrong, abort
+				if (!originalEventObject)
+					return;
 
-  /**
-   * Inits the external events panel
-   * @param  jQuery [calElement] The calendar dom element wrapped into jQuery
-   */
-  function initExternalEvents(calElement){
-    // Panel with the external events list
-    var externalEvents = $('.external-events');
+				// clone the object to avoid multiple events with reference to the same object
+				var clonedEventObject = $.extend({}, originalEventObject);
 
-    // init the external events in the panel
-    new ExternalEvent(externalEvents.children('div'));
+				// assign the reported date
+				clonedEventObject.start = date;
+				clonedEventObject.allDay = allDay;
+				clonedEventObject.backgroundColor = $this.css("background-color");
+				clonedEventObject.borderColor = $this.css("border-color");
 
-    // External event color is danger-red by default
-    var currColor = '#f6504d';
-    // Color selector button
-    var eventAddBtn = $('.external-event-add-btn');
-    // New external event name input
-    var eventNameInput = $('.external-event-name');
-    // Color switchers
-    var eventColorSelector = $('.external-event-color-selector .point');
+				// render the event on the calendar
+				// the last `true` argument determines if the event "sticks" 
+				// (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+				calElement.fullCalendar('renderEvent', clonedEventObject, true);
 
-    // Trash events Droparea 
-    $('.external-events-trash').droppable({
-      accept:       '.fc-event',
-      activeClass:  'active',
-      hoverClass:   'hovered',
-      tolerance:    'touch',
-      drop: function(event, ui) {
-        
-        // You can use this function to send an ajax request
-        // to remove the event from the repository
-        
-        if(draggingEvent) {
-          var eid = draggingEvent.id || draggingEvent._id;
-          // Remove the event
-          calElement.fullCalendar('removeEvents', eid);
-          // Remove the dom element
-          ui.draggable.remove();
-          // clear
-          draggingEvent = null;
-        }
-      }
-    });
+				// if necessary remove the element from the list
+				if (removeAfterDrop.is(':checked')) {
+					$this.remove();
+				}
+			},
+			eventDragStart: function (event, js, ui) {
+				draggingEvent = event;
+			},
+			// This array is the events sources
+			events: events
+		});
+	}
 
-    eventColorSelector.click(function(e) {
-        e.preventDefault();
-        var $this = $(this);
+	/**
+	 * Inits the external events panel
+	 * @param  jQuery [calElement] The calendar dom element wrapped into jQuery
+	 */
+	function initExternalEvents(calElement) {
+		// Panel with the external events list
+		var externalEvents = $('.external-events');
 
-        // Save color
-        currColor = $this.css('background-color');
-        // De-select all and select the current one
-        eventColorSelector.removeClass('selected');
-        $this.addClass('selected');
-    });
+		// init the external events in the panel
+		new ExternalEvent(externalEvents.children('div'));
 
-    eventAddBtn.click(function(e) {
-        e.preventDefault();
-        
-        // Get event name from input
-        var val = eventNameInput.val();
-        // Dont allow empty values
-        if ($.trim(val) === '') return;
-        
-        // Create new event element
-        var newEvent = $('<div/>').css({
-                            'background-color': currColor,
-                            'border-color':     currColor,
-                            'color':            '#fff'
-                        })
-                        .html(val);
+		// External event color is danger-red by default
+		var currColor = '#f6504d';
+		// Color selector button
+		var eventAddBtn = $('.external-event-add-btn');
+		// New external event name input
+		var eventNameInput = $('.external-event-name');
+		// Color switchers
+		var eventColorSelector = $('.external-event-color-selector .point');
 
-        // Prepends to the external events list
-        externalEvents.prepend(newEvent);
-        // Initialize the new event element
-        new ExternalEvent(newEvent);
-        // Clear input
-        eventNameInput.val('');
-    });
-  }
+		// Trash events Droparea 
+		$('.external-events-trash').droppable({
+			accept: '.fc-event',
+			activeClass: 'active',
+			hoverClass: 'hovered',
+			tolerance: 'touch',
+			drop: function (event, ui) {
 
-  /**
-   * Creates an array of events to display in the first load of the calendar
-   * Wrap into this function a request to a source to get via ajax the stored events
-   * @return Array The array with the events
-   */
-  function createDemoEvents() {
-    // Date for the calendar events (dummy data)
-    var date = new Date();
-    var d = date.getDate(),
-        m = date.getMonth(),
-        y = date.getFullYear();
+				// You can use this function to send an ajax request
+				// to remove the event from the repository
 
-    return  [
-              {
-                  title: 'All Day Event',
-                  start: new Date(y, m, 1),
-                  backgroundColor: "#f56954", //red 
-                  borderColor: "#f56954" //red
-              },
-              {
-                  title: 'Long Event',
-                  start: new Date(y, m, d - 5),
-                  end: new Date(y, m, d - 2),
-                  backgroundColor: "#f39c12", //yellow
-                  borderColor: "#f39c12" //yellow
-              },
-              {
-                  title: 'Meeting',
-                  start: new Date(y, m, d, 10, 30),
-                  allDay: false,
-                  backgroundColor: "#0073b7", //Blue
-                  borderColor: "#0073b7" //Blue
-              },
-              {
-                  title: 'Lunch',
-                  start: new Date(y, m, d, 12, 0),
-                  end: new Date(y, m, d, 14, 0),
-                  allDay: false,
-                  backgroundColor: "#00c0ef", //Info (aqua)
-                  borderColor: "#00c0ef" //Info (aqua)
-              },
-              {
-                  title: 'Birthday Party',
-                  start: new Date(y, m, d + 1, 19, 0),
-                  end: new Date(y, m, d + 1, 22, 30),
-                  allDay: false,
-                  backgroundColor: "#00a65a", //Success (green)
-                  borderColor: "#00a65a" //Success (green)
-              },
-              {
-                  title: 'Open Google',
-                  start: new Date(y, m, 28),
-                  end: new Date(y, m, 29),
-                  url: 'http://google.com/',
-                  backgroundColor: "#3c8dbc", //Primary (light-blue)
-                  borderColor: "#3c8dbc" //Primary (light-blue)
-              }
-          ];
-  }
+				if (draggingEvent) {
+					var eid = draggingEvent.id || draggingEvent._id;
+					// Remove the event
+					calElement.fullCalendar('removeEvents', eid);
+					// Remove the dom element
+					ui.draggable.remove();
+					// clear
+					draggingEvent = null;
+				}
+			}
+		});
 
-  // When dom ready, init calendar and events
-  $(function() {
+		eventColorSelector.click(function (e) {
+			e.preventDefault();
+			var $this = $(this);
 
-      // global shared var to know what we are dragging
-      var draggingEvent = null;
-      // The element that will display the calendar
-      var calendar = $('#calendar');
+			// Save color
+			currColor = $this.css('background-color');
+			// De-select all and select the current one
+			eventColorSelector.removeClass('selected');
+			$this.addClass('selected');
+		});
 
-      var demoEvents = createDemoEvents();
+		eventAddBtn.click(function (e) {
+			e.preventDefault();
 
-      initExternalEvents(calendar);
+			// Get event name from input
+			var val = eventNameInput.val();
+			// Dont allow empty values
+			if ($.trim(val) === '')
+				return;
 
-      initCalendar(calendar, demoEvents);
+			// Create new event element
+			var newEvent = $('<div/>').css({
+				'background-color': currColor,
+				'border-color': currColor,
+				'color': '#fff'
+			})
+					.html(val);
 
-  });
+			// Prepends to the external events list
+			externalEvents.prepend(newEvent);
+			// Initialize the new event element
+			new ExternalEvent(newEvent);
+			// Clear input
+			eventNameInput.val('');
+		});
+	}
+
+	/**
+	 * Creates an array of events to display in the first load of the calendar
+	 * Wrap into this function a request to a source to get via ajax the stored events
+	 * @return Array The array with the events
+	 */
+	function createDemoEvents() {
+		// Date for the calendar events (dummy data)
+		var date = new Date();
+		var d = date.getDate(),
+				m = date.getMonth(),
+				y = date.getFullYear();
+
+		return  [
+			{
+				title: 'All Day Event',
+				start: new Date(y, m, 1),
+				backgroundColor: "#f56954", //red 
+				borderColor: "#f56954" //red
+			},
+			{
+				title: 'Long Event',
+				start: new Date(y, m, d - 5),
+				end: new Date(y, m, d - 2),
+				backgroundColor: "#f39c12", //yellow
+				borderColor: "#f39c12" //yellow
+			},
+			{
+				title: 'Meeting',
+				start: new Date(y, m, d, 10, 30),
+				allDay: false,
+				backgroundColor: "#0073b7", //Blue
+				borderColor: "#0073b7" //Blue
+			},
+			{
+				title: 'Lunch',
+				start: new Date(y, m, d, 12, 0),
+				end: new Date(y, m, d, 14, 0),
+				allDay: false,
+				backgroundColor: "#00c0ef", //Info (aqua)
+				borderColor: "#00c0ef" //Info (aqua)
+			},
+			{
+				title: 'Birthday Party',
+				start: new Date(y, m, d + 1, 19, 0),
+				end: new Date(y, m, d + 1, 22, 30),
+				allDay: false,
+				backgroundColor: "#00a65a", //Success (green)
+				borderColor: "#00a65a" //Success (green)
+			},
+			{
+				title: 'Open Google',
+				start: new Date(y, m, 28),
+				end: new Date(y, m, 29),
+				url: 'http://google.com/',
+				backgroundColor: "#3c8dbc", //Primary (light-blue)
+				borderColor: "#3c8dbc" //Primary (light-blue)
+			}
+		];
+	}
+
+	// When dom ready, init calendar and events
+	$(function () {
+
+		// global shared var to know what we are dragging
+		var draggingEvent = null;
+		// The element that will display the calendar
+		var calendar = $('#calendar');
+
+		var demoEvents = createDemoEvents();
+
+		initExternalEvents(calendar);
+
+		initCalendar(calendar, demoEvents);
+
+	});
 
 
 }(jQuery, window, document));
@@ -288,89 +306,90 @@
  * DateTime Picker init
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-  $(function(){
+	$(function () {
 
-    if ( ! $.fn.dataTable ) return;
+		if (!$.fn.dataTable)
+			return;
 
-    //
-    // Zero configuration
-    // 
+		//
+		// Zero configuration
+		// 
 
-    $('#datatable1').dataTable({
-        'paging':   true,  // Table pagination
-        'ordering': true,  // Column ordering 
-        'info':     true,  // Bottom left status text
-        // Text translation options
-        // Note the required keywords between underscores (e.g _MENU_)
-        oLanguage: {
-            sSearch:      'Search all columns:',
-            sLengthMenu:  '_MENU_ records per page',
-            info:         'Showing page _PAGE_ of _PAGES_',
-            zeroRecords:  'Nothing found - sorry',
-            infoEmpty:    'No records available',
-            infoFiltered: '(filtered from _MAX_ total records)'
-        }
-    });
-
-
-    // 
-    // Filtering by Columns
-    // 
-
-    var dtInstance2 = $('#datatable2').dataTable({
-        'paging':   true,  // Table pagination
-        'ordering': true,  // Column ordering 
-        'info':     true,  // Bottom left status text
-        // Text translation options
-        // Note the required keywords between underscores (e.g _MENU_)
-        oLanguage: {
-            sSearch:      'Search all columns:',
-            sLengthMenu:  '_MENU_ records per page',
-            info:         'Showing page _PAGE_ of _PAGES_',
-            zeroRecords:  'Nothing found - sorry',
-            infoEmpty:    'No records available',
-            infoFiltered: '(filtered from _MAX_ total records)'
-        }
-    });
-    var inputSearchClass = 'datatable_input_col_search';
-    var columnInputs = $('tfoot .'+inputSearchClass);
-
-    // On input keyup trigger filtering
-    columnInputs
-      .keyup(function () {
-          dtInstance2.fnFilter(this.value, columnInputs.index(this));
-      });
+		$('#datatable1').dataTable({
+			'paging': true, // Table pagination
+			'ordering': true, // Column ordering 
+			'info': true, // Bottom left status text
+			// Text translation options
+			// Note the required keywords between underscores (e.g _MENU_)
+			oLanguage: {
+				sSearch: 'Search all columns:',
+				sLengthMenu: '_MENU_ records per page',
+				info: 'Showing page _PAGE_ of _PAGES_',
+				zeroRecords: 'Nothing found - sorry',
+				infoEmpty: 'No records available',
+				infoFiltered: '(filtered from _MAX_ total records)'
+			}
+		});
 
 
-    // 
-    // Column Visibilty Extension
-    // 
+		// 
+		// Filtering by Columns
+		// 
 
-    var dtInstance3 = $('#datatable3').dataTable({
-        'paging':   true,  // Table pagination
-        'ordering': true,  // Column ordering 
-        'info':     true,  // Bottom left status text
-        // Text translation options
-        // Note the required keywords between underscores (e.g _MENU_)
-        oLanguage: {
-            sSearch:      'Search all columns:',
-            sLengthMenu:  '_MENU_ records per page',
-            info:         'Showing page _PAGE_ of _PAGES_',
-            zeroRecords:  'Nothing found - sorry',
-            infoEmpty:    'No records available',
-            infoFiltered: '(filtered from _MAX_ total records)'
-        },
-        sDom:      'C<"clear">lfrtip',
-        colVis: {
-            order: "alfa",
-            "buttonText": "Show/Hide Columns"
-        }
-    });
+		var dtInstance2 = $('#datatable2').dataTable({
+			'paging': true, // Table pagination
+			'ordering': true, // Column ordering 
+			'info': true, // Bottom left status text
+			// Text translation options
+			// Note the required keywords between underscores (e.g _MENU_)
+			oLanguage: {
+				sSearch: 'Search all columns:',
+				sLengthMenu: '_MENU_ records per page',
+				info: 'Showing page _PAGE_ of _PAGES_',
+				zeroRecords: 'Nothing found - sorry',
+				infoEmpty: 'No records available',
+				infoFiltered: '(filtered from _MAX_ total records)'
+			}
+		});
+		var inputSearchClass = 'datatable_input_col_search';
+		var columnInputs = $('tfoot .' + inputSearchClass);
+
+		// On input keyup trigger filtering
+		columnInputs
+				.keyup(function () {
+					dtInstance2.fnFilter(this.value, columnInputs.index(this));
+				});
 
 
-  });
+		// 
+		// Column Visibilty Extension
+		// 
+
+		var dtInstance3 = $('#datatable3').dataTable({
+			'paging': true, // Table pagination
+			'ordering': true, // Column ordering 
+			'info': true, // Bottom left status text
+			// Text translation options
+			// Note the required keywords between underscores (e.g _MENU_)
+			oLanguage: {
+				sSearch: 'Search all columns:',
+				sLengthMenu: '_MENU_ records per page',
+				info: 'Showing page _PAGE_ of _PAGES_',
+				zeroRecords: 'Nothing found - sorry',
+				infoEmpty: 'No records available',
+				infoFiltered: '(filtered from _MAX_ total records)'
+			},
+			sDom: 'C<"clear">lfrtip',
+			colVis: {
+				order: "alfa",
+				"buttonText": "Show/Hide Columns"
+			}
+		});
+
+
+	});
 
 }(jQuery, window, document));
 
@@ -379,33 +398,33 @@
  * DateTime Picker init
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-    var Selector = '.datetimepicker';
+	var Selector = '.datetimepicker';
 
-    $(Selector).each(function() {
+	$(Selector).each(function () {
 
-      var $this = $(this),
-          options = $this.data(); // allow to set options via data-* attributes
-      
-      $this.datetimepicker($.extend(
-        options,
-        { // support for FontAwesome icons
-          icons: {
-              time:   "fa fa-clock-o",
-              date:   "fa fa-calendar",
-              up:     "fa fa-arrow-up",
-              down:   "fa fa-arrow-down"
-          },
-          language: 'ro'
-        }));
+		var $this = $(this),
+				options = $this.data(); // allow to set options via data-* attributes
 
-      // Force a dropdown hide when click out of the input
-      $(document).on('click', function(){
-        $this.data("DateTimePicker").hide();
-      });
+		$this.datetimepicker($.extend(
+				options,
+				{// support for FontAwesome icons
+					icons: {
+						time: "fa fa-clock-o",
+						date: "fa fa-calendar",
+						up: "fa fa-arrow-up",
+						down: "fa fa-arrow-down"
+					},
+					language: 'ro'
+				}));
 
-    });
+		// Force a dropdown hide when click out of the input
+		$(document).on('click', function () {
+			$this.data("DateTimePicker").hide();
+		});
+
+	});
 
 }(jQuery, window, document));
 
@@ -418,30 +437,30 @@
  * Requires animo.js
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-  $(function() {
-    var Selector = '.dropdown-toggle[data-play]',
-        parent = $(Selector).parent(); /* From BS-Doc: All dropdown events are fired at the .dropdown-menu's parent element. */
+	$(function () {
+		var Selector = '.dropdown-toggle[data-play]',
+				parent = $(Selector).parent(); /* From BS-Doc: All dropdown events are fired at the .dropdown-menu's parent element. */
 
-    parent.on('show.bs.dropdown', function (e) {
-      //e.preventDefault();
+		parent.on('show.bs.dropdown', function (e) {
+			//e.preventDefault();
 
-      var $this     = $(this),
-          toggle    = $this.children('.dropdown-toggle'),
-          animation = toggle.data('play'),
-          duration  = toggle.data('duration') || 0.5,
-          target    = $this.children('.dropdown-menu');
+			var $this = $(this),
+					toggle = $this.children('.dropdown-toggle'),
+					animation = toggle.data('play'),
+					duration = toggle.data('duration') || 0.5,
+					target = $this.children('.dropdown-menu');
 
-      if(!target || !target.length)
-        $.error('No target for play-animation');
-      else
-        if( $.fn.animo && animation)
-          target.animo( { animation: animation,  duration: duration} );
+			if (!target || !target.length)
+				$.error('No target for play-animation');
+			else
+			if ($.fn.animo && animation)
+				target.animo({animation: animation, duration: duration});
 
-    });
-  
-  });
+		});
+
+	});
 
 }(jQuery, window, document));
 
@@ -451,293 +470,294 @@
  * plugin to elements according to its type
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-  /**
-   * Global object to load data for charts using ajax 
-   * Request the chart data from the server via post
-   * Expects a response in JSON format to init the plugin
-   * Usage
-   *   chart = new floatChart('#id', 'server/chart-data.php')
-   *   ...
-   *   chart.requestData(options);
-   *
-   * @param  Chart element placeholder or selector
-   * @param  Url to get the data via post. Response in JSON format
-   */
-  window.FlotChart = function (element, url) {
-    // Properties
-    this.element = $(element);
-    this.url = url;
+	/**
+	 * Global object to load data for charts using ajax 
+	 * Request the chart data from the server via post
+	 * Expects a response in JSON format to init the plugin
+	 * Usage
+	 *   chart = new floatChart('#id', 'server/chart-data.php')
+	 *   ...
+	 *   chart.requestData(options);
+	 *
+	 * @param  Chart element placeholder or selector
+	 * @param  Url to get the data via post. Response in JSON format
+	 */
+	window.FlotChart = function (element, url) {
+		// Properties
+		this.element = $(element);
+		this.url = url;
 
-    // Public method
-    this.requestData = function (option, method, callback) {
-      var self = this;
-      
-      // support params (option), (option, method, callback) or (option, callback)
-      callback = (method && $.isFunction(method)) ? method : callback;
-      method = (method && typeof method == 'string') ? method : "POST";
+		// Public method
+		this.requestData = function (option, method, callback) {
+			var self = this;
 
-      self.option = option; // save options
+			// support params (option), (option, method, callback) or (option, callback)
+			callback = (method && $.isFunction(method)) ? method : callback;
+			method = (method && typeof method == 'string') ? method : "POST";
 
-      $.ajax({
-          url:      self.url,
-          cache:    false,
-          type:     method,
-          dataType: "json"
-      }).done(function (data) {
-          
-          $.plot( self.element, data, option );
-          
-          if(callback) callback();
+			self.option = option; // save options
 
-      });
+			$.ajax({
+				url: self.url,
+				cache: false,
+				type: method,
+				dataType: "json"
+			}).done(function (data) {
 
-      return this; // chain-ability
+				$.plot(self.element, data, option);
 
-    };
+				if (callback)
+					callback();
 
-    // Listen to refresh events
-    this.listen = function() {
-      var self = this,
-          chartPanel = this.element.parents('.panel').eq(0);
-      
-      // attach custom event
-      chartPanel.on('panel-refresh', function(event, panel) {
-        // request data and remove spinner when done
-        self.requestData(self.option, function(){
-          panel.removeSpinner();
-        });
+			});
 
-      });
+			return this; // chain-ability
 
-      return this; // chain-ability
-    };
+		};
 
-  };
+		// Listen to refresh events
+		this.listen = function () {
+			var self = this,
+					chartPanel = this.element.parents('.panel').eq(0);
 
-  //
-  // Start of Demo Script
-  // 
-  $(function () {
+			// attach custom event
+			chartPanel.on('panel-refresh', function (event, panel) {
+				// request data and remove spinner when done
+				self.requestData(self.option, function () {
+					panel.removeSpinner();
+				});
 
-    // Bar chart
-    (function () {
-        var Selector = ".chart-bar";
-        $(Selector).each(function() {
-            var source = $(this).data('source') || $.error('Bar: No source defined.');
-            var chart = new FlotChart(this, source),
-                panel = $(Selector).parents(".panel"),
-                option = {
-                    series: {
-                        bars: {
-                            align: "center",
-                            lineWidth: 0,
-                            show: true,
-                            barWidth: 0.6,
-                            fill: 0.9
-                        }
-                    },
-                    grid: {
-                        borderColor: "#eee",
-                        borderWidth: 1,
-                        hoverable: true,
-                        backgroundColor: "#fcfcfc"
-                    },
-                    tooltip: true,
-                    tooltipOpts: {
-                        content: "%x : %y"
-                    },
-                    xaxis: {
-                        tickColor: "#fcfcfc",
-                        mode: "categories"
-                    },
-                    yaxis: {
-                        tickColor: "#eee"
-                    },
-                    shadowSize: 0
-                };
-            // Send Request
-            chart.requestData(option);
-        });
+			});
 
-    })();
-    // Bar Stacked chart
-    (function () {
-        var Selector = ".chart-bar-stacked";
-        $(Selector).each(function() {
-            var source = $(this).data('source') || $.error('Bar Stacked: No source defined.');
-            var chart = new FlotChart(this, source),
-                option = {
-                    series: {
-                        stack: true,
-                        bars: {
-                            align: "center",
-                            lineWidth: 0,
-                            show: true,
-                            barWidth: 0.6,
-                            fill: 0.9
-                        }
-                    },
-                    grid: {
-                        borderColor: "#eee",
-                        borderWidth: 1,
-                        hoverable: true,
-                        backgroundColor: "#fcfcfc"
-                    },
-                    tooltip: true,
-                    tooltipOpts: {
-                        content: "%x : %y"
-                    },
-                    xaxis: {
-                        tickColor: "#fcfcfc",
-                        mode: "categories"
-                    },
-                    yaxis: {
-                        tickColor: "#eee"
-                    },
-                    shadowSize: 0
-                };
-            // Send Request
-            chart.requestData(option);
-        });
-    })();
-    // Area chart
-    (function () {
-        var Selector = ".chart-area";
-        $(Selector).each(function() {
-            var source = $(this).data('source') || $.error('Area: No source defined.');
-            var chart = new FlotChart(this, source),
-                option = {
-                    series: {
-                        lines: {
-                            show: true,
-                            fill: 0.8
-                        },
-                        points: {
-                            show: true,
-                            radius: 4
-                        }
-                    },
-                    grid: {
-                        borderColor: "#eee",
-                        borderWidth: 1,
-                        hoverable: true,
-                        backgroundColor: "#fcfcfc"
-                    },
-                    tooltip: true,
-                    tooltipOpts: {
-                        content: "%x : %y"
-                    },
-                    xaxis: {
-                        tickColor: "#fcfcfc",
-                        mode: "categories"
-                    },
-                    yaxis: {
-                        tickColor: "#eee",
-                        tickFormatter: function (v) {
-                            return v + " visitors";
-                        }
-                    },
-                    shadowSize: 0
-                };
-            
-            // Send Request and Listen for refresh events
-            chart.requestData(option).listen();
+			return this; // chain-ability
+		};
 
-        });
-    })();
-    // Line chart
-    (function () {
-        var Selector = ".chart-line";
-        $(Selector).each(function() {
-            var source = $(this).data('source') || $.error('Line: No source defined.');
-            var chart = new FlotChart(this, source),
-                option = {
-                    series: {
-                        lines: {
-                            show: true,
-                            fill: 0.01
-                        },
-                        points: {
-                            show: true,
-                            radius: 4
-                        }
-                    },
-                    grid: {
-                        borderColor: "#eee",
-                        borderWidth: 1,
-                        hoverable: true,
-                        backgroundColor: "#fcfcfc"
-                    },
-                    tooltip: true,
-                    tooltipOpts: {
-                        content: "%x : %y"
-                    },
-                    xaxis: {
-                        tickColor: "#eee",
-                        mode: "categories"
-                    },
-                    yaxis: {
-                        tickColor: "#eee"
-                    },
-                    shadowSize: 0
-                };
-            // Send Request
-            chart.requestData(option);
-        });
-    })();
-    // Pïe
-    (function () {
-        var Selector = ".chart-pie";
-        $(Selector).each(function() {
-            var source = $(this).data('source') || $.error('Pie: No source defined.');
-            var chart = new FlotChart(this, source),
-                option = {
-                    series: {
-                        pie: {
-                            show: true,
-                            innerRadius: 0,
-                            label: {
-                                show: true,
-                                radius: 0.8,
-                                formatter: function (label, series) {
-                                    return '<div class="flot-pie-label">' +
-                                    //label + ' : ' +
-                                    Math.round(series.percent) +
-                                    '%</div>';
-                                },
-                                background: {
-                                    opacity: 0.8,
-                                    color: '#222'
-                                }
-                            }
-                        }
-                    }
-                };
-            // Send Request
-            chart.requestData(option);
-        });
-    })();
-    // Donut
-    (function () {
-        var Selector = ".chart-donut";
-        $(Selector).each(function() {
-            var source = $(this).data('source') || $.error('Donut: No source defined.');
-            var chart = new FlotChart(this, source),
-                option = {
-                    series: {
-                        pie: {
-                            show: true,
-                            innerRadius: 0.5 // This makes the donut shape
-                        }
-                    }
-                };
-            // Send Request
-            chart.requestData(option);
-        });
-    })();
-  });
+	};
+
+	//
+	// Start of Demo Script
+	// 
+	$(function () {
+
+		// Bar chart
+		(function () {
+			var Selector = ".chart-bar";
+			$(Selector).each(function () {
+				var source = $(this).data('source') || $.error('Bar: No source defined.');
+				var chart = new FlotChart(this, source),
+						panel = $(Selector).parents(".panel"),
+						option = {
+							series: {
+								bars: {
+									align: "center",
+									lineWidth: 0,
+									show: true,
+									barWidth: 0.6,
+									fill: 0.9
+								}
+							},
+							grid: {
+								borderColor: "#eee",
+								borderWidth: 1,
+								hoverable: true,
+								backgroundColor: "#fcfcfc"
+							},
+							tooltip: true,
+							tooltipOpts: {
+								content: "%x : %y"
+							},
+							xaxis: {
+								tickColor: "#fcfcfc",
+								mode: "categories"
+							},
+							yaxis: {
+								tickColor: "#eee"
+							},
+							shadowSize: 0
+						};
+				// Send Request
+				chart.requestData(option);
+			});
+
+		})();
+		// Bar Stacked chart
+		(function () {
+			var Selector = ".chart-bar-stacked";
+			$(Selector).each(function () {
+				var source = $(this).data('source') || $.error('Bar Stacked: No source defined.');
+				var chart = new FlotChart(this, source),
+						option = {
+							series: {
+								stack: true,
+								bars: {
+									align: "center",
+									lineWidth: 0,
+									show: true,
+									barWidth: 0.6,
+									fill: 0.9
+								}
+							},
+							grid: {
+								borderColor: "#eee",
+								borderWidth: 1,
+								hoverable: true,
+								backgroundColor: "#fcfcfc"
+							},
+							tooltip: true,
+							tooltipOpts: {
+								content: "%x : %y"
+							},
+							xaxis: {
+								tickColor: "#fcfcfc",
+								mode: "categories"
+							},
+							yaxis: {
+								tickColor: "#eee"
+							},
+							shadowSize: 0
+						};
+				// Send Request
+				chart.requestData(option);
+			});
+		})();
+		// Area chart
+		(function () {
+			var Selector = ".chart-area";
+			$(Selector).each(function () {
+				var source = $(this).data('source') || $.error('Area: No source defined.');
+				var chart = new FlotChart(this, source),
+						option = {
+							series: {
+								lines: {
+									show: true,
+									fill: 0.8
+								},
+								points: {
+									show: true,
+									radius: 4
+								}
+							},
+							grid: {
+								borderColor: "#eee",
+								borderWidth: 1,
+								hoverable: true,
+								backgroundColor: "#fcfcfc"
+							},
+							tooltip: true,
+							tooltipOpts: {
+								content: "%x : %y"
+							},
+							xaxis: {
+								tickColor: "#fcfcfc",
+								mode: "categories"
+							},
+							yaxis: {
+								tickColor: "#eee",
+								tickFormatter: function (v) {
+									return v + " visitors";
+								}
+							},
+							shadowSize: 0
+						};
+
+				// Send Request and Listen for refresh events
+				chart.requestData(option).listen();
+
+			});
+		})();
+		// Line chart
+		(function () {
+			var Selector = ".chart-line";
+			$(Selector).each(function () {
+				var source = $(this).data('source') || $.error('Line: No source defined.');
+				var chart = new FlotChart(this, source),
+						option = {
+							series: {
+								lines: {
+									show: true,
+									fill: 0.01
+								},
+								points: {
+									show: true,
+									radius: 4
+								}
+							},
+							grid: {
+								borderColor: "#eee",
+								borderWidth: 1,
+								hoverable: true,
+								backgroundColor: "#fcfcfc"
+							},
+							tooltip: true,
+							tooltipOpts: {
+								content: "%x : %y"
+							},
+							xaxis: {
+								tickColor: "#eee",
+								mode: "categories"
+							},
+							yaxis: {
+								tickColor: "#eee"
+							},
+							shadowSize: 0
+						};
+				// Send Request
+				chart.requestData(option);
+			});
+		})();
+		// Pïe
+		(function () {
+			var Selector = ".chart-pie";
+			$(Selector).each(function () {
+				var source = $(this).data('source') || $.error('Pie: No source defined.');
+				var chart = new FlotChart(this, source),
+						option = {
+							series: {
+								pie: {
+									show: true,
+									innerRadius: 0,
+									label: {
+										show: true,
+										radius: 0.8,
+										formatter: function (label, series) {
+											return '<div class="flot-pie-label">' +
+													//label + ' : ' +
+													Math.round(series.percent) +
+													'%</div>';
+										},
+										background: {
+											opacity: 0.8,
+											color: '#222'
+										}
+									}
+								}
+							}
+						};
+				// Send Request
+				chart.requestData(option);
+			});
+		})();
+		// Donut
+		(function () {
+			var Selector = ".chart-donut";
+			$(Selector).each(function () {
+				var source = $(this).data('source') || $.error('Donut: No source defined.');
+				var chart = new FlotChart(this, source),
+						option = {
+							series: {
+								pie: {
+									show: true,
+									innerRadius: 0.5 // This makes the donut shape
+								}
+							}
+						};
+				// Send Request
+				chart.requestData(option);
+			});
+		})();
+	});
 
 }(jQuery, window, document));
 
@@ -746,96 +766,96 @@
  * Init Google Map plugin
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-    // -------------------------
-    // Map Style definition
-    // -------------------------
+	// -------------------------
+	// Map Style definition
+	// -------------------------
 
-    // Custom core styles
-    // Get more styles from http://snazzymaps.com/style/29/light-monochrome
-    // - Just replace and assign to "MapStyles" the new style array
-    var MapStyles = [{featureType:"water",stylers:[{visibility:"on"},{color:"#bdd1f9"}]},{featureType:"all",elementType:"labels.text.fill",stylers:[{color:"#334165"}]},{featureType:"landscape",stylers:[{color:"#e9ebf1"}]},{featureType:"road.highway",elementType:"geometry",stylers:[{color:"#c5c6c6"}]},{featureType:"road.arterial",elementType:"geometry",stylers:[{color:"#fff"}]},{featureType:"road.local",elementType:"geometry",stylers:[{color:"#fff"}]},{featureType:"transit",elementType:"geometry",stylers:[{color:"#d8dbe0"}]},{featureType:"poi",elementType:"geometry",stylers:[{color:"#cfd5e0"}]},{featureType:"administrative",stylers:[{visibility:"on"},{lightness:33}]},{featureType:"poi.park",elementType:"labels",stylers:[{visibility:"on"},{lightness:20}]},{featureType:"road",stylers:[{color:"#d8dbe0",lightness:20}]}];
+	// Custom core styles
+	// Get more styles from http://snazzymaps.com/style/29/light-monochrome
+	// - Just replace and assign to "MapStyles" the new style array
+	var MapStyles = [{featureType: "water", stylers: [{visibility: "on"}, {color: "#bdd1f9"}]}, {featureType: "all", elementType: "labels.text.fill", stylers: [{color: "#334165"}]}, {featureType: "landscape", stylers: [{color: "#e9ebf1"}]}, {featureType: "road.highway", elementType: "geometry", stylers: [{color: "#c5c6c6"}]}, {featureType: "road.arterial", elementType: "geometry", stylers: [{color: "#fff"}]}, {featureType: "road.local", elementType: "geometry", stylers: [{color: "#fff"}]}, {featureType: "transit", elementType: "geometry", stylers: [{color: "#d8dbe0"}]}, {featureType: "poi", elementType: "geometry", stylers: [{color: "#cfd5e0"}]}, {featureType: "administrative", stylers: [{visibility: "on"}, {lightness: 33}]}, {featureType: "poi.park", elementType: "labels", stylers: [{visibility: "on"}, {lightness: 20}]}, {featureType: "road", stylers: [{color: "#d8dbe0", lightness: 20}]}];
 
 
-    // -------------------------
-    // Custom Script
-    // -------------------------
+	// -------------------------
+	// Custom Script
+	// -------------------------
 
-    var mapSelector = '[data-toggle="gmap"]';
+	var mapSelector = '[data-toggle="gmap"]';
 
-    if($.fn.gMap) {
-        var gMapRefs = [];
-        
-        $(mapSelector).each(function(){
-            
-            var $this   = $(this),
-                addresses = $this.data('address') && $this.data('address').split(';'),
-                titles    = $this.data('title') && $this.data('title').split(';'),
-                zoom      = $this.data('zoom') || 14,
-                maptype   = $this.data('maptype') || 'ROADMAP', // or 'TERRAIN'
-                markers   = [];
+	if ($.fn.gMap) {
+		var gMapRefs = [];
 
-            if(addresses) {
-              for(var a in addresses)  {
-                  if(typeof addresses[a] == 'string') {
-                      markers.push({
-                          address:  addresses[a],
-                          html:     (titles && titles[a]) || '',
-                          popup:    true   /* Always popup */
-                        });
-                  }
-              }
+		$(mapSelector).each(function () {
 
-              var options = {
-                  controls: {
-                         panControl:         true,
-                         zoomControl:        true,
-                         mapTypeControl:     true,
-                         scaleControl:       true,
-                         streetViewControl:  true,
-                         overviewMapControl: true
-                     },
-                  scrollwheel: false,
-                  maptype: maptype,
-                  markers: markers,
-                  zoom: zoom
-                  // More options https://github.com/marioestrada/jQuery-gMap
-              };
+			var $this = $(this),
+					addresses = $this.data('address') && $this.data('address').split(';'),
+					titles = $this.data('title') && $this.data('title').split(';'),
+					zoom = $this.data('zoom') || 14,
+					maptype = $this.data('maptype') || 'ROADMAP', // or 'TERRAIN'
+					markers = [];
 
-              var gMap = $this.gMap(options);
+			if (addresses) {
+				for (var a in addresses) {
+					if (typeof addresses[a] == 'string') {
+						markers.push({
+							address: addresses[a],
+							html: (titles && titles[a]) || '',
+							popup: true   /* Always popup */
+						});
+					}
+				}
 
-              var ref = gMap.data('gMap.reference');
-              // save in the map references list
-              gMapRefs.push(ref);
+				var options = {
+					controls: {
+						panControl: true,
+						zoomControl: true,
+						mapTypeControl: true,
+						scaleControl: true,
+						streetViewControl: true,
+						overviewMapControl: true
+					},
+					scrollwheel: false,
+					maptype: maptype,
+					markers: markers,
+					zoom: zoom
+							// More options https://github.com/marioestrada/jQuery-gMap
+				};
 
-              // set the styles
-              if($this.data('styled') !== undefined) {
-                
-                ref.setOptions({
-                  styles: MapStyles
-                });
+				var gMap = $this.gMap(options);
 
-              }
-            }
+				var ref = gMap.data('gMap.reference');
+				// save in the map references list
+				gMapRefs.push(ref);
 
-        }); //each
-    }
-    
-    // Center Map marker on resolution change
-    $(window).resize(function() {
+				// set the styles
+				if ($this.data('styled') !== undefined) {
 
-        if(gMapRefs && gMapRefs.length) {
-            for( var r in gMapRefs) {
-              var mapRef = gMapRefs[r];
-              var currMapCenter = mapRef.getCenter();
-              if(mapRef && currMapCenter) {
-                  google.maps.event.trigger(mapRef, "resize");
-                  mapRef.setCenter(currMapCenter);
-              }
-            }
-        }
-    });
+					ref.setOptions({
+						styles: MapStyles
+					});
+
+				}
+			}
+
+		}); //each
+	}
+
+	// Center Map marker on resolution change
+	$(window).resize(function () {
+
+		if (gMapRefs && gMapRefs.length) {
+			for (var r in gMapRefs) {
+				var mapRef = gMapRefs[r];
+				var currMapCenter = mapRef.getCenter();
+				if (mapRef && currMapCenter) {
+					google.maps.event.trigger(mapRef, "resize");
+					mapRef.setCenter(currMapCenter);
+				}
+			}
+		}
+	});
 
 
 }(jQuery, window, document));
@@ -847,415 +867,415 @@
  * @author: geedmo (http://geedmo.com)
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-    var Markdownarea = function(element, options){
+	var Markdownarea = function (element, options) {
 
-        var $element = $(element);
+		var $element = $(element);
 
-        if($element.data("markdownarea")) return;
+		if ($element.data("markdownarea"))
+			return;
 
-        this.element = $element;
-        this.options = $.extend({}, Markdownarea.defaults, options);
+		this.element = $element;
+		this.options = $.extend({}, Markdownarea.defaults, options);
 
-        this.marked     = this.options.marked || marked;
-        this.CodeMirror = this.options.CodeMirror || CodeMirror;
+		this.marked = this.options.marked || marked;
+		this.CodeMirror = this.options.CodeMirror || CodeMirror;
 
-        this.marked.setOptions({
-          gfm           : true,
-          tables        : true,
-          breaks        : true,
-          pedantic      : true,
-          sanitize      : false,
-          smartLists    : true,
-          smartypants   : false,
-          langPrefix    : 'lang-'
-        });
+		this.marked.setOptions({
+			gfm: true,
+			tables: true,
+			breaks: true,
+			pedantic: true,
+			sanitize: false,
+			smartLists: true,
+			smartypants: false,
+			langPrefix: 'lang-'
+		});
 
-        this.init();
+		this.init();
 
-        this.element.data("markdownarea", this);
-    };
+		this.element.data("markdownarea", this);
+	};
 
-    $.extend(Markdownarea.prototype, {
+	$.extend(Markdownarea.prototype, {
+		init: function () {
 
-        init: function(){
+			var $this = this, tpl = Markdownarea.template;
 
-            var $this = this, tpl = Markdownarea.template;
+			tpl = tpl.replace(/\{\:lblPreview\}/g, this.options.lblPreview);
+			tpl = tpl.replace(/\{\:lblCodeview\}/g, this.options.lblCodeview);
 
-            tpl = tpl.replace(/\{\:lblPreview\}/g, this.options.lblPreview);
-            tpl = tpl.replace(/\{\:lblCodeview\}/g, this.options.lblCodeview);
+			this.markdownarea = $(tpl);
+			this.content = this.markdownarea.find(".uk-markdownarea-content");
+			this.toolbar = this.markdownarea.find(".uk-markdownarea-toolbar");
+			this.preview = this.markdownarea.find(".uk-markdownarea-preview").children().eq(0);
+			this.code = this.markdownarea.find(".uk-markdownarea-code");
 
-            this.markdownarea = $(tpl);
-            this.content      = this.markdownarea.find(".uk-markdownarea-content");
-            this.toolbar      = this.markdownarea.find(".uk-markdownarea-toolbar");
-            this.preview      = this.markdownarea.find(".uk-markdownarea-preview").children().eq(0);
-            this.code         = this.markdownarea.find(".uk-markdownarea-code");
+			this.element.before(this.markdownarea).appendTo(this.code);
 
-            this.element.before(this.markdownarea).appendTo(this.code);
+			this.editor = this.CodeMirror.fromTextArea(this.element[0], this.options.codemirror);
 
-            this.editor = this.CodeMirror.fromTextArea(this.element[0], this.options.codemirror);
+			this.editor.markdownarea = this;
 
-            this.editor.markdownarea = this;
+			this.editor.on("change", (function () {
+				var render = function () {
 
-            this.editor.on("change", (function(){
-                var render = function(){
+					var value = $this.editor.getValue();
 
-                    var value   = $this.editor.getValue();
+					$this.currentvalue = String(value);
 
-                    $this.currentvalue  = String(value);
+					$this.element.trigger("markdownarea-before", [$this]);
 
-                    $this.element.trigger("markdownarea-before", [$this]);
+					$this.applyPlugins();
 
-                    $this.applyPlugins();
+					$this.marked($this.currentvalue, function (err, markdown) {
 
-                    $this.marked($this.currentvalue, function (err, markdown) {
+						if (err)
+							throw err;
 
-                      if (err) throw err;
+						$this.preview.html(markdown);
+						$this.element.val($this.editor.getValue()).trigger("markdownarea-update", [$this]);
+					});
+				};
+				render();
+				return $.Utils.debounce(render, 150);
+			})());
 
-                      $this.preview.html(markdown);
-                      $this.element.val($this.editor.getValue()).trigger("markdownarea-update", [$this]);
-                    });
-                };
-                render();
-                return $.Utils.debounce(render, 150);
-            })());
+			this.code.find(".CodeMirror").css("height", this.options.height);
 
-            this.code.find(".CodeMirror").css("height", this.options.height);
+			this._buildtoolbar();
+			this.fit();
 
-            this._buildtoolbar();
-            this.fit();
+			$(window).on("resize", $.Utils.debounce(function () {
+				$this.fit();
+			}, 200));
 
-            $(window).on("resize", $.Utils.debounce(function(){
-                $this.fit();
-            }, 200));
 
+			var previewContainer = $this.preview.parent(),
+					codeContent = this.code.find('.CodeMirror-sizer'),
+					codeScroll = this.code.find('.CodeMirror-scroll').on('scroll', $.Utils.debounce(function () {
 
-            var previewContainer = $this.preview.parent(),
-                codeContent      = this.code.find('.CodeMirror-sizer'),
-                codeScroll       = this.code.find('.CodeMirror-scroll').on('scroll',$.Utils.debounce(function() {
+				if ($this.markdownarea.attr("data-mode") == "tab")
+					return;
 
-                    if($this.markdownarea.attr("data-mode")=="tab") return;
+				// calc position
+				var codeHeight = codeContent.height() - codeScroll.height(),
+						previewHeight = previewContainer[0].scrollHeight - previewContainer.height(),
+						ratio = previewHeight / codeHeight,
+						previewPostition = codeScroll.scrollTop() * ratio;
 
-                    // calc position
-                    var codeHeight       = codeContent.height()   - codeScroll.height(),
-                        previewHeight    = previewContainer[0].scrollHeight - previewContainer.height(),
-                        ratio            = previewHeight / codeHeight,
-                        previewPostition = codeScroll.scrollTop() * ratio;
+				// apply new scroll
+				previewContainer.scrollTop(previewPostition);
+			}, 10));
 
-                    // apply new scroll
-                    previewContainer.scrollTop(previewPostition);
-            }, 10));
+			this.markdownarea.on("click", ".uk-markdown-button-markdown, .uk-markdown-button-preview", function (e) {
 
-            this.markdownarea.on("click", ".uk-markdown-button-markdown, .uk-markdown-button-preview", function(e){
+				e.preventDefault();
 
-                e.preventDefault();
+				if ($this.markdownarea.attr("data-mode") == "tab") {
 
-                if($this.markdownarea.attr("data-mode")=="tab") {
+					$this.markdownarea.find(".uk-markdown-button-markdown, .uk-markdown-button-preview").removeClass("uk-active").filter(this).addClass("uk-active");
 
-                    $this.markdownarea.find(".uk-markdown-button-markdown, .uk-markdown-button-preview").removeClass("uk-active").filter(this).addClass("uk-active");
+					$this.activetab = $(this).hasClass("uk-markdown-button-markdown") ? "code" : "preview";
+					$this.markdownarea.attr("data-active-tab", $this.activetab);
+				}
+			});
 
-                    $this.activetab = $(this).hasClass("uk-markdown-button-markdown") ? "code":"preview";
-                    $this.markdownarea.attr("data-active-tab", $this.activetab);
-                }
-            });
+			this.preview.parent().css("height", this.code.height());
+		},
+		applyPlugins: function () {
 
-            this.preview.parent().css("height", this.code.height());
-        },
+			var $this = this,
+					plugins = Object.keys(Markdownarea.plugins),
+					plgs = Markdownarea.plugins;
 
-        applyPlugins: function(){
+			this.markers = {};
 
-            var $this   = this,
-                plugins = Object.keys(Markdownarea.plugins),
-                plgs    = Markdownarea.plugins;
+			if (plugins.length) {
 
-            this.markers = {};
+				var lines = this.currentvalue.split("\n");
 
-            if(plugins.length) {
+				plugins.forEach(function (name) {
+					this.markers[name] = [];
+				}, this);
 
-                var lines = this.currentvalue.split("\n");
+				for (var line = 0, max = lines.length; line < max; line++) {
 
-                plugins.forEach(function(name){
-                    this.markers[name] = [];
-                }, this);
+					(function (line) {
+						plugins.forEach(function (name) {
 
-                for(var line=0,max=lines.length;line<max;line++) {
+							var i = 0;
 
-                    (function(line){
-                        plugins.forEach(function(name){
+							lines[line] = lines[line].replace(plgs[name].identifier, function () {
 
-                            var i = 0;
+								var replacement = plgs[name].cb({
+									"area": $this,
+									"found": arguments,
+									"line": line,
+									"pos": i++,
+									"uid": [name, line, i, (new Date().getTime()) + "RAND" + (Math.ceil(Math.random() * 100000))].join('-'),
+									"replace": function (strwith) {
+										var src = this.area.editor.getLine(this.line),
+												start = src.indexOf(this.found[0]);
+										end = start + this.found[0].length;
 
-                            lines[line] = lines[line].replace(plgs[name].identifier, function(){
+										this.area.editor.replaceRange(strwith, {"line": this.line, "ch": start}, {"line": this.line, "ch": end});
+									}
+								});
 
-                                var replacement =  plgs[name].cb({
-                                    "area" : $this,
-                                    "found": arguments,
-                                    "line" : line,
-                                    "pos"  : i++,
-                                    "uid"  : [name, line, i, (new Date().getTime())+"RAND"+(Math.ceil(Math.random() *100000))].join('-'),
-                                    "replace": function(strwith){
-                                        var src   = this.area.editor.getLine(this.line),
-                                            start = src.indexOf(this.found[0]);
-                                            end   = start + this.found[0].length;
+								return replacement;
+							});
+						});
+					}(line));
+				}
 
-                                        this.area.editor.replaceRange(strwith, {"line": this.line, "ch":start}, {"line": this.line, "ch":end} );
-                                    }
-                                });
+				this.currentvalue = lines.join("\n");
 
-                                return replacement;
-                            });
-                        });
-                    }(line));
-                }
+			}
+		},
+		_buildtoolbar: function () {
 
-                this.currentvalue = lines.join("\n");
+			if (!(this.options.toolbar && this.options.toolbar.length))
+				return;
 
-            }
-        },
+			var $this = this, bar = [];
 
-        _buildtoolbar: function(){
+			this.options.toolbar.forEach(function (cmd) {
+				if (Markdownarea.commands[cmd]) {
 
-            if(!(this.options.toolbar && this.options.toolbar.length)) return;
+					var title = Markdownarea.commands[cmd].title ? Markdownarea.commands[cmd].title : cmd;
 
-            var $this = this, bar = [];
+					bar.push('<li><a data-markdownarea-cmd="' + cmd + '" title="' + title + '" data-toggle="tooltip">' + Markdownarea.commands[cmd].label + '</a></li>');
 
-            this.options.toolbar.forEach(function(cmd){
-                if(Markdownarea.commands[cmd]) {
+					if (Markdownarea.commands[cmd].shortcut) {
+						$this.registerShortcut(Markdownarea.commands[cmd].shortcut, Markdownarea.commands[cmd].action);
+					}
+				}
+			});
 
-                   var title = Markdownarea.commands[cmd].title ? Markdownarea.commands[cmd].title : cmd;
+			this.toolbar.html(bar.join("\n"));
 
-                   bar.push('<li><a data-markdownarea-cmd="'+cmd+'" title="'+title+'" data-toggle="tooltip">'+Markdownarea.commands[cmd].label+'</a></li>');
+			this.markdownarea.on("click", "a[data-markdownarea-cmd]", function () {
+				var cmd = $(this).data("markdownareaCmd");
 
-                   if(Markdownarea.commands[cmd].shortcut) {
-                       $this.registerShortcut(Markdownarea.commands[cmd].shortcut, Markdownarea.commands[cmd].action);
-                   }
-                }
-            });
+				if (cmd && Markdownarea.commands[cmd] && (!$this.activetab || $this.activetab == "code" || cmd == "fullscreen")) {
+					Markdownarea.commands[cmd].action.apply($this, [$this.editor]);
+				}
 
-            this.toolbar.html(bar.join("\n"));
+			});
+		},
+		fit: function () {
 
-            this.markdownarea.on("click", "a[data-markdownarea-cmd]", function(){
-                var cmd = $(this).data("markdownareaCmd");
+			var mode = this.options.mode;
 
-                if(cmd && Markdownarea.commands[cmd] && (!$this.activetab || $this.activetab=="code" || cmd=="fullscreen")) {
-                    Markdownarea.commands[cmd].action.apply($this, [$this.editor]);
-                }
+			if (mode == "split" && this.markdownarea.width() < this.options.maxsplitsize) {
+				mode = "tab";
+			}
 
-            });
-        },
+			if (mode == "tab") {
 
-        fit: function() {
+				if (!this.activetab) {
+					this.activetab = "code";
+					this.markdownarea.attr("data-active-tab", this.activetab);
+				}
 
-            var mode = this.options.mode;
+				this.markdownarea.find(".uk-markdown-button-markdown, .uk-markdown-button-preview").removeClass("uk-active")
+						.filter(this.activetab == "code" ? '.uk-markdown-button-markdown' : '.uk-markdown-button-preview').addClass("uk-active");
 
-            if(mode=="split" && this.markdownarea.width() < this.options.maxsplitsize) {
-                mode = "tab";
-            }
+			}
 
-            if(mode=="tab") {
+			this.editor.refresh();
+			this.preview.parent().css("height", this.code.height());
 
-                if(!this.activetab) {
-                    this.activetab = "code";
-                    this.markdownarea.attr("data-active-tab", this.activetab);
-                }
+			this.markdownarea.attr("data-mode", mode);
+		},
+		registerShortcut: function (combination, callback) {
 
-                this.markdownarea.find(".uk-markdown-button-markdown, .uk-markdown-button-preview").removeClass("uk-active")
-                                 .filter(this.activetab=="code" ? '.uk-markdown-button-markdown':'.uk-markdown-button-preview').addClass("uk-active");
+			var $this = this;
 
-            }
+			combination = $.isArray(combination) ? combination : [combination];
 
-            this.editor.refresh();
-            this.preview.parent().css("height", this.code.height());
+			for (var i = 0, max = combination.length; i < max; i++) {
+				var map = {};
 
-            this.markdownarea.attr("data-mode", mode);
-        },
+				map[combination[i]] = function () {
+					callback.apply($this, [$this.editor]);
+				};
 
-        registerShortcut: function(combination, callback){
-
-            var $this = this;
-
-            combination = $.isArray(combination) ? combination : [combination];
-
-            for(var i=0,max=combination.length;i < max;i++) {
-                var map = {};
-
-                map[combination[i]] = function(){
-                    callback.apply($this, [$this.editor]);
-                };
-
-                $this.editor.addKeyMap(map);
-            }
-        },
-
-        getMode: function(){
-            var pos = this.editor.getDoc().getCursor();
-
-            return this.editor.getTokenAt(pos).state.base.htmlState ? 'html':'markdown';
-        }
-    });
-
-    //jQuery plugin
-
-    $.fn.markdownarea = function(options){
-
-        return this.each(function(){
-
-            var ele = $(this);
-
-            if(!ele.data("markdownarea")) {
-                var obj = new Markdownarea(ele, options);
-            }
-        });
-    };
-
-    var baseReplacer = function(replace, editor){
-        var text     = editor.getSelection(),
-            markdown = replace.replace('$1', text);
-
-        editor.replaceSelection(markdown, 'end');
-    };
-
-    Markdownarea.commands = {
-        "fullscreen": {
-            "title"  : 'Fullscreen',
-            "label"  : '<i class="fa fa-expand"></i>',
-            "action" : function(editor){
-
-                editor.markdownarea.markdownarea.toggleClass("uk-markdownarea-fullscreen");
-
-                // dont use uk- to avoid rules declaration
-                $('html').toggleClass("markdownarea-fullscreen");
-                $('html, body').scrollTop(0);
-
-                var wrap = editor.getWrapperElement();
-
-                if(editor.markdownarea.markdownarea.hasClass("uk-markdownarea-fullscreen")) {
-
-                    editor.state.fullScreenRestore = {scrollTop: window.pageYOffset, scrollLeft: window.pageXOffset, width: wrap.style.width, height: wrap.style.height};
-                    wrap.style.width  = "";
-                    wrap.style.height = editor.markdownarea.content.height()+"px";
-                    document.documentElement.style.overflow = "hidden";
-
-                } else {
-
-                    document.documentElement.style.overflow = "";
-                    var info = editor.state.fullScreenRestore;
-                    wrap.style.width = info.width; wrap.style.height = info.height;
-                    window.scrollTo(info.scrollLeft, info.scrollTop);
-                }
-
-                editor.refresh();
-                editor.markdownarea.preview.parent().css("height", editor.markdownarea.code.height());
-            }
-        },
-
-        "bold" : {
-            "title"  : "Bold",
-            "label"  : '<i class="fa fa-bold"></i>',
-            "shortcut": ['Ctrl-B', 'Cmd-B'],
-            "action" : function(editor){
-                baseReplacer(this.getMode() == 'html' ? "<strong>$1</strong>":"**$1**", editor);
-            }
-        },
-        "italic" : {
-            "title"  : "Italic",
-            "label"  : '<i class="fa fa-italic"></i>',
-            "action" : function(editor){
-                baseReplacer(this.getMode() == 'html' ? "<em>$1</em>":"*$1*", editor);
-            }
-        },
-        "strike" : {
-            "title"  : "Strikethrough",
-            "label"  : '<i class="fa fa-strikethrough"></i>',
-            "action" : function(editor){
-                baseReplacer(this.getMode() == 'html' ? "<del>$1</del>":"~~$1~~", editor);
-            }
-        },
-        "blockquote" : {
-            "title"  : "Blockquote",
-            "label"  : '<i class="fa fa-quote-right"></i>',
-            "action" : function(editor){
-                baseReplacer(this.getMode() == 'html' ? "<blockquote><p>$1</p></blockquote>":"> $1", editor);
-            }
-        },
-        "link" : {
-            "title"  : "Link",
-            "label"  : '<i class="fa fa-link"></i>',
-            "action" : function(editor){
-                baseReplacer(this.getMode() == 'html' ? '<a href="http://">$1</a>':"[$1](http://)", editor);
-            }
-        },
-        "picture" : {
-            "title"  : "Picture",
-            "label"  : '<i class="fa fa-picture-o"></i>',
-            "action" : function(editor){
-                baseReplacer(this.getMode() == 'html' ? '<img src="http://" alt="$1">':"![$1](http://)", editor);
-            }
-        },
-        "listUl" : {
-            "title"  : "Unordered List",
-            "label"  : '<i class="fa fa-list-ul"></i>',
-            "action" : function(editor){
-                if(this.getMode() == 'markdown') baseReplacer("* $1", editor);
-            }
-        },
-        "listOl" : {
-            "title"  : "Ordered List",
-            "label"  : '<i class="fa fa-list-ol"></i>',
-            "action" : function(editor){
-                if(this.getMode() == 'markdown') baseReplacer("1. $1", editor);
-            }
-        }
-    };
-
-    Markdownarea.defaults = {
-        "mode"         : "split",
-        "height"       : 500,
-        "maxsplitsize" : 1000,
-        "codemirror"   : { mode: 'gfm', tabMode: 'indent', tabindex: "2", lineWrapping: true, dragDrop: false, autoCloseTags: true, matchTags: true },
-        "toolbar"      : [ "bold", "italic", "strike", "link", "picture", "blockquote", "listUl", "listOl" ],
-        "lblPreview"   : "Preview",
-        "lblCodeview"  : "Markdown"
-    };
-
-    Markdownarea.template = '<div class="uk-markdownarea uk-clearfix" data-mode="split">' +
-                                '<div class="uk-markdownarea-navbar">' +
-                                    '<ul class="uk-markdownarea-navbar-nav uk-markdownarea-toolbar"></ul>' +
-                                    '<div class="uk-markdownarea-navbar-flip">' +
-                                        '<ul class="uk-markdownarea-navbar-nav">' +
-                                            '<li class="uk-markdown-button-markdown"><a>{:lblCodeview}</a></li>' +
-                                            '<li class="uk-markdown-button-preview"><a>{:lblPreview}</a></li>' +
-                                            '<li><a data-markdownarea-cmd="fullscreen" data-toggle="tooltip" title="Zen Mode"><i class="fa fa-expand"></i></a></li>' +
-                                        '</ul>' +
-                                    '</div>' +
-                                '</div>' +
-                                '<div class="uk-markdownarea-content">' +
-                                    '<div class="uk-markdownarea-code"></div>' +
-                                    '<div class="uk-markdownarea-preview"><div></div></div>' +
-                                '</div>' +
-                            '</div>';
-
-    Markdownarea.plugins   = {};
-    Markdownarea.addPlugin = function(name, identifier, callback) {
-        Markdownarea.plugins[name] = {"identifier":identifier, "cb":callback};
-    };
-
-    $.fn["markdownarea"] = Markdownarea;
-
-    // init code
-    $(function() {
-
-        $("textarea[data-uk-markdownarea]").each(function() {
-            var area = $(this), obj;
-
-            if (!area.data("markdownarea")) {
-                obj = new Markdownarea(area, $.Utils.options(area.attr("data-uk-markdownarea")));
-            }
-        });
-    });
-
-    return Markdownarea;
+				$this.editor.addKeyMap(map);
+			}
+		},
+		getMode: function () {
+			var pos = this.editor.getDoc().getCursor();
+
+			return this.editor.getTokenAt(pos).state.base.htmlState ? 'html' : 'markdown';
+		}
+	});
+
+	//jQuery plugin
+
+	$.fn.markdownarea = function (options) {
+
+		return this.each(function () {
+
+			var ele = $(this);
+
+			if (!ele.data("markdownarea")) {
+				var obj = new Markdownarea(ele, options);
+			}
+		});
+	};
+
+	var baseReplacer = function (replace, editor) {
+		var text = editor.getSelection(),
+				markdown = replace.replace('$1', text);
+
+		editor.replaceSelection(markdown, 'end');
+	};
+
+	Markdownarea.commands = {
+		"fullscreen": {
+			"title": 'Fullscreen',
+			"label": '<i class="fa fa-expand"></i>',
+			"action": function (editor) {
+
+				editor.markdownarea.markdownarea.toggleClass("uk-markdownarea-fullscreen");
+
+				// dont use uk- to avoid rules declaration
+				$('html').toggleClass("markdownarea-fullscreen");
+				$('html, body').scrollTop(0);
+
+				var wrap = editor.getWrapperElement();
+
+				if (editor.markdownarea.markdownarea.hasClass("uk-markdownarea-fullscreen")) {
+
+					editor.state.fullScreenRestore = {scrollTop: window.pageYOffset, scrollLeft: window.pageXOffset, width: wrap.style.width, height: wrap.style.height};
+					wrap.style.width = "";
+					wrap.style.height = editor.markdownarea.content.height() + "px";
+					document.documentElement.style.overflow = "hidden";
+
+				} else {
+
+					document.documentElement.style.overflow = "";
+					var info = editor.state.fullScreenRestore;
+					wrap.style.width = info.width;
+					wrap.style.height = info.height;
+					window.scrollTo(info.scrollLeft, info.scrollTop);
+				}
+
+				editor.refresh();
+				editor.markdownarea.preview.parent().css("height", editor.markdownarea.code.height());
+			}
+		},
+		"bold": {
+			"title": "Bold",
+			"label": '<i class="fa fa-bold"></i>',
+			"shortcut": ['Ctrl-B', 'Cmd-B'],
+			"action": function (editor) {
+				baseReplacer(this.getMode() == 'html' ? "<strong>$1</strong>" : "**$1**", editor);
+			}
+		},
+		"italic": {
+			"title": "Italic",
+			"label": '<i class="fa fa-italic"></i>',
+			"action": function (editor) {
+				baseReplacer(this.getMode() == 'html' ? "<em>$1</em>" : "*$1*", editor);
+			}
+		},
+		"strike": {
+			"title": "Strikethrough",
+			"label": '<i class="fa fa-strikethrough"></i>',
+			"action": function (editor) {
+				baseReplacer(this.getMode() == 'html' ? "<del>$1</del>" : "~~$1~~", editor);
+			}
+		},
+		"blockquote": {
+			"title": "Blockquote",
+			"label": '<i class="fa fa-quote-right"></i>',
+			"action": function (editor) {
+				baseReplacer(this.getMode() == 'html' ? "<blockquote><p>$1</p></blockquote>" : "> $1", editor);
+			}
+		},
+		"link": {
+			"title": "Link",
+			"label": '<i class="fa fa-link"></i>',
+			"action": function (editor) {
+				baseReplacer(this.getMode() == 'html' ? '<a href="http://">$1</a>' : "[$1](http://)", editor);
+			}
+		},
+		"picture": {
+			"title": "Picture",
+			"label": '<i class="fa fa-picture-o"></i>',
+			"action": function (editor) {
+				baseReplacer(this.getMode() == 'html' ? '<img src="http://" alt="$1">' : "![$1](http://)", editor);
+			}
+		},
+		"listUl": {
+			"title": "Unordered List",
+			"label": '<i class="fa fa-list-ul"></i>',
+			"action": function (editor) {
+				if (this.getMode() == 'markdown')
+					baseReplacer("* $1", editor);
+			}
+		},
+		"listOl": {
+			"title": "Ordered List",
+			"label": '<i class="fa fa-list-ol"></i>',
+			"action": function (editor) {
+				if (this.getMode() == 'markdown')
+					baseReplacer("1. $1", editor);
+			}
+		}
+	};
+
+	Markdownarea.defaults = {
+		"mode": "split",
+		"height": 500,
+		"maxsplitsize": 1000,
+		"codemirror": {mode: 'gfm', tabMode: 'indent', tabindex: "2", lineWrapping: true, dragDrop: false, autoCloseTags: true, matchTags: true},
+		"toolbar": ["bold", "italic", "strike", "link", "picture", "blockquote", "listUl", "listOl"],
+		"lblPreview": "Preview",
+		"lblCodeview": "Markdown"
+	};
+
+	Markdownarea.template = '<div class="uk-markdownarea uk-clearfix" data-mode="split">' +
+			'<div class="uk-markdownarea-navbar">' +
+			'<ul class="uk-markdownarea-navbar-nav uk-markdownarea-toolbar"></ul>' +
+			'<div class="uk-markdownarea-navbar-flip">' +
+			'<ul class="uk-markdownarea-navbar-nav">' +
+			'<li class="uk-markdown-button-markdown"><a>{:lblCodeview}</a></li>' +
+			'<li class="uk-markdown-button-preview"><a>{:lblPreview}</a></li>' +
+			'<li><a data-markdownarea-cmd="fullscreen" data-toggle="tooltip" title="Zen Mode"><i class="fa fa-expand"></i></a></li>' +
+			'</ul>' +
+			'</div>' +
+			'</div>' +
+			'<div class="uk-markdownarea-content">' +
+			'<div class="uk-markdownarea-code"></div>' +
+			'<div class="uk-markdownarea-preview"><div></div></div>' +
+			'</div>' +
+			'</div>';
+
+	Markdownarea.plugins = {};
+	Markdownarea.addPlugin = function (name, identifier, callback) {
+		Markdownarea.plugins[name] = {"identifier": identifier, "cb": callback};
+	};
+
+	$.fn["markdownarea"] = Markdownarea;
+
+	// init code
+	$(function () {
+
+		$("textarea[data-uk-markdownarea]").each(function () {
+			var area = $(this), obj;
+
+			if (!area.data("markdownarea")) {
+				obj = new Markdownarea(area, $.Utils.options(area.attr("data-uk-markdownarea")));
+			}
+		});
+	});
+
+	return Markdownarea;
 
 }(jQuery, window, document));
 
@@ -1268,48 +1288,47 @@
  * Auto dismiss on ESC key
  =========================================================*/
 
-(function($, window, document){
-  
-  $(function() {
+(function ($, window, document) {
 
-    var openSelector    = '[data-toggle="navbar-search"]',
-        dismissSelector = '[data-toggle="navbar-search-dismiss"]',
-        inputSelector   = '.navbar-form input[type="text"]',
-        navbarForm      = $('form.navbar-form');
+	$(function () {
 
-    var NavSearch = {
-      toggle: function() {
-        
-        navbarForm.toggleClass('open');
-        
-        var isOpen = navbarForm.hasClass('open');
-        
-        navbarForm.find('input')[isOpen ? 'focus' : 'blur']();
+		var openSelector = '[data-toggle="navbar-search"]',
+				dismissSelector = '[data-toggle="navbar-search-dismiss"]',
+				inputSelector = '.navbar-form input[type="text"]',
+				navbarForm = $('form.navbar-form');
 
-      },
+		var NavSearch = {
+			toggle: function () {
 
-      dismiss: function() {
-        navbarForm
-          .removeClass('open')      // Close control
-          .find('input[type="text"]').blur() // remove focus
-          .val('')                    // Empty input
-          ;
-      }
+				navbarForm.toggleClass('open');
 
-    };
+				var isOpen = navbarForm.hasClass('open');
 
-    $(document)
-        .on("click", NavSearch.dismiss)
-        .on("click", openSelector +', '+ inputSelector +', '+ dismissSelector, function (e) {
-          e.stopPropagation();
-        })
-        .on("click", dismissSelector, NavSearch.dismiss)
-        .on("click", openSelector, NavSearch.toggle)
-        .keyup(function(e) {
-          if (e.keyCode == 27) // ESC
-            NavSearch.close();
-        });
-  });
+				navbarForm.find('input')[isOpen ? 'focus' : 'blur']();
+
+			},
+			dismiss: function () {
+				navbarForm
+						.removeClass('open')      // Close control
+						.find('input[type="text"]').blur() // remove focus
+						.val('')                    // Empty input
+						;
+			}
+
+		};
+
+		$(document)
+				.on("click", NavSearch.dismiss)
+				.on("click", openSelector + ', ' + inputSelector + ', ' + dismissSelector, function (e) {
+					e.stopPropagation();
+				})
+				.on("click", dismissSelector, NavSearch.dismiss)
+				.on("click", openSelector, NavSearch.toggle)
+				.keyup(function (e) {
+					if (e.keyCode == 27) // ESC
+						NavSearch.close();
+				});
+	});
 
 
 }(jQuery, window, document));
@@ -1322,44 +1341,44 @@
  * [data-options="options in json format" ]
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-  var Selector = '[data-toggle="notify"]',
-      autoloadSelector = '[data-onload]',
-      doc = $(document);
+	var Selector = '[data-toggle="notify"]',
+			autoloadSelector = '[data-onload]',
+			doc = $(document);
 
 
-  $(function() {
+	$(function () {
 
-    $(Selector).each(function(){
+		$(Selector).each(function () {
 
-      var $this  = $(this),
-          onload = $this.data('onload');
+			var $this = $(this),
+					onload = $this.data('onload');
 
-      if(onload !== undefined) {
-        setTimeout(function(){
-          notifyNow($this);
-        }, 800);
-      }
+			if (onload !== undefined) {
+				setTimeout(function () {
+					notifyNow($this);
+				}, 800);
+			}
 
-      $this.on('click', function (e) {
-        e.preventDefault();
-        notifyNow($this);
-      });
+			$this.on('click', function (e) {
+				e.preventDefault();
+				notifyNow($this);
+			});
 
-    });
+		});
 
-  });
+	});
 
-  function notifyNow($element) {
-      var message = $element.data('message'),
-          options = $element.data('options');
+	function notifyNow($element) {
+		var message = $element.data('message'),
+				options = $element.data('options');
 
-      if(!message)
-        $.error('Notify: No message specified');
-     
-      $.notify(message, options || {});
-  }
+		if (!message)
+			$.error('Notify: No message specified');
+
+		$.notify(message, options || {});
+	}
 
 
 }(jQuery, window, document));
@@ -1371,167 +1390,174 @@
  * More information http://getuikit.com/docs/addons_notify.html
  */
 
-(function($, window, document){
+(function ($, window, document) {
 
-    var containers = {},
-        messages   = {},
+	var containers = {},
+			messages = {},
+			notify = function (options) {
 
-        notify     =  function(options){
+				if ($.type(options) == 'string') {
+					options = {message: options};
+				}
 
-            if ($.type(options) == 'string') {
-                options = { message: options };
-            }
+				if (arguments[1]) {
+					options = $.extend(options, $.type(arguments[1]) == 'string' ? {status: arguments[1]} : arguments[1]);
+				}
 
-            if (arguments[1]) {
-                options = $.extend(options, $.type(arguments[1]) == 'string' ? {status:arguments[1]} : arguments[1]);
-            }
+				return (new Message(options)).show();
+			},
+			closeAll = function (group, instantly) {
+				if (group) {
+					for (var id in messages) {
+						if (group === messages[id].group)
+							messages[id].close(instantly);
+					}
+				} else {
+					for (var id in messages) {
+						messages[id].close(instantly);
+					}
+				}
+			};
 
-            return (new Message(options)).show();
-        },
-        closeAll  = function(group, instantly){
-            if(group) {
-                for(var id in messages) { if(group===messages[id].group) messages[id].close(instantly); }
-            } else {
-                for(var id in messages) { messages[id].close(instantly); }
-            }
-        };
+	var Message = function (options) {
 
-    var Message = function(options){
+		var $this = this;
 
-        var $this = this;
+		this.options = $.extend({}, Message.defaults, options);
 
-        this.options = $.extend({}, Message.defaults, options);
+		this.uuid = "ID" + (new Date().getTime()) + "RAND" + (Math.ceil(Math.random() * 100000));
+		this.element = $([
+			// @geedmo: alert-dismissable enables bs close icon
+			'<div class="uk-notify-message alert-dismissable">',
+			'<a class="close">&times;</a>',
+			'<div>' + this.options.message + '</div>',
+			'</div>'
 
-        this.uuid    = "ID"+(new Date().getTime())+"RAND"+(Math.ceil(Math.random() * 100000));
-        this.element = $([
-            // @geedmo: alert-dismissable enables bs close icon
-            '<div class="uk-notify-message alert-dismissable">',
-                '<a class="close">&times;</a>',
-                '<div>'+this.options.message+'</div>',
-            '</div>'
+		].join('')).data("notifyMessage", this);
 
-        ].join('')).data("notifyMessage", this);
+		// status
+		if (this.options.status) {
+			this.element.addClass('alert alert-' + this.options.status);
+			this.currentstatus = this.options.status;
+		}
 
-        // status
-        if (this.options.status) {
-            this.element.addClass('alert alert-'+this.options.status);
-            this.currentstatus = this.options.status;
-        }
+		this.group = this.options.group;
 
-        this.group = this.options.group;
+		messages[this.uuid] = this;
 
-        messages[this.uuid] = this;
-
-        if(!containers[this.options.pos]) {
-            containers[this.options.pos] = $('<div class="uk-notify uk-notify-'+this.options.pos+'"></div>').appendTo('body').on("click", ".uk-notify-message", function(){
-                $(this).data("notifyMessage").close();
-            });
-        }
-    };
-
-
-    $.extend(Message.prototype, {
-
-        uuid: false,
-        element: false,
-        timout: false,
-        currentstatus: "",
-        group: false,
-
-        show: function() {
-
-            if (this.element.is(":visible")) return;
-
-            var $this = this;
-
-            containers[this.options.pos].show().prepend(this.element);
-
-            var marginbottom = parseInt(this.element.css("margin-bottom"), 10);
-
-            this.element.css({"opacity":0, "margin-top": -1*this.element.outerHeight(), "margin-bottom":0}).animate({"opacity":1, "margin-top": 0, "margin-bottom":marginbottom}, function(){
-
-                if ($this.options.timeout) {
-
-                    var closefn = function(){ $this.close(); };
-
-                    $this.timeout = setTimeout(closefn, $this.options.timeout);
-
-                    $this.element.hover(
-                        function() { clearTimeout($this.timeout); },
-                        function() { $this.timeout = setTimeout(closefn, $this.options.timeout);  }
-                    );
-                }
-
-            });
-
-            return this;
-        },
-
-        close: function(instantly) {
-
-            var $this    = this,
-                finalize = function(){
-                    $this.element.remove();
-
-                    if(!containers[$this.options.pos].children().length) {
-                        containers[$this.options.pos].hide();
-                    }
-
-                    delete messages[$this.uuid];
-                };
-
-            if(this.timeout) clearTimeout(this.timeout);
-
-            if(instantly) {
-                finalize();
-            } else {
-                this.element.animate({"opacity":0, "margin-top": -1* this.element.outerHeight(), "margin-bottom":0}, function(){
-                    finalize();
-                });
-            }
-        },
-
-        content: function(html){
-
-            var container = this.element.find(">div");
-
-            if(!html) {
-                return container.html();
-            }
-
-            container.html(html);
-
-            return this;
-        },
-
-        status: function(status) {
-
-            if(!status) {
-                return this.currentstatus;
-            }
-
-            this.element.removeClass('alert alert-'+this.currentstatus).addClass('alert alert-'+status);
-
-            this.currentstatus = status;
-
-            return this;
-        }
-    });
-
-    Message.defaults = {
-        message: "",
-        status: "normal",
-        timeout: 5000,
-        group: null,
-        pos: 'top-center'
-    };
+		if (!containers[this.options.pos]) {
+			containers[this.options.pos] = $('<div class="uk-notify uk-notify-' + this.options.pos + '"></div>').appendTo('body').on("click", ".uk-notify-message", function () {
+				$(this).data("notifyMessage").close();
+			});
+		}
+	};
 
 
-    $["notify"]          = notify;
-    $["notify"].message  = Message;
-    $["notify"].closeAll = closeAll;
+	$.extend(Message.prototype, {
+		uuid: false,
+		element: false,
+		timout: false,
+		currentstatus: "",
+		group: false,
+		show: function () {
 
-    return notify;
+			if (this.element.is(":visible"))
+				return;
+
+			var $this = this;
+
+			containers[this.options.pos].show().prepend(this.element);
+
+			var marginbottom = parseInt(this.element.css("margin-bottom"), 10);
+
+			this.element.css({"opacity": 0, "margin-top": -1 * this.element.outerHeight(), "margin-bottom": 0}).animate({"opacity": 1, "margin-top": 0, "margin-bottom": marginbottom}, function () {
+
+				if ($this.options.timeout) {
+
+					var closefn = function () {
+						$this.close();
+					};
+
+					$this.timeout = setTimeout(closefn, $this.options.timeout);
+
+					$this.element.hover(
+							function () {
+								clearTimeout($this.timeout);
+							},
+							function () {
+								$this.timeout = setTimeout(closefn, $this.options.timeout);
+							}
+					);
+				}
+
+			});
+
+			return this;
+		},
+		close: function (instantly) {
+
+			var $this = this,
+					finalize = function () {
+						$this.element.remove();
+
+						if (!containers[$this.options.pos].children().length) {
+							containers[$this.options.pos].hide();
+						}
+
+						delete messages[$this.uuid];
+					};
+
+			if (this.timeout)
+				clearTimeout(this.timeout);
+
+			if (instantly) {
+				finalize();
+			} else {
+				this.element.animate({"opacity": 0, "margin-top": -1 * this.element.outerHeight(), "margin-bottom": 0}, function () {
+					finalize();
+				});
+			}
+		},
+		content: function (html) {
+
+			var container = this.element.find(">div");
+
+			if (!html) {
+				return container.html();
+			}
+
+			container.html(html);
+
+			return this;
+		},
+		status: function (status) {
+
+			if (!status) {
+				return this.currentstatus;
+			}
+
+			this.element.removeClass('alert alert-' + this.currentstatus).addClass('alert alert-' + status);
+
+			this.currentstatus = status;
+
+			return this;
+		}
+	});
+
+	Message.defaults = {
+		message: "",
+		status: "normal",
+		timeout: 5000,
+		group: null,
+		pos: 'top-center'
+	};
+
+
+	$["notify"] = notify;
+	$["notify"].message = Message;
+	$["notify"].closeAll = closeAll;
+
+	return notify;
 
 }(jQuery, window, document));
 
@@ -1540,35 +1566,35 @@
  * Show content inside an offcanvas box
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-  var triggerSelector      = '[data-toggle="offsidebar"]',
-      offsidebarSelector   = '.offsidebar',
-      offsidebarOpenClass  = 'offsidebar-open',
-      $body = $('body');
+	var triggerSelector = '[data-toggle="offsidebar"]',
+			offsidebarSelector = '.offsidebar',
+			offsidebarOpenClass = 'offsidebar-open',
+			$body = $('body');
 
-  $(function() {
-    
-    var OffSidebar = {
-      open: function(offsidebar) {
-        $body.addClass(offsidebarOpenClass);
-      },
-      close: function() {
-        $body.removeClass(offsidebarOpenClass);
-      },
-      toggle: function() {
-        $body.toggleClass(offsidebarOpenClass);
-      }
-    };
+	$(function () {
 
-    $(document)
-        .on("click", OffSidebar.close)
-        .on("click", offsidebarSelector + "," + triggerSelector, function (e) {
-          e.stopPropagation();
-        })
-        .on("click", triggerSelector, OffSidebar.toggle);
+		var OffSidebar = {
+			open: function (offsidebar) {
+				$body.addClass(offsidebarOpenClass);
+			},
+			close: function () {
+				$body.removeClass(offsidebarOpenClass);
+			},
+			toggle: function () {
+				$body.toggleClass(offsidebarOpenClass);
+			}
+		};
 
-  });
+		$(document)
+				.on("click", OffSidebar.close)
+				.on("click", offsidebarSelector + "," + triggerSelector, function (e) {
+					e.stopPropagation();
+				})
+				.on("click", triggerSelector, OffSidebar.toggle);
+
+	});
 
 }(jQuery, window, document));
 
@@ -1579,32 +1605,33 @@
  *
  * Requires animo.js
  =========================================================*/
-(function($, window, document){
-  
-  var panelSelector = '[data-perform="panel-dismiss"]';
+(function ($, window, document) {
 
-  $(document).on('click', panelSelector, function (e) {
-    
-    // find the first parent panel
-    var parent = $(this).closest('.panel');
+	var panelSelector = '[data-perform="panel-dismiss"]';
 
-    if($.support.animation) {
-      parent.animo({animation: 'bounceOut'}, removeElement);
-    }
-    else removeElement();
+	$(document).on('click', panelSelector, function (e) {
 
-    function removeElement() {
-      var col = parent.parent();
-      parent.remove();
-      // remove the parent if it is a row and is empty
-      col.filter(function() {
-        var el = $(this);
-        return (el.is('[class*="col-"]') && el.children('*').length === 0);
-      }).remove();
+		// find the first parent panel
+		var parent = $(this).closest('.panel');
 
-    }
+		if ($.support.animation) {
+			parent.animo({animation: 'bounceOut'}, removeElement);
+		}
+		else
+			removeElement();
 
-  });
+		function removeElement() {
+			var col = parent.parent();
+			parent.remove();
+			// remove the parent if it is a row and is empty
+			col.filter(function () {
+				var el = $(this);
+				return (el.is('[class*="col-"]') && el.children('*').length === 0);
+			}).remove();
+
+		}
+
+	});
 
 }(jQuery, window, document));
 
@@ -1613,48 +1640,48 @@
  * Collapse panels
  * [data-perform="panel-collapse"]
  */
-(function($, window, document){
-  
-  var panelSelector = '[data-perform="panel-collapse"]';
+(function ($, window, document) {
 
-  // Prepare the panel to be collapsable and its events
-  $(panelSelector).each(function() {
-    // find the first parent panel
-    var $this = $(this),
-        parent = $this.closest('.panel'),
-        wrapper = parent.find('.panel-wrapper'),
-        collapseOpts = {toggle: false};
-    
-    // if wrapper not addded, add it
-    // we need a wrapper to avoid jumping due to the paddings
-    if( ! wrapper.length) {
-      wrapper =
-        parent.children('.panel-heading').nextAll() //find('.panel-body, .panel-footer')
-          .wrapAll('<div/>')
-          .parent()
-          .addClass('panel-wrapper');
-      collapseOpts = {};
-    }
-    // Init collapse and bind events to switch icons
-    wrapper
-      .collapse(collapseOpts)
-      .on('hide.bs.collapse', function() {
-        $this.children('em').removeClass('fa-minus').addClass('fa-plus');
-      })
-      .on('show.bs.collapse', function() {
-        $this.children('em').removeClass('fa-plus').addClass('fa-minus');
-      });
+	var panelSelector = '[data-perform="panel-collapse"]';
 
-  });
-  // finally catch clicks to toggle panel size
-  $(document).on('click', panelSelector, function (e) {
-    
-    var parent = $(this).closest('.panel');
-    var wrapper = parent.find('.panel-wrapper');
+	// Prepare the panel to be collapsable and its events
+	$(panelSelector).each(function () {
+		// find the first parent panel
+		var $this = $(this),
+				parent = $this.closest('.panel'),
+				wrapper = parent.find('.panel-wrapper'),
+				collapseOpts = {toggle: false};
 
-    wrapper.collapse('toggle');
+		// if wrapper not addded, add it
+		// we need a wrapper to avoid jumping due to the paddings
+		if (!wrapper.length) {
+			wrapper =
+					parent.children('.panel-heading').nextAll() //find('.panel-body, .panel-footer')
+					.wrapAll('<div/>')
+					.parent()
+					.addClass('panel-wrapper');
+			collapseOpts = {};
+		}
+		// Init collapse and bind events to switch icons
+		wrapper
+				.collapse(collapseOpts)
+				.on('hide.bs.collapse', function () {
+					$this.children('em').removeClass('fa-minus').addClass('fa-plus');
+				})
+				.on('show.bs.collapse', function () {
+					$this.children('em').removeClass('fa-plus').addClass('fa-minus');
+				});
 
-  });
+	});
+	// finally catch clicks to toggle panel size
+	$(document).on('click', panelSelector, function (e) {
+
+		var parent = $(this).closest('.panel');
+		var wrapper = parent.find('.panel-wrapper');
+
+		wrapper.collapse('toggle');
+
+	});
 
 }(jQuery, window, document));
 
@@ -1664,53 +1691,55 @@
  * [data-perform="panel-refresh"]
  * [data-spinner="standard"]
  */
-(function($, window, document){
-  
-  var panelSelector  = '[data-perform="panel-refresh"]',
-      refreshEvent   = 'panel-refresh',
-      csspinnerClass = 'csspinner',
-      defaultSpinner = 'standard';
+(function ($, window, document) {
 
-  // method to clear the spinner when done
-  function removeSpinner() { this.removeClass(csspinnerClass); }
+	var panelSelector = '[data-perform="panel-refresh"]',
+			refreshEvent = 'panel-refresh',
+			csspinnerClass = 'csspinner',
+			defaultSpinner = 'standard';
 
-  // catch clicks to toggle panel refresh
-  $(document).on('click', panelSelector, function (e) {
-      var $this   = $(this),
-          panel   = $this.parents('.panel').eq(0),
-          spinner = $this.data('spinner') || defaultSpinner
-          ;
+	// method to clear the spinner when done
+	function removeSpinner() {
+		this.removeClass(csspinnerClass);
+	}
 
-      // start showing the spinner
-      panel.addClass(csspinnerClass + ' ' + spinner);
+	// catch clicks to toggle panel refresh
+	$(document).on('click', panelSelector, function (e) {
+		var $this = $(this),
+				panel = $this.parents('.panel').eq(0),
+				spinner = $this.data('spinner') || defaultSpinner
+				;
 
-      // attach as public method
-      panel.removeSpinner = removeSpinner;
+		// start showing the spinner
+		panel.addClass(csspinnerClass + ' ' + spinner);
 
-      // Trigger the event and send the panel object
-      $this.trigger(refreshEvent, [panel]);
+		// attach as public method
+		panel.removeSpinner = removeSpinner;
 
-  });
+		// Trigger the event and send the panel object
+		$this.trigger(refreshEvent, [panel]);
+
+	});
 
 
-  /**
-   * This function is only to show a demonstration
-   * of how to use the panel refresh system via 
-   * custom event. 
-   * IMPORTANT: see how to remove the spinner.
-   */
+	/**
+	 * This function is only to show a demonstration
+	 * of how to use the panel refresh system via 
+	 * custom event. 
+	 * IMPORTANT: see how to remove the spinner.
+	 */
 
-  $('.panel.panel-demo').on('panel-refresh', function(e, panel){
-    
-    // perform any action when a .panel triggers a the refresh event
-    setTimeout(function(){
-  
-      // when the action is done, just remove the spinner class
-      panel.removeSpinner();
-  
-    }, 3000);
+	$('.panel.panel-demo').on('panel-refresh', function (e, panel) {
 
-  });
+		// perform any action when a .panel triggers a the refresh event
+		setTimeout(function () {
+
+			// when the action is done, just remove the spinner class
+			panel.removeSpinner();
+
+		}, 3000);
+
+	});
 
 }(jQuery, window, document));
 
@@ -1724,66 +1753,66 @@
  *
  * Requires animo.js
  =========================================================*/
- 
-(function($, window, document){
 
-  var Selector = '[data-toggle="play-animation"]';
+(function ($, window, document) {
 
-  $(function() {
-    
-    var $scroller = $('body, .wrapper');
+	var Selector = '[data-toggle="play-animation"]';
 
-    // Parse animations params and attach trigger to scroll
-    $(Selector).each(function() {
-      var $this     = $(this),
-          offset    = $this.data('offset'),
-          delay     = $this.data('delay')     || 100, // milliseconds
-          animation = $this.data('play')      || 'bounce';
-      
-      if(typeof offset !== 'undefined') {
-        
-        // test if the element starts visible
-        testAnimation($this);
-        // test on scroll
-        $scroller.scroll(function(){
-          testAnimation($this);
-        });
+	$(function () {
 
-      }
+		var $scroller = $('body, .wrapper');
 
-      // Test an element visibilty and trigger the given animation
-      function testAnimation(element) {
-          if ( !element.hasClass('anim-running') &&
-              $.Utils.isInView(element, {topoffset: offset})) {
-          element
-            .addClass('anim-running');
+		// Parse animations params and attach trigger to scroll
+		$(Selector).each(function () {
+			var $this = $(this),
+					offset = $this.data('offset'),
+					delay = $this.data('delay') || 100, // milliseconds
+					animation = $this.data('play') || 'bounce';
 
-          setTimeout(function() {
-            element
-              .addClass('anim-done')
-              .animo( { animation: animation, duration: 0.7} );
-          }, delay);
+			if (typeof offset !== 'undefined') {
 
-        }
-      }
+				// test if the element starts visible
+				testAnimation($this);
+				// test on scroll
+				$scroller.scroll(function () {
+					testAnimation($this);
+				});
 
-    });
+			}
 
-    // Run click triggered animations
-    $(document).on('click', Selector, function(e) {
+			// Test an element visibilty and trigger the given animation
+			function testAnimation(element) {
+				if (!element.hasClass('anim-running') &&
+						$.Utils.isInView(element, {topoffset: offset})) {
+					element
+							.addClass('anim-running');
 
-      var $this     = $(this),
-          targetSel = $this.data('target'),
-          animation = $this.data('play') || 'bounce',
-          target    = $(targetSel);
+					setTimeout(function () {
+						element
+								.addClass('anim-done')
+								.animo({animation: animation, duration: 0.7});
+					}, delay);
 
-      if(target && target) {
-        target.animo( { animation: animation } );
-      }
-      
-    });
+				}
+			}
 
-  });
+		});
+
+		// Run click triggered animations
+		$(document).on('click', Selector, function (e) {
+
+			var $this = $(this),
+					targetSel = $this.data('target'),
+					animation = $this.data('play') || 'bounce',
+					target = $(targetSel);
+
+			if (target && target) {
+				target.animo({animation: animation});
+			}
+
+		});
+
+	});
 
 }(jQuery, window, document));
 
@@ -1794,32 +1823,32 @@
  * panel, so .col-* element are ideal.
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-  // Component is optional
-  if(!$.fn.sortable) return;
+	// Component is optional
+	if (!$.fn.sortable)
+		return;
 
-  var Selector = '[data-toggle="portlet"]';
+	var Selector = '[data-toggle="portlet"]';
 
-  $(function(){
+	$(function () {
 
-    $( Selector ).sortable({
-      connectWith:  Selector,
-      items:        'div.panel',
-      handle:       '.portlet-handler',
-      opacity:      0.7,
-      placeholder:  'portlet box-placeholder',
-      cancel:       '.portlet-cancel',
-      forcePlaceholderSize: true,
-      iframeFix:  false,
-      tolerance:  'pointer',
-      helper:     'original',
-      revert:     200,
-      forceHelperSize: true,
+		$(Selector).sortable({
+			connectWith: Selector,
+			items: 'div.panel',
+			handle: '.portlet-handler',
+			opacity: 0.7,
+			placeholder: 'portlet box-placeholder',
+			cancel: '.portlet-cancel',
+			forcePlaceholderSize: true,
+			iframeFix: false,
+			tolerance: 'pointer',
+			helper: 'original',
+			revert: 200,
+			forceHelperSize: true,
+		}).disableSelection();
 
-    }).disableSelection();
-
-  });
+	});
 
 }(jQuery, window, document));
 
@@ -1830,47 +1859,48 @@
  * next to the current element (sibling)
  * Targeted elements must have [data-toggle="collapse-next"]
  =========================================================*/
-(function($, window, document){
+(function ($, window, document) {
 
-  var collapseSelector = '[data-toggle="collapse-next"]',
-      colllapsibles    = $('.sidebar .collapse').collapse({toggle: false}),
-      toggledClass     = 'aside-toggled',
-      $body            = $('body'),
-      phone_mq         = 768; // media querie
+	var collapseSelector = '[data-toggle="collapse-next"]',
+			colllapsibles = $('.sidebar .collapse').collapse({toggle: false}),
+			toggledClass = 'aside-toggled',
+			$body = $('body'),
+			phone_mq = 768; // media querie
 
-  $(function() {
+	$(function () {
 
-    $(document)
-      .on('click', collapseSelector, function (e) {
-          e.preventDefault();
-          
-          if ($(window).width() > phone_mq &&
-              $body.hasClass(toggledClass)) return;
+		$(document)
+				.on('click', collapseSelector, function (e) {
+					e.preventDefault();
 
-          // Try to close all of the collapse areas first
-          colllapsibles.collapse('hide');
-          // ...then open just the one we want
-          var $target = $(this).siblings('ul');
-          $target.collapse('show');
+					if ($(window).width() > phone_mq &&
+							$body.hasClass(toggledClass))
+						return;
 
-      })
-      // Submenu when aside is toggled
-      .on('click', '.sidebar > .nav > li', function() {
+					// Try to close all of the collapse areas first
+					colllapsibles.collapse('hide');
+					// ...then open just the one we want
+					var $target = $(this).siblings('ul');
+					$target.collapse('show');
 
-        if ($body.hasClass(toggledClass) &&
-          $(window).width() > phone_mq) {
+				})
+				// Submenu when aside is toggled
+				.on('click', '.sidebar > .nav > li', function () {
 
-            $('.sidebar > .nav > li')
-              .not(this)
-              .removeClass('open')
-              .end()
-              .filter(this)
-              .toggleClass('open');
-        }
+					if ($body.hasClass(toggledClass) &&
+							$(window).width() > phone_mq) {
 
-      });
+						$('.sidebar > .nav > li')
+								.not(this)
+								.removeClass('open')
+								.end()
+								.filter(this)
+								.toggleClass('open');
+					}
 
-  });
+				});
+
+	});
 
 
 }(jQuery, window, document));
@@ -1880,34 +1910,34 @@
  * SparkLines Mini Charts
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-  var Selector = '.inlinesparkline';
+	var Selector = '.inlinesparkline';
 
-  // Match color with css values to style charts
-  var colors = {
-        primary:         '#5fb5cb',
-        success:         '#27ae60',
-        info:            '#22bfe8',
-        warning:         '#ffc61d',
-        danger:          '#f6504d'
-    };
+	// Match color with css values to style charts
+	var colors = {
+		primary: '#5fb5cb',
+		success: '#27ae60',
+		info: '#22bfe8',
+		warning: '#ffc61d',
+		danger: '#f6504d'
+	};
 
-  // Inline sparklines take their values from the contents of the tag 
-  $(Selector).each(function() {
+	// Inline sparklines take their values from the contents of the tag 
+	$(Selector).each(function () {
 
-      var $this = $(this);
-      var data = $this.data();
+		var $this = $(this);
+		var data = $this.data();
 
-        if(data.barColor && colors[data.barColor])
-          data.barColor = colors[data.barColor];
+		if (data.barColor && colors[data.barColor])
+			data.barColor = colors[data.barColor];
 
-      var options = data;
-      options.type = data.type || 'bar'; // default chart is bar
+		var options = data;
+		options.type = data.type || 'bar'; // default chart is bar
 
-      $(this).sparkline('html', options);
+		$(this).sparkline('html', options);
 
-  });
+	});
 
 }(jQuery, window, document));
 
@@ -1916,20 +1946,20 @@
  * Tables check all checkbox
  =========================================================*/
 
-(function($, window, document){
-  
-  var Selector = 'th.check-all';
+(function ($, window, document) {
 
-  $(Selector).on('change', function() {
-    var $this = $(this),
-        index= $this.index() + 1,
-        checkbox = $this.find('input[type="checkbox"]'),
-        table = $this.parents('table');
-    // Make sure to affect only the correct checkbox column
-    table.find('tbody > tr > td:nth-child('+index+') input[type="checkbox"]')
-      .prop('checked', checkbox[0].checked);
+	var Selector = 'th.check-all';
 
-  });
+	$(Selector).on('change', function () {
+		var $this = $(this),
+				index = $this.index() + 1,
+				checkbox = $this.find('input[type="checkbox"]'),
+				table = $this.parents('table');
+		// Make sure to affect only the correct checkbox column
+		table.find('tbody > tr > td:nth-child(' + index + ') input[type="checkbox"]')
+				.prop('checked', checkbox[0].checked);
+
+	});
 
 }(jQuery, window, document));
 
@@ -1938,50 +1968,50 @@
  * Initialize Bootstrap tooltip with auto placement
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-  $(function(){
+	$(function () {
 
-    $('[data-toggle="tooltip"]').tooltip({
-      container: 'body',
-      placement: function (context, source) {
-                    //return (predictTooltipTop(source) < 0) ?  "bottom": "top";
-                    var pos = "top";
-                    if(predictTooltipTop(source) < 0)
-                      pos = "bottom";
-                    if(predictTooltipLeft(source) < 0)
-                      pos = "right";
-                    return pos;
-                }
-    });
+		$('[data-toggle="tooltip"]').tooltip({
+			container: 'body',
+			placement: function (context, source) {
+				//return (predictTooltipTop(source) < 0) ?  "bottom": "top";
+				var pos = "top";
+				if (predictTooltipTop(source) < 0)
+					pos = "bottom";
+				if (predictTooltipLeft(source) < 0)
+					pos = "right";
+				return pos;
+			}
+		});
 
-  });
+	});
 
-  // Predicts tooltip top position 
-  // based on the trigger element
-  function predictTooltipTop(el) {
-    var top = el.offsetTop;
-    var height = 40; // asumes ~40px tooltip height
+	// Predicts tooltip top position 
+	// based on the trigger element
+	function predictTooltipTop(el) {
+		var top = el.offsetTop;
+		var height = 40; // asumes ~40px tooltip height
 
-    while(el.offsetParent) {
-      el = el.offsetParent;
-      top += el.offsetTop;
-    }
-    return (top - height) - (window.pageYOffset);
-  }
+		while (el.offsetParent) {
+			el = el.offsetParent;
+			top += el.offsetTop;
+		}
+		return (top - height) - (window.pageYOffset);
+	}
 
-  // Predicts tooltip top position 
-  // based on the trigger element
-  function predictTooltipLeft(el) {
-    var left = el.offsetLeft;
-    var width = el.offsetWidth;
+	// Predicts tooltip top position 
+	// based on the trigger element
+	function predictTooltipLeft(el) {
+		var left = el.offsetLeft;
+		var width = el.offsetWidth;
 
-    while(el.offsetParent) {
-      el = el.offsetParent;
-      left += el.offsetLeft;
-    }
-    return (left - width) - (window.pageXOffset);
-  }
+		while (el.offsetParent) {
+			el = el.offsetParent;
+			left += el.offsetLeft;
+		}
+		return (left - width) - (window.pageXOffset);
+	}
 
 }(jQuery, window, document));
 
@@ -1991,30 +2021,30 @@
  * the user status
  =========================================================*/
 
-(function($, window, document){
+(function ($, window, document) {
 
-  var Selector =  '.user-block-status';
+	var Selector = '.user-block-status';
 
-  $(document).on('click', Selector, function(e) {
+	$(document).on('click', Selector, function (e) {
 
-    // avoids conflict with menu collapse
-    e.stopPropagation();
+		// avoids conflict with menu collapse
+		e.stopPropagation();
 
-    var $this = $(this),
-        html = $this.find('.dropdown-menu > li > a').filter(e.target).html(), // the status clicked
-        btn  = $this.find('.btn'); // the button to display status
-    
-    // Update button status
-    btn.html(html);
+		var $this = $(this),
+				html = $this.find('.dropdown-menu > li > a').filter(e.target).html(), // the status clicked
+				btn = $this.find('.btn'); // the button to display status
 
-    // Update picture status indicator
-    $('.user-block .user-block-picture .user-block-status').html(html);
-    
-    // Since we stopPropagation dropdown must be closed manually
-    if($this.hasClass('open'))
-      btn.dropdown('toggle');
-    
-  });
+		// Update button status
+		btn.html(html);
+
+		// Update picture status indicator
+		$('.user-block .user-block-picture .user-block-status').html(html);
+
+		// Since we stopPropagation dropdown must be closed manually
+		if ($this.hasClass('open'))
+			btn.dropdown('toggle');
+
+	});
 
 }(jQuery, window, document));
 
@@ -2024,205 +2054,218 @@
  * adapted from the core of UIKit
  =========================================================*/
 
-(function($, window, doc){
+(function ($, window, doc) {
 
-    "use strict";
-    
-    var $html = $("html"), $win = $(window);
+	"use strict";
 
-    $.support.transition = (function() {
+	var $html = $("html"), $win = $(window);
 
-        var transitionEnd = (function() {
+	$.support.transition = (function () {
 
-            var element = doc.body || doc.documentElement,
-                transEndEventNames = {
-                    WebkitTransition: 'webkitTransitionEnd',
-                    MozTransition: 'transitionend',
-                    OTransition: 'oTransitionEnd otransitionend',
-                    transition: 'transitionend'
-                }, name;
+		var transitionEnd = (function () {
 
-            for (name in transEndEventNames) {
-                if (element.style[name] !== undefined) return transEndEventNames[name];
-            }
-        }());
+			var element = doc.body || doc.documentElement,
+					transEndEventNames = {
+						WebkitTransition: 'webkitTransitionEnd',
+						MozTransition: 'transitionend',
+						OTransition: 'oTransitionEnd otransitionend',
+						transition: 'transitionend'
+					}, name;
 
-        return transitionEnd && { end: transitionEnd };
-    })();
+			for (name in transEndEventNames) {
+				if (element.style[name] !== undefined)
+					return transEndEventNames[name];
+			}
+		}());
 
-    $.support.animation = (function() {
+		return transitionEnd && {end: transitionEnd};
+	})();
 
-        var animationEnd = (function() {
+	$.support.animation = (function () {
 
-            var element = doc.body || doc.documentElement,
-                animEndEventNames = {
-                    WebkitAnimation: 'webkitAnimationEnd',
-                    MozAnimation: 'animationend',
-                    OAnimation: 'oAnimationEnd oanimationend',
-                    animation: 'animationend'
-                }, name;
+		var animationEnd = (function () {
 
-            for (name in animEndEventNames) {
-                if (element.style[name] !== undefined) return animEndEventNames[name];
-            }
-        }());
+			var element = doc.body || doc.documentElement,
+					animEndEventNames = {
+						WebkitAnimation: 'webkitAnimationEnd',
+						MozAnimation: 'animationend',
+						OAnimation: 'oAnimationEnd oanimationend',
+						animation: 'animationend'
+					}, name;
 
-        return animationEnd && { end: animationEnd };
-    })();
+			for (name in animEndEventNames) {
+				if (element.style[name] !== undefined)
+					return animEndEventNames[name];
+			}
+		}());
 
-    $.support.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60); };
-    $.support.touch                 = (
-        ('ontouchstart' in window && navigator.userAgent.toLowerCase().match(/mobile|tablet/)) ||
-        (window.DocumentTouch && document instanceof window.DocumentTouch)  ||
-        (window.navigator['msPointerEnabled'] && window.navigator['msMaxTouchPoints'] > 0) || //IE 10
-        (window.navigator['pointerEnabled'] && window.navigator['maxTouchPoints'] > 0) || //IE >=11
-        false
-    );
-    $.support.mutationobserver      = (window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver || null);
+		return animationEnd && {end: animationEnd};
+	})();
 
-    $.Utils = {};
+	$.support.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function (callback) {
+		window.setTimeout(callback, 1000 / 60);
+	};
+	$.support.touch = (
+			('ontouchstart' in window && navigator.userAgent.toLowerCase().match(/mobile|tablet/)) ||
+			(window.DocumentTouch && document instanceof window.DocumentTouch) ||
+			(window.navigator['msPointerEnabled'] && window.navigator['msMaxTouchPoints'] > 0) || //IE 10
+			(window.navigator['pointerEnabled'] && window.navigator['maxTouchPoints'] > 0) || //IE >=11
+			false
+			);
+	$.support.mutationobserver = (window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver || null);
 
-    $.Utils.debounce = function(func, wait, immediate) {
-        var timeout;
-        return function() {
-            var context = this, args = arguments;
-            var later = function() {
-                timeout = null;
-                if (!immediate) func.apply(context, args);
-            };
-            var callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) func.apply(context, args);
-        };
-    };
+	$.Utils = {};
 
-    $.Utils.removeCssRules = function(selectorRegEx) {
-        var idx, idxs, stylesheet, _i, _j, _k, _len, _len1, _len2, _ref;
+	$.Utils.debounce = function (func, wait, immediate) {
+		var timeout;
+		return function () {
+			var context = this, args = arguments;
+			var later = function () {
+				timeout = null;
+				if (!immediate)
+					func.apply(context, args);
+			};
+			var callNow = immediate && !timeout;
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+			if (callNow)
+				func.apply(context, args);
+		};
+	};
 
-        if(!selectorRegEx) return;
+	$.Utils.removeCssRules = function (selectorRegEx) {
+		var idx, idxs, stylesheet, _i, _j, _k, _len, _len1, _len2, _ref;
 
-        setTimeout(function(){
-            try {
-              _ref = document.styleSheets;
-              for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-                stylesheet = _ref[_i];
-                idxs = [];
-                stylesheet.cssRules = stylesheet.cssRules;
-                for (idx = _j = 0, _len1 = stylesheet.cssRules.length; _j < _len1; idx = ++_j) {
-                  if (stylesheet.cssRules[idx].type === CSSRule.STYLE_RULE && selectorRegEx.test(stylesheet.cssRules[idx].selectorText)) {
-                    idxs.unshift(idx);
-                  }
-                }
-                for (_k = 0, _len2 = idxs.length; _k < _len2; _k++) {
-                  stylesheet.deleteRule(idxs[_k]);
-                }
-              }
-            } catch (_error) {}
-        }, 0);
-    };
+		if (!selectorRegEx)
+			return;
 
-    $.Utils.isInView = function(element, options) {
+		setTimeout(function () {
+			try {
+				_ref = document.styleSheets;
+				for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+					stylesheet = _ref[_i];
+					idxs = [];
+					stylesheet.cssRules = stylesheet.cssRules;
+					for (idx = _j = 0, _len1 = stylesheet.cssRules.length; _j < _len1; idx = ++_j) {
+						if (stylesheet.cssRules[idx].type === CSSRule.STYLE_RULE && selectorRegEx.test(stylesheet.cssRules[idx].selectorText)) {
+							idxs.unshift(idx);
+						}
+					}
+					for (_k = 0, _len2 = idxs.length; _k < _len2; _k++) {
+						stylesheet.deleteRule(idxs[_k]);
+					}
+				}
+			} catch (_error) {
+			}
+		}, 0);
+	};
 
-        var $element = $(element);
+	$.Utils.isInView = function (element, options) {
 
-        if (!$element.is(':visible')) {
-            return false;
-        }
+		var $element = $(element);
 
-        var window_left = $win.scrollLeft(),
-            window_top  = $win.scrollTop(),
-            offset      = $element.offset(),
-            left        = offset.left,
-            top         = offset.top;
+		if (!$element.is(':visible')) {
+			return false;
+		}
 
-        options = $.extend({topoffset:0, leftoffset:0}, options);
+		var window_left = $win.scrollLeft(),
+				window_top = $win.scrollTop(),
+				offset = $element.offset(),
+				left = offset.left,
+				top = offset.top;
 
-        if (top + $element.height() >= window_top && top - options.topoffset <= window_top + $win.height() &&
-            left + $element.width() >= window_left && left - options.leftoffset <= window_left + $win.width()) {
-          return true;
-        } else {
-          return false;
-        }
-    };
+		options = $.extend({topoffset: 0, leftoffset: 0}, options);
 
-    $.Utils.options = function(string) {
+		if (top + $element.height() >= window_top && top - options.topoffset <= window_top + $win.height() &&
+				left + $element.width() >= window_left && left - options.leftoffset <= window_left + $win.width()) {
+			return true;
+		} else {
+			return false;
+		}
+	};
 
-        if ($.isPlainObject(string)) return string;
+	$.Utils.options = function (string) {
 
-        var start = (string ? string.indexOf("{") : -1), options = {};
+		if ($.isPlainObject(string))
+			return string;
 
-        if (start != -1) {
-            try {
-                options = (new Function("", "var json = " + string.substr(start) + "; return JSON.parse(JSON.stringify(json));"))();
-            } catch (e) {}
-        }
+		var start = (string ? string.indexOf("{") : -1), options = {};
 
-        return options;
-    };
+		if (start != -1) {
+			try {
+				options = (new Function("", "var json = " + string.substr(start) + "; return JSON.parse(JSON.stringify(json));"))();
+			} catch (e) {
+			}
+		}
 
-    $.Utils.events       = {};
-    $.Utils.events.click = $.support.touch ? 'tap' : 'click';
+		return options;
+	};
 
-    $.langdirection = $html.attr("dir") == "rtl" ? "right" : "left";
+	$.Utils.events = {};
+	$.Utils.events.click = $.support.touch ? 'tap' : 'click';
 
-    $(function(){
+	$.langdirection = $html.attr("dir") == "rtl" ? "right" : "left";
 
-        // Check for dom modifications
-        if(!$.support.mutationobserver) return;
+	$(function () {
 
-        // Install an observer for custom needs of dom changes
-        var observer = new $.support.mutationobserver($.Utils.debounce(function(mutations) {
-            $(doc).trigger("domready");
-        }, 300));
+		// Check for dom modifications
+		if (!$.support.mutationobserver)
+			return;
 
-        // pass in the target node, as well as the observer options
-        observer.observe(document.body, { childList: true, subtree: true });
+		// Install an observer for custom needs of dom changes
+		var observer = new $.support.mutationobserver($.Utils.debounce(function (mutations) {
+			$(doc).trigger("domready");
+		}, 300));
 
-    });
+		// pass in the target node, as well as the observer options
+		observer.observe(document.body, {childList: true, subtree: true});
 
-    // add touch identifier class
-    $html.addClass($.support.touch ? "touch" : "no-touch");
+	});
+
+	// add touch identifier class
+	$html.addClass($.support.touch ? "touch" : "no-touch");
 
 }(jQuery, window, document));
 /**
  * Provides a start point to run plugins and other scripts
  */
-(function($, window, document){
+(function ($, window, document) {
 
-  if (typeof $ === 'undefined') { throw new Error('This application\'s JavaScript requires jQuery'); }
+	if (typeof $ === 'undefined') {
+		throw new Error('This application\'s JavaScript requires jQuery');
+	}
 
-  $(window).load(function() {
+	$(window).load(function () {
 
-    $('.scroll-content').slimScroll({
-        height: '250px'
-    });
+		$('.scroll-content').slimScroll({
+			height: '250px'
+		});
 
-  });
+	});
 
-  $(function() {
+	$(function () {
 
-    // Init Fast click for mobiles
-    FastClick.attach(document.body);
+		// Init Fast click for mobiles
+		FastClick.attach(document.body);
 
-    // inhibits null links
-    $('a[href="#"]').each(function(){
-      this.href = 'javascript:void(0);';
-    });
+		// inhibits null links
+		$('a[href="#"]').each(function () {
+			this.href = 'javascript:void(0);';
+		});
 
-    // popover init
-    $("[data-toggle=popover]")
-      .popover();
+		// popover init
+		$("[data-toggle=popover]")
+				.popover();
 
-    // Bootstrap slider
-    $('.slider').slider();
+		// Bootstrap slider
+		$('.slider').slider();
 
-    // Chosen
-    $(".chosen-select").chosen();
+		// Chosen
+		$(".chosen-select").chosen();
 
-    // Filestyle
-    $(".filestyle").filestyle();
+		// Filestyle
+		$(".filestyle").filestyle();
 
-  });
+	});
 
 }(jQuery, window, document));
