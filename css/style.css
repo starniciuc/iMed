@@ -2777,6 +2777,21 @@ li.open-submenu a{
 .side-check{
 	display: inline-block;
 }
+@media (max-width: 1400px){
+	.top-main-container .main-container.top-name .btn-info-pacient{
+		font-size: 16px;
+	}
+	.top-main-container .main-container.top-name .name-block .name span.virsta{
+		font-size: 11px;
+	}
+	.top-main-container .main-container.top-name .btn-info-pacient{
+		padding: 2px 5px;
+		margin-right: 0;
+	}
+	.top-main-container .main-container.top-name .name-block .name{
+		padding-left: 3px;
+	}
+}
 @media (max-width: 1200px){
     .icons.navbar-toggle{
         /*position: absolute;
