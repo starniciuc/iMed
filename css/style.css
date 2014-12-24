@@ -2855,14 +2855,27 @@ li.open-submenu a{
         Mobile op$timization
 ************************************************************/
 @media (max-width:767px){
+	.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse{
+		max-height: 100%;
+	}
     .login{
         width: 100%;
         display: block;
         text-align: center;
     }
+	.nav > li.print-side-button{
+		position: relative;
+		margin-top: 40px;
+	}
+	.aside-toggled .sidebar .nav > li.print-side-button a span.item-text{
+		display: inline-block;
+	}
     .main-content{
         padding-top: 10px; 
     }
+	.aside-toggled .sidebar .nav > li.print-side-button{
+		border: 0;
+	}
     .main-container.user-page .side-textarea{
         padding: 0;
     }
