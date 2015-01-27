@@ -2777,6 +2777,28 @@ li.open-submenu a{
 .side-check{
 	display: inline-block;
 }
+.user-page .into-small-text.text-left{
+    text-align: left !important;
+    padding-left: 0;
+    margin-bottom: 0 !important;
+}
+.user-page .breadcrumb{
+    background: none;
+}
+.user-page .breadcrumb li{
+    color: #000000;
+}
+.user-page .breadcrumb li,
+.user-page .breadcrumb li a{
+    font-size: 12px;
+}
+.user-page .breadcrumb li a{
+    color: #0080ff;
+    text-decoration: underline;
+}
+.user-page .breadcrumb li a:hover{
+    text-decoration: none;
+}
 @media (max-width: 1400px){
 	.top-main-container .main-container.top-name .btn-info-pacient{
 		font-size: 16px;
