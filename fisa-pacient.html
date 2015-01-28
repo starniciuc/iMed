@@ -349,112 +349,221 @@
                             <div class="row-fluid clearfix" id="container">
                                 <div class="col-lg-16 form-page">
                                     <h1 class="into-small-text text-left">Ana Mardare Radu</h1>
-                                    
+
                                     <ol class="breadcrumb">
                                         <li><a href="#">Căutare pacient</a></li>
                                         <li class="active">Fișa medicală a pacientului</li>
                                     </ol>
-                                    
-                                    <div class="form-group clearfix">
-                                        <div class="col-md-5">
-                                            <p>Data înregistraturii</p>
-                                            <input type="text" class="form-control" >
-                                        </div>
-                                        <div class="col-md-5">
-                                            <p>IDNP</p>
-                                            <input type="text" class="form-control" >
-                                        </div>
-                                        <div class="col-md-5">
-                                            <p>Prenume</p>
-                                            <input type="text" class="form-control" >
+
+                                    <div class="section-pacient">
+                                        <h1>Datele generale</h1>
+                                        <div class="inner">
+                                            <div class="form-group clearfix">
+                                                <div class="col-md-5">
+                                                    <p>Prenume</p>
+                                                    <input type="text" class="form-control" >
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <p>Nume</p>
+                                                    <input type="text" class="form-control" >
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <p>Patronimic</p>
+                                                    <input type="text" class="form-control" > 
+                                                </div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <div class="col-md-5">
+                                                    <p>IDNP</p>
+                                                    <input type="text" class="form-control" >
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <p>Data nașterii</p>
+                                                            <input type="text" class="form-control" > 
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <p>Data nașterii</p>
+                                                            <div class="datetimepicker input-group date mb-lg" data-pick-time="false">
+                                                                <input type="text" class="form-control">
+                                                                <span class="input-group-addon">
+                                                                    <span class="fa fa-calendar"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <p>Sexul</p>
+                                                            <select class="form-control" >
+                                                                <option></option>
+                                                                <option></option>
+                                                                <option></option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <p>Grupa sangvina</p>
+                                                            <select class="form-control" >
+                                                                <option></option>
+                                                                <option></option>
+                                                                <option></option>
+                                                            </select>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <div class="col-md-5">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <p>Rezus factor</p>
+                                                            <select class="form-control" >
+                                                                <option></option>
+                                                                <option></option>
+                                                                <option></option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <p>Greutatea</p>
+                                                            <div class="masure-input">
+                                                                <input type="text" class="form-control" >
+                                                                <label>Kg</label>
+                                                            </div>  
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <p>Înalțimea</p>
+                                                            <div class="masure-input">
+                                                                <input type="text" class="form-control" >
+                                                                <label>cm</label>
+                                                            </div>  
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <p>Culoarea ochilor</p>
+                                                            <select class="form-control" >
+                                                                <option></option>
+                                                                <option></option>
+                                                                <option></option>
+                                                            </select>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="form-group clearfix">
-                                        <div class="col-md-5">
-                                            <p>Nume</p>
-                                            <input type="text" class="form-control" >
-                                        </div>
-                                        <div class="col-md-5">
-                                            <p>Patronimic</p>
-                                            <input type="text" class="form-control" > 
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="row">
-                                                <div class="col-md-8">
-                                                    <p>Sexul</p>
+                                    <div class="section-pacient">
+                                        <h1>Medic de familie</h1>
+                                        <div class="inner">
+                                            <div class="form-group clearfix">
+                                                <div class="col-md-5">
+                                                    <p>Doctor</p>
                                                     <select class="form-control" >
                                                         <option></option>
                                                         <option></option>
                                                         <option></option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-8">
-                                                    <p>Data nașterii</p>
-                                                    <input type="text" class="form-control" > 
-                                                </div>
                                             </div>
+                                        </div>
+                                    </div>
 
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="col-md-5 ">
-                                            <p>Numărul poliței</p>
-                                            <input type="text" class="form-control" > 
-                                        </div>
-                                        <div class="col-md-5 ">
-                                            <p>Categoria</p>
-                                            <select class="form-control" >
-                                                <option></option>
-                                                <option></option>
-                                                <option></option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-5 ">
-                                            <p>Legătură cu instituția</p>
-                                            <select class="form-control" >
-                                                <option></option>
-                                                <option></option>
-                                                <option></option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="col-md-5">
-                                            <p>Raion</p>
-                                            <input type="text" class="form-control" >
-                                        </div>
-                                        <div class="col-md-5">
-                                            <p>Lacalitatea</p>
-                                            <input type="text" class="form-control" > 
-                                        </div>
-                                        <div class="col-md-5">
-                                            <p>Strada</p>
-                                            <input type="text" class="form-control" > 
-                                        </div>
-                                    </div>
-                                    <div class="form-group clearfix">
-                                        <div class="col-md-5 ">
-                                            <div class="row">
-                                                <div class="col-md-8">
-                                                    <p>Bloc</p>
-                                                    <input type="text" class="form-control" >
+                                    <div class="section-pacient">
+                                        <h1>Adresa</h1>
+                                        <div class="inner">
+                                            <div class="form-group clearfix">
+                                                <div class="col-md-5">
+                                                    <p>Țara</p>
+                                                    <select class="form-control" >
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                    </select>
                                                 </div>
-                                                <div class="col-md-8">
-                                                    <p>Bară</p>
-                                                    <input type="text" class="form-control" > 
+                                                <div class="col-md-5">
+                                                    <p>Cetățenia</p>
+                                                    <select class="form-control" >
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <p>Raion</p>
+                                                    <select class="form-control" >
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <div class="form-group clearfix">
+                                                    <div class="col-md-5">
+                                                        <p>localitatea</p>
+                                                        <input type="text" class="form-control" >
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <p>Strada</p>
+                                                        <input type="text" class="form-control" >
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <p>Bloc</p>
+                                                                <input type="text" class="form-control" > 
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <p>Bară</p>
+                                                                <input type="text" class="form-control" > 
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <div class="form-group clearfix">
+                                                    <div class="col-md-5">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <p>Apartament</p>
+                                                                <input type="text" class="form-control" > 
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-5 ">
-                                            <div class="row">
-                                                <div class="col-md-8">
-                                                    <p>Apartament</p>
-                                                    <input type="text" class="form-control" >
-                                                </div>                                            
+                                    </div>
+
+                                    <div class="section-pacient">
+                                        <h1>Contacte</h1>
+                                        <div class="inner">
+                                            <div class="form-group clearfix">
+                                                <div class="form-group clearfix">
+                                                    <div class="col-md-5">
+                                                        <p>Tel. de contact</p>
+                                                        <input type="text" class="form-control" >
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <p>Tel. mobil</p>
+                                                        <input type="text" class="form-control" >
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <p>E-mail</p>
+                                                        <input type="text" class="form-control" > 
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="form-group clearfix">
                                         <div class="col-lg-16  padding-top">
                                             <button class="btn btn-green-med">Salvează</button>
